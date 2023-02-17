@@ -1,6 +1,6 @@
 ﻿namespace MediaShelfApp
 {
-    partial class Form1
+    partial class Notes_Form
     {
         /// <summary>
         ///  Required designer variable.

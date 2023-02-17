@@ -1,8 +1,8 @@
 namespace MediaShelfApp
 {
-    public partial class Form1 : Form
+    public partial class Notes_Form : Form
     {
-        public Form1()
+        public Notes_Form()
         {
             InitializeComponent();
         }
