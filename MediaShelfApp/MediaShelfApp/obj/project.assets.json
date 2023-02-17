@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laesc\\OneDrive\\Desktop\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
+      "projectUniqueName": "C:\\Users\\laesc\\OneDrive\\Desktop\\github_repos\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
       "projectName": "MediaShelfApp",
-      "projectPath": "C:\\Users\\laesc\\OneDrive\\Desktop\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
+      "projectPath": "C:\\Users\\laesc\\OneDrive\\Desktop\\github_repos\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
       "packagesPath": "C:\\Users\\laesc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laesc\\OneDrive\\Desktop\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\obj\\",
+      "outputPath": "C:\\Users\\laesc\\OneDrive\\Desktop\\github_repos\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
