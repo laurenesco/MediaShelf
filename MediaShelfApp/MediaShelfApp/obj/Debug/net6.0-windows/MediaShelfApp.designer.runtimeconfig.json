@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\laesc\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\laesc\\.nuget\\packages",
+      "C:\\Users\\punti\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\punti\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

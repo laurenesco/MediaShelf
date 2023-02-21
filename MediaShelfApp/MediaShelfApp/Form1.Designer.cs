@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(322, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 20);
+            this.label2.Size = new System.Drawing.Size(41, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "test";
             // 
@@ -46,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(703, 378);
             this.Controls.Add(this.label2);
             this.Name = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -55,5 +58,6 @@
 
         private Label label1;
         private Label label2;
+        private BindingSource bindingSource1;
     }
 }
