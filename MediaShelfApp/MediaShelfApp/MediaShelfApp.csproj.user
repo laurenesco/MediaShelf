@@ -7,5 +7,8 @@
     <Compile Update="Manual_Entry_Form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SearchResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
