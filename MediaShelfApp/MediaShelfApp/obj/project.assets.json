@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\eliseorico\\.nuget\\packages\\": {}
+    "C:\\Users\\jerem\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Y:\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
+      "projectUniqueName": "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
       "projectName": "MediaShelfApp",
-      "projectPath": "Y:\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
-      "packagesPath": "C:\\Users\\eliseorico\\.nuget\\packages\\",
-      "outputPath": "Y:\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\obj\\",
+      "projectPath": "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
+      "packagesPath": "C:\\Users\\jerem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\eliseorico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
