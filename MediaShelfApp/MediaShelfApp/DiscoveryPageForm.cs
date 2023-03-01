@@ -55,5 +55,18 @@ namespace MediaShelfApp
         {
 
         }
+
+        //button6 = search button. NOTE: click search button (NOT See More button) to get to more recommendations
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //creates an instance of detailed recommendations form and displays it to user
+            //NOTE: this instance is NOT stored in a variable; purpose is to test functionality of back button in Detailed Recommendations form
+            new Detailed_Recommendations(this).Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
