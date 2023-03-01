@@ -40,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -175,14 +174,6 @@
             this.checkedListBox1.Size = new System.Drawing.Size(65, 90);
             this.checkedListBox1.TabIndex = 5;
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(208, 97);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(547, 305);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -210,7 +201,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.searchBox1);
@@ -237,7 +227,6 @@
         private Label label6;
         private DateTimePicker dateTimePicker2;
         private Label label7;
-        private ListView listView1;
         private Label label2;
         private Label label1;
     }
