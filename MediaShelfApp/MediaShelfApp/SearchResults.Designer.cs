@@ -42,6 +42,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_loc_id = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,11 +195,20 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Filters";
             // 
+            // comboBox_loc_id
+            // 
+            this.comboBox_loc_id.FormattingEnabled = true;
+            this.comboBox_loc_id.Location = new System.Drawing.Point(406, 400);
+            this.comboBox_loc_id.Name = "comboBox_loc_id";
+            this.comboBox_loc_id.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_loc_id.TabIndex = 7;
+            // 
             // SearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox_loc_id);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -229,5 +239,6 @@
         private Label label7;
         private Label label2;
         private Label label1;
+        private ComboBox comboBox_loc_id;
     }
 }
