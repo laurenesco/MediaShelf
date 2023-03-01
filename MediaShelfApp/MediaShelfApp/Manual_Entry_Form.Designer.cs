@@ -28,53 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ME_backButton = new System.Windows.Forms.Button();
+            this.ME_fowardButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ME_tittle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ME_creator = new System.Windows.Forms.TextBox();
+            this.ME_type = new System.Windows.Forms.TextBox();
+            this.ME_genre = new System.Windows.Forms.TextBox();
+            this.ME_date = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ME_description = new System.Windows.Forms.TextBox();
+            this.ME_addButton = new System.Windows.Forms.Button();
+            this.ME_pic = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ME_pic)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // ME_backButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 29);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ME_backButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ME_backButton.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ME_backButton.Location = new System.Drawing.Point(12, 12);
+            this.ME_backButton.Name = "ME_backButton";
+            this.ME_backButton.Size = new System.Drawing.Size(38, 29);
+            this.ME_backButton.TabIndex = 5;
+            this.ME_backButton.Text = "<";
+            this.ME_backButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // ME_fowardButton
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(56, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 29);
-            this.button2.TabIndex = 6;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = false;
+            this.ME_fowardButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ME_fowardButton.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ME_fowardButton.Location = new System.Drawing.Point(56, 12);
+            this.ME_fowardButton.Name = "ME_fowardButton";
+            this.ME_fowardButton.Size = new System.Drawing.Size(38, 29);
+            this.ME_fowardButton.TabIndex = 6;
+            this.ME_fowardButton.Text = ">";
+            this.ME_fowardButton.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(300, 28);
+            this.label1.Location = new System.Drawing.Point(300, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 41);
             this.label1.TabIndex = 7;
@@ -90,12 +90,12 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Title:";
             // 
-            // textBox1
+            // ME_tittle
             // 
-            this.textBox1.Location = new System.Drawing.Point(370, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 27);
-            this.textBox1.TabIndex = 9;
+            this.ME_tittle.Location = new System.Drawing.Point(370, 87);
+            this.ME_tittle.Name = "ME_tittle";
+            this.ME_tittle.Size = new System.Drawing.Size(257, 27);
+            this.ME_tittle.TabIndex = 9;
             // 
             // label3
             // 
@@ -138,33 +138,33 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Release Date:";
             // 
-            // textBox2
+            // ME_creator
             // 
-            this.textBox2.Location = new System.Drawing.Point(398, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(229, 27);
-            this.textBox2.TabIndex = 14;
+            this.ME_creator.Location = new System.Drawing.Point(398, 117);
+            this.ME_creator.Name = "ME_creator";
+            this.ME_creator.Size = new System.Drawing.Size(229, 27);
+            this.ME_creator.TabIndex = 14;
             // 
-            // textBox3
+            // ME_type
             // 
-            this.textBox3.Location = new System.Drawing.Point(370, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 27);
-            this.textBox3.TabIndex = 15;
+            this.ME_type.Location = new System.Drawing.Point(370, 145);
+            this.ME_type.Name = "ME_type";
+            this.ME_type.Size = new System.Drawing.Size(257, 27);
+            this.ME_type.TabIndex = 15;
             // 
-            // textBox4
+            // ME_genre
             // 
-            this.textBox4.Location = new System.Drawing.Point(385, 174);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(242, 27);
-            this.textBox4.TabIndex = 16;
+            this.ME_genre.Location = new System.Drawing.Point(385, 174);
+            this.ME_genre.Name = "ME_genre";
+            this.ME_genre.Size = new System.Drawing.Size(242, 27);
+            this.ME_genre.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // ME_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(443, 209);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(184, 27);
-            this.dateTimePicker1.TabIndex = 17;
+            this.ME_date.Location = new System.Drawing.Point(443, 209);
+            this.ME_date.Name = "ME_date";
+            this.ME_date.Size = new System.Drawing.Size(184, 27);
+            this.ME_date.TabIndex = 17;
             // 
             // label7
             // 
@@ -177,58 +177,58 @@
             this.label7.Text = "Description:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox5
+            // ME_description
             // 
-            this.textBox5.Location = new System.Drawing.Point(80, 287);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(708, 142);
-            this.textBox5.TabIndex = 19;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.ME_description.Location = new System.Drawing.Point(80, 287);
+            this.ME_description.Multiline = true;
+            this.ME_description.Name = "ME_description";
+            this.ME_description.Size = new System.Drawing.Size(708, 142);
+            this.ME_description.TabIndex = 19;
+            this.ME_description.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // button3
+            // ME_addButton
             // 
-            this.button3.Location = new System.Drawing.Point(694, 445);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ME_addButton.Location = new System.Drawing.Point(694, 445);
+            this.ME_addButton.Name = "ME_addButton";
+            this.ME_addButton.Size = new System.Drawing.Size(94, 29);
+            this.ME_addButton.TabIndex = 20;
+            this.ME_addButton.Text = "Add";
+            this.ME_addButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // ME_pic
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(90, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(190, 166);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
+            this.ME_pic.Location = new System.Drawing.Point(90, 77);
+            this.ME_pic.Name = "ME_pic";
+            this.ME_pic.Size = new System.Drawing.Size(190, 166);
+            this.ME_pic.TabIndex = 21;
+            this.ME_pic.TabStop = false;
             // 
             // Manual_Entry_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.ME_pic);
+            this.Controls.Add(this.ME_addButton);
+            this.Controls.Add(this.ME_description);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ME_date);
+            this.Controls.Add(this.ME_genre);
+            this.Controls.Add(this.ME_type);
+            this.Controls.Add(this.ME_creator);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ME_tittle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ME_fowardButton);
+            this.Controls.Add(this.ME_backButton);
             this.Name = "Manual_Entry_Form";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Manual_Entry_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ME_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,22 +236,22 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button ME_backButton;
+        private Button ME_fowardButton;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox ME_tittle;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private DateTimePicker dateTimePicker1;
+        private TextBox ME_creator;
+        private TextBox ME_type;
+        private TextBox ME_genre;
+        private DateTimePicker ME_date;
         private Label label7;
-        private TextBox textBox5;
-        private Button button3;
-        private PictureBox pictureBox1;
+        private TextBox ME_description;
+        private Button ME_addButton;
+        private PictureBox ME_pic;
     }
 }

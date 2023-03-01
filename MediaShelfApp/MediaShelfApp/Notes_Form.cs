@@ -16,5 +16,10 @@ namespace MediaShelfApp
         {
             InitializeComponent();
         }
+
+        private void Notes_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
