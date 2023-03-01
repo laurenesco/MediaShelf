@@ -12,9 +12,19 @@ namespace MediaShelfApp
 {
     public partial class Detailed_Recommendations : Form
     {
-        public Detailed_Recommendations()
+        private Form previousForm;
+        public Detailed_Recommendations(Form previousForm)
         {
+            this.previousForm = previousForm;
+            this.previousForm.Hide();
             InitializeComponent();
+        }
+
+        private void lbl_backButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            previousForm.Show();
+            Close();
         }
     }
 }

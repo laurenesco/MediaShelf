@@ -28,321 +28,344 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Recommended_Tag = new System.Windows.Forms.Label();
-            this.label_Recommendations = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.lbl_recommendedTag = new System.Windows.Forms.Label();
+            this.lbl_recommendations = new System.Windows.Forms.Label();
+            this.flp_allFilters = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_filters = new System.Windows.Forms.Label();
+            this.gb_mediaType = new System.Windows.Forms.GroupBox();
+            this.flp_allMediaTypes = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkB_moviesTag = new System.Windows.Forms.CheckBox();
+            this.chkB_gamesTag = new System.Windows.Forms.CheckBox();
+            this.chkB_musicTag = new System.Windows.Forms.CheckBox();
+            this.chkB_tvShowsTag = new System.Windows.Forms.CheckBox();
+            this.chkB_booksTag = new System.Windows.Forms.CheckBox();
+            this.gb_Genre = new System.Windows.Forms.GroupBox();
+            this.flp_allGenres = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkB_horrorTag = new System.Windows.Forms.CheckBox();
+            this.chkB_romanceTag = new System.Windows.Forms.CheckBox();
+            this.chkB_fictionTag = new System.Windows.Forms.CheckBox();
+            this.chkB_nonfictionTag = new System.Windows.Forms.CheckBox();
+            this.chkB_recommendedTag = new System.Windows.Forms.CheckBox();
+            this.gb_date = new System.Windows.Forms.GroupBox();
+            this.gb_dateRanges = new System.Windows.Forms.FlowLayoutPanel();
+            this.date_fromDate = new System.Windows.Forms.DateTimePicker();
+            this.lbl_toDate = new System.Windows.Forms.Label();
+            this.date_ToDate = new System.Windows.Forms.DateTimePicker();
+            this.dg_recommendationResults = new System.Windows.Forms.DataGridView();
+            this.lbl_backButton = new System.Windows.Forms.Label();
+            this.flp_allFilters.SuspendLayout();
+            this.gb_mediaType.SuspendLayout();
+            this.flp_allMediaTypes.SuspendLayout();
+            this.gb_Genre.SuspendLayout();
+            this.flp_allGenres.SuspendLayout();
+            this.gb_date.SuspendLayout();
+            this.gb_dateRanges.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_recommendationResults)).BeginInit();
             this.SuspendLayout();
             // 
-            // Recommended_Tag
+            // lbl_recommendedTag
             // 
-            this.Recommended_Tag.AutoSize = true;
-            this.Recommended_Tag.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Recommended_Tag.Location = new System.Drawing.Point(340, 33);
-            this.Recommended_Tag.Name = "Recommended_Tag";
-            this.Recommended_Tag.Size = new System.Drawing.Size(117, 54);
-            this.Recommended_Tag.TabIndex = 0;
-            this.Recommended_Tag.Text = "[TAG]";
+            this.lbl_recommendedTag.AutoSize = true;
+            this.lbl_recommendedTag.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_recommendedTag.Location = new System.Drawing.Point(340, 33);
+            this.lbl_recommendedTag.Name = "lbl_recommendedTag";
+            this.lbl_recommendedTag.Size = new System.Drawing.Size(117, 54);
+            this.lbl_recommendedTag.TabIndex = 0;
+            this.lbl_recommendedTag.Text = "[TAG]";
             // 
-            // label_Recommendations
+            // lbl_recommendations
             // 
-            this.label_Recommendations.AutoSize = true;
-            this.label_Recommendations.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_Recommendations.Location = new System.Drawing.Point(508, 33);
-            this.label_Recommendations.Name = "label_Recommendations";
-            this.label_Recommendations.Size = new System.Drawing.Size(351, 54);
-            this.label_Recommendations.TabIndex = 1;
-            this.label_Recommendations.Text = "Recommendations";
+            this.lbl_recommendations.AutoSize = true;
+            this.lbl_recommendations.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_recommendations.Location = new System.Drawing.Point(508, 33);
+            this.lbl_recommendations.Name = "lbl_recommendations";
+            this.lbl_recommendations.Size = new System.Drawing.Size(351, 54);
+            this.lbl_recommendations.TabIndex = 1;
+            this.lbl_recommendations.Text = "Recommendations";
             // 
-            // flowLayoutPanel1
+            // flp_allFilters
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox2);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox3);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 96);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(270, 644);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.flp_allFilters.Controls.Add(this.lbl_filters);
+            this.flp_allFilters.Controls.Add(this.gb_mediaType);
+            this.flp_allFilters.Controls.Add(this.gb_Genre);
+            this.flp_allFilters.Controls.Add(this.gb_date);
+            this.flp_allFilters.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_allFilters.Location = new System.Drawing.Point(30, 96);
+            this.flp_allFilters.Name = "flp_allFilters";
+            this.flp_allFilters.Size = new System.Drawing.Size(270, 644);
+            this.flp_allFilters.TabIndex = 3;
             // 
-            // label1
+            // lbl_filters
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Filters";
+            this.lbl_filters.AutoSize = true;
+            this.lbl_filters.Location = new System.Drawing.Point(3, 0);
+            this.lbl_filters.Name = "lbl_filters";
+            this.lbl_filters.Size = new System.Drawing.Size(58, 25);
+            this.lbl_filters.TabIndex = 4;
+            this.lbl_filters.Text = "Filters";
             // 
-            // dataGridView1
+            // gb_mediaType
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(340, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(763, 644);
-            this.dataGridView1.TabIndex = 4;
+            this.gb_mediaType.Controls.Add(this.flp_allMediaTypes);
+            this.gb_mediaType.Location = new System.Drawing.Point(3, 28);
+            this.gb_mediaType.Name = "gb_mediaType";
+            this.gb_mediaType.Size = new System.Drawing.Size(267, 213);
+            this.gb_mediaType.TabIndex = 9;
+            this.gb_mediaType.TabStop = false;
+            this.gb_mediaType.Text = "Media Type";
             // 
-            // groupBox1
+            // flp_allMediaTypes
             // 
-            this.groupBox1.Controls.Add(this.flowLayoutPanel3);
-            this.groupBox1.Location = new System.Drawing.Point(3, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(267, 213);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Media Type";
+            this.flp_allMediaTypes.Controls.Add(this.chkB_moviesTag);
+            this.flp_allMediaTypes.Controls.Add(this.chkB_gamesTag);
+            this.flp_allMediaTypes.Controls.Add(this.chkB_musicTag);
+            this.flp_allMediaTypes.Controls.Add(this.chkB_tvShowsTag);
+            this.flp_allMediaTypes.Controls.Add(this.chkB_booksTag);
+            this.flp_allMediaTypes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flp_allMediaTypes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_allMediaTypes.Location = new System.Drawing.Point(3, 27);
+            this.flp_allMediaTypes.Name = "flp_allMediaTypes";
+            this.flp_allMediaTypes.Size = new System.Drawing.Size(261, 183);
+            this.flp_allMediaTypes.TabIndex = 0;
             // 
-            // flowLayoutPanel3
+            // chkB_moviesTag
             // 
-            this.flowLayoutPanel3.Controls.Add(this.checkBox1);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox2);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox3);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox4);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox5);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 27);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(261, 183);
-            this.flowLayoutPanel3.TabIndex = 0;
+            this.chkB_moviesTag.AutoSize = true;
+            this.chkB_moviesTag.Location = new System.Drawing.Point(3, 3);
+            this.chkB_moviesTag.Name = "chkB_moviesTag";
+            this.chkB_moviesTag.Size = new System.Drawing.Size(95, 29);
+            this.chkB_moviesTag.TabIndex = 0;
+            this.chkB_moviesTag.Text = "Movies";
+            this.chkB_moviesTag.ThreeState = true;
+            this.chkB_moviesTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkB_gamesTag
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 29);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Movies";
-            this.checkBox1.ThreeState = true;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkB_gamesTag.AutoSize = true;
+            this.chkB_gamesTag.Location = new System.Drawing.Point(3, 38);
+            this.chkB_gamesTag.Name = "chkB_gamesTag";
+            this.chkB_gamesTag.Size = new System.Drawing.Size(92, 29);
+            this.chkB_gamesTag.TabIndex = 1;
+            this.chkB_gamesTag.Text = "Games";
+            this.chkB_gamesTag.ThreeState = true;
+            this.chkB_gamesTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkB_musicTag
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(3, 38);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(92, 29);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Games";
-            this.checkBox2.ThreeState = true;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkB_musicTag.AutoSize = true;
+            this.chkB_musicTag.Location = new System.Drawing.Point(3, 73);
+            this.chkB_musicTag.Name = "chkB_musicTag";
+            this.chkB_musicTag.Size = new System.Drawing.Size(84, 29);
+            this.chkB_musicTag.TabIndex = 2;
+            this.chkB_musicTag.Text = "Music";
+            this.chkB_musicTag.ThreeState = true;
+            this.chkB_musicTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkB_tvShowsTag
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(3, 73);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(84, 29);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Music";
-            this.checkBox3.ThreeState = true;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkB_tvShowsTag.AutoSize = true;
+            this.chkB_tvShowsTag.Location = new System.Drawing.Point(3, 108);
+            this.chkB_tvShowsTag.Name = "chkB_tvShowsTag";
+            this.chkB_tvShowsTag.Size = new System.Drawing.Size(115, 29);
+            this.chkB_tvShowsTag.TabIndex = 3;
+            this.chkB_tvShowsTag.Text = "TV Shows";
+            this.chkB_tvShowsTag.ThreeState = true;
+            this.chkB_tvShowsTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkB_booksTag
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(3, 108);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(115, 29);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "TV Shows";
-            this.checkBox4.ThreeState = true;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkB_booksTag.AutoSize = true;
+            this.chkB_booksTag.Location = new System.Drawing.Point(3, 143);
+            this.chkB_booksTag.Name = "chkB_booksTag";
+            this.chkB_booksTag.Size = new System.Drawing.Size(87, 29);
+            this.chkB_booksTag.TabIndex = 4;
+            this.chkB_booksTag.Text = "Books";
+            this.chkB_booksTag.ThreeState = true;
+            this.chkB_booksTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // gb_Genre
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(3, 143);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(87, 29);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Books";
-            this.checkBox5.ThreeState = true;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.gb_Genre.Controls.Add(this.flp_allGenres);
+            this.gb_Genre.Location = new System.Drawing.Point(3, 247);
+            this.gb_Genre.Name = "gb_Genre";
+            this.gb_Genre.Size = new System.Drawing.Size(267, 213);
+            this.gb_Genre.TabIndex = 10;
+            this.gb_Genre.TabStop = false;
+            this.gb_Genre.Text = "Genre";
             // 
-            // groupBox2
+            // flp_allGenres
             // 
-            this.groupBox2.Controls.Add(this.flowLayoutPanel4);
-            this.groupBox2.Location = new System.Drawing.Point(3, 247);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(267, 213);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Genre";
+            this.flp_allGenres.Controls.Add(this.chkB_horrorTag);
+            this.flp_allGenres.Controls.Add(this.chkB_romanceTag);
+            this.flp_allGenres.Controls.Add(this.chkB_fictionTag);
+            this.flp_allGenres.Controls.Add(this.chkB_nonfictionTag);
+            this.flp_allGenres.Controls.Add(this.chkB_recommendedTag);
+            this.flp_allGenres.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flp_allGenres.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_allGenres.Location = new System.Drawing.Point(3, 27);
+            this.flp_allGenres.Name = "flp_allGenres";
+            this.flp_allGenres.Size = new System.Drawing.Size(261, 183);
+            this.flp_allGenres.TabIndex = 0;
             // 
-            // flowLayoutPanel4
+            // chkB_horrorTag
             // 
-            this.flowLayoutPanel4.Controls.Add(this.checkBox6);
-            this.flowLayoutPanel4.Controls.Add(this.checkBox7);
-            this.flowLayoutPanel4.Controls.Add(this.checkBox8);
-            this.flowLayoutPanel4.Controls.Add(this.checkBox9);
-            this.flowLayoutPanel4.Controls.Add(this.checkBox10);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 27);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(261, 183);
-            this.flowLayoutPanel4.TabIndex = 0;
+            this.chkB_horrorTag.AutoSize = true;
+            this.chkB_horrorTag.Location = new System.Drawing.Point(3, 3);
+            this.chkB_horrorTag.Name = "chkB_horrorTag";
+            this.chkB_horrorTag.Size = new System.Drawing.Size(91, 29);
+            this.chkB_horrorTag.TabIndex = 0;
+            this.chkB_horrorTag.Text = "Horror";
+            this.chkB_horrorTag.ThreeState = true;
+            this.chkB_horrorTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chkB_romanceTag
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(3, 3);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(91, 29);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.Text = "Horror";
-            this.checkBox6.ThreeState = true;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkB_romanceTag.AutoSize = true;
+            this.chkB_romanceTag.Location = new System.Drawing.Point(3, 38);
+            this.chkB_romanceTag.Name = "chkB_romanceTag";
+            this.chkB_romanceTag.Size = new System.Drawing.Size(111, 29);
+            this.chkB_romanceTag.TabIndex = 1;
+            this.chkB_romanceTag.Text = "Romance";
+            this.chkB_romanceTag.ThreeState = true;
+            this.chkB_romanceTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // chkB_fictionTag
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(3, 38);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(111, 29);
-            this.checkBox7.TabIndex = 1;
-            this.checkBox7.Text = "Romance";
-            this.checkBox7.ThreeState = true;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chkB_fictionTag.AutoSize = true;
+            this.chkB_fictionTag.Location = new System.Drawing.Point(3, 73);
+            this.chkB_fictionTag.Name = "chkB_fictionTag";
+            this.chkB_fictionTag.Size = new System.Drawing.Size(90, 29);
+            this.chkB_fictionTag.TabIndex = 2;
+            this.chkB_fictionTag.Text = "Fiction";
+            this.chkB_fictionTag.ThreeState = true;
+            this.chkB_fictionTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // chkB_nonfictionTag
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(3, 73);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(90, 29);
-            this.checkBox8.TabIndex = 2;
-            this.checkBox8.Text = "Fiction";
-            this.checkBox8.ThreeState = true;
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.chkB_nonfictionTag.AutoSize = true;
+            this.chkB_nonfictionTag.Location = new System.Drawing.Point(3, 108);
+            this.chkB_nonfictionTag.Name = "chkB_nonfictionTag";
+            this.chkB_nonfictionTag.Size = new System.Drawing.Size(131, 29);
+            this.chkB_nonfictionTag.TabIndex = 3;
+            this.chkB_nonfictionTag.Text = "Non-Fiction";
+            this.chkB_nonfictionTag.ThreeState = true;
+            this.chkB_nonfictionTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // chkB_recommendedTag
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(3, 108);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(131, 29);
-            this.checkBox9.TabIndex = 3;
-            this.checkBox9.Text = "Non-Fiction";
-            this.checkBox9.ThreeState = true;
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.chkB_recommendedTag.AutoSize = true;
+            this.chkB_recommendedTag.Checked = true;
+            this.chkB_recommendedTag.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkB_recommendedTag.Location = new System.Drawing.Point(3, 143);
+            this.chkB_recommendedTag.Name = "chkB_recommendedTag";
+            this.chkB_recommendedTag.Size = new System.Drawing.Size(80, 29);
+            this.chkB_recommendedTag.TabIndex = 4;
+            this.chkB_recommendedTag.Text = "[TAG]";
+            this.chkB_recommendedTag.ThreeState = true;
+            this.chkB_recommendedTag.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // gb_date
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Checked = true;
-            this.checkBox10.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox10.Location = new System.Drawing.Point(3, 143);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(80, 29);
-            this.checkBox10.TabIndex = 4;
-            this.checkBox10.Text = "[TAG]";
-            this.checkBox10.ThreeState = true;
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.gb_date.Controls.Add(this.gb_dateRanges);
+            this.gb_date.Location = new System.Drawing.Point(3, 466);
+            this.gb_date.Name = "gb_date";
+            this.gb_date.Size = new System.Drawing.Size(267, 161);
+            this.gb_date.TabIndex = 11;
+            this.gb_date.TabStop = false;
+            this.gb_date.Text = "Date Range";
             // 
-            // flowLayoutPanel2
+            // gb_dateRanges
             // 
-            this.flowLayoutPanel2.Controls.Add(this.dateTimePicker1);
-            this.flowLayoutPanel2.Controls.Add(this.label5);
-            this.flowLayoutPanel2.Controls.Add(this.dateTimePicker2);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 27);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(261, 131);
-            this.flowLayoutPanel2.TabIndex = 7;
+            this.gb_dateRanges.Controls.Add(this.date_fromDate);
+            this.gb_dateRanges.Controls.Add(this.lbl_toDate);
+            this.gb_dateRanges.Controls.Add(this.date_ToDate);
+            this.gb_dateRanges.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gb_dateRanges.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.gb_dateRanges.Location = new System.Drawing.Point(3, 27);
+            this.gb_dateRanges.Name = "gb_dateRanges";
+            this.gb_dateRanges.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.gb_dateRanges.Size = new System.Drawing.Size(261, 131);
+            this.gb_dateRanges.TabIndex = 7;
             // 
-            // label5
+            // date_fromDate
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "to";
+            this.date_fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_fromDate.Location = new System.Drawing.Point(3, 18);
+            this.date_fromDate.MaxDate = new System.DateTime(2023, 2, 27, 0, 0, 0, 0);
+            this.date_fromDate.MinDate = new System.DateTime(1853, 1, 1, 0, 0, 0, 0);
+            this.date_fromDate.Name = "date_fromDate";
+            this.date_fromDate.Size = new System.Drawing.Size(133, 31);
+            this.date_fromDate.TabIndex = 4;
+            this.date_fromDate.Value = new System.DateTime(2023, 2, 27, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // lbl_toDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(133, 31);
-            this.dateTimePicker1.TabIndex = 4;
+            this.lbl_toDate.AutoSize = true;
+            this.lbl_toDate.Location = new System.Drawing.Point(3, 52);
+            this.lbl_toDate.Name = "lbl_toDate";
+            this.lbl_toDate.Size = new System.Drawing.Size(29, 25);
+            this.lbl_toDate.TabIndex = 5;
+            this.lbl_toDate.Text = "to";
             // 
-            // dateTimePicker2
+            // date_ToDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(3, 65);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(150, 31);
-            this.dateTimePicker2.TabIndex = 6;
+            this.date_ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_ToDate.Location = new System.Drawing.Point(3, 80);
+            this.date_ToDate.MaxDate = new System.DateTime(2023, 2, 27, 0, 0, 0, 0);
+            this.date_ToDate.MinDate = new System.DateTime(1853, 1, 1, 0, 0, 0, 0);
+            this.date_ToDate.Name = "date_ToDate";
+            this.date_ToDate.Size = new System.Drawing.Size(133, 31);
+            this.date_ToDate.TabIndex = 6;
+            this.date_ToDate.Value = new System.DateTime(2023, 2, 27, 0, 0, 0, 0);
             // 
-            // groupBox3
+            // dg_recommendationResults
             // 
-            this.groupBox3.Controls.Add(this.flowLayoutPanel2);
-            this.groupBox3.Location = new System.Drawing.Point(3, 466);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(267, 161);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Date Range";
+            this.dg_recommendationResults.AllowUserToDeleteRows = false;
+            this.dg_recommendationResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_recommendationResults.Location = new System.Drawing.Point(340, 96);
+            this.dg_recommendationResults.Name = "dg_recommendationResults";
+            this.dg_recommendationResults.ReadOnly = true;
+            this.dg_recommendationResults.RowHeadersWidth = 62;
+            this.dg_recommendationResults.RowTemplate.Height = 33;
+            this.dg_recommendationResults.Size = new System.Drawing.Size(763, 644);
+            this.dg_recommendationResults.TabIndex = 4;
+            // 
+            // lbl_backButton
+            // 
+            this.lbl_backButton.AutoSize = true;
+            this.lbl_backButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_backButton.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_backButton.Location = new System.Drawing.Point(31, 55);
+            this.lbl_backButton.Name = "lbl_backButton";
+            this.lbl_backButton.Size = new System.Drawing.Size(135, 25);
+            this.lbl_backButton.TabIndex = 5;
+            this.lbl_backButton.Text = "Back to Home";
+            this.lbl_backButton.Click += new System.EventHandler(this.lbl_backButton_Click);
             // 
             // Detailed_Recommendations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 752);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label_Recommendations);
-            this.Controls.Add(this.Recommended_Tag);
+            this.Controls.Add(this.lbl_backButton);
+            this.Controls.Add(this.dg_recommendationResults);
+            this.Controls.Add(this.flp_allFilters);
+            this.Controls.Add(this.lbl_recommendations);
+            this.Controls.Add(this.lbl_recommendedTag);
             this.Name = "Detailed_Recommendations";
             this.Text = "Detailed_Recommendations";
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.flp_allFilters.ResumeLayout(false);
+            this.flp_allFilters.PerformLayout();
+            this.gb_mediaType.ResumeLayout(false);
+            this.flp_allMediaTypes.ResumeLayout(false);
+            this.flp_allMediaTypes.PerformLayout();
+            this.gb_Genre.ResumeLayout(false);
+            this.flp_allGenres.ResumeLayout(false);
+            this.flp_allGenres.PerformLayout();
+            this.gb_date.ResumeLayout(false);
+            this.gb_dateRanges.ResumeLayout(false);
+            this.gb_dateRanges.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_recommendationResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,29 +373,30 @@
 
         #endregion
 
-        private Label Recommended_Tag;
-        private Label label_Recommendations;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Label label1;
-        private DataGridView dataGridView1;
-        private GroupBox groupBox1;
-        private FlowLayoutPanel flowLayoutPanel3;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
-        private CheckBox checkBox5;
-        private GroupBox groupBox2;
-        private FlowLayoutPanel flowLayoutPanel4;
-        private CheckBox checkBox6;
-        private CheckBox checkBox7;
-        private CheckBox checkBox8;
-        private CheckBox checkBox9;
-        private CheckBox checkBox10;
-        private GroupBox groupBox3;
-        private FlowLayoutPanel flowLayoutPanel2;
-        private DateTimePicker dateTimePicker1;
-        private Label label5;
-        private DateTimePicker dateTimePicker2;
+        private Label lbl_recommendedTag;
+        private Label lbl_recommendations;
+        private FlowLayoutPanel flp_allFilters;
+        private Label lbl_filters;
+        private DataGridView dg_recommendationResults;
+        private GroupBox gb_mediaType;
+        private FlowLayoutPanel flp_allMediaTypes;
+        private CheckBox chkB_moviesTag;
+        private CheckBox chkB_gamesTag;
+        private CheckBox chkB_musicTag;
+        private CheckBox chkB_tvShowsTag;
+        private CheckBox chkB_booksTag;
+        private GroupBox gb_Genre;
+        private FlowLayoutPanel flp_allGenres;
+        private CheckBox chkB_horrorTag;
+        private CheckBox chkB_romanceTag;
+        private CheckBox chkB_fictionTag;
+        private CheckBox chkB_nonfictionTag;
+        private CheckBox chkB_recommendedTag;
+        private GroupBox gb_date;
+        private FlowLayoutPanel gb_dateRanges;
+        private DateTimePicker date_fromDate;
+        private Label lbl_toDate;
+        private DateTimePicker date_ToDate;
+        private Label lbl_backButton;
     }
 }
