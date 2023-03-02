@@ -17,43 +17,28 @@ namespace MediaShelfApp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnNavRecs_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Detailed_Recommendations window = new Detailed_Recommendations();
+            window.caller = this;
+            window.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnNavSearch_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            SearchResults window = new SearchResults();
+            window.caller = this;
+            window.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnNavMyShelf_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            MyShelfForm window = new MyShelfForm();
+            window.caller = this;
+            window.Show();
         }
     }
 }
