@@ -14,7 +14,7 @@ namespace MediaShelfApp
     {
         // Instance variables:
         // caller   - form which invoked this form
-        // list     - list intended to be viewed
+        // itemID   - ID of item intended to be viewed, used for querying 
         private ListView caller = null!;
         private int itemID = 0;
 
@@ -40,9 +40,9 @@ namespace MediaShelfApp
             this.itemID = id;
         }
 
-        //////////////////////
-        //  Priate methods  //
-        //////////////////////
+        ///////////////////////
+        //  Private methods  //
+        ///////////////////////
 
         // Back button functionality - reopens calling form, closes this form
         private void btnNavBack_Click(object sender, EventArgs e)
