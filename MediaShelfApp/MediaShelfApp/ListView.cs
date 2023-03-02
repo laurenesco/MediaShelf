@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace MediaShelfApp
 {
@@ -26,6 +27,16 @@ namespace MediaShelfApp
         public ListView()
         {
             InitializeComponent();
+
+            // Initiate Database Connection
+            try
+            {
+                SqlConnection dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db1;Persist Security Info=True;User ID=;Password=");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         // Set caller method - this variable allows the back button to reopen the calling form
