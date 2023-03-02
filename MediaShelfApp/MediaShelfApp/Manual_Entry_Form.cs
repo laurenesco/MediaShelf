@@ -40,9 +40,9 @@ namespace MediaShelfApp
             this.list = listName;
         }
 
-        //////////////////////
-        //  Priate methods  //
-        //////////////////////
+        ///////////////////////
+        //  Private methods  //
+        ///////////////////////
 
         // Back button functionality - reopens calling form
         private void btnNavBack_Click(object sender, EventArgs e)

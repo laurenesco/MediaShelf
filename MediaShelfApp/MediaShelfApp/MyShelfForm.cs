@@ -12,7 +12,7 @@ namespace MediaShelfApp
 {
     public partial class MyShelfForm : Form
     {
-        public DiscoveryPageForm caller = null!;
+        private DiscoveryPageForm caller = null!;
 
         //////////////////////
         //  Public methods  //
@@ -24,10 +24,16 @@ namespace MediaShelfApp
             InitializeComponent();
         }
 
-        //////////////////////
-        //  Priate methods  //
-        //////////////////////
-        
+        // Set caller method - this variable allows the back button to reopen the calling form
+        public void setCaller(DiscoveryPageForm caller)
+        {
+            this.caller = caller;
+        }
+
+        ///////////////////////
+        //  Private methods  //
+        ///////////////////////
+
         // Back button functionality - reopens the calling form and closes this form
         private void btnBack_Click(object sender, EventArgs e)
         {
