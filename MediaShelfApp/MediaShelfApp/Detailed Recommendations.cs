@@ -12,9 +12,16 @@ namespace MediaShelfApp
 {
     public partial class Detailed_Recommendations : Form
     {
+        public DiscoveryPageForm caller = null!;
         public Detailed_Recommendations()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            caller.Show();
+            this.Close();
         }
     }
 }

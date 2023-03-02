@@ -12,9 +12,16 @@ namespace MediaShelfApp
 {
     public partial class SearchResults : Form
     {
+        public DiscoveryPageForm caller = null!;
         public SearchResults()
         {
             InitializeComponent();
+        }
+
+        private void btnNavBack_Click(object sender, EventArgs e)
+        {
+            caller.Show();
+            this.Close();
         }
     }
 }
