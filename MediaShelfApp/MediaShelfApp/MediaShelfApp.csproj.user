@@ -4,9 +4,6 @@
     <Compile Update="DiscoveryPageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DiscoveryPageFormCont.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="ListView.cs">
       <SubType>Form</SubType>
     </Compile>
