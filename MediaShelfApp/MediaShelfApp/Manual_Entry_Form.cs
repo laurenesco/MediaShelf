@@ -61,25 +61,5 @@ namespace MediaShelfApp
             caller.Show();
             this.Close();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Manual_Entry_Form_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

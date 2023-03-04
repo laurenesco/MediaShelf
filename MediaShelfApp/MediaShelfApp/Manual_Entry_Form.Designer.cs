@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ME_backButton = new System.Windows.Forms.Button();
+            this.btnNavBack = new System.Windows.Forms.Button();
             this.ME_fowardButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,16 +48,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.ME_pic)).BeginInit();
             this.SuspendLayout();
             // 
-            // ME_backButton
+            // btnNavBack
             // 
-            this.ME_backButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ME_backButton.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ME_backButton.Location = new System.Drawing.Point(12, 12);
-            this.ME_backButton.Name = "ME_backButton";
-            this.ME_backButton.Size = new System.Drawing.Size(38, 29);
-            this.ME_backButton.TabIndex = 5;
-            this.ME_backButton.Text = "<";
-            this.ME_backButton.UseVisualStyleBackColor = false;
+            this.btnNavBack.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnNavBack.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNavBack.Location = new System.Drawing.Point(12, 12);
+            this.btnNavBack.Name = "btnNavBack";
+            this.btnNavBack.Size = new System.Drawing.Size(38, 29);
+            this.btnNavBack.TabIndex = 5;
+            this.btnNavBack.Text = "<";
+            this.btnNavBack.UseVisualStyleBackColor = false;
+            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
             // 
             // ME_fowardButton
             // 
@@ -106,7 +107,6 @@
             this.label3.Size = new System.Drawing.Size(81, 28);
             this.label3.TabIndex = 10;
             this.label3.Text = "Creator:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -175,7 +175,6 @@
             this.label7.Size = new System.Drawing.Size(116, 28);
             this.label7.TabIndex = 18;
             this.label7.Text = "Description:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // ME_description
             // 
@@ -184,7 +183,6 @@
             this.ME_description.Name = "ME_description";
             this.ME_description.Size = new System.Drawing.Size(708, 142);
             this.ME_description.TabIndex = 19;
-            this.ME_description.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // ME_addButton
             // 
@@ -224,10 +222,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ME_fowardButton);
-            this.Controls.Add(this.ME_backButton);
+            this.Controls.Add(this.btnNavBack);
             this.Name = "Manual_Entry_Form";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Manual_Entry_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ME_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,7 +233,7 @@
 
         #endregion
 
-        private Button ME_backButton;
+        private Button btnNavBack;
         private Button ME_fowardButton;
         private Label label1;
         private Label label2;
