@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,48 +13,58 @@ namespace MediaShelfApp
 {
     public partial class DiscoveryPageForm : Form
     {
+        //////////////////////
+        //  Public methods  //
+        //////////////////////
+
+        // Constructor
         public DiscoveryPageForm()
         {
             InitializeComponent();
+
+            // Initiate Database Connection
+            try
+            {
+                SqlConnection dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db1;Persist Security Info=True;User ID=;Password=");
+                dbConnection.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //////////////////////
+        //  Priate methods  //
+        //////////////////////
+        
+        // See More button functionality - Hides this form as the caller, opens detailed recommendations form
+        private void btnNavRecs_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Detailed_Recommendations window = new Detailed_Recommendations();
+            window.setCaller(this);
+            window.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        // Search button functionality - Hides this form as the caller, opens new instance of search form
+        //                               with search parameter set as text from the search box
+        private void btnNavSearch_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            SearchResults window = new SearchResults();
+            window.setCaller(this);
+            window.setSearchText("Test"); // Text pulled from search box will go here
+            window.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        // MyShelf button functionality - Hides this form as the caller, opens new instance of MyShelf form
+        private void btnNavMyShelf_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            MyShelfForm window = new MyShelfForm();
+            window.setCaller(this);
+            window.Show();
         }
     }
 }
