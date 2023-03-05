@@ -76,6 +76,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.btnNavMyShelf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -598,11 +599,22 @@
             this.vScrollBar1.Size = new System.Drawing.Size(39, 814);
             this.vScrollBar1.TabIndex = 67;
             // 
+            // btnNavMyShelf
+            // 
+            this.btnNavMyShelf.Location = new System.Drawing.Point(498, 19);
+            this.btnNavMyShelf.Name = "btnNavMyShelf";
+            this.btnNavMyShelf.Size = new System.Drawing.Size(94, 29);
+            this.btnNavMyShelf.TabIndex = 68;
+            this.btnNavMyShelf.Text = "MyShelf";
+            this.btnNavMyShelf.UseVisualStyleBackColor = true;
+            this.btnNavMyShelf.Click += new System.EventHandler(this.btnNavMyShelf_Click);
+            // 
             // DiscoveryPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 840);
+            this.Controls.Add(this.btnNavMyShelf);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -715,5 +727,6 @@
         private Label label25;
         private Label label26;
         private VScrollBar vScrollBar1;
+        private Button btnNavMyShelf;
     }
 }

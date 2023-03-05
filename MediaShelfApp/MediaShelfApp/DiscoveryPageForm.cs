@@ -330,5 +330,14 @@ namespace MediaShelfApp
             window.Show();
             this.Hide();
         }
+
+        // See More button functionality - Hides this form and sets it as the caller of the MyShelf Form
+        private void btnNavMyShelf_Click(object sender, EventArgs e)
+        {
+            MyShelfForm window = new MyShelfForm();
+            window.setCaller(this);
+            window.Show();
+            this.Hide();
+        }
     }
 }
