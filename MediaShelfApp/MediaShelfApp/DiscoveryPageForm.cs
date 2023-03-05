@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,17 @@ namespace MediaShelfApp
     {
         public DiscoveryPageForm()
         {
-
             InitializeComponent();
+
+            // Initiate Database Connection
+            try
+            {
+                SqlConnection dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db1;Persist Security Info=True;User ID=;Password=");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         private void DiscoveryPageForm_Load(object sender, EventArgs e)
         {
@@ -299,6 +309,26 @@ namespace MediaShelfApp
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        // Search button functionality - Hides this form and sets it as the caller of the Search form,
+        //                               opens new instance of search form
+        private void btnNavSearch_Click(object sender, EventArgs e)
+        {
+            SearchResults window = new SearchResults();
+            window.setCaller(this);
+            window.Show();
+            this.Hide();
+        }
+
+        // See More button functionality - Hides this form and sets it as the caller of the Detailed Rec form,
+        //                                 opens new instance of detailed recommendation form with parameter 
+        private void btnNavRec_Click(object sender, EventArgs e)
+        {
+            Detailed_Recommendations window = new Detailed_Recommendations();
+            window.setCaller(this);
+            window.Show();
+            this.Hide();
         }
     }
 }
