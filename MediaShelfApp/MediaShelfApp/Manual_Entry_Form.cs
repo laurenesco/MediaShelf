@@ -36,7 +36,7 @@ namespace MediaShelfApp
             // Initiate Database Connection
             try
             {
-                dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db1;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
+                dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace MediaShelfApp
              * da         - the sql data adapter being used to make sql commands from c#
              */
 
-            int mediaIDval,apiIDval,listIDval = 0;
+/*            int mediaIDval,apiIDval,listIDval = 0;
             SqlDataAdapter da = new SqlDataAdapter();
 
             dbConnection.Open();
@@ -172,7 +172,66 @@ namespace MediaShelfApp
 
             dbConnection.Close();
 
-            MessageBox.Show("Completed");
+            MessageBox.Show("Completed");*/
+
+            //////////////////////////////////////////////////////////
+
+            // Enclosing the SQL query in a try/catch block allows the system to catch an error in its tracks
+            // and display the exact error to the screen if one does occur.
+            try
+            {
+                // Declaring all form variables that may be used in the query
+                // Eventually these variables will need validation, but that will come later
+                String title = ME_title.Text;
+                String creator = ME_creator.Text;
+                String genre = ME_genre.Text; 
+                String description = ME_description.Text;
+                DateOnly releaseDate = DateOnly.FromDateTime(Convert.ToDateTime(ME_date.Text));
+
+                // Open connection and create command
+                dbConnection.Open();
+                SqlCommand cmdInsertMedia = dbConnection.CreateCommand();
+
+                // Construct insertion query
+                cmdInsertMedia.CommandText = @"INSERT INTO ITEMS 
+                                               (ITEM_API,
+                                               ITEM_MEDIA_TYPE,
+                                               ITEM_TITLE,
+                                               ITEM_CREATOR,   
+                                               ITEM_RELEASE_DATE,
+                                               ITEM_DESCRIPTION,
+                                               ITEM_LIST_ID,
+                                               ITEM_GENRE)
+                                               VALUES(@api, @type, @title, @creator, @date, @desc, @list, @genre)";
+
+                // Parameterize the variables for system security
+                cmdInsertMedia.Parameters.AddWithValue("@api", 0); // API ID 0 signifies manual entry - No API affiliation
+                cmdInsertMedia.Parameters.AddWithValue("@type", 0); // TYpe 0 signifies manual entry - No media type affiliation
+                cmdInsertMedia.Parameters.AddWithValue("@title", title);
+                cmdInsertMedia.Parameters.AddWithValue("@creator", creator);
+                cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
+                cmdInsertMedia.Parameters.AddWithValue("@desc", description);
+                cmdInsertMedia.Parameters.AddWithValue("@list", 0); // List ID 0 signifies manual entry - No list affiliation
+                cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
+
+
+                // Execute the insertion query
+                // ExecuteNonQuery is what is used with insertions and updates.
+                cmdInsertMedia.ExecuteNonQuery();
+
+                // Close connection and dispose of the command
+                dbConnection.Close();
+                cmdInsertMedia.Dispose();
+
+                // Confirmation message
+                MessageBox.Show("Item created!\n", "Confirmation Message", MessageBoxButtons.OK);
+            }
+            // This is where any exception (error) is caught. It saves the exception to variable "ex", then displays
+            // the error message in the message box inside the block
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
