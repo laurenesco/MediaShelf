@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,7 +83,7 @@ namespace MediaShelfApp
             }
             else
             {
-                saveManualEntry();
+                SaveManualEntry();
                 this.Close();
             }
         }
@@ -96,97 +96,16 @@ namespace MediaShelfApp
         }
         
         //adds user-made manual entry to database
-        private void saveManualEntry()
+        private void SaveManualEntry()
         {
-            /* Instance variables:
-             * mediaIDval - value for media_id in database
-             * apiIDval   - value for api_id in database
-             * listIDval  - value for list_id in database
-             * da         - the sql data adapter being used to make sql commands from c#
-             */
-
-/*            int mediaIDval,apiIDval,listIDval = 0;
-            SqlDataAdapter da = new SqlDataAdapter();
-
-            dbConnection.Open();
-
-            var test = new SqlCommand("SELECT MIN(media_id) FROM MEDIA_TYPE", dbConnection).ExecuteScalar();
-            //MessageBox.Show("pass 0"); - for debugging
-
-            //checks if user has previous manual entries; current assumption: first item in database is a manual entry
-            if(test != DBNull.Value)
-            {
-                mediaIDval = (int)test - 1;
-                apiIDval = (int)(new SqlCommand("SELECT MIN(api_id) FROM API", dbConnection).ExecuteScalar()) - 1;
-                listIDval = (int)(new SqlCommand("SELECT MIN(list_id) FROM LIST", dbConnection).ExecuteScalar()) - 1;
-            }
-            else
-            {
-                mediaIDval = apiIDval = listIDval = 0;
-            }
-
-            //to satisfy media_id foreign key constraint in database
-            da.InsertCommand = new SqlCommand("INSERT INTO MEDIA_TYPE VALUES(@media_id,@media_name)", dbConnection);
-            da.InsertCommand.Parameters.Add("@media_id", SqlDbType.Int).Value = mediaIDval;
-            da.InsertCommand.Parameters.Add("@media_name", SqlDbType.NVarChar, 50).Value = ME_type.Text;
-
-            da.InsertCommand.ExecuteNonQuery();
-
-            //MessageBox.Show("pass 1"); - for debugging
-
-            //to satisfy api_id foreign key constraint in database
-            da.InsertCommand = new SqlCommand("INSERT INTO API VALUES(@api_id,@api_key,@api_name)", dbConnection);
-            da.InsertCommand.Parameters.Add("@api_id", SqlDbType.Int).Value = apiIDval;
-            da.InsertCommand.Parameters.Add("@api_key", SqlDbType.NVarChar, 200).Value = "";
-            da.InsertCommand.Parameters.Add("@api_name", SqlDbType.NVarChar, 50).Value = "";
-
-            da.InsertCommand.ExecuteNonQuery();
-
-            //MessageBox.Show("pass 2"); - for debugging
-
-
-            //stores manual entry made in program in database
-            da.InsertCommand = new SqlCommand("INSERT INTO ITEMS VALUES(@item_id,@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,@item_icon,@item_description,@item_list_id,@item_genre)", dbConnection);
-            da.InsertCommand.Parameters.Add("@item_id", SqlDbType.Int).Value = new Random().Next() * 1000 + 1;
-            da.InsertCommand.Parameters.Add("@item_api", SqlDbType.Int).Value = 0;
-            da.InsertCommand.Parameters.Add("@item_media_type", SqlDbType.Int).Value = 0;
-            da.InsertCommand.Parameters.Add("@item_title", SqlDbType.NVarChar, 200).Value = ME_title.Text;
-            da.InsertCommand.Parameters.Add("@item_creator", SqlDbType.NVarChar, 100).Value = ME_creator.Text;
-            da.InsertCommand.Parameters.Add("@item_release_date", SqlDbType.Date).Value = ME_date.Value;
-            da.InsertCommand.Parameters.Add("@item_icon", SqlDbType.Image).Value = Array.Empty<byte>();
-            da.InsertCommand.Parameters.Add("@item_description", SqlDbType.NVarChar, 1000).Value = ME_description.Text;
-            da.InsertCommand.Parameters.Add("@item_list_id", SqlDbType.Int).Value = 3;
-            da.InsertCommand.Parameters.Add("@item_genre", SqlDbType.NVarChar, 50).Value = ME_genre.Text;
-
-            da.InsertCommand.ExecuteNonQuery();
-
-            //MessageBox.Show("pass 3"); - for debugging
-
-            //to satisfy list_id foreign key constraint; currently having issues
-            da.InsertCommand = new SqlCommand("INSERT INTO LIST VALUES(@list_id,@list_name,@list_description)", dbConnection);
-            da.InsertCommand.Parameters.Add("@list_id", SqlDbType.Int).Value = listIDval;
-            da.InsertCommand.Parameters.Add("@list_name", SqlDbType.NVarChar, 25).Value = "Manual Entries";
-            da.InsertCommand.Parameters.Add("@list_description", SqlDbType.NVarChar, 280).Value = "";
-
-            da.InsertCommand.ExecuteNonQuery();
-
-            dbConnection.Close();
-
-            MessageBox.Show("Completed");*/
-
-            //////////////////////////////////////////////////////////
-
-            // Enclosing the SQL query in a try/catch block allows the system to catch an error in its tracks
-            // and display the exact error to the screen if one does occur.
             try
             {
-                // Declaring all form variables that may be used in the query
-                // Eventually these variables will need validation, but that will come later
+                // Declaring all form variables that may be used in the query (to later be validated)
                 String title = ME_title.Text;
                 String creator = ME_creator.Text;
                 String genre = ME_genre.Text; 
                 String description = ME_description.Text;
-                DateOnly releaseDate = DateOnly.FromDateTime(Convert.ToDateTime(ME_date.Text));
+                DateTime releaseDate = ME_date.Value;
 
                 // Open connection and create command
                 dbConnection.Open();
@@ -206,17 +125,16 @@ namespace MediaShelfApp
 
                 // Parameterize the variables for system security
                 cmdInsertMedia.Parameters.AddWithValue("@api", 0); // API ID 0 signifies manual entry - No API affiliation
-                cmdInsertMedia.Parameters.AddWithValue("@type", 0); // TYpe 0 signifies manual entry - No media type affiliation
+                cmdInsertMedia.Parameters.AddWithValue("@type", 0); // TYPE 0 signifies manual entry - No media type affiliation
                 cmdInsertMedia.Parameters.AddWithValue("@title", title);
                 cmdInsertMedia.Parameters.AddWithValue("@creator", creator);
                 cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
                 cmdInsertMedia.Parameters.AddWithValue("@desc", description);
-                cmdInsertMedia.Parameters.AddWithValue("@list", 0); // List ID 0 signifies manual entry - No list affiliation
+                cmdInsertMedia.Parameters.AddWithValue("@list", 0); // LIST ID 0 signifies manual entry - No list affiliation
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
 
 
                 // Execute the insertion query
-                // ExecuteNonQuery is what is used with insertions and updates.
                 cmdInsertMedia.ExecuteNonQuery();
 
                 // Close connection and dispose of the command
@@ -226,12 +144,10 @@ namespace MediaShelfApp
                 // Confirmation message
                 MessageBox.Show("Item created!\n", "Confirmation Message", MessageBoxButtons.OK);
             }
-            // This is where any exception (error) is caught. It saves the exception to variable "ex", then displays
-            // the error message in the message box inside the block
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        } 
     }
 }
