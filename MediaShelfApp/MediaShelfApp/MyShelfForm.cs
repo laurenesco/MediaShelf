@@ -134,6 +134,7 @@ namespace MediaShelfApp
             this.Hide();
         }
 
+        // Manual Entries list button functionality - hides this form and opens the list form with the list variable set to favorites
         private void lblNavManualEntryList_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Manual Entries", this);
