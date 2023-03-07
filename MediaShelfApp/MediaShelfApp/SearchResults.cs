@@ -98,8 +98,9 @@ namespace MediaShelfApp
                         richTextBox1.AppendText("Title: " + movieList.results[i].original_title.ToString() + "\n"
                             + "Overview: " + movieList.results[i].overview.ToString() + "\n\n");
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        richTextBox1.AppendText(ex.Message);
                         break;
                     }
                 }
