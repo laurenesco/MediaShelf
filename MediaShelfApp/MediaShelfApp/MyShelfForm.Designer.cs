@@ -83,7 +83,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblNavManualEntryList = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -636,16 +636,17 @@
             this.label21.TabIndex = 179;
             this.label21.Text = "Description:";
             // 
-            // label22
+            // lblNavManualEntryList
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(59, 582);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(127, 28);
-            this.label22.TabIndex = 178;
-            this.label22.Text = "Manual Entry";
+            this.lblNavManualEntryList.AutoSize = true;
+            this.lblNavManualEntryList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNavManualEntryList.Location = new System.Drawing.Point(59, 582);
+            this.lblNavManualEntryList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNavManualEntryList.Name = "lblNavManualEntryList";
+            this.lblNavManualEntryList.Size = new System.Drawing.Size(140, 28);
+            this.lblNavManualEntryList.TabIndex = 178;
+            this.lblNavManualEntryList.Text = "Manual Entries";
+            this.lblNavManualEntryList.Click += new System.EventHandler(this.lblNavManualEntryList_Click);
             // 
             // label23
             // 
@@ -808,7 +809,7 @@
             this.Controls.Add(this.button14);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.label22);
+            this.Controls.Add(this.lblNavManualEntryList);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label25);
@@ -943,7 +944,7 @@
         private Button button14;
         private TextBox textBox4;
         private Label label21;
-        private Label label22;
+        private Label lblNavManualEntryList;
         private Label label23;
         private Label label24;
         private Label label25;

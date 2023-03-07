@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rocha\\OneDrive\\Documents\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj": {}
+    "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rocha\\OneDrive\\Documents\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj": {
+    "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rocha\\OneDrive\\Documents\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
+        "projectUniqueName": "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
         "projectName": "MediaShelfApp",
-        "projectPath": "C:\\Users\\rocha\\OneDrive\\Documents\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
-        "packagesPath": "C:\\Users\\rocha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rocha\\OneDrive\\Documents\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\obj\\",
+        "projectPath": "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\MediaShelfApp.csproj",
+        "packagesPath": "C:\\Users\\jerem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jerem\\Documents\\CS STMU\\CS3340 Software Engineering\\git\\MediaShelf\\MediaShelfApp\\MediaShelfApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rocha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,16 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

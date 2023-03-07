@@ -129,11 +129,16 @@ namespace MediaShelfApp
         // Favorites list button functionality - hides this form and opens the list form with the list variable set to favorites
         private void lblNavFavList_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ListView window = new ListView();
-            window.setCaller(this);
-            window.setList("Favorites");
+            ListView window = new ListView("Favorites", this);
             window.Show();
+            this.Hide();
+        }
+
+        private void lblNavManualEntryList_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Manual Entries", this);
+            window.Show();
+            this.Hide();
         }
     }
 }
