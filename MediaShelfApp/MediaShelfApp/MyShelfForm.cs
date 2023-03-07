@@ -62,7 +62,7 @@ namespace MediaShelfApp
 
         private void lblNavManualEntryList_Click(object sender, EventArgs e)
         {
-            ListView window = new ListView("Manual Entry", this);
+            ListView window = new ListView("Manual Entries", this);
             window.Show();
             this.Hide();
         }

@@ -20,28 +20,22 @@ namespace MediaShelfApp
         // dbConnection - connection to sql database being used in program
 
         private ListView caller = null!;
-        private String list = null!;
-
-        SqlConnection dbConnection;
+        private String list = "";
+        private SqlConnection dbConnection;
 
         //////////////////////
         //  Public methods  //
         //////////////////////
 
         // Constructor
-        public Manual_Entry_Form()
+        public Manual_Entry_Form(string list, ListView caller)
         {
             InitializeComponent();
+            this.list = list;
+            this.caller = caller;
 
             // Initiate Database Connection
-            try
-            {
-                dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
         }
 
         // Set caller method - this variable allows the back button to reopen the calling form
@@ -99,9 +93,10 @@ namespace MediaShelfApp
             ME_description.Clear();
         }
 
-        // Back button functionality - reopens calling form
+        // Back button functionality - reopens calling form with refreshed data grid
         private void btnNavBack_Click(object sender, EventArgs e)
         {
+            caller.PopulateDataTable();
             caller.Show();
             this.Close();
         }

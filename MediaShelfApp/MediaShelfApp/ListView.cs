@@ -39,52 +39,8 @@ namespace MediaShelfApp
             PopulateDataTable();
         }
 
-        ///////////////////////
-        //  Private methods  //
-        ///////////////////////
-        
-        // Retrieves information about list that was selected and fills in basic form elements
-        private void PopulateListInfo(String list)
-        {
-            // Retrieve list information
-            try
-            {
-                // Set basic form elements
-                lblListName.Text = list;
-
-                // Open database connection
-                dbConnection.Open();
-                SqlCommand cmdGetListInfo = dbConnection.CreateCommand();
-
-                // Construct insertion query
-                cmdGetListInfo.CommandText = @"SELECT LIST_DESCRIPTION
-                                               FROM LIST
-                                               WHERE LIST_NAME = @bind1";
-
-                // Parameterize the variables for system security
-                cmdGetListInfo.Parameters.AddWithValue("@bind1", list);
-
-                // Execute and read the data
-                SqlDataReader reader = cmdGetListInfo.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    lblDescription.Text = reader[0].ToString();
-                }
-
-                // Close resources
-                reader.Close();
-                cmdGetListInfo.Dispose();
-                dbConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
         // Retrieves items from the selected list and fills the data grid
-        private void PopulateDataTable()
+        public void PopulateDataTable()
         {
             // Create data container
             DataTable results = new DataTable();
@@ -127,6 +83,50 @@ namespace MediaShelfApp
             }
         }
 
+        ///////////////////////
+        //  Private methods  //
+        ///////////////////////
+
+        // Retrieves information about list that was selected and fills in basic form elements
+        private void PopulateListInfo(String list)
+        {
+            // Retrieve list information
+            try
+            {
+                // Set basic form elements
+                lblListName.Text = list;
+
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdGetListInfo = dbConnection.CreateCommand();
+
+                // Construct insertion query
+                cmdGetListInfo.CommandText = @"SELECT LIST_DESCRIPTION
+                                               FROM LIST
+                                               WHERE LIST_NAME = @bind1";
+
+                // Parameterize the variables for system security
+                cmdGetListInfo.Parameters.AddWithValue("@bind1", list);
+
+                // Execute and read the data
+                SqlDataReader reader = cmdGetListInfo.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    lblDescription.Text = reader[0].ToString();
+                }
+
+                // Close resources
+                reader.Close();
+                cmdGetListInfo.Dispose();
+                dbConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         // Back button functionality - reopens calling form, closes this form
         private void btnNavBack_Click(object sender, EventArgs e)
         {
@@ -139,9 +139,7 @@ namespace MediaShelfApp
         private void btnNavManualEntry_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Manual_Entry_Form window = new Manual_Entry_Form();
-            window.setCaller(this);
-            window.setList(list);
+            Manual_Entry_Form window = new Manual_Entry_Form(list, this);
             window.Show();
         }
 

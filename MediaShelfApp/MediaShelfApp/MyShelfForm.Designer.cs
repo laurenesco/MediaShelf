@@ -640,9 +640,9 @@
             this.lblNavManualEntryList.Location = new System.Drawing.Point(59, 582);
             this.lblNavManualEntryList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNavManualEntryList.Name = "lblNavManualEntryList";
-            this.lblNavManualEntryList.Size = new System.Drawing.Size(127, 28);
+            this.lblNavManualEntryList.Size = new System.Drawing.Size(140, 28);
             this.lblNavManualEntryList.TabIndex = 178;
-            this.lblNavManualEntryList.Text = "Manual Entry";
+            this.lblNavManualEntryList.Text = "Manual Entries";
             this.lblNavManualEntryList.Click += new System.EventHandler(this.lblNavManualEntryList_Click);
             // 
             // label23
