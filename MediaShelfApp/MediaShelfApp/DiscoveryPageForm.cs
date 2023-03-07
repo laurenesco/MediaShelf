@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,18 @@ namespace MediaShelfApp
     {
         public DiscoveryPageForm()
         {
-
             InitializeComponent();
+
+            // Initiate Database Connection
+            try
+            {
+                SqlConnection dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db1;Persist Security Info=True;User ID=;Password=");
+                dbConnection.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         private void DiscoveryPageForm_Load(object sender, EventArgs e)
         {
@@ -25,7 +36,10 @@ namespace MediaShelfApp
         //Name Label
         private void label1_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            MyShelfForm window = new MyShelfForm();
+            window.setCaller(this);
+            window.Show();
         }
 
         //Music Square
@@ -55,15 +69,26 @@ namespace MediaShelfApp
         }
 
         //MyShelf Square
+        // MyShelf button functionality - Hides this form as the caller, opens new instance of MyShelf form
         private void button5_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            MyShelfForm window = new MyShelfForm();
+            window.setCaller(this);
+            window.Show();
         }
 
 
         //Search Bar
+        // Search button functionality - Hides this form as the caller, opens new instance of search form
+        //                               with search parameter set as text from the search box
         private void button6_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            SearchResults window = new SearchResults();
+            window.setCaller(this);
+            window.setSearchText("Test"); // Text pulled from search box will go here
+            window.Show();
         }
 
 
@@ -71,7 +96,10 @@ namespace MediaShelfApp
         //Recommendations Header
         private void Recommendations_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Detailed_Recommendations window = new Detailed_Recommendations();
+            window.setCaller(this);
+            window.Show();
         }
         //Based on your... info
         private void label2_Click(object sender, EventArgs e)
@@ -227,9 +255,14 @@ namespace MediaShelfApp
         }
 
         //See More Recommendations
+        // See More button functionality - Hides this form as the caller, opens detailed recommendations form
+
         private void button14_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Detailed_Recommendations window = new Detailed_Recommendations();
+            window.setCaller(this);
+            window.Show();
         }
 
         //==========================================================================
@@ -242,7 +275,7 @@ namespace MediaShelfApp
         //Favorites List
         private void label25_Click(object sender, EventArgs e)
         {
-
+            
         }
         //Favorites List Description
         private void label24_Click(object sender, EventArgs e)
