@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,8 +84,19 @@ namespace MediaShelfApp
             else
             {
                 SaveManualEntry();
-                this.Close();
+                this.ClearFields();
             }
+        }
+
+        private void ClearFields()
+        {
+            ME_creator.Clear();
+            ME_date.Value = DateTime.Today;
+            ME_title.Clear();
+            ME_genre.Clear();
+            ME_type.Clear();
+            ME_creator.Clear();
+            ME_description.Clear();
         }
 
         // Back button functionality - reopens calling form
