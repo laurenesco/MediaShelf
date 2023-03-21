@@ -113,7 +113,7 @@ namespace MediaShelfApp
 
                 if (reader.Read())
                 {
-                    lblDescription.Text = reader[0].ToString();
+                    lblDescriptionText.Text = reader[0].ToString();
                 }
 
                 // Close resources
@@ -153,6 +153,5 @@ namespace MediaShelfApp
             // window.setItemID(id_of_item_goes_here); // May also need to include API id eventually
             window.Show();
         }
-
     }
 }
