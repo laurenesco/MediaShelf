@@ -45,7 +45,11 @@
             this.btnNavBack = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox1
@@ -169,7 +173,7 @@
             this.checkedListBox2.Location = new System.Drawing.Point(34, 255);
             this.checkedListBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(146, 112);
+            this.checkedListBox2.Size = new System.Drawing.Size(146, 84);
             this.checkedListBox2.TabIndex = 7;
             // 
             // checkedListBox1
@@ -186,7 +190,7 @@
             this.checkedListBox1.Location = new System.Drawing.Point(34, 50);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(92, 112);
+            this.checkedListBox1.Size = new System.Drawing.Size(92, 84);
             this.checkedListBox1.TabIndex = 5;
             // 
             // label2
@@ -225,6 +229,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(989, 88);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 34);
             this.button2.TabIndex = 8;
@@ -234,17 +239,50 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(411, 181);
+            this.richTextBox1.Location = new System.Drawing.Point(487, 646);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(548, 416);
+            this.richTextBox1.Size = new System.Drawing.Size(386, 84);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(411, 142);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(557, 474);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // sqlCommand1
+            // 
+            this.sqlCommand1.CommandTimeout = 30;
+            this.sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.CausesValidation = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Movies/TV Shows",
+            "Books",
+            "Music",
+            "Video Games"});
+            this.comboBox1.Location = new System.Drawing.Point(943, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 33);
+            this.comboBox1.TabIndex = 11;
             // 
             // SearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1142, 750);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnNavBack);
@@ -256,8 +294,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SearchResults";
             this.Text = "SearchResults";
+            this.Load += new System.EventHandler(this.SearchResults_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,5 +322,8 @@
         private Button btnNavBack;
         private Button button2;
         private RichTextBox richTextBox1;
+        private DataGridView dataGridView1;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private ComboBox comboBox1;
     }
 }
