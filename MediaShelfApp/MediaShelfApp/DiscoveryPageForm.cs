@@ -13,6 +13,7 @@ namespace MediaShelfApp
 {
     public partial class DiscoveryPageForm : Form
     {
+
         public DiscoveryPageForm()
         {
             InitializeComponent();
@@ -34,55 +35,61 @@ namespace MediaShelfApp
         }
 
         //Name Label
-        private void label1_Click(object sender, EventArgs e)
+        private void lblTopName(object sender, EventArgs e)
         {
-            this.Hide();
-            MyShelfForm window = new MyShelfForm();
-            window.setCaller(this);
-            window.Show();
         }
 
         //Music Square
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        //Movies Square
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        //Shows Square
-        private void button3_Click(object sender, EventArgs e)
-        {
-        }
-
-        //Book Square
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Games square
-        private void button7_Click(object sender, EventArgs e)
-        {
-        }
-
-        //MyShelf Square
-        // MyShelf button functionality - Hides this form as the caller, opens new instance of MyShelf form
-        private void button5_Click(object sender, EventArgs e)
+        private void btnMusic(object sender, EventArgs e)
         {
             this.Hide();
-            MyShelfForm window = new MyShelfForm();
+            SearchResults window = new SearchResults();
             window.setCaller(this);
+            window.setSearchText("Test"); // Text pulled from search box will go here
             window.Show();
         }
 
+        //Movies Square
+        private void btnMovies(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchResults window = new SearchResults();
+            window.setCaller(this);
+            window.setSearchText("Test"); // Text pulled from search box will go here
+            window.Show();
+        }
+
+        //Shows Square
+        private void btnTVShows(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchResults window = new SearchResults();
+            window.setCaller(this);
+            window.setSearchText("Test"); // Text pulled from search box will go here
+            window.Show();
+        }
+
+        //Book Square
+        private void btnBooks(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchResults window = new SearchResults();
+            window.setCaller(this);
+            window.setSearchText("Test"); // Text pulled from search box will go here
+            window.Show();
+        }
+
+        //Games square
+        private void btnGames(object sender, EventArgs e)
+        {
+            //ListView window = new ListView("Games", this);
+            //window.Show();
+        }
 
         //Search Bar
         // Search button functionality - Hides this form as the caller, opens new instance of search form
         //                               with search parameter set as text from the search box
-        private void button6_Click(object sender, EventArgs e)
+        private void btnSearchBar(object sender, EventArgs e)
         {
             this.Hide();
             SearchResults window = new SearchResults();
@@ -94,7 +101,7 @@ namespace MediaShelfApp
 
         //==================================================================
         //Recommendations Header
-        private void Recommendations_Click(object sender, EventArgs e)
+        private void lblRecommendations(object sender, EventArgs e)
         {
             this.Hide();
             Detailed_Recommendations window = new Detailed_Recommendations();
@@ -102,21 +109,21 @@ namespace MediaShelfApp
             window.Show();
         }
         //Based on your... info
-        private void label2_Click(object sender, EventArgs e)
+        private void lblBasedOnYourInfo(object sender, EventArgs e)
         {
         }
         //Other titles with TAG
-        private void label3_Click(object sender, EventArgs e)
+        private void lblOtherTitlesWithTag(object sender, EventArgs e)
         {
         }
 
         //Recommendation #1 picture
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void picBox1(object sender, EventArgs e)
         {
         }
 
         //Recommendation #1 Title 
-        private void label4_Click(object sender, EventArgs e)
+        private void lblTitle1(object sender, EventArgs e)
         {
 
         }
@@ -126,20 +133,20 @@ namespace MediaShelfApp
 
         }
         //Recommendation #1 TAG
-        private void button8_Click(object sender, EventArgs e)
+        private void btnTag1(object sender, EventArgs e)
         {
 
         }
 
 
         //Recommendation #2 Picture
-        private void pictureBox2_Click_1(object sender, EventArgs e)
+        private void picBox2(object sender, EventArgs e)
         {
 
         }
 
         ////Recommendation #2 Title
-        private void label5_Click(object sender, EventArgs e)
+        private void lblTitle2(object sender, EventArgs e)
         {
 
         }
@@ -151,20 +158,20 @@ namespace MediaShelfApp
         }
 
         //Recommendation #2 TAG
-        private void button15_Click(object sender, EventArgs e)
+        private void btnTag2(object sender, EventArgs e)
         {
 
         }
 
 
         //Recommendation #3 Picture
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void picBox3(object sender, EventArgs e)
         {
 
         }
 
         //Recommendation #3 Title
-        private void label17_Click(object sender, EventArgs e)
+        private void lblTitle3(object sender, EventArgs e)
         {
 
         }
@@ -176,19 +183,19 @@ namespace MediaShelfApp
         }
 
         //Recommendation #3 TAG
-        private void button9_Click(object sender, EventArgs e)
+        private void btnTag3(object sender, EventArgs e)
         {
 
         }
 
         //Recommendation #4 Picture
-        private void pictureBox4_Click_1(object sender, EventArgs e)
+        private void picBox4(object sender, EventArgs e)
         {
 
         }
 
         //Recommendation #4 Title
-        private void label12_Click(object sender, EventArgs e)
+        private void lblTitle4(object sender, EventArgs e)
         {
 
         }
@@ -200,19 +207,19 @@ namespace MediaShelfApp
         }
 
         //Recommendation #4 TAG
-        private void button10_Click(object sender, EventArgs e)
+        private void btnTag4(object sender, EventArgs e)
         {
 
         }
 
         //Recommendation #5 Picture
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void picBox5(object sender, EventArgs e)
         {
 
         }
 
         //Recommendation #5 Title
-        private void label19_Click(object sender, EventArgs e)
+        private void lblTitle5(object sender, EventArgs e)
         {
 
         }
@@ -224,20 +231,20 @@ namespace MediaShelfApp
         }
 
         //Recommendation #5 TAG
-        private void button16_Click(object sender, EventArgs e)
+        private void btnTag5(object sender, EventArgs e)
         {
 
         }
 
 
         //Recommendation #6 Picture
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void picBox6(object sender, EventArgs e)
         {
 
         }
 
         //Recommendation #6 Title
-        private void label21_Click(object sender, EventArgs e)
+        private void lblTitle6(object sender, EventArgs e)
         {
 
         }
@@ -249,7 +256,7 @@ namespace MediaShelfApp
         }
 
         //Recommendation #6 TAG
-        private void button17_Click(object sender, EventArgs e)
+        private void btnTag6(object sender, EventArgs e)
         {
 
         }
@@ -257,7 +264,7 @@ namespace MediaShelfApp
         //See More Recommendations
         // See More button functionality - Hides this form as the caller, opens detailed recommendations form
 
-        private void button14_Click(object sender, EventArgs e)
+        private void btnSeeMoreRecommendations(object sender, EventArgs e)
         {
             this.Hide();
             Detailed_Recommendations window = new Detailed_Recommendations();
@@ -267,30 +274,36 @@ namespace MediaShelfApp
 
         //==========================================================================
         //List Header
-        private void label26_Click(object sender, EventArgs e)
+        private void lblListHeader(object sender, EventArgs e)
         {
+            /*
+            this.Hide();
+            ListView window = new ListView();
+            window.setCaller(this);
+            window.Show();
+            */
 
         }
 
         //Favorites List
-        private void label25_Click(object sender, EventArgs e)
+        private void lblFavoritesList(object sender, EventArgs e)
         {
-            
+
         }
         //Favorites List Description
-        private void label24_Click(object sender, EventArgs e)
+        private void lblFavoritesDescription(object sender, EventArgs e)
         {
 
         }
 
         //Wishlist List 
-        private void label13_Click(object sender, EventArgs e)
+        private void lblWishlistList(object sender, EventArgs e)
         {
 
         }
 
         //Withlist Decription
-        private void label22_Click(object sender, EventArgs e)
+        private void lblWishlistDescription(object sender, EventArgs e)
         {
 
         }
@@ -324,12 +337,6 @@ namespace MediaShelfApp
         }
         //List #3 Description
         private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Scrollbar
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
         }
