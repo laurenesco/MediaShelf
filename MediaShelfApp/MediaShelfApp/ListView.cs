@@ -36,12 +36,15 @@ namespace MediaShelfApp
 
             // Populate form
             PopulateListInfo(list);
-            PopulateDataTable();
+            PopulateDataTable("");
         }
 
         // Retrieves items from the selected list and fills the data grid
-        public void PopulateDataTable()
+        public void PopulateDataTable(String s)
         {
+            // Format search
+            String search = "%" + s + "%";
+
             // Create data container
             DataTable results = new DataTable();
 
@@ -53,10 +56,18 @@ namespace MediaShelfApp
 
                 // Construct insertion query
                 cmdGetListItems.CommandText = @"SELECT ITEM_TITLE,
-                                               ITEM_ICON
+                                               ITEM_CREATOR,
+                                               ITEM_GENRE
                                                FROM ITEMS
                                                JOIN LIST ON ITEM_LIST_ID = LIST_ID
                                                WHERE LIST_NAME = @bind1";
+
+                if (search != "null")
+                {
+                    cmdGetListItems.CommandText += " AND ITEM_TITLE LIKE @bind2";
+                    cmdGetListItems.Parameters.AddWithValue("@bind2", search);
+                }
+                                               
 
                 // Parameterize the variables for system security
                 cmdGetListItems.Parameters.AddWithValue("@bind1", list);
@@ -69,7 +80,8 @@ namespace MediaShelfApp
                 dgvResults.DataSource = results;
                 dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvResults.Columns[0].HeaderText = "Title";
-                dgvResults.Columns[1].HeaderText = "Icon";
+                dgvResults.Columns[1].HeaderText = "Artist";
+                dgvResults.Columns[2].HeaderText = "Genre";
 
                 // Close resources
                 reader.Close();
@@ -138,7 +150,6 @@ namespace MediaShelfApp
         //                                         currently viewed list as the list to be added to
         private void btnNavManualEntry_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Manual_Entry_Form window = new Manual_Entry_Form(list, this);
             window.Show();
         }
@@ -152,6 +163,19 @@ namespace MediaShelfApp
             window.setCaller(this);
             // window.setItemID(id_of_item_goes_here); // May also need to include API id eventually
             window.Show();
+        }
+
+        // Search box functionality - Refreshes box upon typing
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            String search = txtSearch.Text.ToString();
+            PopulateDataTable(search);
+        }
+
+        // Delete entry functionality - Deletes selected item from list
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

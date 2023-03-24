@@ -131,7 +131,6 @@ namespace MediaShelfApp
         {
             ListView window = new ListView("Favorites", this);
             window.Show();
-            this.Hide();
         }
 
         // Manual Entries list button functionality - hides this form and opens the list form with the list variable set to favorites
@@ -139,7 +138,6 @@ namespace MediaShelfApp
         {
             ListView window = new ListView("Manual Entries", this);
             window.Show();
-            this.Hide();
         }
     }
 }

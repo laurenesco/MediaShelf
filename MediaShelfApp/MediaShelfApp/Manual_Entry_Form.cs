@@ -96,7 +96,7 @@ namespace MediaShelfApp
         // Back button functionality - reopens calling form with refreshed data grid
         private void btnNavBack_Click(object sender, EventArgs e)
         {
-            caller.PopulateDataTable();
+            caller.PopulateDataTable("");
             caller.Show();
             this.Close();
         }
@@ -112,6 +112,7 @@ namespace MediaShelfApp
                 String genre = ME_genre.Text; 
                 String description = ME_description.Text;
                 DateTime releaseDate = ME_date.Value;
+                int listID = getListID(list);
 
                 // Open connection and create command
                 dbConnection.Open();
@@ -136,7 +137,7 @@ namespace MediaShelfApp
                 cmdInsertMedia.Parameters.AddWithValue("@creator", creator);
                 cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
                 cmdInsertMedia.Parameters.AddWithValue("@desc", description);
-                cmdInsertMedia.Parameters.AddWithValue("@list", 0); // LIST ID 0 signifies manual entry - No list affiliation
+                cmdInsertMedia.Parameters.AddWithValue("@list", listID); 
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
 
 
@@ -154,6 +155,19 @@ namespace MediaShelfApp
             {
                 MessageBox.Show(ex.Message);
             }
-        } 
+        }
+
+        private int getListID(String name)
+        {
+            switch (name)
+            {
+                case "Favorites":
+                    return 1;
+                    break;
+                default:
+                    return -1;
+                    break;
+            }
+        }
     }
 }
