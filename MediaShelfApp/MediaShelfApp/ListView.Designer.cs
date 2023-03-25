@@ -44,7 +44,7 @@
             // btnNavManualEntry
             // 
             this.btnNavManualEntry.AutoSize = true;
-            this.btnNavManualEntry.Location = new System.Drawing.Point(643, 965);
+            this.btnNavManualEntry.Location = new System.Drawing.Point(947, 694);
             this.btnNavManualEntry.Name = "btnNavManualEntry";
             this.btnNavManualEntry.Size = new System.Drawing.Size(94, 30);
             this.btnNavManualEntry.TabIndex = 147;
@@ -57,7 +57,7 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSearch.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblSearch.Location = new System.Drawing.Point(230, 167);
+            this.lblSearch.Location = new System.Drawing.Point(376, 169);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(56, 20);
             this.lblSearch.TabIndex = 146;
@@ -65,7 +65,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(292, 164);
+            this.txtSearch.Location = new System.Drawing.Point(438, 166);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(245, 27);
             this.txtSearch.TabIndex = 145;
@@ -74,7 +74,7 @@
             // cmbSortByParameter
             // 
             this.cmbSortByParameter.FormattingEnabled = true;
-            this.cmbSortByParameter.Location = new System.Drawing.Point(586, 932);
+            this.cmbSortByParameter.Location = new System.Drawing.Point(890, 661);
             this.cmbSortByParameter.Name = "cmbSortByParameter";
             this.cmbSortByParameter.Size = new System.Drawing.Size(151, 28);
             this.cmbSortByParameter.TabIndex = 136;
@@ -84,7 +84,7 @@
             this.lblSortBy.AutoSize = true;
             this.lblSortBy.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSortBy.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblSortBy.Location = new System.Drawing.Point(521, 935);
+            this.lblSortBy.Location = new System.Drawing.Point(825, 664);
             this.lblSortBy.Name = "lblSortBy";
             this.lblSortBy.Size = new System.Drawing.Size(59, 20);
             this.lblSortBy.TabIndex = 135;
@@ -96,7 +96,7 @@
             this.lblListName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.lblListName.Font = new System.Drawing.Font("Ebrima", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblListName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblListName.Location = new System.Drawing.Point(320, 35);
+            this.lblListName.Location = new System.Drawing.Point(459, 27);
             this.lblListName.Name = "lblListName";
             this.lblListName.Size = new System.Drawing.Size(173, 47);
             this.lblListName.TabIndex = 127;
@@ -104,7 +104,7 @@
             // 
             // btnNavBack
             // 
-            this.btnNavBack.Location = new System.Drawing.Point(52, 966);
+            this.btnNavBack.Location = new System.Drawing.Point(42, 697);
             this.btnNavBack.Name = "btnNavBack";
             this.btnNavBack.Size = new System.Drawing.Size(94, 29);
             this.btnNavBack.TabIndex = 160;
@@ -117,7 +117,7 @@
             this.lblDescriptionText.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDescriptionText.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDescriptionText.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblDescriptionText.Location = new System.Drawing.Point(289, 90);
+            this.lblDescriptionText.Location = new System.Drawing.Point(459, 74);
             this.lblDescriptionText.Name = "lblDescriptionText";
             this.lblDescriptionText.Size = new System.Drawing.Size(230, 52);
             this.lblDescriptionText.TabIndex = 162;
@@ -136,18 +136,18 @@
             this.dgvResults.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResults.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
-            this.dgvResults.Location = new System.Drawing.Point(52, 212);
+            this.dgvResults.Location = new System.Drawing.Point(42, 209);
             this.dgvResults.Name = "dgvResults";
             this.dgvResults.ReadOnly = true;
             this.dgvResults.RowHeadersWidth = 10;
             this.dgvResults.RowTemplate.Height = 29;
             this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvResults.Size = new System.Drawing.Size(685, 695);
+            this.dgvResults.Size = new System.Drawing.Size(999, 435);
             this.dgvResults.TabIndex = 163;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(52, 930);
+            this.btnDelete.Location = new System.Drawing.Point(42, 661);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(137, 30);
             this.btnDelete.TabIndex = 164;
@@ -161,7 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.ClientSize = new System.Drawing.Size(790, 1055);
+            this.ClientSize = new System.Drawing.Size(1084, 761);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.lblDescriptionText);

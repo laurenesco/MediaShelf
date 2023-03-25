@@ -175,7 +175,7 @@ namespace MediaShelfApp
         // Delete entry functionality - Deletes selected item from list
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString());
         }
     }
 }
