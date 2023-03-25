@@ -45,7 +45,7 @@ namespace MediaShelfApp
             this.caller = caller;
 
             // Initiate Database Connection
-            dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=;Password=");
+            dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz;");
         }
 
         // Set caller method - this variable allows the back button to reopen the calling form
