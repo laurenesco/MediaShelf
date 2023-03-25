@@ -154,17 +154,6 @@ namespace MediaShelfApp
             window.Show();
         }
 
-        // Item Image button functionality - hides this form as the caller, then opens the detailed item listing form
-        //                                   with the seelcted item as the item to be viewed
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form();
-            window.setCaller(this);
-            // window.setItemID(id_of_item_goes_here); // May also need to include API id eventually
-            window.Show();
-        }
-
         // Search box functionality - Refreshes box upon typing
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -175,7 +164,51 @@ namespace MediaShelfApp
         // Delete entry functionality - Deletes selected item from list
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            String title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            String creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+
+            var areYouSure = MessageBox.Show("Are you sure you want to delete " + title + "?", "Deletion Warning", MessageBoxButtons.YesNoCancel);
+
+            if (areYouSure == DialogResult.Yes)
+            {
+                DeleteItem(title, creator);
+            }
+        }
+
+        private void DeleteItem (String title, String creator)
+        {
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdDeleteItem = dbConnection.CreateCommand();
+
+                // Construct deletion query
+                cmdDeleteItem.CommandText = @"DELETE FROM ITEMS
+                                             WHERE ITEM_TITLE = @bind1
+                                             AND ITEM_CREATOR = @bind2";
+
+                // Parameterize the variables for system security
+                cmdDeleteItem.Parameters.AddWithValue("@bind1", title);
+                cmdDeleteItem.Parameters.AddWithValue("@bind2", creator);
+
+                // Execute query
+                cmdDeleteItem.ExecuteNonQuery();
+
+                // Dispose of resources
+                cmdDeleteItem.Dispose();
+                dbConnection.Close();
+
+                // Confirmation & Refresh
+                PopulateDataTable("");
+                MessageBox.Show(title + " has been deleted from your " + list + " list", "Deletion Successful", MessageBoxButtons.OK);
+
+            }
+            catch (Exception ex)
+            {
+                // Display error if caught
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
