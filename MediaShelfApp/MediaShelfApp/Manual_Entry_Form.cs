@@ -444,7 +444,7 @@ namespace MediaShelfApp
         private void ClearFields()
         {
             txtCreator.Clear();
-            dateReleaseDate.Value = DateTime.Today;
+            dtpReleaseDate.Value = DateTime.Today;
             txtTitle.Clear();
             txtTags.Clear();
             txtCreator.Clear();
@@ -472,19 +472,14 @@ namespace MediaShelfApp
                 String creator = txtCreator.Text;
                 String genre = txtTags.Text; 
                 String description = txtDescriptionText.Text;
-                DateTime releaseDate = dateReleaseDate.Value;
+                DateTime releaseDate = dtpReleaseDate.Value;
+                int listID = getListID(list);
                 Byte[] icon;
 
                 FileStream iconFile = new FileStream(picboxImage.ImageLocation, FileMode.Open, FileAccess.Read);
                 icon = new Byte[iconFile.Length];
                 iconFile.Read(icon, 0, Convert.ToInt32(iconFile.Length));
                 iconFile.Close();
-                String title = ME_title.Text;
-                String creator = ME_creator.Text;
-                String genre = ME_genre.Text; 
-                String description = ME_description.Text;
-                DateTime releaseDate = ME_date.Value;
-                int listID = getListID(list);
 
                 // Open connection and create command
                 dbConnection.Open();
@@ -533,16 +528,43 @@ namespace MediaShelfApp
 
         private int getListID(String name)
         {
-            switch (name)
+            int ID = 0;
+
+            // Try query
+            try
             {
-                case "Favorites":
-                    return 1;
-                    break;
-                default:
-                    return -1;
-                    break;
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdGetListInfo = dbConnection.CreateCommand();
+
+                // Construct insertion query
+                cmdGetListInfo.CommandText = @"SELECT LIST_ID
+                                               FROM LIST
+                                               WHERE LIST_NAME = @bind1";
+
+                // Parameterize the variables for system security
+                cmdGetListInfo.Parameters.AddWithValue("@bind1", list);
+
+                // Execute and read the data
+                SqlDataReader reader = cmdGetListInfo.ExecuteReader();
+
+                // Assign result to ID variable
+                if (reader.Read())
+                {
+                    ID = Convert.ToInt32(reader[0]); 
+                } 
+
+                // Close resources
+                reader.Close();
+                cmdGetListInfo.Dispose();
+                dbConnection.Close();
             }
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return ID;
         }
 
         //enables user to upload an image for manual entry

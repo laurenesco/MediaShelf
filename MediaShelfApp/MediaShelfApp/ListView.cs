@@ -132,7 +132,7 @@ namespace MediaShelfApp
         // Retrieves information about list that was selected and fills in basic form elements
         private void PopulateListInfo(String list)
         {
-            // Retrieve list information
+            // Try query
             try
             {
                 // Set basic form elements
