@@ -28,224 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNavBack = new System.Windows.Forms.Button();
-            this.ME_fowardButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ME_title = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ME_creator = new System.Windows.Forms.TextBox();
-            this.ME_type = new System.Windows.Forms.TextBox();
-            this.ME_genre = new System.Windows.Forms.TextBox();
-            this.ME_date = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ME_description = new System.Windows.Forms.TextBox();
-            this.ME_addButton = new System.Windows.Forms.Button();
-            this.ME_pic = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ME_pic)).BeginInit();
+            this.btnBackButton = new System.Windows.Forms.Button();
+            this.lblManualEntry = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.lblCreator = new System.Windows.Forms.Label();
+            this.lblTags = new System.Windows.Forms.Label();
+            this.lblReleaseDate = new System.Windows.Forms.Label();
+            this.txtCreator = new System.Windows.Forms.TextBox();
+            this.txtTags = new System.Windows.Forms.TextBox();
+            this.dateReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescriptionText = new System.Windows.Forms.TextBox();
+            this.btnAddButton = new System.Windows.Forms.Button();
+            this.picboxImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnNavBack
+            // btnBackButton
             // 
-            this.btnNavBack.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnNavBack.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNavBack.Location = new System.Drawing.Point(15, 15);
-            this.btnNavBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnNavBack.Name = "btnNavBack";
-            this.btnNavBack.Size = new System.Drawing.Size(48, 36);
-            this.btnNavBack.TabIndex = 5;
-            this.btnNavBack.Text = "<";
-            this.btnNavBack.UseVisualStyleBackColor = false;
-            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
+            this.btnBackButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnBackButton.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBackButton.Location = new System.Drawing.Point(13, 13);
+            this.btnBackButton.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBackButton.Name = "btnBackButton";
+            this.btnBackButton.Size = new System.Drawing.Size(85, 46);
+            this.btnBackButton.TabIndex = 5;
+            this.btnBackButton.Text = "Back";
+            this.btnBackButton.UseVisualStyleBackColor = false;
+            this.btnBackButton.Click += new System.EventHandler(this.btnNavBack_Click);
             // 
-            // ME_fowardButton
+            // lblManualEntry
             // 
-            this.ME_fowardButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ME_fowardButton.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ME_fowardButton.Location = new System.Drawing.Point(70, 15);
-            this.ME_fowardButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_fowardButton.Name = "ME_fowardButton";
-            this.ME_fowardButton.Size = new System.Drawing.Size(48, 36);
-            this.ME_fowardButton.TabIndex = 6;
-            this.ME_fowardButton.Text = ">";
-            this.ME_fowardButton.UseVisualStyleBackColor = false;
+            this.lblManualEntry.AutoSize = true;
+            this.lblManualEntry.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblManualEntry.Location = new System.Drawing.Point(441, 24);
+            this.lblManualEntry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblManualEntry.Name = "lblManualEntry";
+            this.lblManualEntry.Size = new System.Drawing.Size(155, 32);
+            this.lblManualEntry.TabIndex = 7;
+            this.lblManualEntry.Text = "Manual Entry";
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(375, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 48);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Manual Entry";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(407, 119);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(65, 32);
+            this.lblTitle.TabIndex = 8;
+            this.lblTitle.Text = "Title:";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label2
+            // txtTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(389, 104);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 32);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Title:";
+            this.txtTitle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTitle.Location = new System.Drawing.Point(474, 118);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(379, 40);
+            this.txtTitle.TabIndex = 9;
             // 
-            // ME_title
+            // lblCreator
             // 
-            this.ME_title.Location = new System.Drawing.Point(462, 109);
-            this.ME_title.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_title.Name = "ME_title";
-            this.ME_title.Size = new System.Drawing.Size(320, 31);
-            this.ME_title.TabIndex = 9;
+            this.lblCreator.AutoSize = true;
+            this.lblCreator.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCreator.Location = new System.Drawing.Point(374, 167);
+            this.lblCreator.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCreator.Name = "lblCreator";
+            this.lblCreator.Size = new System.Drawing.Size(97, 32);
+            this.lblCreator.TabIndex = 10;
+            this.lblCreator.Text = "Creator:";
+            this.lblCreator.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label3
+            // lblTags
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(389, 142);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 32);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Creator:";
+            this.lblTags.AutoSize = true;
+            this.lblTags.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTags.Location = new System.Drawing.Point(330, 215);
+            this.lblTags.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTags.Name = "lblTags";
+            this.lblTags.Size = new System.Drawing.Size(141, 32);
+            this.lblTags.TabIndex = 12;
+            this.lblTags.Text = "Genre/Tags:";
+            this.lblTags.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label4
+            // lblReleaseDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(389, 178);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 32);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Type:";
+            this.lblReleaseDate.AutoSize = true;
+            this.lblReleaseDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReleaseDate.Location = new System.Drawing.Point(314, 266);
+            this.lblReleaseDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReleaseDate.Name = "lblReleaseDate";
+            this.lblReleaseDate.Size = new System.Drawing.Size(157, 32);
+            this.lblReleaseDate.TabIndex = 13;
+            this.lblReleaseDate.Text = "Release Date:";
+            this.lblReleaseDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label5
+            // txtCreator
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(389, 212);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 32);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Genre:";
+            this.txtCreator.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCreator.Location = new System.Drawing.Point(474, 166);
+            this.txtCreator.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCreator.Name = "txtCreator";
+            this.txtCreator.Size = new System.Drawing.Size(379, 40);
+            this.txtCreator.TabIndex = 14;
             // 
-            // label6
+            // txtTags
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(389, 260);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 32);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Release Date:";
+            this.txtTags.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTags.Location = new System.Drawing.Point(474, 214);
+            this.txtTags.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTags.Name = "txtTags";
+            this.txtTags.Size = new System.Drawing.Size(379, 40);
+            this.txtTags.TabIndex = 16;
             // 
-            // ME_creator
+            // dateReleaseDate
             // 
-            this.ME_creator.Location = new System.Drawing.Point(498, 146);
-            this.ME_creator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_creator.Name = "ME_creator";
-            this.ME_creator.Size = new System.Drawing.Size(285, 31);
-            this.ME_creator.TabIndex = 14;
+            this.dateReleaseDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateReleaseDate.Location = new System.Drawing.Point(474, 262);
+            this.dateReleaseDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dateReleaseDate.Name = "dateReleaseDate";
+            this.dateReleaseDate.Size = new System.Drawing.Size(379, 40);
+            this.dateReleaseDate.TabIndex = 17;
             // 
-            // ME_type
+            // lblDescription
             // 
-            this.ME_type.Location = new System.Drawing.Point(462, 181);
-            this.ME_type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_type.Name = "ME_type";
-            this.ME_type.ReadOnly = true;
-            this.ME_type.Size = new System.Drawing.Size(320, 31);
-            this.ME_type.TabIndex = 15;
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDescription.Location = new System.Drawing.Point(51, 336);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(140, 32);
+            this.lblDescription.TabIndex = 18;
+            this.lblDescription.Text = "Description:";
             // 
-            // ME_genre
+            // txtDescriptionText
             // 
-            this.ME_genre.Location = new System.Drawing.Point(481, 218);
-            this.ME_genre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_genre.Name = "ME_genre";
-            this.ME_genre.Size = new System.Drawing.Size(302, 31);
-            this.ME_genre.TabIndex = 16;
+            this.txtDescriptionText.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDescriptionText.Location = new System.Drawing.Point(58, 372);
+            this.txtDescriptionText.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescriptionText.Multiline = true;
+            this.txtDescriptionText.Name = "txtDescriptionText";
+            this.txtDescriptionText.Size = new System.Drawing.Size(877, 169);
+            this.txtDescriptionText.TabIndex = 19;
             // 
-            // ME_date
+            // btnAddButton
             // 
-            this.ME_date.Location = new System.Drawing.Point(554, 261);
-            this.ME_date.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_date.Name = "ME_date";
-            this.ME_date.Size = new System.Drawing.Size(229, 31);
-            this.ME_date.TabIndex = 17;
+            this.btnAddButton.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddButton.Location = new System.Drawing.Point(850, 549);
+            this.btnAddButton.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddButton.Name = "btnAddButton";
+            this.btnAddButton.Size = new System.Drawing.Size(85, 46);
+            this.btnAddButton.TabIndex = 20;
+            this.btnAddButton.Text = "Add";
+            this.btnAddButton.UseVisualStyleBackColor = true;
+            this.btnAddButton.Click += new System.EventHandler(this.ME_addButton_Click);
             // 
-            // label7
+            // picboxImage
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(100, 320);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 32);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Description:";
-            // 
-            // ME_description
-            // 
-            this.ME_description.Location = new System.Drawing.Point(100, 359);
-            this.ME_description.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_description.Multiline = true;
-            this.ME_description.Name = "ME_description";
-            this.ME_description.Size = new System.Drawing.Size(884, 176);
-            this.ME_description.TabIndex = 19;
-            // 
-            // ME_addButton
-            // 
-            this.ME_addButton.Location = new System.Drawing.Point(868, 556);
-            this.ME_addButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_addButton.Name = "ME_addButton";
-            this.ME_addButton.Size = new System.Drawing.Size(118, 36);
-            this.ME_addButton.TabIndex = 20;
-            this.ME_addButton.Text = "Add";
-            this.ME_addButton.UseVisualStyleBackColor = true;
-            this.ME_addButton.Click += new System.EventHandler(this.ME_addButton_Click);
-            // 
-            // ME_pic
-            // 
-            this.ME_pic.Location = new System.Drawing.Point(112, 96);
-            this.ME_pic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ME_pic.Name = "ME_pic";
-            this.ME_pic.Size = new System.Drawing.Size(238, 208);
-            this.ME_pic.TabIndex = 21;
-            this.ME_pic.TabStop = false;
+            this.picboxImage.BackColor = System.Drawing.Color.White;
+            this.picboxImage.BackgroundImage = global::MediaShelfApp.Properties.Resources.uploadImagePrompt;
+            this.picboxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picboxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picboxImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picboxImage.Location = new System.Drawing.Point(58, 82);
+            this.picboxImage.Margin = new System.Windows.Forms.Padding(4);
+            this.picboxImage.Name = "picboxImage";
+            this.picboxImage.Size = new System.Drawing.Size(250, 250);
+            this.picboxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxImage.TabIndex = 21;
+            this.picboxImage.TabStop = false;
+            this.picboxImage.Click += new System.EventHandler(this.picboxImage_Click);
             // 
             // Manual_Entry_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 608);
-            this.Controls.Add(this.ME_pic);
-            this.Controls.Add(this.ME_addButton);
-            this.Controls.Add(this.ME_description);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.ME_date);
-            this.Controls.Add(this.ME_genre);
-            this.Controls.Add(this.ME_type);
-            this.Controls.Add(this.ME_creator);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.ME_title);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ME_fowardButton);
-            this.Controls.Add(this.btnNavBack);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(951, 608);
+            this.Controls.Add(this.picboxImage);
+            this.Controls.Add(this.btnAddButton);
+            this.Controls.Add(this.txtDescriptionText);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.dateReleaseDate);
+            this.Controls.Add(this.txtTags);
+            this.Controls.Add(this.txtCreator);
+            this.Controls.Add(this.lblReleaseDate);
+            this.Controls.Add(this.lblTags);
+            this.Controls.Add(this.lblCreator);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblManualEntry);
+            this.Controls.Add(this.btnBackButton);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Manual_Entry_Form";
-            this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.ME_pic)).EndInit();
+            this.Text = "MediaShelf - Make Manual Entry";
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,22 +233,19 @@
 
         #endregion
 
-        private Button btnNavBack;
-        private Button ME_fowardButton;
-        private Label label1;
-        private Label label2;
-        private TextBox ME_title;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox ME_creator;
-        private TextBox ME_type;
-        private TextBox ME_genre;
-        private DateTimePicker ME_date;
-        private Label label7;
-        private TextBox ME_description;
-        private Button ME_addButton;
-        private PictureBox ME_pic;
+        private Button btnBackButton;
+        private Label lblManualEntry;
+        private Label lblTitle;
+        private TextBox txtTitle;
+        private Label lblCreator;
+        private Label lblTags;
+        private Label lblReleaseDate;
+        private TextBox txtCreator;
+        private TextBox txtTags;
+        private DateTimePicker dateReleaseDate;
+        private Label lblDescription;
+        private TextBox txtDescriptionText;
+        private Button btnAddButton;
+        private PictureBox picboxImage;
     }
 }
