@@ -73,6 +73,7 @@
             // 
             // cmbSortByParameter
             // 
+            this.cmbSortByParameter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortByParameter.FormattingEnabled = true;
             this.cmbSortByParameter.Location = new System.Drawing.Point(890, 661);
             this.cmbSortByParameter.Name = "cmbSortByParameter";

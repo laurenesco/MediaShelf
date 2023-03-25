@@ -35,6 +35,7 @@ namespace MediaShelfApp
             dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
 
             // Populate form
+            PopulateSortComboBox();
             PopulateListInfo(list);
             PopulateDataTable("");
         }
@@ -44,17 +45,36 @@ namespace MediaShelfApp
         {
             // Format search
             String search = "%" + s + "%";
+            String parameter = "";
+            
+            // Set search parameter
+            switch(cmbSortByParameter.Text)
+            {
+                case "Title":
+                    parameter = "ITEM_TITLE";
+                    break;
+                case "Genre":
+                    parameter = "ITEM_GENRE";
+                    break;
+                case "Creator":
+                    parameter = "ITEM_CREATOR";
+                    break;
+                default:
+                    MessageBox.Show("Error in sorting function", "Sorting Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
 
             // Create data container
             DataTable results = new DataTable();
 
-            // Retrieve Items from list
+            // Try query
             try
             {
+                // Open connection
                 dbConnection.Open();
                 SqlCommand cmdGetListItems = dbConnection.CreateCommand();
 
-                // Construct insertion query
+                // Construct select query
                 cmdGetListItems.CommandText = @"SELECT ITEM_TITLE,
                                                ITEM_CREATOR,
                                                ITEM_GENRE
@@ -62,9 +82,10 @@ namespace MediaShelfApp
                                                JOIN LIST ON ITEM_LIST_ID = LIST_ID
                                                WHERE LIST_NAME = @bind1";
 
-                if (search != "null")
+                // If search box is not empty, add this condition to the query
+                if (search != "%%")
                 {
-                    cmdGetListItems.CommandText += " AND ITEM_TITLE LIKE @bind2";
+                    cmdGetListItems.CommandText += " AND " + parameter + " LIKE @bind2";
                     cmdGetListItems.Parameters.AddWithValue("@bind2", search);
                 }
                                                
@@ -91,6 +112,7 @@ namespace MediaShelfApp
             }
             catch (Exception ex)
             {
+                // Display any potential errors
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -98,6 +120,14 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
+        
+        private void PopulateSortComboBox()
+        {
+            cmbSortByParameter.Items.Add("Title");
+            cmbSortByParameter.Items.Add("Creator");
+            cmbSortByParameter.Items.Add("Genre");
+            cmbSortByParameter.SelectedIndex = 0;
+        }
 
         // Retrieves information about list that was selected and fills in basic form elements
         private void PopulateListInfo(String list)
