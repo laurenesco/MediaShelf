@@ -24,8 +24,8 @@ namespace MediaShelfApp
 
 
         // Marcel's Stuff
-        private MovieResult moviesjson;
-        private Root booksjson;
+        private moviesRoot moviesjson;
+        private booksRoot booksjson;
         private musicRoot musicjson;
         private gamesRoot gamesjson;
 
@@ -136,12 +136,6 @@ namespace MediaShelfApp
         {
             public string smallThumbnail { get; set; }
             public string large { get; set; }
-            public string thumbnail { get; set; }
-        }
-
-        public class ImageLinks
-        {
-            public string smallThumbnail { get; set; }
             public string thumbnail { get; set; }
         }
 
@@ -367,11 +361,10 @@ namespace MediaShelfApp
 
                 // API call for books REPLACE [QUERY] =https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=[QUERY]
 
-                var endpoint = new Uri("https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=" + query);
-                var result = client.GetAsync(endpoint).Result;
-                var json = result.Content.ReadAsStringAsync().Result;
-                var movieList = JsonConvert.DeserializeObject<MovieResult>(json);
-
+                var endpoint = new Uri("https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=" + query); // endpoint = HTTP URL for API call
+                var result = client.GetAsync(endpoint).Result; // checks API status to get successful API call, Code 200 for most API = successful API call
+                var json = result.Content.ReadAsStringAsync().Result; // Confirms successful API call then pulls the JSON 
+                moviesRoot movieList = JsonConvert.DeserializeObject<moviesRoot>(json); // ROOT CLASS VARIABLE  //Parses JSON and assigns it as a C# object to assigned rootClass
 
                 dataGridView1.Rows.Clear(); // Clears datagrid view and refreshes
                 dataGridView1.Columns.Clear();
@@ -384,9 +377,9 @@ namespace MediaShelfApp
                 for (int i = 0; i < 10; i++)
                 {
                     try
-
                     {
-                        dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString());
+                        dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString()); // DISPLAYS information on datagrid, must add columns above to display info correctly/formatted correctly
+
                     }
                     catch (Exception ex)
                     {
@@ -396,6 +389,7 @@ namespace MediaShelfApp
                 }
                 moviesjson = movieList;
             }
+
         }
 
         // BOOKS API CALL //

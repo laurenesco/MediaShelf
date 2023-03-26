@@ -235,7 +235,6 @@ namespace MediaShelfApp
             richTextBox1.Size = new Size(501, 106);
             richTextBox1.TabIndex = 9;
             richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // dataGridView1
             // 
