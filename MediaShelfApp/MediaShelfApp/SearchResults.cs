@@ -489,14 +489,6 @@ namespace MediaShelfApp
 
         
         /// END OF API CALLS /// 
-        
-        
-        
-        //useless but DO NOT REMOVE; breaks program
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         // Search Results Form Loads
         private void SearchResults_Load(object sender, EventArgs e)
