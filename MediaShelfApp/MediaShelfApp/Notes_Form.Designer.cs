@@ -60,11 +60,13 @@
             this.btnAddNote.TabIndex = 5;
             this.btnAddNote.Text = "Save";
             this.btnAddNote.UseVisualStyleBackColor = true;
+            this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
             // 
             // txtNote1
             // 
             this.txtNote1.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote1.Location = new System.Drawing.Point(32, 91);
+            this.txtNote1.MaxLength = 400;
             this.txtNote1.Multiline = true;
             this.txtNote1.Name = "txtNote1";
             this.txtNote1.Size = new System.Drawing.Size(186, 165);
@@ -74,6 +76,7 @@
             // 
             this.txtNote2.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote2.Location = new System.Drawing.Point(240, 91);
+            this.txtNote2.MaxLength = 400;
             this.txtNote2.Multiline = true;
             this.txtNote2.Name = "txtNote2";
             this.txtNote2.Size = new System.Drawing.Size(186, 165);
@@ -83,6 +86,7 @@
             // 
             this.txtNote3.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote3.Location = new System.Drawing.Point(447, 91);
+            this.txtNote3.MaxLength = 400;
             this.txtNote3.Multiline = true;
             this.txtNote3.Name = "txtNote3";
             this.txtNote3.Size = new System.Drawing.Size(186, 165);
@@ -92,6 +96,7 @@
             // 
             this.txtNote4.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote4.Location = new System.Drawing.Point(654, 91);
+            this.txtNote4.MaxLength = 400;
             this.txtNote4.Multiline = true;
             this.txtNote4.Name = "txtNote4";
             this.txtNote4.Size = new System.Drawing.Size(186, 165);
@@ -101,6 +106,7 @@
             // 
             this.txtNote5.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote5.Location = new System.Drawing.Point(32, 287);
+            this.txtNote5.MaxLength = 400;
             this.txtNote5.Multiline = true;
             this.txtNote5.Name = "txtNote5";
             this.txtNote5.Size = new System.Drawing.Size(186, 165);
@@ -110,6 +116,7 @@
             // 
             this.txtNote6.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote6.Location = new System.Drawing.Point(240, 287);
+            this.txtNote6.MaxLength = 400;
             this.txtNote6.Multiline = true;
             this.txtNote6.Name = "txtNote6";
             this.txtNote6.Size = new System.Drawing.Size(186, 165);
@@ -119,6 +126,7 @@
             // 
             this.txtNote7.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote7.Location = new System.Drawing.Point(447, 287);
+            this.txtNote7.MaxLength = 400;
             this.txtNote7.Multiline = true;
             this.txtNote7.Name = "txtNote7";
             this.txtNote7.Size = new System.Drawing.Size(186, 165);
@@ -128,6 +136,7 @@
             // 
             this.txtNote8.BackColor = System.Drawing.SystemColors.Info;
             this.txtNote8.Location = new System.Drawing.Point(654, 287);
+            this.txtNote8.MaxLength = 400;
             this.txtNote8.Multiline = true;
             this.txtNote8.Name = "txtNote8";
             this.txtNote8.Size = new System.Drawing.Size(186, 165);
