@@ -43,7 +43,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNavBack = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox1
@@ -162,7 +168,7 @@
             this.checkedListBox2.Location = new System.Drawing.Point(27, 204);
             this.checkedListBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(117, 110);
+            this.checkedListBox2.Size = new System.Drawing.Size(117, 66);
             this.checkedListBox2.TabIndex = 7;
             // 
             // checkedListBox1
@@ -179,7 +185,7 @@
             this.checkedListBox1.Location = new System.Drawing.Point(27, 40);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(74, 110);
+            this.checkedListBox1.Size = new System.Drawing.Size(74, 66);
             this.checkedListBox1.TabIndex = 5;
             // 
             // label2
@@ -212,11 +218,67 @@
             this.btnNavBack.UseVisualStyleBackColor = true;
             this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(791, 70);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 27);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(390, 517);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(310, 68);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(329, 114);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(446, 379);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // sqlCommand1
+            // 
+            this.sqlCommand1.CommandTimeout = 30;
+            this.sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.CausesValidation = false;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Movies/TV Shows",
+            "Books",
+            "Music",
+            "Video Games"});
+            this.comboBox1.Location = new System.Drawing.Point(754, 17);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(150, 28);
+            this.comboBox1.TabIndex = 11;
+            // 
             // SearchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnNavBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -226,8 +288,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SearchResults";
             this.Text = "SearchResults";
+            this.Load += new System.EventHandler(this.SearchResults_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +314,10 @@
         private Label label2;
         private Label label1;
         private Button btnNavBack;
+        private Button button2;
+        private RichTextBox richTextBox1;
+        private DataGridView dataGridView1;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private ComboBox comboBox1;
     }
 }
