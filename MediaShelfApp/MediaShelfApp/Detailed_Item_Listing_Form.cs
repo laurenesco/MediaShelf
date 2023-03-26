@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,14 +17,29 @@ namespace MediaShelfApp
         // Instance variables:
         // caller   - form which invoked this form
         // itemID   - ID of item intended to be viewed, used for querying 
-        private ListView caller = null!;
+        private ListView lcaller = null!;
+        private SearchResults dcaller = null!;
         private int itemID = 0;
+
+
+        // Marcel's Stuff
+        private string title;
+        private string description;
+        private string genre;
+        private string release_date;
+        private string creator;
+        private string mediaImageLink;
+
+        private string dbConnectionString = @"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID= mediaalt;Password=wehkun-7jYcnu-zidjaz";
 
         //////////////////////
         //  Public methods  //
         //////////////////////
 
-        // Constructor
+        // ============================================================================================================================================================
+        // ============================================================================================================================================================
+
+        // Constructors
         public Detailed_Item_Listing_Form()
         {
             InitializeComponent();
@@ -31,7 +47,7 @@ namespace MediaShelfApp
             // Initiate Database Connection
             try
             {
-                SqlConnection dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db1;Persist Security Info=True;User ID=;Password=");
+                SqlConnection dbConnection = new SqlConnection(dbConnectionString);
             }
             catch (Exception ex)
             {
@@ -39,10 +55,58 @@ namespace MediaShelfApp
             }
         }
 
-        // Set caller method - this variable allows the back button to reopen the calling form
-        public void setCaller(ListView caller)
+        public Detailed_Item_Listing_Form(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int api_type)
         {
-            this.caller = caller;
+            InitializeComponent();
+
+
+            // Initiate Database Connection
+            try
+            {
+                SqlConnection dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID= mediaalt;Password=wehkun-7jYcnu-zidjaz");
+                fillListBox(dbConnection);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            this.title = title;
+            this.creator = creator;
+            this.genre = genre;
+            this.release_date = release_date;
+            this.description = description;
+            this.mediaImageLink = mediaImageLink;
+
+            displayData(title, creator, genre, release_date, description, mediaImageLink, api_type);
+        }
+
+        // ============================================================================================================================================================
+        // ============================================================================================================================================================
+
+        private void fillListBox(SqlConnection dbConnection)
+        {
+            SqlCommand cmd = dbConnection.CreateCommand();
+            dbConnection.Open();
+            cmd.CommandText = "SELECT list_name FROM LIST";
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                cmbAddToList.Items.Add(reader.GetString(0));
+            }
+            dbConnection.Close();
+        }
+
+        // Set caller method - this variable allows the back button to reopen the calling form
+        public void setCaller(ListView lcaller)
+        {
+            this.lcaller = lcaller;
+        }
+
+        public void setCaller(SearchResults dcaller)
+        {
+            this.dcaller = dcaller;
         }
 
         // Set itemID method - this variable allows the form to display the correct item
@@ -58,8 +122,131 @@ namespace MediaShelfApp
         // Back button functionality - reopens calling form, closes this form
         private void btnNavBack_Click(object sender, EventArgs e)
         {
-            caller.Show();
-            this.Close();
+            if (dcaller != null)
+            {
+                this.Hide();
+                dcaller.Show();
+
+            }
+            else
+            {
+                this.Hide();
+                lcaller.Show();
+            }
+        }
+
+
+        private void displayData(string title, string creator, string genre, string releaseDate, string description, string mediaImageLink, int mediaType)
+        {
+
+            switch (mediaType)
+            {
+
+                case 0:
+
+                    lblTitle.Text = title;
+                    lblCreatorValue.Text = creator;
+                    lblGenreValue.Text = genre;
+                    lblReleaseDateValue.Text = releaseDate;
+                    txtDescriptionValue.Text = description;
+
+
+                    picMediaImage.ImageLocation = mediaImageLink;
+                    picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    break;
+                case 1:
+
+                    // Modify Labels on Form for Books
+                    lblTitle.Text = title;
+                    lblCreatorTitle.Text = "Author:";
+                    lblGenreTitle.Text = "Publisher:";
+                    lblReleaseDateTitle.Text = "Release Date:";
+
+
+                    lblTitle.Text = title;
+                    lblCreatorValue.Text = creator;
+                    lblGenreValue.Text = genre;
+                    lblReleaseDateValue.Text = releaseDate;
+                    txtDescriptionValue.Text = description;
+
+
+                    picMediaImage.ImageLocation = mediaImageLink;
+                    picMediaImage.Size = new System.Drawing.Size(369, 369);
+
+                    break;
+                case 2:
+                    // Modify Labels on Form for Books
+                    lblTitle.Text = title;
+                    lblCreatorTitle.Text = "Artist:";
+                    lblGenreTitle.Text = "Album:";
+                    lblReleaseDateTitle.Text = "Release Date:";
+
+
+                    lblTitle.Text = title;
+                    lblCreatorValue.Text = creator;
+                    lblGenreValue.Text = genre;
+                    lblReleaseDateValue.Text = releaseDate;
+                    txtDescriptionValue.Text = description;
+
+
+                    picMediaImage.ImageLocation = mediaImageLink;
+                    //picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    break;
+                case 3:
+
+                    lblCreatorTitle.Text = "Platform:";
+                    lblDescriptionTitle.Text = "";
+
+
+                    lblTitle.Text = title;
+                    lblCreatorValue.Text = creator;
+                    lblGenreValue.Text = genre;
+                    lblReleaseDateValue.Text = releaseDate;
+                    txtDescriptionValue.Text = description;
+
+
+                    picMediaImage.ImageLocation = mediaImageLink;
+                    picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    break;
+                default:
+                    break;
+
+            }
+
+
+        }
+
+        private void Detailed_Item_Listing_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnFavorite_Click(object sender, EventArgs e)
+        {
+            int list_index = cmbAddToList.SelectedIndex;
+            SqlConnection dbConnect = new SqlConnection(dbConnectionString);
+
+            try
+            {
+                dbConnect.Open();
+                SqlCommand cmd = dbConnect.CreateCommand();
+                cmd.CommandText = "INSERT INTO ITEMS VALUES (@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,NULL,@item_description,@item_list_id,@item_genre)";
+                cmd.Parameters.AddWithValue("@item_api", 0);
+                cmd.Parameters.AddWithValue("@item_media_type", 1);
+                cmd.Parameters.AddWithValue("@item_title", lblTitle.Text);
+                cmd.Parameters.AddWithValue("@item_creator", lblCreatorValue.Text);
+                cmd.Parameters.AddWithValue("@item_release_date", lblReleaseDateValue.Text);
+                //cmd.Parameters.AddWithValue("@item_icon", picMediaImage.Image);
+                cmd.Parameters.AddWithValue("@item_description", lblDescriptionValue.Text);
+                cmd.Parameters.AddWithValue("@item_list_id", list_index);
+                cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            dbConnect.Close();
         }
     }
 }

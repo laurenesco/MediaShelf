@@ -1,4 +1,4 @@
-﻿namespace MediaShelfApp
+namespace MediaShelfApp
 {
     partial class SearchResults
     {
@@ -85,7 +85,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.checkedListBox2);
             this.panel1.Controls.Add(this.checkedListBox1);
-            this.panel1.Location = new System.Drawing.Point(33, 73);
+            this.panel1.Location = new System.Drawing.Point(33, 72);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(165, 462);
@@ -185,7 +185,7 @@
             this.checkedListBox1.Location = new System.Drawing.Point(27, 40);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(74, 66);
+            this.checkedListBox1.Size = new System.Drawing.Size(117, 66);
             this.checkedListBox1.TabIndex = 5;
             // 
             // label2
@@ -220,10 +220,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(791, 70);
+            this.button2.Location = new System.Drawing.Point(791, 71);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 27);
+            this.button2.Size = new System.Drawing.Size(90, 28);
             this.button2.TabIndex = 8;
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
@@ -240,14 +240,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(329, 114);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowHeadersWidth = 10;
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(446, 379);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // sqlCommand1
             // 
@@ -265,7 +268,7 @@
             "Music",
             "Video Games"});
             this.comboBox1.Location = new System.Drawing.Point(754, 17);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(150, 28);
             this.comboBox1.TabIndex = 11;
