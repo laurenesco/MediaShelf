@@ -22,6 +22,15 @@ namespace MediaShelfApp
         private DiscoveryPageForm caller = null!;
         private String searchText = null!;
 
+
+        // Marcel's Stuff
+        private MovieResult moviesjson;
+        private Root booksjson;
+        private musicRoot musicjson;
+        private gamesRoot gamesjson;
+
+
+
         //////////////////////
         //  Public methods  //
         //////////////////////
@@ -59,6 +68,8 @@ namespace MediaShelfApp
         {
             public string original_title { get; set; }
             public string overview { get; set; }
+            public string release_date { get; set; }
+            public string poster_path { get; set; }
         }
 
         // Separates the results in JSON and puts it into a list format
@@ -94,13 +105,38 @@ namespace MediaShelfApp
             public VolumeInfo volumeInfo { get; set; }
             //public SaleInfo saleInfo { get; set; }
             //public AccessInfo accessInfo { get; set; }
-           // public SearchInfo searchInfo { get; set; }
+            // public SearchInfo searchInfo { get; set; }
+        }
+
+        public class ImageLinks
+        {
+            public string smallThumbnail { get; set; }
+            public string large { get; set; }
+            public string thumbnail { get; set; }
         }
 
         public class VolumeInfo
         {
             public string title { get; set; }
+            public List<string> authors { get; set; }
+            public string publisher { get; set; }
+            public string publishedDate { get; set; }
             public string description { get; set; }
+            public int pageCount { get; set; }
+            public string printType { get; set; }
+            public List<string> categories { get; set; }
+            public double averageRating { get; set; }
+            public int ratingsCount { get; set; }
+            public string maturityRating { get; set; }
+            public bool allowAnonLogging { get; set; }
+            public string contentVersion { get; set; }
+            public ImageLinks imageLinks { get; set; }
+            public string language { get; set; }
+            public string previewLink { get; set; }
+            public string infoLink { get; set; }
+            public string canonicalVolumeLink { get; set; }
+            public string subtitle { get; set; }
+            public bool? comicsContent { get; set; }
         }
 
         public class Root
@@ -108,7 +144,7 @@ namespace MediaShelfApp
             public string kind { get; set; }
             public int totalItems { get; set; }
             public List<Item> items { get; set; }
-       
+
         }
 
         //Deezer API for MUSIC
@@ -256,8 +292,8 @@ namespace MediaShelfApp
                 case 0:
                     movieAPICall();
                     break;
-                case 1:                 
-                    booksAPICall(); 
+                case 1:
+                    booksAPICall();
                     break;
                 case 2:
                     musicAPICall();
@@ -265,8 +301,9 @@ namespace MediaShelfApp
                 case 3:
                     gamesAPICall();
                     break;
-            }    
+            }
         }
+
         //change to datagrid
 
 
@@ -278,7 +315,7 @@ namespace MediaShelfApp
         /// All API call basically function the same, most code comment will be laid out in first API call
         /// 
         /// </summary>
-        
+
 
 
 
@@ -292,7 +329,7 @@ namespace MediaShelfApp
 
                 // API Key is in code, need to clean up and add as private variables at later date / clean up URI as well
 
-                
+
                 var endpoint = new Uri("https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=" + query);
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
@@ -309,9 +346,9 @@ namespace MediaShelfApp
                 for (int i = 0; i < 10; i++)
                 {
                     try
-                    {                     
+                    {
                         dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString());
-                          
+
                     }
                     catch (Exception ex)
                     {
@@ -319,14 +356,14 @@ namespace MediaShelfApp
                         break;
                     }
                 }
-
+                moviesjson = movieList;
             }
         }
 
         //Books API Call
         private void booksAPICall()
         {
-            using (var client = new HttpClient()) 
+            using (var client = new HttpClient())
             {
                 string query = searchBox1.Text.ToString();
 
@@ -347,7 +384,7 @@ namespace MediaShelfApp
                     try
                     {
                         dataGridView1.Rows.Add(bookList.items[i].volumeInfo.title.ToString(), bookList.items[i].volumeInfo.description.ToString());
-                                             
+
                     }
                     catch (Exception ex)
                     {
@@ -355,12 +392,13 @@ namespace MediaShelfApp
                         break;
                     }
                 }
+                booksjson = bookList;
             }
         }
 
-        private void musicAPICall() 
+        private void musicAPICall()
         {
-            using (var client = new HttpClient()) 
+            using (var client = new HttpClient())
             {
                 string query = searchBox1.Text.ToString();
 
@@ -381,7 +419,7 @@ namespace MediaShelfApp
                     try
                     {
                         dataGridView1.Rows.Add(musicList.data[i].title.ToString(), musicList.data[i].artist.name.ToString());
-             
+
                     }
                     catch (Exception ex)
                     {
@@ -389,12 +427,13 @@ namespace MediaShelfApp
                         break;
                     }
                 }
+                musicjson = musicList;
             }
         }
 
         private void gamesAPICall()
-        { 
-            using (var client = new HttpClient()) 
+        {
+            using (var client = new HttpClient())
             {
                 string query = searchBox1.Text.ToString();
 
@@ -421,7 +460,8 @@ namespace MediaShelfApp
                         break;
                     }
                 }
-            } 
+                gamesjson = gamesList;
+            }
         }
 
         //useless but do not remove it breaks
@@ -433,6 +473,84 @@ namespace MediaShelfApp
         private void SearchResults_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
+        }
+
+        private void SearchResults_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+        private void openDetailedItemListingForm(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int mediaType)
+        {
+            Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form(title, creator, genre, release_date, description, mediaImageLink, mediaType);
+            window.setCaller(this);
+            this.Hide();
+            window.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var rowIndex = dataGridView1.CurrentRow.Index;
+            string title;
+            string creator;
+            string genre;
+            string release_date;
+            string description;
+            string mediaImageLink;
+
+            switch (comboBox1.SelectedIndex) // calls API depended on comboBox selection
+            {
+                case 0:
+                    //movies
+
+                    title = moviesjson.results[rowIndex].original_title.ToString();
+                    creator = "";
+                    release_date = moviesjson.results[rowIndex].release_date.ToString();
+                    genre = "";
+                    description = moviesjson.results[rowIndex].overview.ToString();
+                    mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
+
+                    openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0);
+
+                    break;
+                case 1:
+                    //books
+                    title = booksjson.items[rowIndex].volumeInfo.title.ToString();
+                    string author = booksjson.items[rowIndex].volumeInfo.authors[0].ToString();
+                    release_date = booksjson.items[rowIndex].volumeInfo.publishedDate.ToString();
+                    string publisher = booksjson.items[rowIndex].volumeInfo.publisher.ToString();
+                    description = booksjson.items[rowIndex].volumeInfo.description.ToString();
+                    mediaImageLink = booksjson.items[rowIndex].volumeInfo.imageLinks.thumbnail;
+
+                    openDetailedItemListingForm(title, author, publisher, release_date, description, mediaImageLink, 1);
+                    break;
+                case 2:
+                    //music
+                    title = musicjson.data[rowIndex].title.ToString();
+                    string artist = musicjson.data[rowIndex].artist.name.ToString();
+                    string album = musicjson.data[rowIndex].album.title;
+                    release_date = "";
+                    description = "";
+                    mediaImageLink = musicjson.data[rowIndex].album.cover_big;
+
+                    openDetailedItemListingForm(title, artist, album, release_date, description, mediaImageLink, 2); ;
+                    break;
+                case 3:
+                    //games
+
+                    title = gamesjson.results[rowIndex].name;
+                    string platform = gamesjson.results[rowIndex].parent_platforms[0].platform.name.ToString();
+                    genre = gamesjson.results[rowIndex].genres[1].name.ToString();
+                    release_date = gamesjson.results[rowIndex].released;
+                    description = "";
+                    mediaImageLink = gamesjson.results[rowIndex].background_image;
+
+
+                    openDetailedItemListingForm(title, platform, genre, release_date, description, mediaImageLink, 3);
+
+                    break;
+            }
         }
     }
 }

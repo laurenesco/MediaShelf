@@ -28,170 +28,233 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnNavBack = new System.Windows.Forms.Button();
-            this.picImage = new System.Windows.Forms.PictureBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.lblDescTitle = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblGenre = new System.Windows.Forms.Label();
-            this.lblCreator = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.cmbAddToList = new System.Windows.Forms.ComboBox();
-            this.btnFavorite = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
-            this.SuspendLayout();
+            splitContainer1 = new SplitContainer();
+            btnNavBack = new Button();
+            picMediaImage = new PictureBox();
+            txtDescriptionValue = new TextBox();
+            lblReleaseDateValue = new Label();
+            lblGenreValue = new Label();
+            lblCreatorValue = new Label();
+            lblDescriptionValue = new Label();
+            lblDescriptionTitle = new Label();
+            lblReleaseDateTitle = new Label();
+            lblGenreTitle = new Label();
+            lblCreatorTitle = new Label();
+            lblTitle = new Label();
+            cmbAddToList = new ComboBox();
+            btnFavorite = new Button();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picMediaImage).BeginInit();
+            SuspendLayout();
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Margin = new Padding(5);
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnNavBack);
-            this.splitContainer1.Panel1.Controls.Add(this.picImage);
+            splitContainer1.Panel1.Controls.Add(btnNavBack);
+            splitContainer1.Panel1.Controls.Add(picMediaImage);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.lblDescription);
-            this.splitContainer1.Panel2.Controls.Add(this.lblDescTitle);
-            this.splitContainer1.Panel2.Controls.Add(this.lblDate);
-            this.splitContainer1.Panel2.Controls.Add(this.lblGenre);
-            this.splitContainer1.Panel2.Controls.Add(this.lblCreator);
-            this.splitContainer1.Panel2.Controls.Add(this.lblTitle);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbAddToList);
-            this.splitContainer1.Panel2.Controls.Add(this.btnFavorite);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 266;
-            this.splitContainer1.TabIndex = 0;
+            splitContainer1.Panel2.Controls.Add(txtDescriptionValue);
+            splitContainer1.Panel2.Controls.Add(lblReleaseDateValue);
+            splitContainer1.Panel2.Controls.Add(lblGenreValue);
+            splitContainer1.Panel2.Controls.Add(lblCreatorValue);
+            splitContainer1.Panel2.Controls.Add(lblDescriptionValue);
+            splitContainer1.Panel2.Controls.Add(lblDescriptionTitle);
+            splitContainer1.Panel2.Controls.Add(lblReleaseDateTitle);
+            splitContainer1.Panel2.Controls.Add(lblGenreTitle);
+            splitContainer1.Panel2.Controls.Add(lblCreatorTitle);
+            splitContainer1.Panel2.Controls.Add(lblTitle);
+            splitContainer1.Panel2.Controls.Add(cmbAddToList);
+            splitContainer1.Panel2.Controls.Add(btnFavorite);
+            splitContainer1.Size = new Size(1524, 893);
+            splitContainer1.SplitterDistance = 601;
+            splitContainer1.SplitterWidth = 6;
+            splitContainer1.TabIndex = 0;
             // 
             // btnNavBack
             // 
-            this.btnNavBack.Location = new System.Drawing.Point(18, 395);
-            this.btnNavBack.Name = "btnNavBack";
-            this.btnNavBack.Size = new System.Drawing.Size(105, 29);
-            this.btnNavBack.TabIndex = 1;
-            this.btnNavBack.Text = "Back";
-            this.btnNavBack.UseVisualStyleBackColor = true;
-            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
+            btnNavBack.Location = new Point(29, 10);
+            btnNavBack.Margin = new Padding(5);
+            btnNavBack.Name = "btnNavBack";
+            btnNavBack.Size = new Size(171, 46);
+            btnNavBack.TabIndex = 1;
+            btnNavBack.Text = "Back";
+            btnNavBack.UseVisualStyleBackColor = true;
+            btnNavBack.Click += btnNavBack_Click;
             // 
-            // picImage
+            // picMediaImage
             // 
-            this.picImage.Location = new System.Drawing.Point(18, 41);
-            this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(227, 212);
-            this.picImage.TabIndex = 0;
-            this.picImage.TabStop = false;
+            picMediaImage.Location = new Point(29, 90);
+            picMediaImage.Margin = new Padding(5);
+            picMediaImage.Name = "picMediaImage";
+            picMediaImage.Size = new Size(369, 339);
+            picMediaImage.SizeMode = PictureBoxSizeMode.AutoSize;
+            picMediaImage.TabIndex = 0;
+            picMediaImage.TabStop = false;
             // 
-            // lblDescription
+            // txtDescriptionValue
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(49, 291);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(163, 20);
-            this.lblDescription.TabIndex = 7;
-            this.lblDescription.Text = "Description goes here...";
+            txtDescriptionValue.Location = new Point(89, 487);
+            txtDescriptionValue.Multiline = true;
+            txtDescriptionValue.Name = "txtDescriptionValue";
+            txtDescriptionValue.ReadOnly = true;
+            txtDescriptionValue.ScrollBars = ScrollBars.Vertical;
+            txtDescriptionValue.Size = new Size(783, 351);
+            txtDescriptionValue.TabIndex = 11;
             // 
-            // lblDescTitle
+            // lblReleaseDateValue
             // 
-            this.lblDescTitle.AutoSize = true;
-            this.lblDescTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDescTitle.Location = new System.Drawing.Point(50, 264);
-            this.lblDescTitle.Name = "lblDescTitle";
-            this.lblDescTitle.Size = new System.Drawing.Size(89, 20);
-            this.lblDescTitle.TabIndex = 6;
-            this.lblDescTitle.Text = "Description";
+            lblReleaseDateValue.AutoSize = true;
+            lblReleaseDateValue.Location = new Point(265, 350);
+            lblReleaseDateValue.Name = "lblReleaseDateValue";
+            lblReleaseDateValue.Size = new Size(0, 32);
+            lblReleaseDateValue.TabIndex = 10;
             // 
-            // lblDate
+            // lblGenreValue
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(49, 183);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(99, 20);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "Release Date:";
+            lblGenreValue.AutoSize = true;
+            lblGenreValue.Location = new Point(211, 299);
+            lblGenreValue.Name = "lblGenreValue";
+            lblGenreValue.Size = new Size(0, 32);
+            lblGenreValue.TabIndex = 9;
             // 
-            // lblGenre
+            // lblCreatorValue
             // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Location = new System.Drawing.Point(49, 151);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(51, 20);
-            this.lblGenre.TabIndex = 4;
-            this.lblGenre.Text = "Genre:";
+            lblCreatorValue.AutoSize = true;
+            lblCreatorValue.Location = new Point(211, 247);
+            lblCreatorValue.Name = "lblCreatorValue";
+            lblCreatorValue.Size = new Size(0, 32);
+            lblCreatorValue.TabIndex = 8;
             // 
-            // lblCreator
+            // lblDescriptionValue
             // 
-            this.lblCreator.AutoSize = true;
-            this.lblCreator.Location = new System.Drawing.Point(49, 118);
-            this.lblCreator.Name = "lblCreator";
-            this.lblCreator.Size = new System.Drawing.Size(61, 20);
-            this.lblCreator.TabIndex = 3;
-            this.lblCreator.Text = "Creator:";
+            lblDescriptionValue.AutoSize = true;
+            lblDescriptionValue.Location = new Point(87, 487);
+            lblDescriptionValue.Margin = new Padding(5, 0, 5, 0);
+            lblDescriptionValue.MaximumSize = new Size(750, 0);
+            lblDescriptionValue.Name = "lblDescriptionValue";
+            lblDescriptionValue.Size = new Size(0, 32);
+            lblDescriptionValue.TabIndex = 7;
+            // 
+            // lblDescriptionTitle
+            // 
+            lblDescriptionTitle.AutoSize = true;
+            lblDescriptionTitle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDescriptionTitle.Location = new Point(88, 443);
+            lblDescriptionTitle.Margin = new Padding(5, 0, 5, 0);
+            lblDescriptionTitle.Name = "lblDescriptionTitle";
+            lblDescriptionTitle.Size = new Size(146, 32);
+            lblDescriptionTitle.TabIndex = 6;
+            lblDescriptionTitle.Text = "Description";
+            // 
+            // lblReleaseDateTitle
+            // 
+            lblReleaseDateTitle.AutoSize = true;
+            lblReleaseDateTitle.Location = new Point(89, 350);
+            lblReleaseDateTitle.Margin = new Padding(5, 0, 5, 0);
+            lblReleaseDateTitle.Name = "lblReleaseDateTitle";
+            lblReleaseDateTitle.Size = new Size(156, 32);
+            lblReleaseDateTitle.TabIndex = 5;
+            lblReleaseDateTitle.Text = "Release Date:";
+            // 
+            // lblGenreTitle
+            // 
+            lblGenreTitle.AutoSize = true;
+            lblGenreTitle.Location = new Point(88, 299);
+            lblGenreTitle.Margin = new Padding(5, 0, 5, 0);
+            lblGenreTitle.Name = "lblGenreTitle";
+            lblGenreTitle.Size = new Size(83, 32);
+            lblGenreTitle.TabIndex = 4;
+            lblGenreTitle.Text = "Genre:";
+            // 
+            // lblCreatorTitle
+            // 
+            lblCreatorTitle.AutoSize = true;
+            lblCreatorTitle.Location = new Point(88, 247);
+            lblCreatorTitle.Margin = new Padding(5, 0, 5, 0);
+            lblCreatorTitle.Name = "lblCreatorTitle";
+            lblCreatorTitle.Size = new Size(97, 32);
+            lblCreatorTitle.TabIndex = 3;
+            lblCreatorTitle.Text = "Creator:";
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(39, 43);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(103, 57);
-            this.lblTitle.TabIndex = 2;
-            this.lblTitle.Text = "Title";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 25.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.Location = new Point(70, 90);
+            lblTitle.Margin = new Padding(5, 0, 5, 0);
+            lblTitle.MaximumSize = new Size(750, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(166, 91);
+            lblTitle.TabIndex = 2;
+            lblTitle.Text = "Title";
             // 
             // cmbAddToList
             // 
-            this.cmbAddToList.FormattingEnabled = true;
-            this.cmbAddToList.Location = new System.Drawing.Point(333, 56);
-            this.cmbAddToList.Name = "cmbAddToList";
-            this.cmbAddToList.Size = new System.Drawing.Size(171, 28);
-            this.cmbAddToList.TabIndex = 1;
+            cmbAddToList.FormattingEnabled = true;
+            cmbAddToList.Location = new Point(361, 16);
+            cmbAddToList.Margin = new Padding(5);
+            cmbAddToList.Name = "cmbAddToList";
+            cmbAddToList.Size = new Size(275, 40);
+            cmbAddToList.TabIndex = 1;
             // 
             // btnFavorite
             // 
-            this.btnFavorite.Location = new System.Drawing.Point(385, 100);
-            this.btnFavorite.Name = "btnFavorite";
-            this.btnFavorite.Size = new System.Drawing.Size(119, 29);
-            this.btnFavorite.TabIndex = 0;
-            this.btnFavorite.Text = "Favorite";
-            this.btnFavorite.UseVisualStyleBackColor = true;
+            btnFavorite.Location = new Point(663, 12);
+            btnFavorite.Margin = new Padding(5);
+            btnFavorite.Name = "btnFavorite";
+            btnFavorite.Size = new Size(193, 46);
+            btnFavorite.TabIndex = 0;
+            btnFavorite.Text = "Favorite";
+            btnFavorite.UseVisualStyleBackColor = true;
+            btnFavorite.Click += btnFavorite_Click;
             // 
             // Detailed_Item_Listing_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.splitContainer1);
-            this.Name = "Detailed_Item_Listing_Form";
-            this.Text = "Detailed Item Listing";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1524, 893);
+            Controls.Add(splitContainer1);
+            Margin = new Padding(5);
+            Name = "Detailed_Item_Listing_Form";
+            Text = "Detailed Item Listing";
+            FormClosing += Detailed_Item_Listing_Form_FormClosing;
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picMediaImage).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private SplitContainer splitContainer1;
         private Button btnNavBack;
-        private PictureBox picImage;
+        private PictureBox picMediaImage;
         private Button btnFavorite;
-        private Label lblDescription;
-        private Label lblDescTitle;
-        private Label lblDate;
-        private Label lblGenre;
-        private Label lblCreator;
+        private Label lblDescriptionValue;
+        private Label lblDescriptionTitle;
+        private Label lblReleaseDateTitle;
+        private Label lblGenreTitle;
+        private Label lblCreatorTitle;
         private Label lblTitle;
         private ComboBox cmbAddToList;
+        private Label lblReleaseDateValue;
+        private Label lblGenreValue;
+        private Label lblCreatorValue;
+        private TextBox txtDescriptionValue;
     }
 }
