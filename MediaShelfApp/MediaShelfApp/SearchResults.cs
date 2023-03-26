@@ -54,36 +54,60 @@ namespace MediaShelfApp
             this.searchText = text;
         }
 
-        // What API parses for
-        public class MovieInfo
-        {
+        /// <summary>
+        /// API CLASSES:
+        /// 
+        /// The API classes take a JSON file from the API call and assigns it to the associated API class. In each class it stores each result as a C# object, which we can now use and pull the information out of.
+        /// All the information gets stored within an array List, which can be pulled using an index value.
+        /// 
+        /// How the classes work:
+        /// 
+        /// All API classes have a 'root' class based on the JSON file, which is what is displayed first.
+        /// The root class will connect to another class through a list, which allows the JSON parser to get the info that is nested within the JSON file.
+        /// EX: bookList.items[i].volumeInfo.description -> bookList is assigned to the Root Class Variable, which pulls from the items list, which pulls from the volumeInfo list, which then gets the description for index i.
+        /// Start from the root class, then navigate to the next class with the List of the same name
+        /// 
+        /// MOST INFORMATION IS NOT USED, ONLY THERE IF NEEDED AT LATER DATE
+        /// 
+        /// </summary>
+
+
+
+        ////// MOVIES API CLASSES //////
+
+        // ANOTHER EXAMPLE ON OBJECT STRUCTURE
+        // movieList.results[i].original_title -> movieList (defined obj assinged to moviesRoot),
+        // gets results from index [i], which gets C# object from moviesResult "original_title"
+
+
+        public class moviesResult 
+        {   
+            // Name of object has to match name of JSON object
+            public bool adult { get; set; } // C# object assigned at apiCall function below
+            public string backdrop_path { get; set; }
+            public List<int> genre_ids { get; set; }
+            public int id { get; set; }
+            public string original_language { get; set; }
             public string original_title { get; set; }
             public string overview { get; set; }
-        }
-
-        // Separates the results in JSON and puts it into a list format
-        public class MovieResult
-        {
-            public List<MovieInfo> results { get; set; }
-        }
-
-        // BOOKS API
-
-        public class BookInfo
-        {
-            //public string volumeInfo { get; set; }
+            public double popularity { get; set; }
+            public string poster_path { get; set; }
+            public string release_date { get; set; }
             public string title { get; set; }
-            public string description { get; set; }
+            public bool video { get; set; }
+            public double vote_average { get; set; }
+            public int vote_count { get; set; }
         }
-
-        public class BookResult
+               
+        public class moviesRoot // ROOT CLASS FOR MOVIES //
         {
-            public List<BookInfo> volumeInfo { get; set; }
-            //public string title { get; set; }
-            //public string description { get; set; }
-
-
+            public List<moviesResult> results { get; set; } // ^ above is all info for results
         }
+
+
+
+
+        ////// BOOKS API CLASSES //////
 
         public class Item
         {
@@ -92,18 +116,44 @@ namespace MediaShelfApp
             public string etag { get; set; }
             public string selfLink { get; set; }
             public VolumeInfo volumeInfo { get; set; }
-            //public SaleInfo saleInfo { get; set; }
+            
+
+            // Might not need, let me know if needed
             //public AccessInfo accessInfo { get; set; }
            // public SearchInfo searchInfo { get; set; }
+        }
+
+        public class ImageLinks
+        {
+            public string smallThumbnail { get; set; }
+            public string thumbnail { get; set; }
         }
 
         public class VolumeInfo
         {
             public string title { get; set; }
-            public string description { get; set; }
+            public List<string> authors { get; set; }
+            public string publisher { get; set; }
+            public string publishedDate { get; set; }
+            public string description { get; set; }            
+            public int pageCount { get; set; }
+            public string printType { get; set; }
+            public List<string> categories { get; set; }
+            public double averageRating { get; set; }
+            public int ratingsCount { get; set; }
+            public string maturityRating { get; set; }
+            public bool allowAnonLogging { get; set; }
+            public string contentVersion { get; set; }           
+            public ImageLinks imageLinks { get; set; }
+            public string language { get; set; }
+            public string previewLink { get; set; }
+            public string infoLink { get; set; }
+            public string canonicalVolumeLink { get; set; }
+            public string subtitle { get; set; }
+            public bool? comicsContent { get; set; }
         }
 
-        public class Root
+        public class booksRoot // ROOT CLASS FOR BOOKS //
         {
             public string kind { get; set; }
             public int totalItems { get; set; }
@@ -111,8 +161,11 @@ namespace MediaShelfApp
        
         }
 
-        //Deezer API for MUSIC
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
+
+
+
+        ////// MUSIC API CLASSES //////
         public class Album
         {
             public int id { get; set; }
@@ -161,15 +214,19 @@ namespace MediaShelfApp
             public string type { get; set; }
         }
 
-        public class musicRoot
+        public class musicRoot // ROOT CLASS FOR MUSIC //
         {
             public List<Datum> data { get; set; }
             public int total { get; set; }
             public string next { get; set; }
         }
 
-        //GAMES API CLASSES
-        public class gamesRoot
+
+
+
+        ////// GAMES API CLASSES //////
+        
+        public class gamesRoot // ROOT CLASS FOR GAMES // 
         {
             public int count { get; set; }
             public string next { get; set; }
@@ -182,32 +239,29 @@ namespace MediaShelfApp
             public string slug { get; set; }
             public string name { get; set; }
             public int playtime { get; set; }
-            //public List<Platform> platforms { get; set; }
-            //public List<Store> stores { get; set; }
+            //public List<Platform> platforms { get; set; }   // Leave commented
+            
             public string released { get; set; }
             public bool tba { get; set; }
             public string background_image { get; set; }
             public double rating { get; set; }
             public int rating_top { get; set; }
-            //public List<Rating> ratings { get; set; }
+            
             public int ratings_count { get; set; }
             public int reviews_text_count { get; set; }
             public int added { get; set; }
-            //public AddedByStatus added_by_status { get; set; }
+            
             public int? metacritic { get; set; }
             public int suggestions_count { get; set; }
             public DateTime updated { get; set; }
             public int id { get; set; }
             public string score { get; set; }
-            public object clip { get; set; }
-            //public List<Tag> tags { get; set; }
-            //public EsrbRating esrb_rating { get; set; }
+            public object clip { get; set; }           
             public object user_game { get; set; }
             public int reviews_count { get; set; }
             public int community_rating { get; set; }
             public string saturated_color { get; set; }
-            public string dominant_color { get; set; }
-            //public List<ShortScreenshot> short_screenshots { get; set; }
+            public string dominant_color { get; set; }          
             public List<ParentPlatform> parent_platforms { get; set; }
             public List<Genre> genres { get; set; }
         }
@@ -218,9 +272,10 @@ namespace MediaShelfApp
             public string name { get; set; }
             public string slug { get; set; }
         }
+
         public class ParentPlatform
         {
-            public Platform platform { get; set; }
+            public Platform platform { get; set; } // goes to Platform2 (below)
         }
 
         public class Platform
@@ -249,9 +304,11 @@ namespace MediaShelfApp
             this.Close();
         }
 
+
+        // Users clicks Search button
         private void button2_Click(object sender, EventArgs e)
         {
-            switch (comboBox1.SelectedIndex)
+            switch (comboBox1.SelectedIndex) // calls API depended on comboBox selection
             {
                 case 0:
                     movieAPICall();
@@ -267,7 +324,6 @@ namespace MediaShelfApp
                     break;
             }    
         }
-        //change to datagrid
 
 
         //////////////////////////
@@ -275,34 +331,35 @@ namespace MediaShelfApp
         //////////////////////////
         /// <summary>
         /// 
-        /// All API call basically function the same, most code comment will be laid out in first API call
+        /// All API call basically function the same
         /// 
+        /// movieAPICall() will have most comments to explain how all API calls work
+        /// 
+        /// TIP! : To run own API call, go to your browser and copy link from new Uri, ex: https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=[QUERY] and add query, works for all URIs, helps get
+        ///            better understanding of JSON file. Included structure needed for API call in each function.
         /// </summary>
-        
 
 
-
-        //Movie API Call
+        // MOVIES/TV SHOWS API CALL //
         private void movieAPICall()
         {
-            using (var client = new HttpClient())
+            using (var client = new HttpClient()) // allows to connect to HTTP
             {
 
-                string query = searchBox1.Text.ToString();
+                string query = searchBox1.Text.ToString(); // user types in Search Box
 
-                // API Key is in code, need to clean up and add as private variables at later date / clean up URI as well
+                // API call for books REPLACE [QUERY] =https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=[QUERY]
 
-                
-                var endpoint = new Uri("https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=" + query);
-                var result = client.GetAsync(endpoint).Result;
-                var json = result.Content.ReadAsStringAsync().Result;
-                var movieList = JsonConvert.DeserializeObject<MovieResult>(json);
+                var endpoint = new Uri("https://api.themoviedb.org/3/search/movie?api_key=d076abf5fac2dab8dfeaca89a50f37a2&query=" + query); // endpoint = HTTP URL for API call
+                var result = client.GetAsync(endpoint).Result; // checks API status to get successful API call, Code 200 for most API = successful API call
+                var json = result.Content.ReadAsStringAsync().Result; // Confirms successful API call then pulls the JSON 
+                moviesRoot movieList = JsonConvert.DeserializeObject<moviesRoot>(json); // ROOT CLASS VARIABLE  //Parses JSON and assigns it as a C# object to assigned rootClass
 
-                dataGridView1.Rows.Clear();
+                dataGridView1.Rows.Clear(); // Clears datagrid view and refreshes
                 dataGridView1.Columns.Clear();
                 dataGridView1.Refresh();
 
-                dataGridView1.Columns.Add("Title", "Title");
+                dataGridView1.Columns.Add("Title", "Title"); //Adds columns to datagrid, to keep alignment with displayed information, add column with name of info
                 dataGridView1.Columns.Add("Overview", "Overview");
 
                 //Displays Top 10 results, breaks loop if none
@@ -310,12 +367,12 @@ namespace MediaShelfApp
                 {
                     try
                     {                     
-                        dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString());
+                        dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString()); // DISPLAYS information on datagrid, must add columns above to display info correctly/formatted correctly
                           
                     }
                     catch (Exception ex)
                     {
-                        richTextBox1.AppendText(ex.Message);
+                        richTextBox1.AppendText(ex.Message); // Displays error in text box on search results, subject to change
                         break;
                     }
                 }
@@ -323,25 +380,26 @@ namespace MediaShelfApp
             }
         }
 
-        //Books API Call
+        // BOOKS API CALL //
         private void booksAPICall()
         {
             using (var client = new HttpClient()) 
             {
                 string query = searchBox1.Text.ToString();
 
+                // API call for books REPLACE [QUERY] = https://www.googleapis.com/books/v1/volumes?q=[QUERY]&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ
+
                 var endpoint = new Uri("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ");
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
-                Root bookList = JsonConvert.DeserializeObject<Root>(json);
+                booksRoot bookList = JsonConvert.DeserializeObject<booksRoot>(json);
 
                 dataGridView1.Rows.Clear();
                 dataGridView1.Columns.Clear();
                 dataGridView1.Refresh();
 
                 dataGridView1.Columns.Add("Title", "Title");
-                dataGridView1.Columns.Add("Overview", "Overview");
-                //Displays Top 10 results, breaks loop if none
+                dataGridView1.Columns.Add("Overview", "Overview");               
                 for (int i = 0; i < 10; i++)
                 {
                     try
@@ -358,14 +416,17 @@ namespace MediaShelfApp
             }
         }
 
+
+        // MUSIC API CALL // 
         private void musicAPICall() 
         {
             using (var client = new HttpClient()) 
             {
                 string query = searchBox1.Text.ToString();
 
-                var endpoint = new Uri("https://api.deezer.com/search/track?q=" + query);
-                var result = client.GetAsync(endpoint).Result;
+                // API call for music REPLACE [QUERY] = https://api.deezer.com/search/track?q=[QUERY]
+                var endpoint = new Uri("https://api.deezer.com/search/track?q=" + query); // NO API KEY NEEDED FOR DEEZER
+                var result = client.GetAsync(endpoint).Result; 
                 var json = result.Content.ReadAsStringAsync().Result;
                 musicRoot musicList = JsonConvert.DeserializeObject<musicRoot>(json);
 
@@ -391,13 +452,15 @@ namespace MediaShelfApp
                 }
             }
         }
-
+        
+        // GAMES API CALL //
         private void gamesAPICall()
         { 
             using (var client = new HttpClient()) 
             {
                 string query = searchBox1.Text.ToString();
 
+                // API call for games REPLACE [QUERY] = https://api.rawg.io/api/games?key=4c2156667b7e46e1b3701085a1150dff&search=[QUERY]
                 var endpoint = new Uri("https://api.rawg.io/api/games?key=4c2156667b7e46e1b3701085a1150dff&search=" + query);
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
@@ -424,15 +487,21 @@ namespace MediaShelfApp
             } 
         }
 
-        //useless but do not remove it breaks
+        
+        /// END OF API CALLS /// 
+        
+        
+        
+        //useless but DO NOT REMOVE; breaks program
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        // Search Results Form Loads
         private void SearchResults_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0; //pre-sets comboBox to Movies/TV Shows
         }
     }
 }
