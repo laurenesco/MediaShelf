@@ -1,4 +1,4 @@
-﻿namespace MediaShelfApp
+namespace MediaShelfApp
 {
     partial class SearchResults
     {
@@ -248,6 +248,7 @@
             dataGridView1.Size = new Size(724, 607);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+
             // 
             // sqlCommand1
             // 
@@ -290,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion

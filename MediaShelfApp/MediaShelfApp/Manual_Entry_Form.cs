@@ -45,7 +45,7 @@ namespace MediaShelfApp
             this.caller = caller;
 
             // Initiate Database Connection
-            dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz;");
+            dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
         }
 
         // Set caller method - this variable allows the back button to reopen the calling form
@@ -474,29 +474,47 @@ namespace MediaShelfApp
                 String description = txtDescriptionText.Text;
                 DateTime releaseDate = dtpReleaseDate.Value;
                 int listID = getListID(list);
-                Byte[] icon;
+                Byte[]? icon;
 
-                FileStream iconFile = new FileStream(picboxImage.ImageLocation, FileMode.Open, FileAccess.Read);
-                icon = new Byte[iconFile.Length];
-                iconFile.Read(icon, 0, Convert.ToInt32(iconFile.Length));
-                iconFile.Close();
+                //gets byte[] of uploaded image, if available
+                if (picboxImage.Image != null)
+                {
+                    FileStream iconFile = new FileStream(picboxImage.ImageLocation, FileMode.Open, FileAccess.Read);
+                    icon = new Byte[iconFile.Length];
+                    iconFile.Read(icon, 0, Convert.ToInt32(iconFile.Length));
+                    iconFile.Close();
+                }
+                else
+                    icon = null;
 
                 // Open connection and create command
                 dbConnection.Open();
                 SqlCommand cmdInsertMedia = dbConnection.CreateCommand();
 
-                // Construct insertion query
-                cmdInsertMedia.CommandText = @"INSERT INTO ITEMS 
-                                               (ITEM_API,
-                                               ITEM_MEDIA_TYPE,
-                                               ITEM_TITLE,
-                                               ITEM_CREATOR,   
-                                               ITEM_RELEASE_DATE,
-                                               ITEM_ICON,
-                                               ITEM_DESCRIPTION,
-                                               ITEM_LIST_ID,
-                                               ITEM_GENRE)
-                                               VALUES(@api, @type, @title, @creator, @date, @icon, @desc, @list, @genre)";
+                // Construct insertion query when user uploads an image
+                if (icon != null)
+                    cmdInsertMedia.CommandText = @"INSERT INTO ITEMS 
+                                                   (ITEM_API,
+                                                   ITEM_MEDIA_TYPE,
+                                                   ITEM_TITLE,
+                                                   ITEM_CREATOR,   
+                                                   ITEM_RELEASE_DATE,
+                                                   ITEM_ICON,
+                                                   ITEM_DESCRIPTION,
+                                                   ITEM_LIST_ID,
+                                                   ITEM_GENRE)
+                                                   VALUES(@api, @type, @title, @creator, @date, @icon, @desc, @list, @genre)";
+                else //construct insertion query when user doesn't upload an image
+                    cmdInsertMedia.CommandText = @"INSERT INTO ITEMS 
+                                                   (ITEM_API,
+                                                   ITEM_MEDIA_TYPE,
+                                                   ITEM_TITLE,
+                                                   ITEM_CREATOR,   
+                                                   ITEM_RELEASE_DATE,
+                                                   ITEM_DESCRIPTION,
+                                                   ITEM_LIST_ID,
+                                                   ITEM_GENRE)
+                                                   VALUES(@api, @type, @title, @creator, @date, @desc, @list, @genre)";
 
                 // Parameterize the variables for system security
                 cmdInsertMedia.Parameters.AddWithValue("@api", 0); // API ID 0 signifies manual entry - No API affiliation
@@ -504,9 +522,10 @@ namespace MediaShelfApp
                 cmdInsertMedia.Parameters.AddWithValue("@title", title);
                 cmdInsertMedia.Parameters.AddWithValue("@creator", creator);
                 cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
-                cmdInsertMedia.Parameters.AddWithValue("@icon", icon); 
+                if (icon != null)
+                    cmdInsertMedia.Parameters.AddWithValue("@icon", icon); 
                 cmdInsertMedia.Parameters.AddWithValue("@desc", description);
-                cmdInsertMedia.Parameters.AddWithValue("@list", listID); 
+                cmdInsertMedia.Parameters.AddWithValue("@list", listID);
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
 
 
@@ -551,8 +570,8 @@ namespace MediaShelfApp
                 // Assign result to ID variable
                 if (reader.Read())
                 {
-                    ID = Convert.ToInt32(reader[0]); 
-                } 
+                    ID = Convert.ToInt32(reader[0]);
+                }
 
                 // Close resources
                 reader.Close();
@@ -575,11 +594,13 @@ namespace MediaShelfApp
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
             if (open.ShowDialog() == DialogResult.OK)
-                imagePath = open.FileName;
+            {
+                imagePath = open.FileName; 
 
-            picboxImage.ImageLocation = imagePath;
-            picboxImage.BackgroundImage = null;
-            picboxImage.BackColor = Color.Transparent;
+                picboxImage.ImageLocation = imagePath;
+                picboxImage.BackgroundImage = null;
+                picboxImage.BackColor = Color.Transparent;
+            }
         }
     }
 }
