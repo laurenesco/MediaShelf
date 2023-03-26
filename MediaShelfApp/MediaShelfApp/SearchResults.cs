@@ -510,12 +510,6 @@ namespace MediaShelfApp
             comboBox1.SelectedIndex = 0; //pre-sets comboBox to Movies/TV Shows
         }
 
-        private void SearchResults_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-
         private void openDetailedItemListingForm(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int mediaType)
         {
             Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form(title, creator, genre, release_date, description, mediaImageLink, mediaType);

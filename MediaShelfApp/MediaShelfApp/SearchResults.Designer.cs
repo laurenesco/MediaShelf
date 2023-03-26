@@ -291,7 +291,6 @@ namespace MediaShelfApp
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SearchResults";
             this.Text = "SearchResults";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchResults_FormClosing);
             this.Load += new System.EventHandler(this.SearchResults_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
