@@ -185,7 +185,7 @@ namespace MediaShelfApp
             this.checkedListBox1.Location = new System.Drawing.Point(27, 40);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(74, 66);
+            this.checkedListBox1.Size = new System.Drawing.Size(117, 66);
             this.checkedListBox1.TabIndex = 5;
             // 
             // label2

@@ -528,57 +528,63 @@ namespace MediaShelfApp
             string description;
             string mediaImageLink;
 
-            switch (comboBox1.SelectedIndex) // calls API depended on comboBox selection
+            try
             {
-                case 0:
-                    //movies
+                switch (comboBox1.SelectedIndex) // calls API depended on comboBox selection
+                {
+                    case 0:
+                        //movies
 
-                    title = moviesjson.results[rowIndex].original_title.ToString();
-                    creator = "";
-                    release_date = moviesjson.results[rowIndex].release_date.ToString();
-                    genre = "";
-                    description = moviesjson.results[rowIndex].overview.ToString();
-                    mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
+                        title = moviesjson.results[rowIndex].original_title.ToString();
+                        creator = "";
+                        release_date = moviesjson.results[rowIndex].release_date.ToString();
+                        genre = "";
+                        description = moviesjson.results[rowIndex].overview.ToString();
+                        mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
 
-                    openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0);
+                        openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0);
 
-                    break;
-                case 1:
-                    //books
-                    title = booksjson.items[rowIndex].volumeInfo.title.ToString();
-                    string author = booksjson.items[rowIndex].volumeInfo.authors[0].ToString();
-                    release_date = booksjson.items[rowIndex].volumeInfo.publishedDate.ToString();
-                    string publisher = booksjson.items[rowIndex].volumeInfo.publisher.ToString();
-                    description = booksjson.items[rowIndex].volumeInfo.description.ToString();
-                    mediaImageLink = booksjson.items[rowIndex].volumeInfo.imageLinks.thumbnail;
+                        break;
+                    case 1:
+                        //books
+                        title = booksjson.items[rowIndex].volumeInfo.title.ToString();
+                        string author = booksjson.items[rowIndex].volumeInfo.authors[0].ToString();
+                        release_date = booksjson.items[rowIndex].volumeInfo.publishedDate.ToString();
+                        string publisher = booksjson.items[rowIndex].volumeInfo.publisher.ToString();
+                        description = booksjson.items[rowIndex].volumeInfo.description.ToString();
+                        mediaImageLink = booksjson.items[rowIndex].volumeInfo.imageLinks.thumbnail;
 
-                    openDetailedItemListingForm(title, author, publisher, release_date, description, mediaImageLink, 1);
-                    break;
-                case 2:
-                    //music
-                    title = musicjson.data[rowIndex].title.ToString();
-                    string artist = musicjson.data[rowIndex].artist.name.ToString();
-                    string album = musicjson.data[rowIndex].album.title;
-                    release_date = "";
-                    description = "";
-                    mediaImageLink = musicjson.data[rowIndex].album.cover_big;
+                        openDetailedItemListingForm(title, author, publisher, release_date, description, mediaImageLink, 1);
+                        break;
+                    case 2:
+                        //music
+                        title = musicjson.data[rowIndex].title.ToString();
+                        string artist = musicjson.data[rowIndex].artist.name.ToString();
+                        string album = musicjson.data[rowIndex].album.title;
+                        release_date = "";
+                        description = "";
+                        mediaImageLink = musicjson.data[rowIndex].album.cover_big;
 
-                    openDetailedItemListingForm(title, artist, album, release_date, description, mediaImageLink, 2); ;
-                    break;
-                case 3:
-                    //games
+                        openDetailedItemListingForm(title, artist, album, release_date, description, mediaImageLink, 2); ;
+                        break;
+                    case 3:
+                        //games
 
-                    title = gamesjson.results[rowIndex].name;
-                    string platform = gamesjson.results[rowIndex].parent_platforms[0].platform.name.ToString();
-                    genre = gamesjson.results[rowIndex].genres[1].name.ToString();
-                    release_date = gamesjson.results[rowIndex].released;
-                    description = "";
-                    mediaImageLink = gamesjson.results[rowIndex].background_image;
+                        title = gamesjson.results[rowIndex].name;
+                        string platform = gamesjson.results[rowIndex].parent_platforms[0].platform.name.ToString();
+                        genre = gamesjson.results[rowIndex].genres[1].name.ToString();
+                        release_date = gamesjson.results[rowIndex].released;
+                        description = "";
+                        mediaImageLink = gamesjson.results[rowIndex].background_image;
 
 
-                    openDetailedItemListingForm(title, platform, genre, release_date, description, mediaImageLink, 3);
+                        openDetailedItemListingForm(title, platform, genre, release_date, description, mediaImageLink, 3);
 
-                    break;
+                        break;
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
