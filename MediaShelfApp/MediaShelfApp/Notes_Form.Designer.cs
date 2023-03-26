@@ -28,154 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.AddNoteButton = new System.Windows.Forms.Button();
-            this.NotesText1 = new System.Windows.Forms.TextBox();
-            this.NotesBackButton = new System.Windows.Forms.Button();
-            this.NotesFowardButton = new System.Windows.Forms.Button();
-            this.NotesText2 = new System.Windows.Forms.TextBox();
-            this.NotesText3 = new System.Windows.Forms.TextBox();
-            this.NotesText4 = new System.Windows.Forms.TextBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.NotesText5 = new System.Windows.Forms.TextBox();
-            this.NotesText6 = new System.Windows.Forms.TextBox();
-            this.NotesText7 = new System.Windows.Forms.TextBox();
-            this.NotesText8 = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnAddNote = new System.Windows.Forms.Button();
+            this.txtNote1 = new System.Windows.Forms.TextBox();
+            this.txtNote2 = new System.Windows.Forms.TextBox();
+            this.txtNote3 = new System.Windows.Forms.TextBox();
+            this.txtNote4 = new System.Windows.Forms.TextBox();
+            this.txtNote5 = new System.Windows.Forms.TextBox();
+            this.txtNote6 = new System.Windows.Forms.TextBox();
+            this.txtNote7 = new System.Windows.Forms.TextBox();
+            this.txtNote8 = new System.Windows.Forms.TextBox();
+            this.btnNavBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(248, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 54);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "\"Item\" Notes";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(298, 21);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(282, 47);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Item Name Label";
             // 
-            // AddNoteButton
+            // btnAddNote
             // 
-            this.AddNoteButton.Location = new System.Drawing.Point(738, 32);
-            this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(94, 29);
-            this.AddNoteButton.TabIndex = 5;
-            this.AddNoteButton.Text = "Add Note";
-            this.AddNoteButton.UseVisualStyleBackColor = true;
+            this.btnAddNote.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddNote.Location = new System.Drawing.Point(769, 12);
+            this.btnAddNote.Name = "btnAddNote";
+            this.btnAddNote.Size = new System.Drawing.Size(94, 29);
+            this.btnAddNote.TabIndex = 5;
+            this.btnAddNote.Text = "Save";
+            this.btnAddNote.UseVisualStyleBackColor = true;
             // 
-            // NotesText1
+            // txtNote1
             // 
-            this.NotesText1.Location = new System.Drawing.Point(24, 93);
-            this.NotesText1.Multiline = true;
-            this.NotesText1.Name = "NotesText1";
-            this.NotesText1.Size = new System.Drawing.Size(186, 165);
-            this.NotesText1.TabIndex = 12;
+            this.txtNote1.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote1.Location = new System.Drawing.Point(32, 91);
+            this.txtNote1.Multiline = true;
+            this.txtNote1.Name = "txtNote1";
+            this.txtNote1.Size = new System.Drawing.Size(186, 165);
+            this.txtNote1.TabIndex = 12;
             // 
-            // NotesBackButton
+            // txtNote2
             // 
-            this.NotesBackButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.NotesBackButton.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NotesBackButton.Location = new System.Drawing.Point(12, 9);
-            this.NotesBackButton.Name = "NotesBackButton";
-            this.NotesBackButton.Size = new System.Drawing.Size(38, 29);
-            this.NotesBackButton.TabIndex = 13;
-            this.NotesBackButton.Text = "<";
-            this.NotesBackButton.UseVisualStyleBackColor = false;
+            this.txtNote2.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote2.Location = new System.Drawing.Point(240, 91);
+            this.txtNote2.Multiline = true;
+            this.txtNote2.Name = "txtNote2";
+            this.txtNote2.Size = new System.Drawing.Size(186, 165);
+            this.txtNote2.TabIndex = 15;
             // 
-            // NotesFowardButton
+            // txtNote3
             // 
-            this.NotesFowardButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.NotesFowardButton.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NotesFowardButton.Location = new System.Drawing.Point(56, 9);
-            this.NotesFowardButton.Name = "NotesFowardButton";
-            this.NotesFowardButton.Size = new System.Drawing.Size(38, 29);
-            this.NotesFowardButton.TabIndex = 14;
-            this.NotesFowardButton.Text = ">";
-            this.NotesFowardButton.UseVisualStyleBackColor = false;
+            this.txtNote3.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote3.Location = new System.Drawing.Point(447, 91);
+            this.txtNote3.Multiline = true;
+            this.txtNote3.Name = "txtNote3";
+            this.txtNote3.Size = new System.Drawing.Size(186, 165);
+            this.txtNote3.TabIndex = 16;
             // 
-            // NotesText2
+            // txtNote4
             // 
-            this.NotesText2.Location = new System.Drawing.Point(232, 93);
-            this.NotesText2.Multiline = true;
-            this.NotesText2.Name = "NotesText2";
-            this.NotesText2.Size = new System.Drawing.Size(186, 165);
-            this.NotesText2.TabIndex = 15;
+            this.txtNote4.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote4.Location = new System.Drawing.Point(654, 91);
+            this.txtNote4.Multiline = true;
+            this.txtNote4.Name = "txtNote4";
+            this.txtNote4.Size = new System.Drawing.Size(186, 165);
+            this.txtNote4.TabIndex = 17;
             // 
-            // NotesText3
+            // txtNote5
             // 
-            this.NotesText3.Location = new System.Drawing.Point(439, 93);
-            this.NotesText3.Multiline = true;
-            this.NotesText3.Name = "NotesText3";
-            this.NotesText3.Size = new System.Drawing.Size(186, 165);
-            this.NotesText3.TabIndex = 16;
+            this.txtNote5.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote5.Location = new System.Drawing.Point(32, 287);
+            this.txtNote5.Multiline = true;
+            this.txtNote5.Name = "txtNote5";
+            this.txtNote5.Size = new System.Drawing.Size(186, 165);
+            this.txtNote5.TabIndex = 19;
             // 
-            // NotesText4
+            // txtNote6
             // 
-            this.NotesText4.Location = new System.Drawing.Point(646, 93);
-            this.NotesText4.Multiline = true;
-            this.NotesText4.Name = "NotesText4";
-            this.NotesText4.Size = new System.Drawing.Size(186, 165);
-            this.NotesText4.TabIndex = 17;
+            this.txtNote6.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote6.Location = new System.Drawing.Point(240, 287);
+            this.txtNote6.Multiline = true;
+            this.txtNote6.Name = "txtNote6";
+            this.txtNote6.Size = new System.Drawing.Size(186, 165);
+            this.txtNote6.TabIndex = 20;
             // 
-            // vScrollBar1
+            // txtNote7
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(851, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 454);
-            this.vScrollBar1.TabIndex = 18;
+            this.txtNote7.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote7.Location = new System.Drawing.Point(447, 287);
+            this.txtNote7.Multiline = true;
+            this.txtNote7.Name = "txtNote7";
+            this.txtNote7.Size = new System.Drawing.Size(186, 165);
+            this.txtNote7.TabIndex = 21;
             // 
-            // NotesText5
+            // txtNote8
             // 
-            this.NotesText5.Location = new System.Drawing.Point(24, 289);
-            this.NotesText5.Multiline = true;
-            this.NotesText5.Name = "NotesText5";
-            this.NotesText5.Size = new System.Drawing.Size(186, 165);
-            this.NotesText5.TabIndex = 19;
+            this.txtNote8.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote8.Location = new System.Drawing.Point(654, 287);
+            this.txtNote8.Multiline = true;
+            this.txtNote8.Name = "txtNote8";
+            this.txtNote8.Size = new System.Drawing.Size(186, 165);
+            this.txtNote8.TabIndex = 22;
             // 
-            // NotesText6
+            // btnNavBack
             // 
-            this.NotesText6.Location = new System.Drawing.Point(232, 289);
-            this.NotesText6.Multiline = true;
-            this.NotesText6.Name = "NotesText6";
-            this.NotesText6.Size = new System.Drawing.Size(186, 165);
-            this.NotesText6.TabIndex = 20;
-            // 
-            // NotesText7
-            // 
-            this.NotesText7.Location = new System.Drawing.Point(439, 289);
-            this.NotesText7.Multiline = true;
-            this.NotesText7.Name = "NotesText7";
-            this.NotesText7.Size = new System.Drawing.Size(186, 165);
-            this.NotesText7.TabIndex = 21;
-            // 
-            // NotesText8
-            // 
-            this.NotesText8.Location = new System.Drawing.Point(646, 289);
-            this.NotesText8.Multiline = true;
-            this.NotesText8.Name = "NotesText8";
-            this.NotesText8.Size = new System.Drawing.Size(186, 165);
-            this.NotesText8.TabIndex = 22;
+            this.btnNavBack.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNavBack.Location = new System.Drawing.Point(12, 12);
+            this.btnNavBack.Name = "btnNavBack";
+            this.btnNavBack.Size = new System.Drawing.Size(94, 29);
+            this.btnNavBack.TabIndex = 23;
+            this.btnNavBack.Text = "Back";
+            this.btnNavBack.UseVisualStyleBackColor = true;
             // 
             // Notes_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 478);
-            this.Controls.Add(this.NotesText8);
-            this.Controls.Add(this.NotesText7);
-            this.Controls.Add(this.NotesText6);
-            this.Controls.Add(this.NotesText5);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.NotesText4);
-            this.Controls.Add(this.NotesText3);
-            this.Controls.Add(this.NotesText2);
-            this.Controls.Add(this.NotesFowardButton);
-            this.Controls.Add(this.NotesBackButton);
-            this.Controls.Add(this.NotesText1);
-            this.Controls.Add(this.AddNoteButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnNavBack);
+            this.Controls.Add(this.txtNote8);
+            this.Controls.Add(this.txtNote7);
+            this.Controls.Add(this.txtNote6);
+            this.Controls.Add(this.txtNote5);
+            this.Controls.Add(this.txtNote4);
+            this.Controls.Add(this.txtNote3);
+            this.Controls.Add(this.txtNote2);
+            this.Controls.Add(this.txtNote1);
+            this.Controls.Add(this.btnAddNote);
+            this.Controls.Add(this.lblTitle);
             this.Name = "Notes_Form";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Notes_Form_Load);
+            this.Text = "Notes";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,18 +168,16 @@
 
         #endregion
 
-        private Label label1;
-        private Button AddNoteButton;
-        private TextBox NotesText1;
-        private Button NotesBackButton;
-        private Button NotesFowardButton;
-        private TextBox NotesText2;
-        private TextBox NotesText3;
-        private TextBox NotesText4;
-        private VScrollBar vScrollBar1;
-        private TextBox NotesText5;
-        private TextBox NotesText6;
-        private TextBox NotesText7;
-        private TextBox NotesText8;
+        private Label lblTitle;
+        private Button btnAddNote;
+        private TextBox txtNote1;
+        private TextBox txtNote2;
+        private TextBox txtNote3;
+        private TextBox txtNote4;
+        private TextBox txtNote5;
+        private TextBox txtNote6;
+        private TextBox txtNote7;
+        private TextBox txtNote8;
+        private Button btnNavBack;
     }
 }
