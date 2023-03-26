@@ -337,7 +337,6 @@ namespace MediaShelfApp
             MyShelfForm window = new MyShelfForm();
             window.setCaller(this);
             window.Show();
-            this.Hide();
         }
     }
 }

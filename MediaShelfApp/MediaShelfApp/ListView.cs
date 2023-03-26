@@ -35,28 +35,60 @@ namespace MediaShelfApp
             dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
 
             // Populate form
+            PopulateSortComboBox();
             PopulateListInfo(list);
-            PopulateDataTable();
+            PopulateDataTable("");
         }
 
         // Retrieves items from the selected list and fills the data grid
-        public void PopulateDataTable()
+        public void PopulateDataTable(String s)
         {
+            // Format search
+            String search = "%" + s + "%";
+            String parameter = "";
+            
+            // Set search parameter
+            switch(cmbSortByParameter.Text)
+            {
+                case "Title":
+                    parameter = "ITEM_TITLE";
+                    break;
+                case "Genre":
+                    parameter = "ITEM_GENRE";
+                    break;
+                case "Creator":
+                    parameter = "ITEM_CREATOR";
+                    break;
+                default:
+                    MessageBox.Show("Error in sorting function", "Sorting Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+
             // Create data container
             DataTable results = new DataTable();
 
-            // Retrieve Items from list
+            // Try query
             try
             {
+                // Open connection
                 dbConnection.Open();
                 SqlCommand cmdGetListItems = dbConnection.CreateCommand();
 
-                // Construct insertion query
+                // Construct select query
                 cmdGetListItems.CommandText = @"SELECT ITEM_TITLE,
-                                               ITEM_ICON
+                                               ITEM_CREATOR,
+                                               ITEM_GENRE
                                                FROM ITEMS
                                                JOIN LIST ON ITEM_LIST_ID = LIST_ID
                                                WHERE LIST_NAME = @bind1";
+
+                // If search box is not empty, add this condition to the query
+                if (search != "%%")
+                {
+                    cmdGetListItems.CommandText += " AND " + parameter + " LIKE @bind2";
+                    cmdGetListItems.Parameters.AddWithValue("@bind2", search);
+                }
+                                               
 
                 // Parameterize the variables for system security
                 cmdGetListItems.Parameters.AddWithValue("@bind1", list);
@@ -69,7 +101,8 @@ namespace MediaShelfApp
                 dgvResults.DataSource = results;
                 dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvResults.Columns[0].HeaderText = "Title";
-                dgvResults.Columns[1].HeaderText = "Icon";
+                dgvResults.Columns[1].HeaderText = "Artist";
+                dgvResults.Columns[2].HeaderText = "Genre";
 
                 // Close resources
                 reader.Close();
@@ -79,6 +112,7 @@ namespace MediaShelfApp
             }
             catch (Exception ex)
             {
+                // Display any potential errors
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -86,11 +120,19 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
+        
+        private void PopulateSortComboBox()
+        {
+            cmbSortByParameter.Items.Add("Title");
+            cmbSortByParameter.Items.Add("Creator");
+            cmbSortByParameter.Items.Add("Genre");
+            cmbSortByParameter.SelectedIndex = 0;
+        }
 
         // Retrieves information about list that was selected and fills in basic form elements
         private void PopulateListInfo(String list)
         {
-            // Retrieve list information
+            // Try query
             try
             {
                 // Set basic form elements
@@ -113,7 +155,7 @@ namespace MediaShelfApp
 
                 if (reader.Read())
                 {
-                    lblDescription.Text = reader[0].ToString();
+                    lblDescriptionText.Text = reader[0].ToString();
                 }
 
                 // Close resources
@@ -138,21 +180,65 @@ namespace MediaShelfApp
         //                                         currently viewed list as the list to be added to
         private void btnNavManualEntry_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Manual_Entry_Form window = new Manual_Entry_Form(list, this);
             window.Show();
         }
 
-        // Item Image button functionality - hides this form as the caller, then opens the detailed item listing form
-        //                                   with the seelcted item as the item to be viewed
-        private void pictureBox1_Click(object sender, EventArgs e)
+        // Search box functionality - Refreshes box upon typing
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            this.Hide();
-            Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form();
-            window.setCaller(this);
-            // window.setItemID(id_of_item_goes_here); // May also need to include API id eventually
-            window.Show();
+            String search = txtSearch.Text.ToString();
+            PopulateDataTable(search);
         }
 
+        // Delete entry functionality - Deletes selected item from list
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            String title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            String creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+
+            var areYouSure = MessageBox.Show("Are you sure you want to delete " + title + "?", "Deletion Warning", MessageBoxButtons.YesNoCancel);
+
+            if (areYouSure == DialogResult.Yes)
+            {
+                DeleteItem(title, creator);
+            }
+        }
+
+        private void DeleteItem (String title, String creator)
+        {
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdDeleteItem = dbConnection.CreateCommand();
+
+                // Construct deletion query
+                cmdDeleteItem.CommandText = @"DELETE FROM ITEMS
+                                             WHERE ITEM_TITLE = @bind1
+                                             AND ITEM_CREATOR = @bind2";
+
+                // Parameterize the variables for system security
+                cmdDeleteItem.Parameters.AddWithValue("@bind1", title);
+                cmdDeleteItem.Parameters.AddWithValue("@bind2", creator);
+
+                // Execute query
+                cmdDeleteItem.ExecuteNonQuery();
+
+                // Dispose of resources
+                cmdDeleteItem.Dispose();
+                dbConnection.Close();
+
+                // Confirmation & Refresh
+                PopulateDataTable("");
+                MessageBox.Show(title + " has been deleted from your " + list + " list", "Deletion Successful", MessageBoxButtons.OK);
+
+            }
+            catch (Exception ex)
+            {
+                // Display error if caught
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

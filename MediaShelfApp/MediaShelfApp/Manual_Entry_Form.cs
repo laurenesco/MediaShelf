@@ -444,7 +444,7 @@ namespace MediaShelfApp
         private void ClearFields()
         {
             txtCreator.Clear();
-            dateReleaseDate.Value = DateTime.Today;
+            dtpReleaseDate.Value = DateTime.Today;
             txtTitle.Clear();
             txtTags.Clear();
             txtCreator.Clear();
@@ -457,7 +457,7 @@ namespace MediaShelfApp
         // Back button functionality - reopens calling form with refreshed data grid
         private void btnNavBack_Click(object sender, EventArgs e)
         {
-            caller.PopulateDataTable();
+            caller.PopulateDataTable("");
             caller.Show();
             this.Close();
         }
@@ -472,7 +472,8 @@ namespace MediaShelfApp
                 String creator = txtCreator.Text;
                 String genre = txtTags.Text; 
                 String description = txtDescriptionText.Text;
-                DateTime releaseDate = dateReleaseDate.Value;
+                DateTime releaseDate = dtpReleaseDate.Value;
+                int listID = getListID(list);
                 Byte[] icon;
 
                 FileStream iconFile = new FileStream(picboxImage.ImageLocation, FileMode.Open, FileAccess.Read);
@@ -505,7 +506,7 @@ namespace MediaShelfApp
                 cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
                 cmdInsertMedia.Parameters.AddWithValue("@icon", icon); 
                 cmdInsertMedia.Parameters.AddWithValue("@desc", description);
-                cmdInsertMedia.Parameters.AddWithValue("@list", 0); // LIST ID 0 signifies manual entry - No list affiliation
+                cmdInsertMedia.Parameters.AddWithValue("@list", listID); 
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
 
 
@@ -523,6 +524,47 @@ namespace MediaShelfApp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private int getListID(String name)
+        {
+            int ID = 0;
+
+            // Try query
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdGetListInfo = dbConnection.CreateCommand();
+
+                // Construct insertion query
+                cmdGetListInfo.CommandText = @"SELECT LIST_ID
+                                               FROM LIST
+                                               WHERE LIST_NAME = @bind1";
+
+                // Parameterize the variables for system security
+                cmdGetListInfo.Parameters.AddWithValue("@bind1", list);
+
+                // Execute and read the data
+                SqlDataReader reader = cmdGetListInfo.ExecuteReader();
+
+                // Assign result to ID variable
+                if (reader.Read())
+                {
+                    ID = Convert.ToInt32(reader[0]); 
+                } 
+
+                // Close resources
+                reader.Close();
+                cmdGetListInfo.Dispose();
+                dbConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return ID;
         }
 
         //enables user to upload an image for manual entry
