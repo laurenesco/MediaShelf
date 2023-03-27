@@ -194,8 +194,8 @@ namespace MediaShelfApp
         // Delete entry functionality - Deletes selected item from list
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            String title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            String creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            string title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            string creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
 
             var areYouSure = MessageBox.Show("Are you sure you want to delete " + title + "?", "Deletion Warning", MessageBoxButtons.YesNoCancel);
 
@@ -205,7 +205,7 @@ namespace MediaShelfApp
             }
         }
 
-        private void DeleteItem (String title, String creator)
+        private void DeleteItem (string title, string creator)
         {
             try
             {
@@ -239,6 +239,55 @@ namespace MediaShelfApp
                 // Display error if caught
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Notes button functionality - Opens notes form populated with the notes of the selected item
+        private void btnNotes_Click(object sender, EventArgs e)
+        {
+            // Declare variables
+            string title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            string creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            int[] IDs = new int[2];
+
+            // Run query to retrieve the ID's necessary to open notes form
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdGetIDs = dbConnection.CreateCommand();
+
+                // Construct deletion query
+                cmdGetIDs.CommandText = @"SELECT ITEM_ID,
+                                          ITEM_API
+                                          FROM ITEMS
+                                          WHERE ITEM_TITLE = @bind1
+                                          AND ITEM_CREATOR = @bind2";
+
+                // Parameterize the variables for system security
+                cmdGetIDs.Parameters.AddWithValue("@bind1", title);
+                cmdGetIDs.Parameters.AddWithValue("@bind2", creator);
+
+                // Execute query
+                SqlDataReader reader = cmdGetIDs.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IDs[0] = Convert.ToInt32(reader[1]);
+                    IDs[1] = Convert.ToInt32(reader[0]);
+                }
+
+                // Dispose of resources
+                cmdGetIDs.Dispose();
+                dbConnection.Close();
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error loading notes form.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Open notes form
+            Notes_Form window = new Notes_Form(IDs[0], IDs[1], title);
+            window.Show();
         }
     }
 }

@@ -38,6 +38,7 @@
             this.lblDescriptionText = new System.Windows.Forms.Label();
             this.dgvResults = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnNotes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +157,16 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnNotes
+            // 
+            this.btnNotes.Location = new System.Drawing.Point(498, 650);
+            this.btnNotes.Name = "btnNotes";
+            this.btnNotes.Size = new System.Drawing.Size(94, 29);
+            this.btnNotes.TabIndex = 165;
+            this.btnNotes.Text = "Notes";
+            this.btnNotes.UseVisualStyleBackColor = true;
+            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
+            // 
             // ListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -163,6 +174,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(1084, 761);
+            this.Controls.Add(this.btnNotes);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.lblDescriptionText);
@@ -194,5 +206,6 @@
         private Label lblDescriptionText;
         private DataGridView dgvResults;
         private Button btnDelete;
+        private Button btnNotes;
     }
 }
