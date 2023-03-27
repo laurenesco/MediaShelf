@@ -89,9 +89,9 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(244, 247);
+            button1.Location = new Point(396, 221);
             button1.Name = "button1";
-            button1.Size = new Size(99, 93);
+            button1.Size = new Size(110, 110);
             button1.TabIndex = 0;
             button1.Text = "Music";
             button1.UseVisualStyleBackColor = false;
@@ -103,9 +103,9 @@
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.BackgroundImageLayout = ImageLayout.Zoom;
             button2.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(337, 100);
+            button2.Location = new Point(569, 92);
             button2.Name = "button2";
-            button2.Size = new Size(100, 93);
+            button2.Size = new Size(110, 110);
             button2.TabIndex = 1;
             button2.Text = "Movies";
             button2.UseVisualStyleBackColor = false;
@@ -117,9 +117,9 @@
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Stretch;
             button3.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(438, 247);
+            button3.Location = new Point(738, 221);
             button3.Name = "button3";
-            button3.Size = new Size(98, 93);
+            button3.Size = new Size(110, 110);
             button3.TabIndex = 2;
             button3.Text = "TV Shows";
             button3.UseVisualStyleBackColor = false;
@@ -131,9 +131,9 @@
             button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
             button4.BackgroundImageLayout = ImageLayout.Zoom;
             button4.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(148, 99);
+            button4.Location = new Point(217, 92);
             button4.Name = "button4";
-            button4.Size = new Size(99, 94);
+            button4.Size = new Size(110, 110);
             button4.TabIndex = 3;
             button4.Text = "Books";
             button4.UseVisualStyleBackColor = false;
@@ -146,9 +146,9 @@
             button7.BackgroundImageLayout = ImageLayout.Stretch;
             button7.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = SystemColors.ControlText;
-            button7.Location = new Point(534, 100);
+            button7.Location = new Point(903, 92);
             button7.Name = "button7";
-            button7.Size = new Size(100, 94);
+            button7.Size = new Size(110, 110);
             button7.TabIndex = 6;
             button7.Text = "Games";
             button7.UseVisualStyleBackColor = false;
@@ -160,7 +160,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Ebrima", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(261, 27);
+            label1.Location = new Point(503, 18);
             label1.Name = "label1";
             label1.Size = new Size(260, 60);
             label1.TabIndex = 8;
@@ -173,7 +173,7 @@
             Recommendations.BackColor = Color.Transparent;
             Recommendations.Font = new Font("Ebrima", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             Recommendations.ForeColor = SystemColors.ControlText;
-            Recommendations.Location = new Point(278, 360);
+            Recommendations.Location = new Point(523, 349);
             Recommendations.Name = "Recommendations";
             Recommendations.Size = new Size(227, 32);
             Recommendations.TabIndex = 10;
@@ -186,7 +186,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(61, 392);
+            label2.Location = new Point(306, 381);
             label2.Name = "label2";
             label2.Size = new Size(622, 28);
             label2.TabIndex = 11;
@@ -199,7 +199,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(61, 420);
+            label3.Location = new Point(306, 409);
             label3.Name = "label3";
             label3.Size = new Size(270, 28);
             label3.TabIndex = 12;
@@ -209,7 +209,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Location = new Point(47, 466);
+            pictureBox1.Location = new Point(94, 455);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(104, 106);
             pictureBox1.TabIndex = 13;
@@ -222,7 +222,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ControlText;
-            label4.Location = new Point(152, 466);
+            label4.Location = new Point(199, 455);
             label4.Name = "label4";
             label4.Size = new Size(55, 28);
             label4.TabIndex = 17;
@@ -235,7 +235,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.ControlText;
-            label5.Location = new Point(410, 466);
+            label5.Location = new Point(624, 455);
             label5.Name = "label5";
             label5.Size = new Size(55, 28);
             label5.TabIndex = 20;
@@ -248,7 +248,7 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ControlText;
-            label10.Location = new Point(152, 493);
+            label10.Location = new Point(199, 482);
             label10.Name = "label10";
             label10.Size = new Size(62, 25);
             label10.TabIndex = 25;
@@ -261,7 +261,7 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = SystemColors.ControlText;
-            label11.Location = new Point(410, 493);
+            label11.Location = new Point(624, 482);
             label11.Name = "label11";
             label11.Size = new Size(62, 25);
             label11.TabIndex = 26;
@@ -271,7 +271,7 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 5F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.Location = new Point(210, 499);
+            button8.Location = new Point(257, 488);
             button8.Name = "button8";
             button8.Size = new Size(45, 20);
             button8.TabIndex = 31;
@@ -281,12 +281,12 @@
             // 
             // button6
             // 
-            button6.BackColor = SystemColors.ControlLight;
+            button6.BackColor = SystemColors.ControlDark;
             button6.Font = new Font("Ebrima", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = SystemColors.ActiveCaptionText;
             button6.Location = new Point(70, 32);
             button6.Name = "button6";
-            button6.Size = new Size(122, 28);
+            button6.Size = new Size(130, 30);
             button6.TabIndex = 9;
             button6.Text = "Search Bar";
             button6.UseVisualStyleBackColor = false;
@@ -297,9 +297,9 @@
             button14.BackColor = SystemColors.ButtonShadow;
             button14.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button14.ForeColor = SystemColors.ActiveCaptionText;
-            button14.Location = new Point(654, 719);
+            button14.Location = new Point(1046, 708);
             button14.Name = "button14";
-            button14.Size = new Size(104, 32);
+            button14.Size = new Size(110, 34);
             button14.TabIndex = 37;
             button14.Text = "See More";
             button14.UseVisualStyleBackColor = false;
@@ -308,7 +308,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Location = new Point(309, 466);
+            pictureBox2.Location = new Point(523, 455);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(104, 106);
             pictureBox2.TabIndex = 38;
@@ -318,7 +318,7 @@
             // button15
             // 
             button15.Font = new Font("Segoe UI", 5F, FontStyle.Regular, GraphicsUnit.Point);
-            button15.Location = new Point(478, 499);
+            button15.Location = new Point(692, 488);
             button15.Name = "button15";
             button15.Size = new Size(45, 20);
             button15.TabIndex = 39;
@@ -329,7 +329,7 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 5F, FontStyle.Regular, GraphicsUnit.Point);
-            button9.Location = new Point(730, 494);
+            button9.Location = new Point(1106, 483);
             button9.Name = "button9";
             button9.Size = new Size(45, 20);
             button9.TabIndex = 43;
@@ -340,7 +340,7 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Location = new Point(569, 466);
+            pictureBox3.Location = new Point(945, 455);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(104, 106);
             pictureBox3.TabIndex = 42;
@@ -353,7 +353,7 @@
             label16.BackColor = Color.Transparent;
             label16.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label16.ForeColor = SystemColors.ControlText;
-            label16.Location = new Point(672, 493);
+            label16.Location = new Point(1048, 482);
             label16.Name = "label16";
             label16.Size = new Size(62, 25);
             label16.TabIndex = 41;
@@ -366,7 +366,7 @@
             label17.BackColor = Color.Transparent;
             label17.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label17.ForeColor = SystemColors.ControlText;
-            label17.Location = new Point(670, 466);
+            label17.Location = new Point(1046, 455);
             label17.Name = "label17";
             label17.Size = new Size(55, 28);
             label17.TabIndex = 40;
@@ -376,7 +376,7 @@
             // button10
             // 
             button10.Font = new Font("Segoe UI", 5F, FontStyle.Regular, GraphicsUnit.Point);
-            button10.Location = new Point(210, 629);
+            button10.Location = new Point(257, 618);
             button10.Name = "button10";
             button10.Size = new Size(45, 20);
             button10.TabIndex = 47;
@@ -387,7 +387,7 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Location = new Point(47, 596);
+            pictureBox4.Location = new Point(94, 585);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(104, 106);
             pictureBox4.TabIndex = 46;
@@ -400,7 +400,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.ControlText;
-            label6.Location = new Point(148, 624);
+            label6.Location = new Point(195, 613);
             label6.Name = "label6";
             label6.Size = new Size(62, 25);
             label6.TabIndex = 45;
@@ -413,7 +413,7 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ControlText;
-            label12.Location = new Point(148, 596);
+            label12.Location = new Point(195, 585);
             label12.Name = "label12";
             label12.Size = new Size(55, 28);
             label12.TabIndex = 44;
@@ -423,7 +423,7 @@
             // button16
             // 
             button16.Font = new Font("Segoe UI", 5F, FontStyle.Regular, GraphicsUnit.Point);
-            button16.Location = new Point(469, 630);
+            button16.Location = new Point(683, 619);
             button16.Name = "button16";
             button16.Size = new Size(45, 20);
             button16.TabIndex = 51;
@@ -434,7 +434,7 @@
             // pictureBox5
             // 
             pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Location = new Point(309, 596);
+            pictureBox5.Location = new Point(523, 585);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(104, 106);
             pictureBox5.TabIndex = 50;
@@ -447,7 +447,7 @@
             label18.BackColor = Color.Transparent;
             label18.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label18.ForeColor = SystemColors.ControlText;
-            label18.Location = new Point(410, 624);
+            label18.Location = new Point(624, 613);
             label18.Name = "label18";
             label18.Size = new Size(62, 25);
             label18.TabIndex = 49;
@@ -460,7 +460,7 @@
             label19.BackColor = Color.Transparent;
             label19.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label19.ForeColor = SystemColors.ControlText;
-            label19.Location = new Point(410, 596);
+            label19.Location = new Point(624, 585);
             label19.Name = "label19";
             label19.Size = new Size(55, 28);
             label19.TabIndex = 48;
@@ -470,7 +470,7 @@
             // button17
             // 
             button17.Font = new Font("Segoe UI", 5F, FontStyle.Regular, GraphicsUnit.Point);
-            button17.Location = new Point(730, 624);
+            button17.Location = new Point(1106, 613);
             button17.Name = "button17";
             button17.Size = new Size(45, 20);
             button17.TabIndex = 55;
@@ -481,7 +481,7 @@
             // pictureBox6
             // 
             pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.Location = new Point(569, 596);
+            pictureBox6.Location = new Point(945, 585);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(104, 106);
             pictureBox6.TabIndex = 54;
@@ -494,7 +494,7 @@
             label20.BackColor = Color.Transparent;
             label20.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label20.ForeColor = SystemColors.ControlText;
-            label20.Location = new Point(670, 624);
+            label20.Location = new Point(1046, 613);
             label20.Name = "label20";
             label20.Size = new Size(62, 25);
             label20.TabIndex = 53;
@@ -507,7 +507,7 @@
             label21.BackColor = Color.Transparent;
             label21.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label21.ForeColor = SystemColors.ControlText;
-            label21.Location = new Point(670, 596);
+            label21.Location = new Point(1046, 585);
             label21.Name = "label21";
             label21.Size = new Size(55, 28);
             label21.TabIndex = 52;
@@ -520,7 +520,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label7.ForeColor = SystemColors.ControlText;
-            label7.Location = new Point(29, 972);
+            label7.Location = new Point(92, 963);
             label7.Name = "label7";
             label7.Size = new Size(75, 28);
             label7.TabIndex = 66;
@@ -533,7 +533,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label8.ForeColor = SystemColors.ControlText;
-            label8.Location = new Point(29, 919);
+            label8.Location = new Point(92, 910);
             label8.Name = "label8";
             label8.Size = new Size(75, 28);
             label8.TabIndex = 65;
@@ -546,7 +546,7 @@
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ControlText;
-            label9.Location = new Point(29, 870);
+            label9.Location = new Point(92, 861);
             label9.Name = "label9";
             label9.Size = new Size(75, 28);
             label9.TabIndex = 64;
@@ -559,7 +559,7 @@
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label13.ForeColor = SystemColors.ControlText;
-            label13.Location = new Point(29, 821);
+            label13.Location = new Point(92, 812);
             label13.Name = "label13";
             label13.Size = new Size(88, 28);
             label13.TabIndex = 63;
@@ -572,7 +572,7 @@
             label14.BackColor = Color.Transparent;
             label14.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = SystemColors.ControlText;
-            label14.Location = new Point(29, 1000);
+            label14.Location = new Point(92, 991);
             label14.Name = "label14";
             label14.Size = new Size(106, 25);
             label14.TabIndex = 62;
@@ -585,7 +585,7 @@
             label15.BackColor = Color.Transparent;
             label15.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = SystemColors.ControlText;
-            label15.Location = new Point(29, 947);
+            label15.Location = new Point(92, 938);
             label15.Name = "label15";
             label15.Size = new Size(106, 25);
             label15.TabIndex = 61;
@@ -598,7 +598,7 @@
             label22.BackColor = Color.Transparent;
             label22.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label22.ForeColor = SystemColors.ControlText;
-            label22.Location = new Point(29, 849);
+            label22.Location = new Point(92, 840);
             label22.Name = "label22";
             label22.Size = new Size(518, 25);
             label22.TabIndex = 60;
@@ -611,7 +611,7 @@
             label23.BackColor = Color.Transparent;
             label23.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label23.ForeColor = SystemColors.ControlText;
-            label23.Location = new Point(29, 898);
+            label23.Location = new Point(92, 889);
             label23.Name = "label23";
             label23.Size = new Size(106, 25);
             label23.TabIndex = 59;
@@ -624,7 +624,7 @@
             label24.BackColor = Color.Transparent;
             label24.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label24.ForeColor = SystemColors.ControlText;
-            label24.Location = new Point(29, 798);
+            label24.Location = new Point(92, 789);
             label24.Name = "label24";
             label24.Size = new Size(508, 75);
             label24.TabIndex = 58;
@@ -637,7 +637,7 @@
             label25.BackColor = Color.Transparent;
             label25.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label25.ForeColor = SystemColors.ControlText;
-            label25.Location = new Point(29, 770);
+            label25.Location = new Point(92, 761);
             label25.Name = "label25";
             label25.Size = new Size(98, 28);
             label25.TabIndex = 57;
@@ -650,7 +650,7 @@
             label26.BackColor = Color.Transparent;
             label26.Font = new Font("Ebrima", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label26.ForeColor = SystemColors.ControlText;
-            label26.Location = new Point(354, 743);
+            label26.Location = new Point(594, 739);
             label26.Name = "label26";
             label26.Size = new Size(64, 32);
             label26.TabIndex = 56;
@@ -665,7 +665,7 @@
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(806, 752);
+            ClientSize = new Size(1246, 752);
             Controls.Add(label7);
             Controls.Add(label8);
             Controls.Add(label9);

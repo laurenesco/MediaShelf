@@ -34,7 +34,7 @@ namespace MediaShelfApp
 
         }
 
-        //Name Label
+        //Media Shelf Title
         private void lblTopName(object sender, EventArgs e)
         {
         }
@@ -42,48 +42,36 @@ namespace MediaShelfApp
         //Music Square
         private void btnMusic(object sender, EventArgs e)
         {
-            this.Hide();
             SearchResults window = new SearchResults();
-            window.setCaller(this);
-            window.setSearchText("Test"); // Text pulled from search box will go here
             window.Show();
         }
 
         //Movies Square
         private void btnMovies(object sender, EventArgs e)
         {
-            this.Hide();
             SearchResults window = new SearchResults();
-            window.setCaller(this);
-            window.setSearchText("Test"); // Text pulled from search box will go here
             window.Show();
         }
 
         //Shows Square
         private void btnTVShows(object sender, EventArgs e)
         {
-            this.Hide();
             SearchResults window = new SearchResults();
-            window.setCaller(this);
-            window.setSearchText("Test"); // Text pulled from search box will go here
             window.Show();
         }
 
         //Book Square
         private void btnBooks(object sender, EventArgs e)
         {
-            this.Hide();
             SearchResults window = new SearchResults();
-            window.setCaller(this);
-            window.setSearchText("Test"); // Text pulled from search box will go here
             window.Show();
         }
 
         //Games square
         private void btnGames(object sender, EventArgs e)
         {
-            //ListView window = new ListView("Games", this);
-            //window.Show();
+            SearchResults window = new SearchResults();
+            window.Show();
         }
 
         //Search Bar
@@ -276,19 +264,14 @@ namespace MediaShelfApp
         //List Header
         private void lblListHeader(object sender, EventArgs e)
         {
-            /*
-            this.Hide();
             ListView window = new ListView();
-            window.setCaller(this);
             window.Show();
-            */
-
         }
 
         //Favorites List
         private void lblFavoritesList(object sender, EventArgs e)
         {
-
+            
         }
         //Favorites List Description
         private void lblFavoritesDescription(object sender, EventArgs e)
