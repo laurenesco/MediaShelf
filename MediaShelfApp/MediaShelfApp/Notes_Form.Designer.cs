@@ -151,6 +151,7 @@
             this.btnNavBack.TabIndex = 23;
             this.btnNavBack.Text = "Back";
             this.btnNavBack.UseVisualStyleBackColor = true;
+            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
             // 
             // Notes_Form
             // 
