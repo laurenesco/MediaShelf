@@ -16,7 +16,7 @@ namespace MediaShelfApp
         // Instance variables:
         // caller   - form which invoked this form
         // list     - list intended to be viewed
-        private MyShelfForm caller;
+        private Form caller;
         public String list = "";
         private SqlConnection dbConnection;
 
@@ -25,7 +25,7 @@ namespace MediaShelfApp
         //////////////////////
         
         // Constructor
-        public ListView(String list, MyShelfForm caller)
+        public ListView(String list, Form caller)
         {
             InitializeComponent();
             this.list = list;

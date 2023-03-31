@@ -71,7 +71,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblFavoritesList = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.btnNavTempSearch = new System.Windows.Forms.Button();
             this.btnNavTempMyShelf = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(317, 177);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 88);
             this.button1.TabIndex = 0;
@@ -104,7 +104,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(455, 74);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 88);
             this.button2.TabIndex = 1;
@@ -118,7 +118,7 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(590, 177);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 88);
             this.button3.TabIndex = 2;
@@ -132,7 +132,7 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(174, 74);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(88, 88);
             this.button4.TabIndex = 3;
@@ -147,7 +147,7 @@
             this.button7.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button7.Location = new System.Drawing.Point(722, 74);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(88, 88);
             this.button7.TabIndex = 6;
@@ -210,7 +210,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Location = new System.Drawing.Point(75, 364);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(83, 85);
             this.pictureBox1.TabIndex = 13;
@@ -272,7 +272,7 @@
             // 
             this.button8.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button8.Location = new System.Drawing.Point(206, 390);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(36, 16);
             this.button8.TabIndex = 31;
@@ -283,7 +283,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Location = new System.Drawing.Point(418, 364);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(83, 85);
             this.pictureBox2.TabIndex = 38;
@@ -293,7 +293,7 @@
             // 
             this.button15.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button15.Location = new System.Drawing.Point(554, 390);
-            this.button15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button15.Margin = new System.Windows.Forms.Padding(2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(36, 16);
             this.button15.TabIndex = 39;
@@ -304,7 +304,7 @@
             // 
             this.button9.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button9.Location = new System.Drawing.Point(885, 386);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(36, 16);
             this.button9.TabIndex = 43;
@@ -315,7 +315,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Location = new System.Drawing.Point(756, 364);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(83, 85);
             this.pictureBox3.TabIndex = 42;
@@ -351,7 +351,7 @@
             // 
             this.button10.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button10.Location = new System.Drawing.Point(206, 494);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(36, 16);
             this.button10.TabIndex = 47;
@@ -362,7 +362,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Location = new System.Drawing.Point(75, 468);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(83, 85);
             this.pictureBox4.TabIndex = 46;
@@ -398,7 +398,7 @@
             // 
             this.button16.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button16.Location = new System.Drawing.Point(546, 495);
-            this.button16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button16.Margin = new System.Windows.Forms.Padding(2);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(36, 16);
             this.button16.TabIndex = 51;
@@ -409,7 +409,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Location = new System.Drawing.Point(418, 468);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(83, 85);
             this.pictureBox5.TabIndex = 50;
@@ -445,7 +445,7 @@
             // 
             this.button17.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button17.Location = new System.Drawing.Point(885, 490);
-            this.button17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button17.Margin = new System.Windows.Forms.Padding(2);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(36, 16);
             this.button17.TabIndex = 55;
@@ -456,7 +456,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Location = new System.Drawing.Point(756, 468);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(83, 85);
             this.pictureBox6.TabIndex = 54;
@@ -605,18 +605,19 @@
             this.label24.TabIndex = 58;
             this.label24.Text = "Description: Items that have been favorited will be placed here.\r\n\r\n\r\n";
             // 
-            // label25
+            // lblFavoritesList
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label25.Location = new System.Drawing.Point(74, 609);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(82, 23);
-            this.label25.TabIndex = 57;
-            this.label25.Text = "Favorites";
+            this.lblFavoritesList.AutoSize = true;
+            this.lblFavoritesList.BackColor = System.Drawing.Color.Transparent;
+            this.lblFavoritesList.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblFavoritesList.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFavoritesList.Location = new System.Drawing.Point(74, 609);
+            this.lblFavoritesList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFavoritesList.Name = "lblFavoritesList";
+            this.lblFavoritesList.Size = new System.Drawing.Size(82, 23);
+            this.lblFavoritesList.TabIndex = 57;
+            this.lblFavoritesList.Text = "Favorites";
+            this.lblFavoritesList.Click += new System.EventHandler(this.lblFavoritesList_Click);
             // 
             // label26
             // 
@@ -639,6 +640,7 @@
             this.btnNavTempSearch.TabIndex = 67;
             this.btnNavTempSearch.Text = "Search";
             this.btnNavTempSearch.UseVisualStyleBackColor = true;
+            this.btnNavTempSearch.Click += new System.EventHandler(this.btnNavTempSearch_Click);
             // 
             // btnNavTempMyShelf
             // 
@@ -648,6 +650,7 @@
             this.btnNavTempMyShelf.TabIndex = 68;
             this.btnNavTempMyShelf.Text = "MyShelf";
             this.btnNavTempMyShelf.UseVisualStyleBackColor = true;
+            this.btnNavTempMyShelf.Click += new System.EventHandler(this.btnNavTempMyShelf_Click);
             // 
             // DiscoveryPageForm
             // 
@@ -669,7 +672,7 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.label25);
+            this.Controls.Add(this.lblFavoritesList);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.pictureBox6);
@@ -705,7 +708,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DiscoveryPageForm";
             this.Text = "Discovery";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -765,7 +768,7 @@
         private Label label22;
         private Label label23;
         private Label label24;
-        private Label label25;
+        private Label lblFavoritesList;
         private Label label26;
         private Button btnNavTempSearch;
         private Button btnNavTempMyShelf;
