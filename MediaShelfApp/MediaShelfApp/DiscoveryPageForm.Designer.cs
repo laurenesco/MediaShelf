@@ -279,7 +279,7 @@
             button8.UseVisualStyleBackColor = true;
             button8.Click += btnTag1;
             // 
-            // button6
+            // btnNavSearch
             // 
             button6.BackColor = SystemColors.ControlDark;
             button6.Font = new Font("Ebrima", 8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -292,7 +292,7 @@
             button6.UseVisualStyleBackColor = false;
             button6.Click += btnSearchBar;
             // 
-            // button14
+            // btnNavRec
             // 
             button14.BackColor = SystemColors.ButtonShadow;
             button14.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -742,8 +742,8 @@
         private Label label10;
         private Label label11;
         private Button button8;
-        private Button button6;
-        private Button button14;
+        private Button btnNavSearch;
+        private Button btnNavRec;
         private PictureBox pictureBox2;
         private Button button15;
         private Button button9;
