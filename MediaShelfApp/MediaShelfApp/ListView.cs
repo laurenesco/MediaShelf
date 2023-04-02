@@ -59,6 +59,9 @@ namespace MediaShelfApp
                 case "Creator":
                     parameter = "ITEM_CREATOR";
                     break;
+                case "Tags":
+                    parameter = "TAG_DESC";
+                    break;
                 default:
                     MessageBox.Show("Error in sorting function", "Sorting Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
@@ -77,9 +80,12 @@ namespace MediaShelfApp
                 // Construct select query
                 cmdGetListItems.CommandText = @"SELECT ITEM_TITLE,
                                                ITEM_CREATOR,
-                                               ITEM_GENRE
+                                               ITEM_GENRE,
+                                               TAG_DESC
                                                FROM ITEMS
                                                JOIN LIST ON ITEM_LIST_ID = LIST_ID
+                                               LEFT JOIN TAGS ON ITEM_API = TAG_ITEM_API
+                                               AND TAG_ITEM_ID = ITEM_ID
                                                WHERE LIST_NAME = @bind1";
 
                 // If search box is not empty, add this condition to the query
@@ -99,22 +105,28 @@ namespace MediaShelfApp
 
                 // Configure table
                 dgvResults.DataSource = results;
-                dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvResults.Columns[0].HeaderText = "Title";
+                dgvResults.Columns[0].Width = 275;
                 dgvResults.Columns[1].HeaderText = "Artist";
+                dgvResults.Columns[1].Width = 275;
                 dgvResults.Columns[2].HeaderText = "Genre";
+                dgvResults.Columns[2].Width = 100;
+                dgvResults.Columns[3].HeaderText = "Tags";
+                dgvResults.Columns[3].Width = 335;
 
                 // Close resources
                 reader.Close();
                 results.Dispose();
                 cmdGetListItems.Dispose();
-                dbConnection.Close();
+
             }
             catch (Exception ex)
             {
                 // Display any potential errors
                 MessageBox.Show(ex.ToString());
             }
+
+            dbConnection.Close();
         }
 
         ///////////////////////
@@ -126,6 +138,7 @@ namespace MediaShelfApp
             cmbSortByParameter.Items.Add("Title");
             cmbSortByParameter.Items.Add("Creator");
             cmbSortByParameter.Items.Add("Genre");
+            cmbSortByParameter.Items.Add("Tags");
             cmbSortByParameter.SelectedIndex = 0;
         }
 
@@ -161,12 +174,14 @@ namespace MediaShelfApp
                 // Close resources
                 reader.Close();
                 cmdGetListInfo.Dispose();
-                dbConnection.Close();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            dbConnection.Close();
         }
 
         // Back button functionality - reopens calling form, closes this form
@@ -201,11 +216,20 @@ namespace MediaShelfApp
 
             if (areYouSure == DialogResult.Yes)
             {
-                DeleteItem(title, creator);
+                int[] id = GetItemID(title, creator);
+                DeleteItem(id[0], id[1]);
+                DeleteNotes(id[0], id[1]);
+
+                // Confirmation
+                MessageBox.Show(title + " has been deleted from your " + list + " list", "Deletion Successful", MessageBoxButtons.OK);
             }
+
+            // Refresh
+            PopulateDataTable("");
         }
 
-        private void DeleteItem (string title, string creator)
+        // Deletes the specified item from the current list
+        private void DeleteItem (int id, int api)
         {
             try
             {
@@ -215,23 +239,18 @@ namespace MediaShelfApp
 
                 // Construct deletion query
                 cmdDeleteItem.CommandText = @"DELETE FROM ITEMS
-                                             WHERE ITEM_TITLE = @bind1
-                                             AND ITEM_CREATOR = @bind2";
+                                             WHERE ITEM_ID = @bind1
+                                             AND ITEM_API = @bind2";
 
                 // Parameterize the variables for system security
-                cmdDeleteItem.Parameters.AddWithValue("@bind1", title);
-                cmdDeleteItem.Parameters.AddWithValue("@bind2", creator);
+                cmdDeleteItem.Parameters.AddWithValue("@bind1", id);
+                cmdDeleteItem.Parameters.AddWithValue("@bind2", api);
 
                 // Execute query
                 cmdDeleteItem.ExecuteNonQuery();
 
                 // Dispose of resources
                 cmdDeleteItem.Dispose();
-                dbConnection.Close();
-
-                // Confirmation & Refresh
-                PopulateDataTable("");
-                MessageBox.Show(title + " has been deleted from your " + list + " list", "Deletion Successful", MessageBoxButtons.OK);
 
             }
             catch (Exception ex)
@@ -239,6 +258,42 @@ namespace MediaShelfApp
                 // Display error if caught
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            dbConnection.Close();
+        }
+
+        // Deletes all notes associated with an item
+        private void DeleteNotes (int id, int api)
+        {
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdDeleteItem = dbConnection.CreateCommand();
+
+                // Construct deletion query
+                cmdDeleteItem.CommandText = @"DELETE FROM  NOTES
+                                             WHERE NOTES_ITEM_ID = @bind1
+                                             AND NOTES_ITEM_API = @bind2";
+
+                // Parameterize the variables for system security
+                cmdDeleteItem.Parameters.AddWithValue("@bind1", id);
+                cmdDeleteItem.Parameters.AddWithValue("@bind2", api);
+
+                // Execute query
+                cmdDeleteItem.ExecuteNonQuery();
+
+                // Dispose of resources
+                cmdDeleteItem.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                // Display error if caught
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            dbConnection.Close();
         }
 
         // Notes button functionality - Opens notes form populated with the notes of the selected item
@@ -278,16 +333,68 @@ namespace MediaShelfApp
 
                 // Dispose of resources
                 cmdGetIDs.Dispose();
-                dbConnection.Close();
+
             } 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error loading notes form.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            dbConnection.Close();
+
             // Open notes form
             Notes_Form window = new Notes_Form(IDs[0], IDs[1], title);
             window.Show();
+        }
+
+        // Returns the items ID and API ID (primary key) from title and creator
+        private int[] GetItemID(string title, string creator)
+        {
+            int[] item = { 0, 0 };
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdGetID = dbConnection.CreateCommand();
+
+                // Construct deletion query
+                cmdGetID.CommandText = @"SELECT ITEM_ID,
+                                         ITEM_API
+                                         FROM ITEMS
+                                         WHERE ITEM_CREATOR = @bind2
+                                         AND ITEM_TITLE = @bind1";
+
+                // Parameterize the variables for system security
+                cmdGetID.Parameters.AddWithValue("@bind1", title);
+                cmdGetID.Parameters.AddWithValue("@bind2", creator);
+
+                // Execute query
+                SqlDataReader reader = cmdGetID.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    item[0] = Convert.ToInt32(reader[0]);
+                    item[1] = Convert.ToInt32(reader[1]);
+                    dbConnection.Close();
+                    return item;
+                }
+
+                // Dispose of resources
+                cmdGetID.Dispose();
+
+                // Confirmation & Refresh
+                PopulateDataTable("");
+                MessageBox.Show(title + " has been deleted from your " + list + " list", "Deletion Successful", MessageBoxButtons.OK);
+
+            }
+            catch (Exception ex)
+            {
+                // Display error if caught
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            dbConnection.Close();
+            return item;
         }
     }
 }
