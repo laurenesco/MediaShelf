@@ -28,30 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNavManualEntry = new System.Windows.Forms.Button();
+            this.btnNavManualListItem = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cmbSortByParameter = new System.Windows.Forms.ComboBox();
+            this.txtListSearch = new System.Windows.Forms.TextBox();
+            this.cmbListSort = new System.Windows.Forms.ComboBox();
             this.lblSortBy = new System.Windows.Forms.Label();
             this.lblListName = new System.Windows.Forms.Label();
             this.btnNavBack = new System.Windows.Forms.Button();
             this.lblDescriptionText = new System.Windows.Forms.Label();
             this.dgvResults = new System.Windows.Forms.DataGridView();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnDeleteListItem = new System.Windows.Forms.Button();
             this.btnNotes = new System.Windows.Forms.Button();
+            this.btnDeleteTag = new System.Windows.Forms.Button();
+            this.btnAddTag = new System.Windows.Forms.Button();
+            this.cmbSortTags = new System.Windows.Forms.ComboBox();
+            this.txtTagsSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnNavManualEntry
+            // btnNavManualListItem
             // 
-            this.btnNavManualEntry.AutoSize = true;
-            this.btnNavManualEntry.Location = new System.Drawing.Point(947, 694);
-            this.btnNavManualEntry.Name = "btnNavManualEntry";
-            this.btnNavManualEntry.Size = new System.Drawing.Size(94, 30);
-            this.btnNavManualEntry.TabIndex = 147;
-            this.btnNavManualEntry.Text = "Add Entry";
-            this.btnNavManualEntry.UseVisualStyleBackColor = true;
-            this.btnNavManualEntry.Click += new System.EventHandler(this.btnNavManualEntry_Click);
+            this.btnNavManualListItem.AutoSize = true;
+            this.btnNavManualListItem.Location = new System.Drawing.Point(947, 694);
+            this.btnNavManualListItem.Name = "btnNavManualListItem";
+            this.btnNavManualListItem.Size = new System.Drawing.Size(94, 30);
+            this.btnNavManualListItem.TabIndex = 147;
+            this.btnNavManualListItem.Text = "Add Entry";
+            this.btnNavManualListItem.UseVisualStyleBackColor = true;
+            this.btnNavManualListItem.Click += new System.EventHandler(this.btnNavManualEntry_Click);
             // 
             // lblSearch
             // 
@@ -64,22 +68,22 @@
             this.lblSearch.TabIndex = 146;
             this.lblSearch.Text = "Search:";
             // 
-            // txtSearch
+            // txtListSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(438, 166);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(245, 27);
-            this.txtSearch.TabIndex = 145;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtListSearch.Location = new System.Drawing.Point(437, 166);
+            this.txtListSearch.Name = "txtListSearch";
+            this.txtListSearch.Size = new System.Drawing.Size(245, 27);
+            this.txtListSearch.TabIndex = 145;
+            this.txtListSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // cmbSortByParameter
+            // cmbListSort
             // 
-            this.cmbSortByParameter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSortByParameter.FormattingEnabled = true;
-            this.cmbSortByParameter.Location = new System.Drawing.Point(890, 661);
-            this.cmbSortByParameter.Name = "cmbSortByParameter";
-            this.cmbSortByParameter.Size = new System.Drawing.Size(151, 28);
-            this.cmbSortByParameter.TabIndex = 136;
+            this.cmbListSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbListSort.FormattingEnabled = true;
+            this.cmbListSort.Location = new System.Drawing.Point(890, 661);
+            this.cmbListSort.Name = "cmbListSort";
+            this.cmbListSort.Size = new System.Drawing.Size(151, 28);
+            this.cmbListSort.TabIndex = 136;
             // 
             // lblSortBy
             // 
@@ -98,11 +102,12 @@
             this.lblListName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.lblListName.Font = new System.Drawing.Font("Ebrima", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblListName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblListName.Location = new System.Drawing.Point(459, 27);
+            this.lblListName.Location = new System.Drawing.Point(465, 27);
             this.lblListName.Name = "lblListName";
             this.lblListName.Size = new System.Drawing.Size(173, 47);
             this.lblListName.TabIndex = 127;
             this.lblListName.Text = "List Name";
+            this.lblListName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNavBack
             // 
@@ -119,11 +124,12 @@
             this.lblDescriptionText.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDescriptionText.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDescriptionText.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblDescriptionText.Location = new System.Drawing.Point(459, 74);
+            this.lblDescriptionText.Location = new System.Drawing.Point(389, 74);
             this.lblDescriptionText.Name = "lblDescriptionText";
-            this.lblDescriptionText.Size = new System.Drawing.Size(230, 52);
+            this.lblDescriptionText.Size = new System.Drawing.Size(322, 46);
             this.lblDescriptionText.TabIndex = 162;
             this.lblDescriptionText.Text = "Description";
+            this.lblDescriptionText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dgvResults
             // 
@@ -145,15 +151,15 @@
             this.dgvResults.Size = new System.Drawing.Size(999, 435);
             this.dgvResults.TabIndex = 163;
             // 
-            // btnDelete
+            // btnDeleteListItem
             // 
-            this.btnDelete.Location = new System.Drawing.Point(42, 661);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(137, 30);
-            this.btnDelete.TabIndex = 164;
-            this.btnDelete.Text = "Delete Entry";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDeleteListItem.Location = new System.Drawing.Point(42, 661);
+            this.btnDeleteListItem.Name = "btnDeleteListItem";
+            this.btnDeleteListItem.Size = new System.Drawing.Size(137, 30);
+            this.btnDeleteListItem.TabIndex = 164;
+            this.btnDeleteListItem.Text = "Delete Entry";
+            this.btnDeleteListItem.UseVisualStyleBackColor = true;
+            this.btnDeleteListItem.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNotes
             // 
@@ -165,6 +171,47 @@
             this.btnNotes.UseVisualStyleBackColor = true;
             this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
             // 
+            // btnDeleteTag
+            // 
+            this.btnDeleteTag.Location = new System.Drawing.Point(42, 661);
+            this.btnDeleteTag.Name = "btnDeleteTag";
+            this.btnDeleteTag.Size = new System.Drawing.Size(137, 30);
+            this.btnDeleteTag.TabIndex = 166;
+            this.btnDeleteTag.Text = "Delete Tag";
+            this.btnDeleteTag.UseVisualStyleBackColor = true;
+            this.btnDeleteTag.Visible = false;
+            // 
+            // btnAddTag
+            // 
+            this.btnAddTag.AutoSize = true;
+            this.btnAddTag.Location = new System.Drawing.Point(947, 695);
+            this.btnAddTag.Name = "btnAddTag";
+            this.btnAddTag.Size = new System.Drawing.Size(94, 30);
+            this.btnAddTag.TabIndex = 167;
+            this.btnAddTag.Text = "Add Tag";
+            this.btnAddTag.UseVisualStyleBackColor = true;
+            this.btnAddTag.Visible = false;
+            this.btnAddTag.Click += new System.EventHandler(this.btnAddTag_Click);
+            // 
+            // cmbSortTags
+            // 
+            this.cmbSortTags.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSortTags.FormattingEnabled = true;
+            this.cmbSortTags.Location = new System.Drawing.Point(890, 661);
+            this.cmbSortTags.Name = "cmbSortTags";
+            this.cmbSortTags.Size = new System.Drawing.Size(151, 28);
+            this.cmbSortTags.TabIndex = 168;
+            this.cmbSortTags.Visible = false;
+            // 
+            // txtTagsSearch
+            // 
+            this.txtTagsSearch.Location = new System.Drawing.Point(437, 166);
+            this.txtTagsSearch.Name = "txtTagsSearch";
+            this.txtTagsSearch.Size = new System.Drawing.Size(245, 27);
+            this.txtTagsSearch.TabIndex = 169;
+            this.txtTagsSearch.Visible = false;
+            this.txtTagsSearch.TextChanged += new System.EventHandler(this.txtTagsSearch_TextChanged);
+            // 
             // ListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -172,15 +219,19 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(1084, 761);
+            this.Controls.Add(this.txtTagsSearch);
+            this.Controls.Add(this.cmbSortTags);
+            this.Controls.Add(this.btnAddTag);
+            this.Controls.Add(this.btnDeleteTag);
             this.Controls.Add(this.btnNotes);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnDeleteListItem);
             this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.lblDescriptionText);
             this.Controls.Add(this.btnNavBack);
-            this.Controls.Add(this.btnNavManualEntry);
+            this.Controls.Add(this.btnNavManualListItem);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.cmbSortByParameter);
+            this.Controls.Add(this.txtListSearch);
+            this.Controls.Add(this.cmbListSort);
             this.Controls.Add(this.lblSortBy);
             this.Controls.Add(this.lblListName);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -194,16 +245,20 @@
         }
 
         #endregion
-        private Button btnNavManualEntry;
+        private Button btnNavManualListItem;
         private Label lblSearch;
-        private TextBox txtSearch;
-        private ComboBox cmbSortByParameter;
+        private TextBox txtListSearch;
+        private ComboBox cmbListSort;
         private Label lblSortBy;
         private Label lblListName;
         private Button btnNavBack;
         private Label lblDescriptionText;
         private DataGridView dgvResults;
-        private Button btnDelete;
+        private Button btnDeleteListItem;
         private Button btnNotes;
+        private Button btnDeleteTag;
+        private Button btnAddTag;
+        private ComboBox cmbSortTags;
+        private TextBox txtTagsSearch;
     }
 }

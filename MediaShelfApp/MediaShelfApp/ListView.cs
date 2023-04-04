@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,11 +36,89 @@ namespace MediaShelfApp
             dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
 
             // Populate form
-            PopulateSortComboBox();
-            PopulateListInfo(list);
-            PopulateDataTable("");
+
+            if (list == "Tags")
+            {             
+                TagElements();
+                PopulateSortComboBox(2);
+                PopulateTagsTable("");
+            }
+            else
+            {
+                PopulateListInfo(list);
+                PopulateDataTable("");
+                PopulateSortComboBox(1);
+            }
         }
 
+        // Populates the datagridview if the user wants to view tags instead of a list
+        public void PopulateTagsTable(String s)
+        {
+            // Format search
+            String search = "%" + s + "%";
+            String parameter = "";
+
+            // Set search parameter
+            switch (cmbSortTags.Text)
+            {
+                case "Tag Name":
+                    parameter = "TAG_NAME";
+                    break;
+                case "Items with Tag":
+                    parameter = "ROW_COUNT";
+                    break;
+                default:
+                    MessageBox.Show("Error in sorting function", "Sorting Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+
+            // Create data container
+            DataTable results = new DataTable();
+
+            // Try query
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdGetTagInfo = dbConnection.CreateCommand();
+
+                // Construct insertion query
+                cmdGetTagInfo.CommandText = @"SELECT UPPER(LEFT(TAG_NAME, 1)) +
+                                              LOWER(RIGHT(TAG_NAME, LEN(TAG_NAME) - 1)),
+                                                  (SELECT COUNT(*)
+                                                   FROM ITEM_TAGS
+                                                   WHERE ITEM_TAG_NO = TAG_NO) AS ROW_COUNT
+                                               FROM TAG";
+
+                // If search box is not empty, add this condition to the query
+                if (search != "%%")
+                {
+                    cmdGetTagInfo.CommandText += " WHERE " + parameter + " LIKE @bind1";
+                    cmdGetTagInfo.Parameters.AddWithValue("@bind1", search);
+                }
+
+                // Execute and read the data
+                SqlDataReader reader = cmdGetTagInfo.ExecuteReader();
+                results.Load(reader);
+
+                dgvResults.DataSource = results;
+                dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvResults.Columns[0].HeaderText = "Tag";
+                dgvResults.Columns[1].HeaderText = "Items with this Tag";
+
+
+                // Close resources
+                reader.Close();
+                cmdGetTagInfo.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            dbConnection.Close();
+        }
         // Retrieves items from the selected list and fills the data grid
         public void PopulateDataTable(String s)
         {
@@ -48,7 +127,7 @@ namespace MediaShelfApp
             String parameter = "";
             
             // Set search parameter
-            switch(cmbSortByParameter.Text)
+            switch(cmbListSort.Text)
             {
                 case "Title":
                     parameter = "ITEM_TITLE";
@@ -133,13 +212,38 @@ namespace MediaShelfApp
         //  Private methods  //
         ///////////////////////
         
-        private void PopulateSortComboBox()
+        private void TagElements()
         {
-            cmbSortByParameter.Items.Add("Title");
-            cmbSortByParameter.Items.Add("Creator");
-            cmbSortByParameter.Items.Add("Genre");
-            cmbSortByParameter.Items.Add("Tags");
-            cmbSortByParameter.SelectedIndex = 0;
+            // Hide elements specific to list items
+            this.btnDeleteListItem.Visible = false;
+            this.btnNavManualListItem.Visible = false;
+            this.btnNotes.Visible = false;
+            this.cmbListSort.Visible = false;
+            this.txtListSearch.Visible = false;
+
+            // Show elements specific to tags
+            this.btnDeleteTag.Visible = true;
+            this.btnAddTag.Visible = true;
+            this.cmbSortTags.Visible = true;
+            this.txtTagsSearch.Visible = true;
+        }
+
+        private void PopulateSortComboBox(int type)
+        {
+            if (type == 1)
+            {
+                cmbListSort.Items.Add("Title");
+                cmbListSort.Items.Add("Creator");
+                cmbListSort.Items.Add("Genre");
+                cmbListSort.Items.Add("Tags");
+                cmbListSort.SelectedIndex = 0;
+            }
+            else if (type == 2)
+            {
+                cmbSortTags.Items.Add("Tag Name");
+                // cmbSortTags.Items.Add("Items with Tag");
+                cmbSortTags.SelectedIndex = 0;
+            }
         }
 
         // Retrieves information about list that was selected and fills in basic form elements
@@ -202,7 +306,7 @@ namespace MediaShelfApp
         // Search box functionality - Refreshes box upon typing
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            String search = txtSearch.Text.ToString();
+            String search = txtListSearch.Text.ToString();
             PopulateDataTable(search);
         }
 
@@ -395,6 +499,18 @@ namespace MediaShelfApp
 
             dbConnection.Close();
             return item;
+        }
+
+        private void txtTagsSearch_TextChanged(object sender, EventArgs e)
+        {
+            String search = txtTagsSearch.Text.ToString();
+            PopulateTagsTable(search);
+        }
+
+        private void btnAddTag_Click(object sender, EventArgs e)
+        {
+            Manual_Entry_Form window = new Manual_Entry_Form(list, this);
+            window.Show();
         }
     }
 }
