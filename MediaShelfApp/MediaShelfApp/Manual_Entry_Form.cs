@@ -411,13 +411,13 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-        
+
         // Add button functionality - saves user-made manual entry
         private void ME_addButton_Click(object sender, EventArgs e)
         {
             // Instance variable: isEmpty - bool representing whether title field is empty
             bool isEmpty = true;
-            
+
             //checks that title text field isn't empty/full of white-space
             foreach (char c in txtTitle.Text)
             {
@@ -429,7 +429,7 @@ namespace MediaShelfApp
             }
 
             //if title field is empty, informs user to correct that; else, proceeds to save manual entry
-            if(isEmpty)
+            if (isEmpty)
             {
                 MessageBox.Show("Title field cannot be empty. Please enter a title.");
             }
@@ -439,7 +439,7 @@ namespace MediaShelfApp
                 this.ClearFields();
             }
         }
-        
+
         //refreshes Manual Entry Form
         private void ClearFields()
         {
@@ -461,7 +461,7 @@ namespace MediaShelfApp
             caller.Show();
             this.Close();
         }
-        
+
         //adds user-made manual entry to database
         private void SaveManualEntry()
         {
@@ -470,7 +470,7 @@ namespace MediaShelfApp
                 // Declaring all form variables that may be used in the query (to later be validated)
                 String title = txtTitle.Text;
                 String creator = txtCreator.Text;
-                String genre = txtTags.Text; 
+                String genre = txtTags.Text;
                 String description = txtDescriptionText.Text;
                 DateTime releaseDate = dtpReleaseDate.Value;
                 int listID = getListID(list);
@@ -523,7 +523,7 @@ namespace MediaShelfApp
                 cmdInsertMedia.Parameters.AddWithValue("@creator", creator);
                 cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
                 if (icon != null)
-                    cmdInsertMedia.Parameters.AddWithValue("@icon", icon); 
+                    cmdInsertMedia.Parameters.AddWithValue("@icon", icon);
                 cmdInsertMedia.Parameters.AddWithValue("@desc", description);
                 cmdInsertMedia.Parameters.AddWithValue("@list", listID);
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
@@ -595,12 +595,17 @@ namespace MediaShelfApp
             open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                imagePath = open.FileName; 
+                imagePath = open.FileName;
 
                 picboxImage.ImageLocation = imagePath;
                 picboxImage.BackgroundImage = null;
                 picboxImage.BackColor = Color.Transparent;
             }
+        }
+
+        private void Manual_Entry_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

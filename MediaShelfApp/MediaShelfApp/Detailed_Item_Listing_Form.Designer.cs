@@ -228,7 +228,6 @@
             Margin = new Padding(5);
             Name = "Detailed_Item_Listing_Form";
             Text = "Detailed Item Listing";
-            FormClosing += Detailed_Item_Listing_Form_FormClosing;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);

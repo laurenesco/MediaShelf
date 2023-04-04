@@ -89,8 +89,8 @@ namespace MediaShelfApp
         // gets results from index [i], which gets C# object from moviesResult "original_title"
 
 
-        public class moviesResult 
-        {   
+        public class moviesResult
+        {
             // Name of object has to match name of JSON object
             public bool adult { get; set; } // C# object assigned at apiCall function below
             public string backdrop_path { get; set; }
@@ -107,7 +107,7 @@ namespace MediaShelfApp
             public double vote_average { get; set; }
             public int vote_count { get; set; }
         }
-               
+
         public class moviesRoot // ROOT CLASS FOR MOVIES //
         {
             public List<moviesResult> results { get; set; } // ^ above is all info for results
@@ -125,7 +125,7 @@ namespace MediaShelfApp
             public string etag { get; set; }
             public string selfLink { get; set; }
             public VolumeInfo volumeInfo { get; set; }
-            
+
 
             // Might not need, let me know if needed
             //public AccessInfo accessInfo { get; set; }
@@ -145,7 +145,7 @@ namespace MediaShelfApp
             public List<string> authors { get; set; }
             public string publisher { get; set; }
             public string publishedDate { get; set; }
-            public string description { get; set; }            
+            public string description { get; set; }
             public int pageCount { get; set; }
             public string printType { get; set; }
             public List<string> categories { get; set; }
@@ -235,7 +235,7 @@ namespace MediaShelfApp
 
 
         ////// GAMES API CLASSES //////
-        
+
         public class gamesRoot // ROOT CLASS FOR GAMES // 
         {
             public int count { get; set; }
@@ -250,28 +250,28 @@ namespace MediaShelfApp
             public string name { get; set; }
             public int playtime { get; set; }
             //public List<Platform> platforms { get; set; }   // Leave commented
-            
+
             public string released { get; set; }
             public bool tba { get; set; }
             public string background_image { get; set; }
             public double rating { get; set; }
             public int rating_top { get; set; }
-            
+
             public int ratings_count { get; set; }
             public int reviews_text_count { get; set; }
             public int added { get; set; }
-            
+
             public int? metacritic { get; set; }
             public int suggestions_count { get; set; }
             public DateTime updated { get; set; }
             public int id { get; set; }
             public string score { get; set; }
-            public object clip { get; set; }           
+            public object clip { get; set; }
             public object user_game { get; set; }
             public int reviews_count { get; set; }
             public int community_rating { get; set; }
             public string saturated_color { get; set; }
-            public string dominant_color { get; set; }          
+            public string dominant_color { get; set; }
             public List<ParentPlatform> parent_platforms { get; set; }
             public List<Genre> genres { get; set; }
         }
@@ -411,7 +411,7 @@ namespace MediaShelfApp
                 dataGridView1.Refresh();
 
                 dataGridView1.Columns.Add("Title", "Title");
-                dataGridView1.Columns.Add("Overview", "Overview");               
+                dataGridView1.Columns.Add("Overview", "Overview");
                 for (int i = 0; i < 10; i++)
                 {
                     try
@@ -438,7 +438,7 @@ namespace MediaShelfApp
 
                 // API call for music REPLACE [QUERY] = https://api.deezer.com/search/track?q=[QUERY]
                 var endpoint = new Uri("https://api.deezer.com/search/track?q=" + query); // NO API KEY NEEDED FOR DEEZER
-                var result = client.GetAsync(endpoint).Result; 
+                var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
                 musicRoot musicList = JsonConvert.DeserializeObject<musicRoot>(json);
 
@@ -465,7 +465,7 @@ namespace MediaShelfApp
                 musicjson = musicList;
             }
         }
-        
+
         // GAMES API CALL //
         private void gamesAPICall()
         {
@@ -501,7 +501,7 @@ namespace MediaShelfApp
             }
         }
 
-        
+
         /// END OF API CALLS /// 
 
         // Search Results Form Loads
@@ -582,7 +582,8 @@ namespace MediaShelfApp
 
                         break;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

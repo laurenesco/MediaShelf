@@ -49,5 +49,10 @@ namespace MediaShelfApp
             caller.Show();
             this.Close();
         }
+
+        private void Detailed_Recommendations_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

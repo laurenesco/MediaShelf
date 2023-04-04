@@ -27,7 +27,7 @@ namespace MediaShelfApp
         //////////////////////
         //  Public methods  //
         //////////////////////
-        
+
         // Constructor
         public Notes_Form(int item_API_ID, int item_ID, string title)
         {
@@ -45,7 +45,7 @@ namespace MediaShelfApp
 
                 // Populate the form
                 LoadForm();
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error Initializing Notes Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -56,7 +56,7 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-        
+
         private void LoadForm()
         {
             // Iterate through all notepads and load notes
@@ -147,11 +147,11 @@ namespace MediaShelfApp
                 // This ensures there are not empty rows taking up space in db until we implement 
                 // method to check if a note exists/
                 DeleteNote(notepadID);
-            } 
+            }
             else if (dne)
             {
                 UpdateNote(notepadID, noteText);
-            } 
+            }
             else
             {
                 // If the note contains text AND does not exist, save it to database
@@ -221,7 +221,7 @@ namespace MediaShelfApp
                 // Close connection and dispose of the command
                 dbConnection.Close();
                 cmdInsertNote.Dispose();
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -289,7 +289,8 @@ namespace MediaShelfApp
                         MessageBox.Show("An error has occured.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return "Error";
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 // Catch any errors and display error string
                 MessageBox.Show(ex.ToString(), "Error Retrieving Note Text", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -330,7 +331,7 @@ namespace MediaShelfApp
                     if (reader.Read())
                     {
                         // Sets array value to true if note exists
-                        exists[i-1] = true;
+                        exists[i - 1] = true;
                     }
 
                     // Close connection and dispose of the command
@@ -356,6 +357,11 @@ namespace MediaShelfApp
         private void btnNavBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Notes_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -215,12 +215,6 @@ namespace MediaShelfApp
 
 
         }
-
-        private void Detailed_Item_Listing_Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnFavorite_Click(object sender, EventArgs e)
         {
             int list_index = cmbAddToList.SelectedIndex;

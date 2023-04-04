@@ -23,13 +23,13 @@ namespace MediaShelfApp
         //////////////////////
         //  Public methods  //
         //////////////////////
-        
+
         // Constructor
         public ListView(String list, Form caller)
         {
             InitializeComponent();
             this.list = list;
-            this.caller = caller;            
+            this.caller = caller;
 
             // Initiate Database Connection String
             dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
@@ -46,9 +46,9 @@ namespace MediaShelfApp
             // Format search
             String search = "%" + s + "%";
             String parameter = "";
-            
+
             // Set search parameter
-            switch(cmbSortByParameter.Text)
+            switch (cmbSortByParameter.Text)
             {
                 case "Title":
                     parameter = "ITEM_TITLE";
@@ -88,7 +88,7 @@ namespace MediaShelfApp
                     cmdGetListItems.CommandText += " AND " + parameter + " LIKE @bind2";
                     cmdGetListItems.Parameters.AddWithValue("@bind2", search);
                 }
-                                               
+
 
                 // Parameterize the variables for system security
                 cmdGetListItems.Parameters.AddWithValue("@bind1", list);
@@ -120,7 +120,7 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-        
+
         private void PopulateSortComboBox()
         {
             cmbSortByParameter.Items.Add("Title");
@@ -205,7 +205,7 @@ namespace MediaShelfApp
             }
         }
 
-        private void DeleteItem (string title, string creator)
+        private void DeleteItem(string title, string creator)
         {
             try
             {
@@ -279,7 +279,7 @@ namespace MediaShelfApp
                 // Dispose of resources
                 cmdGetIDs.Dispose();
                 dbConnection.Close();
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error loading notes form.", MessageBoxButtons.OK, MessageBoxIcon.Error);
