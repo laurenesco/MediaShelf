@@ -61,6 +61,7 @@ namespace MediaShelfApp
             searchBox1.Size = new Size(711, 39);
             searchBox1.TabIndex = 0;
             searchBox1.TextAlign = HorizontalAlignment.Center;
+            searchBox1.KeyPress += searchBox1_KeyPress;
             // 
             // button1
             // 
@@ -210,7 +211,7 @@ namespace MediaShelfApp
             // btnNavBack
             // 
             btnNavBack.Location = new Point(20, 19);
-            btnNavBack.Margin = new Padding(5, 5, 5, 5);
+            btnNavBack.Margin = new Padding(5);
             btnNavBack.Name = "btnNavBack";
             btnNavBack.Size = new Size(153, 46);
             btnNavBack.TabIndex = 7;

@@ -588,5 +588,13 @@ namespace MediaShelfApp
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void searchBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == '\r')
+            {
+                button2.PerformClick();
+            }
+        }
     }
 }

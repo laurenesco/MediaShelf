@@ -95,6 +95,9 @@ namespace MediaShelfApp
             {
                 cmbAddToList.Items.Add(reader.GetString(0));
             }
+
+            cmbAddToList.Text = "Favorites";
+
             dbConnection.Close();
         }
 
@@ -222,7 +225,7 @@ namespace MediaShelfApp
 
             if (list_index == -1)
             {
-                MessageBox.Show("Please select a list to favorite item to.","Error");
+                MessageBox.Show("Please select a list to favorite item to.", "Error");
             }
             else
             {
@@ -242,7 +245,7 @@ namespace MediaShelfApp
                     cmd.Parameters.AddWithValue("@item_list_id", list_index);
                     cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Item saved to " + cmbAddToList.Text,"Save Confirmed");
+                    MessageBox.Show("Item saved to " + cmbAddToList.Text, "Save Confirmed");
                 }
                 catch (Exception ex)
                 {
