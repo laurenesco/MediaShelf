@@ -102,7 +102,7 @@
             this.lblListName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.lblListName.Font = new System.Drawing.Font("Ebrima", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblListName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblListName.Location = new System.Drawing.Point(465, 27);
+            this.lblListName.Location = new System.Drawing.Point(468, 27);
             this.lblListName.Name = "lblListName";
             this.lblListName.Size = new System.Drawing.Size(173, 47);
             this.lblListName.TabIndex = 127;
@@ -180,6 +180,7 @@
             this.btnDeleteTag.Text = "Delete Tag";
             this.btnDeleteTag.UseVisualStyleBackColor = true;
             this.btnDeleteTag.Visible = false;
+            this.btnDeleteTag.Click += new System.EventHandler(this.btnDeleteTag_Click);
             // 
             // btnAddTag
             // 

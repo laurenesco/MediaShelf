@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata;
@@ -119,6 +120,7 @@ namespace MediaShelfApp
 
             dbConnection.Close();
         }
+
         // Retrieves items from the selected list and fills the data grid
         public void PopulateDataTable(String s)
         {
@@ -212,6 +214,7 @@ namespace MediaShelfApp
         //  Private methods  //
         ///////////////////////
         
+        // Set list items to non-visible, set tags items to visible
         private void TagElements()
         {
             // Hide elements specific to list items
@@ -228,6 +231,7 @@ namespace MediaShelfApp
             this.txtTagsSearch.Visible = true;
         }
 
+        // Populate the combobox for the list or tag version of the page for sorting
         private void PopulateSortComboBox(int type)
         {
             if (type == 1)
@@ -501,16 +505,111 @@ namespace MediaShelfApp
             return item;
         }
 
+        // Search the datagridview when tags are loaded, not lists
         private void txtTagsSearch_TextChanged(object sender, EventArgs e)
         {
             String search = txtTagsSearch.Text.ToString();
             PopulateTagsTable(search);
         }
 
+        // Add tag button functionality, opens tag version of manual entry form
         private void btnAddTag_Click(object sender, EventArgs e)
         {
             Manual_Entry_Form window = new Manual_Entry_Form(list, this);
             window.Show();
+        }
+
+        // Delete tag button functionality, deletes the selected tag
+        private void btnDeleteTag_Click(object sender, EventArgs e)
+        {
+            string tagName = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
+
+            var areYouSure = MessageBox.Show("Are you sure you want to delete the tag " + tagName + "?", "Deletion Warning", MessageBoxButtons.YesNoCancel);
+
+            if (areYouSure == DialogResult.Yes)
+            {
+                // Retrieve the ID and delete the tag
+                int id = GetTagID(tagName);
+                DeleteTag(id);
+
+                // Confirmation
+                MessageBox.Show(tagName + " has been deleted!", "Deletion Successful", MessageBoxButtons.OK);
+            }
+
+            // Refresh
+            PopulateTagsTable("");
+        }
+
+        private void DeleteTag(int ID)
+        {
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdDeleteTag = dbConnection.CreateCommand();
+
+                // Construct deletion query
+                cmdDeleteTag.CommandText = @"DELETE FROM TAG
+                                             WHERE TAG_NO = @bind1";
+
+                // Parameterize the variables for system security
+                cmdDeleteTag.Parameters.AddWithValue("@bind1", ID);
+
+                // Execute query
+                cmdDeleteTag.ExecuteNonQuery();
+
+                // Dispose of resources
+                cmdDeleteTag.Dispose();
+            }
+            catch (Exception ex)
+            {
+                // Display error if caught
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            dbConnection.Close();
+        }
+
+        // Retrieve the tag ID for accurate deletion
+        private int GetTagID(string tagName)
+        {
+            // Try query
+            try
+            {
+                // Open database connection
+                dbConnection.Open();
+                SqlCommand cmdGetTagID = dbConnection.CreateCommand();
+
+                // Construct insertion query
+                cmdGetTagID.CommandText = @"SELECT TAG_NO
+                                            FROM TAG
+                                            WHERE TAG_NAME = @bind1";
+
+                // Parameterize for security purposes
+                cmdGetTagID.Parameters.AddWithValue("@bind1", tagName);
+
+                // Execute
+                SqlDataReader reader = cmdGetTagID.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Close resources
+                    int id = Convert.ToInt32(reader[0]);
+                    reader.Close();
+                    cmdGetTagID.Dispose();
+                    dbConnection.Close();
+
+                    // Return ID                   
+                    return id;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            dbConnection.Close();
+            return 0;
         }
     }
 }

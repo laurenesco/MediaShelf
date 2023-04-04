@@ -46,7 +46,7 @@ namespace MediaShelfApp
 
             if (list == "Tags")
             {
-                TagsElements();            
+                TagElements();            
             }
 
             // Initiate Database Connection
@@ -57,37 +57,53 @@ namespace MediaShelfApp
         //  Private methods  //
         ///////////////////////
         
-        // Add button functionality - saves user-made manual entry
 
         private void TagElements()
         {
-            foreach()
-        }
-
-        private void ME_addButton_Click(object sender, EventArgs e)
-        {
-            // Instance variable: isEmpty - bool representing whether title field is empty
-            bool isEmpty = true;
-            
-            //checks that title text field isn't empty/full of white-space
-            foreach (char c in txtTitle.Text)
+            foreach(Control c in this.Controls)
             {
-                if (c != ' ')
-                {
-                    isEmpty = false;
-                    break;
-                }
+                c.Visible = false;
             }
 
-            //if title field is empty, informs user to correct that; else, proceeds to save manual entry
-            if(isEmpty)
+            this.btnBackButton.Visible = true;
+            this.btnAddButton.Visible = true;
+            this.lblTagName.Visible = true;
+            this.txtTagName.Visible = true;
+            this.lblAddTag.Visible = true;
+        }
+
+        // Add button functionality - saves user-made manual entry
+        private void ME_addButton_Click(object sender, EventArgs e)
+        {
+            if (list == "Tags")
             {
-                MessageBox.Show("Title field cannot be empty. Please enter a title.");
+                SaveTag();
             }
             else
             {
-                SaveManualEntry();
-                this.ClearFields();
+                // Instance variable: isEmpty - bool representing whether title field is empty
+                bool isEmpty = true;
+
+                //checks that title text field isn't empty/full of white-space
+                foreach (char c in txtTitle.Text)
+                {
+                    if (c != ' ')
+                    {
+                        isEmpty = false;
+                        break;
+                    }
+                }
+
+                //if title field is empty, informs user to correct that; else, proceeds to save manual entry
+                if (isEmpty)
+                {
+                    MessageBox.Show("Title field cannot be empty. Please enter a title.");
+                }
+                else
+                {
+                    SaveManualEntry();
+                    this.ClearFields();
+                }
             }
         }
         
@@ -108,7 +124,14 @@ namespace MediaShelfApp
         // Back button functionality - reopens calling form with refreshed data grid
         private void btnNavBack_Click(object sender, EventArgs e)
         {
-            caller.PopulateDataTable("");
+            if (list == "Tags")
+            {
+                caller.PopulateTagsTable("");
+            }
+            else
+            {
+                caller.PopulateDataTable("");
+            }
             caller.Show();
             this.Close();
         }
@@ -251,6 +274,40 @@ namespace MediaShelfApp
                 picboxImage.ImageLocation = imagePath;
                 picboxImage.BackgroundImage = null;
                 picboxImage.BackColor = Color.Transparent;
+            }
+        }
+
+        // Save a tag 
+        private void SaveTag()
+        {
+            try { 
+            string tagName = txtTagName.Text;
+
+            // Open connection and create command
+            dbConnection.Open();
+            SqlCommand cmdInsertTag = dbConnection.CreateCommand();
+
+            // Construct insertion query 
+            cmdInsertTag.CommandText = @"INSERT INTO TAG 
+                                                (TAG_NAME)
+                                                VALUES(@bind1)";
+
+            cmdInsertTag.Parameters.AddWithValue("@bind1", tagName);
+
+            // Execute the insertion query
+            cmdInsertTag.ExecuteNonQuery();
+
+            // Close connection and dispose of the command
+            dbConnection.Close();
+            cmdInsertTag.Dispose();
+
+            // Confirmation message
+            MessageBox.Show("Tag created!\n", "Confirmation Message", MessageBoxButtons.OK);
+            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

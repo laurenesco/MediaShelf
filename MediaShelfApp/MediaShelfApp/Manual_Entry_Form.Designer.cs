@@ -42,6 +42,9 @@
             this.txtDescriptionText = new System.Windows.Forms.TextBox();
             this.btnAddButton = new System.Windows.Forms.Button();
             this.picboxImage = new System.Windows.Forms.PictureBox();
+            this.lblTagName = new System.Windows.Forms.Label();
+            this.txtTagName = new System.Windows.Forms.TextBox();
+            this.lblAddTag = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,12 +191,43 @@
             this.picboxImage.TabStop = false;
             this.picboxImage.Click += new System.EventHandler(this.picboxImage_Click);
             // 
+            // lblTagName
+            // 
+            this.lblTagName.AutoSize = true;
+            this.lblTagName.Location = new System.Drawing.Point(244, 136);
+            this.lblTagName.Name = "lblTagName";
+            this.lblTagName.Size = new System.Drawing.Size(79, 20);
+            this.lblTagName.TabIndex = 22;
+            this.lblTagName.Text = "Tag Name:";
+            this.lblTagName.Visible = false;
+            // 
+            // txtTagName
+            // 
+            this.txtTagName.Location = new System.Drawing.Point(337, 133);
+            this.txtTagName.Name = "txtTagName";
+            this.txtTagName.Size = new System.Drawing.Size(222, 27);
+            this.txtTagName.TabIndex = 23;
+            this.txtTagName.Visible = false;
+            // 
+            // lblAddTag
+            // 
+            this.lblAddTag.AutoSize = true;
+            this.lblAddTag.Location = new System.Drawing.Point(337, 21);
+            this.lblAddTag.Name = "lblAddTag";
+            this.lblAddTag.Size = new System.Drawing.Size(76, 20);
+            this.lblAddTag.TabIndex = 24;
+            this.lblAddTag.Text = "Add a Tag";
+            this.lblAddTag.Visible = false;
+            // 
             // Manual_Entry_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(761, 486);
+            this.Controls.Add(this.lblAddTag);
+            this.Controls.Add(this.txtTagName);
+            this.Controls.Add(this.lblTagName);
             this.Controls.Add(this.picboxImage);
             this.Controls.Add(this.btnAddButton);
             this.Controls.Add(this.txtDescriptionText);
@@ -232,5 +266,8 @@
         private TextBox txtDescriptionText;
         private Button btnAddButton;
         private PictureBox picboxImage;
+        private Label lblTagName;
+        private TextBox txtTagName;
+        private Label lblAddTag;
     }
 }
