@@ -220,27 +220,36 @@ namespace MediaShelfApp
             int list_index = cmbAddToList.SelectedIndex;
             SqlConnection dbConnect = new SqlConnection(dbConnectionString);
 
-            try
+            if (list_index == -1)
             {
-                dbConnect.Open();
-                SqlCommand cmd = dbConnect.CreateCommand();
-                cmd.CommandText = "INSERT INTO ITEMS VALUES (@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,NULL,@item_description,@item_list_id,@item_genre)";
-                cmd.Parameters.AddWithValue("@item_api", 0);
-                cmd.Parameters.AddWithValue("@item_media_type", 1);
-                cmd.Parameters.AddWithValue("@item_title", lblTitle.Text);
-                cmd.Parameters.AddWithValue("@item_creator", lblCreatorValue.Text);
-                cmd.Parameters.AddWithValue("@item_release_date", lblReleaseDateValue.Text);
-                //cmd.Parameters.AddWithValue("@item_icon", picMediaImage.Image);
-                cmd.Parameters.AddWithValue("@item_description", lblDescriptionValue.Text);
-                cmd.Parameters.AddWithValue("@item_list_id", list_index);
-                cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
-                cmd.ExecuteNonQuery();
+                MessageBox.Show("Please select a list to favorite item to.","Error");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+
+                try
+                {
+                    dbConnect.Open();
+                    SqlCommand cmd = dbConnect.CreateCommand();
+                    cmd.CommandText = "INSERT INTO ITEMS VALUES (@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,NULL,@item_description,@item_list_id,@item_genre)";
+                    cmd.Parameters.AddWithValue("@item_api", 0);
+                    cmd.Parameters.AddWithValue("@item_media_type", 1);
+                    cmd.Parameters.AddWithValue("@item_title", lblTitle.Text);
+                    cmd.Parameters.AddWithValue("@item_creator", lblCreatorValue.Text);
+                    cmd.Parameters.AddWithValue("@item_release_date", lblReleaseDateValue.Text);
+                    //cmd.Parameters.AddWithValue("@item_icon", picMediaImage.Image);
+                    cmd.Parameters.AddWithValue("@item_description", lblDescriptionValue.Text);
+                    cmd.Parameters.AddWithValue("@item_list_id", list_index);
+                    cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Item saved to " + cmbAddToList.Text,"Save Confirmed");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                dbConnect.Close();
             }
-            dbConnect.Close();
         }
     }
 }
