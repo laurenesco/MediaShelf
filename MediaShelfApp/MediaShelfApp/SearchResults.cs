@@ -572,7 +572,7 @@ namespace MediaShelfApp
 
                         title = gamesjson.results[rowIndex].name;
                         string platform = gamesjson.results[rowIndex].parent_platforms[0].platform.name.ToString();
-                        genre = gamesjson.results[rowIndex].genres[1].name.ToString();
+                        genre = gamesjson.results[rowIndex].genres[0].name.ToString();
                         release_date = gamesjson.results[rowIndex].released;
                         description = "";
                         mediaImageLink = gamesjson.results[rowIndex].background_image;
@@ -591,7 +591,7 @@ namespace MediaShelfApp
 
         private void searchBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == '\r')
+            if (e.KeyChar == '\r')
             {
                 button2.PerformClick();
             }

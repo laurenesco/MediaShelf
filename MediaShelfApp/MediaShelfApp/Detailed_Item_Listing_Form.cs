@@ -154,8 +154,11 @@ namespace MediaShelfApp
                     txtDescriptionValue.Text = description;
 
 
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    pbGameImage.Visible = false;
+                    pbBookImage.Visible = false;
+                    pbMovieImage.Visible = true;
+                    pbMovieImage.ImageLocation = mediaImageLink;
+                    pbMovieImage.Size = new System.Drawing.Size(369, 369);
                     break;
                 case 1:
 
@@ -173,12 +176,13 @@ namespace MediaShelfApp
                     txtDescriptionValue.Text = description;
 
 
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    picMediaImage.Size = new System.Drawing.Size(369, 369);
-
+                    pbMovieImage.Visible = false;
+                    pbGameImage.Visible = false;
+                    pbBookImage.Visible = true;
+                    pbBookImage.ImageLocation = mediaImageLink;
                     break;
                 case 2:
-                    // Modify Labels on Form for Books
+                    // Modify Labels on Form for Music
                     lblTitle.Text = title;
                     lblCreatorTitle.Text = "Artist:";
                     lblGenreTitle.Text = "Album:";
@@ -192,11 +196,15 @@ namespace MediaShelfApp
                     txtDescriptionValue.Text = description;
 
 
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    //picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    pbMovieImage.Visible = false;
+                    pbGameImage.Visible = false;
+                    pbBookImage.Visible = false;
+                    pbMusicImage.Visible = true;
+
+                    pbMusicImage.ImageLocation = mediaImageLink;
                     break;
                 case 3:
-
+                    // Modify Labels on Form for Games
                     lblCreatorTitle.Text = "Platform:";
                     lblDescriptionTitle.Text = "";
 
@@ -207,9 +215,11 @@ namespace MediaShelfApp
                     lblReleaseDateValue.Text = releaseDate;
                     txtDescriptionValue.Text = description;
 
-
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    pbMovieImage.Visible = false;
+                    pbMusicImage.Visible = false;
+                    pbBookImage.Visible = false;
+                    pbGameImage.Visible = true;
+                    pbGameImage.ImageLocation = mediaImageLink;
                     break;
                 default:
                     break;
@@ -241,7 +251,7 @@ namespace MediaShelfApp
                     cmd.Parameters.AddWithValue("@item_creator", lblCreatorValue.Text);
                     cmd.Parameters.AddWithValue("@item_release_date", lblReleaseDateValue.Text);
                     //cmd.Parameters.AddWithValue("@item_icon", picMediaImage.Image);
-                    cmd.Parameters.AddWithValue("@item_description", lblDescriptionValue.Text);
+                    cmd.Parameters.AddWithValue("@item_description", txtDescriptionValue.Text);
                     cmd.Parameters.AddWithValue("@item_list_id", list_index);
                     cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
                     cmd.ExecuteNonQuery();
@@ -253,6 +263,52 @@ namespace MediaShelfApp
                 }
                 dbConnect.Close();
             }
+        }
+
+        private void moveLabelsVerticalPosition(int y)
+        {
+            Label[] labels = { lblCreatorTitle, lblGenreTitle, lblReleaseDateTitle, lblCreatorValue, lblGenreValue, lblReleaseDateValue };
+
+            foreach (Label currentLabel in labels)
+            {
+                currentLabel.Location = new Point(currentLabel.Location.X, currentLabel.Location.Y + y);
+            }
+        }
+
+        private void lblTitle_TextChanged(object sender, EventArgs e)
+        {
+
+            // The purpose of this function is to resize elements of the screen if the Title
+            // is to large to fit within its control.
+
+            if (lblTitle.Text.Length > 50)
+            {
+                // IF lblTitle LENGTH IS MORE THAN 50 CHARACTERS IN TITLE SET FONT SIZE TO 16
+                lblTitle.Font = new Font("Segoe UI", 16);
+            }
+            else if (lblTitle.Text.Length > 45 && lblTitle.Text.Length <= 50)
+            {
+                // IF lblTitle LENGTH is between 45 and 50 CHARACTERS IN TITLE SET FONT SIZE TO 19
+                lblTitle.Font = new Font("Segoe UI", 19);
+            }
+            else if (lblTitle.Text.Length > 20 && lblTitle.Text.Length <= 45)
+            {
+                // IF lblTitle LENGTH is between 20 and 45 CHARACTERS
+                // ADJUST LABEL SPACING AND VALUE LOCATIONS
+                lblDescriptionTitle.Location = new Point(lblDescriptionTitle.Location.X, lblDescriptionTitle.Location.Y+20);
+                txtDescriptionValue.Size = new Size(txtDescriptionValue.Size.Width, txtDescriptionValue.Size.Height - 20);
+                txtDescriptionValue.Location = new Point(txtDescriptionValue.Location.X, txtDescriptionValue.Location.Y + 20);
+                moveLabelsVerticalPosition(30);
+            }
+            else
+            {
+                // IF NONE OF THE ABOVE MOVE ALL LABELS UP 30 POINTS
+                moveLabelsVerticalPosition(-30);
+            }
+
+            txtDescriptionValue.Size = new Size(txtDescriptionValue.Size.Width, txtDescriptionValue.Size.Height);
+
+
         }
     }
 }
