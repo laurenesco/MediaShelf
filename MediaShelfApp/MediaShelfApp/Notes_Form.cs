@@ -485,7 +485,7 @@ namespace MediaShelfApp
 
                 string oldDesc = ""; // to store the tags added during item's creation (the way it's stored in database)
                 string newDesc = ""; // to store the tags added during item's creation that'll remain after tag is deleted (the way it's stored in database)
-                List<String> oldTags = new List<String>(); // to store the tags added during item's creation
+                string[] oldTags; // to store the tags added during item's creation
 
                 //get the tags added during item's creation
                 cmdGetTagDesc.CommandText = @"SELECT ITEM_GENRE FROM ITEMS WHERE ITEM_ID = @id";
@@ -495,26 +495,38 @@ namespace MediaShelfApp
                 if (reader.Read())
                 {
                     if (!reader[0].ToString().IsNullOrEmpty())
-                        oldDesc += reader[0].ToString().ToUpper();
+                        oldDesc += reader[0].ToString().ToLower();
+                    //MessageBox.Show(reader[0].ToString().ToLower(), "Test", MessageBoxButtons.OK);
                 }
+                else
+                    MessageBox.Show("Item doesn't exist in database", "Error", MessageBoxButtons.OK);
                 reader.Close();
 
                 // get values of oldTags
-                oldTags.AddRange(oldDesc.Split(','));
+                oldTags = oldDesc.Split(',');
+
+                for (int i = 0; i < oldTags.Length; i++) 
+                {
+                    oldTags[i] = oldTags[i].Trim();
+                    //if (oldTags[i].Equals(tagToDelete.ToLower()))
+                    //    MessageBox.Show(oldTags[i], "Test", MessageBoxButtons.OK);
+                }
 
                 // check that tag to delete actually has been added to item
-                if (!oldTags.Contains(tagToDelete))
-                    ;//error if not
-
-                // get value of newDesc
-                newDesc = oldDesc.Replace(tagToDelete, "");
-
-                //clean up any extra commas from newDesc
-                newDesc = newDesc.Replace(",,", ",").Trim();
-                if (newDesc[0] == ',')
-                    newDesc = newDesc.Substring(1);
-                if (newDesc[newDesc.Length - 1] == ',')
-                    newDesc = newDesc.Remove(newDesc.Length - 1);
+                if (!oldTags.Contains(tagToDelete.ToLower()))
+                    MessageBox.Show("Item doesn't have tag in database", "Error", MessageBoxButtons.OK);
+                else // get value of newDesc
+                {
+                    //MessageBox.Show("Item has tag in database", "Test", MessageBoxButtons.OK);
+                    for (int i = 0; i < oldTags.Length; i++) 
+                    {
+                        if (i > 0 && i < oldTags.Length-1)
+                            newDesc += ", ";
+                        if (!oldTags[i].Equals(tagToDelete.ToLower()))
+                            newDesc += oldTags[i];
+                    }
+                    //MessageBox.Show(newDesc, "Test", MessageBoxButtons.OK);
+                }
 
                 // update item so that tag has been removed
                 cmdDeleteTagFromItem = dbConnection.CreateCommand();
@@ -661,7 +673,7 @@ namespace MediaShelfApp
             tag.BorderStyle = BorderStyle.FixedSingle;
             tag.Font = new Font("Ebrima", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             tag.Padding = new Padding(4);
-            tag.Text = tagText;
+            tag.Text = tagText.ToLower();
             if (tagTab != -1)
                 tag.TabIndex = tagTab;
             else
