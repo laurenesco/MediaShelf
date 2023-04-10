@@ -46,7 +46,7 @@ namespace MediaShelfApp
 
             if (list == "Tags")
             {
-                TagElements();            
+                TagElements();
             }
 
             // Initiate Database Connection
@@ -56,11 +56,11 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-        
+
 
         private void TagElements()
         {
-            foreach(Control c in this.Controls)
+            foreach (Control c in this.Controls)
             {
                 c.Visible = false;
             }
@@ -72,41 +72,6 @@ namespace MediaShelfApp
             this.lblAddTag.Visible = true;
         }
 
-        // Add button functionality - saves user-made manual entry
-        private void ME_addButton_Click(object sender, EventArgs e)
-        {
-            if (list == "Tags")
-            {
-                SaveTag();
-            }
-            else
-            {
-                // Instance variable: isEmpty - bool representing whether title field is empty
-                bool isEmpty = true;
-
-                //checks that title text field isn't empty/full of white-space
-                foreach (char c in txtTitle.Text)
-                {
-                    if (c != ' ')
-                    {
-                        isEmpty = false;
-                        break;
-                    }
-                }
-
-                //if title field is empty, informs user to correct that; else, proceeds to save manual entry
-                if (isEmpty)
-                {
-                    MessageBox.Show("Title field cannot be empty. Please enter a title.");
-                }
-                else
-                {
-                    SaveManualEntry();
-                    this.ClearFields();
-                }
-            }
-        }
-        
         //refreshes Manual Entry Form
         private void ClearFields()
         {
@@ -121,21 +86,6 @@ namespace MediaShelfApp
             picboxImage.Image = null;
         }
 
-        // Back button functionality - reopens calling form with refreshed data grid
-        private void btnNavBack_Click(object sender, EventArgs e)
-        {
-            if (list == "Tags")
-            {
-                caller.PopulateTagsTable("");
-            }
-            else
-            {
-                caller.PopulateDataTable("");
-            }
-            caller.Show();
-            this.Close();
-        }
-        
         //adds user-made manual entry to database
         private void SaveManualEntry()
         {
@@ -144,7 +94,7 @@ namespace MediaShelfApp
                 // Declaring all form variables that may be used in the query (to later be validated)
                 String title = txtTitle.Text;
                 String creator = txtCreator.Text;
-                String genre = txtTags.Text; 
+                String genre = txtTags.Text;
                 String description = txtDescriptionText.Text;
                 DateTime releaseDate = dtpReleaseDate.Value;
                 int listID = getListID(list);
@@ -197,7 +147,7 @@ namespace MediaShelfApp
                 cmdInsertMedia.Parameters.AddWithValue("@creator", creator);
                 cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
                 if (icon != null)
-                    cmdInsertMedia.Parameters.AddWithValue("@icon", icon); 
+                    cmdInsertMedia.Parameters.AddWithValue("@icon", icon);
                 cmdInsertMedia.Parameters.AddWithValue("@desc", description);
                 cmdInsertMedia.Parameters.AddWithValue("@list", listID);
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
@@ -269,7 +219,7 @@ namespace MediaShelfApp
             open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                imagePath = open.FileName; 
+                imagePath = open.FileName;
 
                 picboxImage.ImageLocation = imagePath;
                 picboxImage.BackgroundImage = null;
@@ -280,35 +230,86 @@ namespace MediaShelfApp
         // Save a tag 
         private void SaveTag()
         {
-            try { 
-            string tagName = txtTagName.Text;
+            try
+            {
+                string tagName = txtTagName.Text;
 
-            // Open connection and create command
-            dbConnection.Open();
-            SqlCommand cmdInsertTag = dbConnection.CreateCommand();
+                // Open connection and create command
+                dbConnection.Open();
+                SqlCommand cmdInsertTag = dbConnection.CreateCommand();
 
-            // Construct insertion query 
-            cmdInsertTag.CommandText = @"INSERT INTO TAG 
+                // Construct insertion query 
+                cmdInsertTag.CommandText = @"INSERT INTO TAG 
                                                 (TAG_NAME)
                                                 VALUES(@bind1)";
 
-            cmdInsertTag.Parameters.AddWithValue("@bind1", tagName);
+                cmdInsertTag.Parameters.AddWithValue("@bind1", tagName);
 
-            // Execute the insertion query
-            cmdInsertTag.ExecuteNonQuery();
+                // Execute the insertion query
+                cmdInsertTag.ExecuteNonQuery();
 
-            // Close connection and dispose of the command
-            dbConnection.Close();
-            cmdInsertTag.Dispose();
+                // Close connection and dispose of the command
+                dbConnection.Close();
+                cmdInsertTag.Dispose();
 
-            // Confirmation message
-            MessageBox.Show("Tag created!\n", "Confirmation Message", MessageBoxButtons.OK);
-            
+                // Confirmation message
+                MessageBox.Show("Tag created!\n", "Confirmation Message", MessageBoxButtons.OK);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        // Add button functionality - saves user-made manual entry
+        private void btnAddButton_Click(object sender, EventArgs e)
+        {
+            if (list == "Tags")
+            {
+                SaveTag();
+            }
+            else
+            {
+                // Instance variable: isEmpty - bool representing whether title field is empty
+                bool isEmpty = true;
+
+                //checks that title text field isn't empty/full of white-space
+                foreach (char c in txtTitle.Text)
+                {
+                    if (c != ' ')
+                    {
+                        isEmpty = false;
+                        break;
+                    }
+                }
+
+                //if title field is empty, informs user to correct that; else, proceeds to save manual entry
+                if (isEmpty)
+                {
+                    MessageBox.Show("Title field cannot be empty. Please enter a title.");
+                }
+                else
+                {
+                    SaveManualEntry();
+                    this.ClearFields();
+                }
+            }
+        }
+
+        // Back button functionality - reopens calling form with refreshed data grid
+        private void btnNavBack_Click(object sender, EventArgs e)
+        {
+            if (list == "Tags")
+            {
+                caller.PopulateTagsTable("");
+            }
+            else
+            {
+                caller.PopulateDataTable("");
+            }
+            caller.Show();
+            this.Close();
         }
     }
 }
