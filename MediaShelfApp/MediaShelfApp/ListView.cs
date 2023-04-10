@@ -46,9 +46,9 @@ namespace MediaShelfApp
             }
             else
             {
+                PopulateSortComboBox(1);
                 PopulateListInfo(list);
                 PopulateDataTable("");
-                PopulateSortComboBox(1);
             }
         }
 
@@ -144,7 +144,7 @@ namespace MediaShelfApp
                     parameter = "TAG_DESC";
                     break;
                 default:
-                    MessageBox.Show("Error in sorting function", "Sorting Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error in sorting switch statement", "Sorting Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -161,12 +161,9 @@ namespace MediaShelfApp
                 // Construct select query
                 cmdGetListItems.CommandText = @"SELECT ITEM_TITLE,
                                                ITEM_CREATOR,
-                                               ITEM_GENRE,
-                                               TAG_DESC
+                                               ITEM_GENRE
                                                FROM ITEMS
                                                JOIN LIST ON ITEM_LIST_ID = LIST_ID
-                                               LEFT JOIN TAGS ON ITEM_API = TAG_ITEM_API
-                                               AND TAG_ITEM_ID = ITEM_ID
                                                WHERE LIST_NAME = @bind1";
 
                 // If search box is not empty, add this condition to the query
@@ -186,14 +183,10 @@ namespace MediaShelfApp
 
                 // Configure table
                 dgvResults.DataSource = results;
+                dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvResults.Columns[0].HeaderText = "Title";
-                dgvResults.Columns[0].Width = 275;
                 dgvResults.Columns[1].HeaderText = "Artist";
-                dgvResults.Columns[1].Width = 275;
                 dgvResults.Columns[2].HeaderText = "Genre";
-                dgvResults.Columns[2].Width = 100;
-                dgvResults.Columns[3].HeaderText = "Tags";
-                dgvResults.Columns[3].Width = 335;
 
                 // Close resources
                 reader.Close();
@@ -204,7 +197,7 @@ namespace MediaShelfApp
             catch (Exception ex)
             {
                 // Display any potential errors
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Error in PopulateDataTable()", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             dbConnection.Close();
