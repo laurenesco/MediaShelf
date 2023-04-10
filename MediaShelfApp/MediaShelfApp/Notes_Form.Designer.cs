@@ -28,152 +28,207 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.btnAddNote = new System.Windows.Forms.Button();
-            this.txtNote1 = new System.Windows.Forms.TextBox();
-            this.txtNote2 = new System.Windows.Forms.TextBox();
-            this.txtNote3 = new System.Windows.Forms.TextBox();
-            this.txtNote4 = new System.Windows.Forms.TextBox();
-            this.txtNote5 = new System.Windows.Forms.TextBox();
-            this.txtNote6 = new System.Windows.Forms.TextBox();
-            this.txtNote7 = new System.Windows.Forms.TextBox();
-            this.txtNote8 = new System.Windows.Forms.TextBox();
-            this.btnNavBack = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblTitle = new Label();
+            btnAddNote = new Button();
+            txtNote1 = new TextBox();
+            txtNote2 = new TextBox();
+            txtNote3 = new TextBox();
+            txtNote4 = new TextBox();
+            btnNavBack = new Button();
+            flpTags = new FlowLayoutPanel();
+            lblAddTagPrompt = new Label();
+            cmbAddTags = new ComboBox();
+            btnAddTag = new Button();
+            btnDeleteTag = new Button();
+            cmbDeleteTags = new ComboBox();
+            lblDeleteTagPrompt = new Label();
+            SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(298, 21);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(282, 47);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Item Name Label";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Ebrima", 21F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.Location = new Point(303, 33);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(282, 47);
+            lblTitle.TabIndex = 4;
+            lblTitle.Text = "Item Name Label";
             // 
             // btnAddNote
             // 
-            this.btnAddNote.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAddNote.Location = new System.Drawing.Point(769, 12);
-            this.btnAddNote.Name = "btnAddNote";
-            this.btnAddNote.Size = new System.Drawing.Size(94, 29);
-            this.btnAddNote.TabIndex = 5;
-            this.btnAddNote.Text = "Save";
-            this.btnAddNote.UseVisualStyleBackColor = true;
-            this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
+            btnAddNote.Enabled = false;
+            btnAddNote.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddNote.Location = new Point(769, 12);
+            btnAddNote.Name = "btnAddNote";
+            btnAddNote.Size = new Size(94, 29);
+            btnAddNote.TabIndex = 5;
+            btnAddNote.Text = "Save";
+            btnAddNote.UseVisualStyleBackColor = true;
+            btnAddNote.Click += btnAddNote_Click;
             // 
             // txtNote1
             // 
-            this.txtNote1.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote1.Location = new System.Drawing.Point(32, 91);
-            this.txtNote1.MaxLength = 400;
-            this.txtNote1.Multiline = true;
-            this.txtNote1.Name = "txtNote1";
-            this.txtNote1.Size = new System.Drawing.Size(186, 165);
-            this.txtNote1.TabIndex = 12;
+            txtNote1.BackColor = SystemColors.Info;
+            txtNote1.Location = new Point(34, 132);
+            txtNote1.MaxLength = 400;
+            txtNote1.Multiline = true;
+            txtNote1.Name = "txtNote1";
+            txtNote1.Size = new Size(186, 165);
+            txtNote1.TabIndex = 12;
+            txtNote1.TextChanged += txtNote1_TextChanged;
             // 
             // txtNote2
             // 
-            this.txtNote2.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote2.Location = new System.Drawing.Point(240, 91);
-            this.txtNote2.MaxLength = 400;
-            this.txtNote2.Multiline = true;
-            this.txtNote2.Name = "txtNote2";
-            this.txtNote2.Size = new System.Drawing.Size(186, 165);
-            this.txtNote2.TabIndex = 15;
+            txtNote2.BackColor = SystemColors.Info;
+            txtNote2.Location = new Point(242, 132);
+            txtNote2.MaxLength = 400;
+            txtNote2.Multiline = true;
+            txtNote2.Name = "txtNote2";
+            txtNote2.Size = new Size(186, 165);
+            txtNote2.TabIndex = 15;
+            txtNote2.TextChanged += txtNote2_TextChanged;
             // 
             // txtNote3
             // 
-            this.txtNote3.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote3.Location = new System.Drawing.Point(447, 91);
-            this.txtNote3.MaxLength = 400;
-            this.txtNote3.Multiline = true;
-            this.txtNote3.Name = "txtNote3";
-            this.txtNote3.Size = new System.Drawing.Size(186, 165);
-            this.txtNote3.TabIndex = 16;
+            txtNote3.BackColor = SystemColors.Info;
+            txtNote3.Location = new Point(449, 132);
+            txtNote3.MaxLength = 400;
+            txtNote3.Multiline = true;
+            txtNote3.Name = "txtNote3";
+            txtNote3.Size = new Size(186, 165);
+            txtNote3.TabIndex = 16;
+            txtNote3.TextChanged += txtNote3_TextChanged;
             // 
             // txtNote4
             // 
-            this.txtNote4.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote4.Location = new System.Drawing.Point(654, 91);
-            this.txtNote4.MaxLength = 400;
-            this.txtNote4.Multiline = true;
-            this.txtNote4.Name = "txtNote4";
-            this.txtNote4.Size = new System.Drawing.Size(186, 165);
-            this.txtNote4.TabIndex = 17;
-            // 
-            // txtNote5
-            // 
-            this.txtNote5.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote5.Location = new System.Drawing.Point(32, 287);
-            this.txtNote5.MaxLength = 400;
-            this.txtNote5.Multiline = true;
-            this.txtNote5.Name = "txtNote5";
-            this.txtNote5.Size = new System.Drawing.Size(186, 165);
-            this.txtNote5.TabIndex = 19;
-            // 
-            // txtNote6
-            // 
-            this.txtNote6.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote6.Location = new System.Drawing.Point(240, 287);
-            this.txtNote6.MaxLength = 400;
-            this.txtNote6.Multiline = true;
-            this.txtNote6.Name = "txtNote6";
-            this.txtNote6.Size = new System.Drawing.Size(186, 165);
-            this.txtNote6.TabIndex = 20;
-            // 
-            // txtNote7
-            // 
-            this.txtNote7.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote7.Location = new System.Drawing.Point(447, 287);
-            this.txtNote7.MaxLength = 400;
-            this.txtNote7.Multiline = true;
-            this.txtNote7.Name = "txtNote7";
-            this.txtNote7.Size = new System.Drawing.Size(186, 165);
-            this.txtNote7.TabIndex = 21;
-            // 
-            // txtNote8
-            // 
-            this.txtNote8.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNote8.Location = new System.Drawing.Point(654, 287);
-            this.txtNote8.MaxLength = 400;
-            this.txtNote8.Multiline = true;
-            this.txtNote8.Name = "txtNote8";
-            this.txtNote8.Size = new System.Drawing.Size(186, 165);
-            this.txtNote8.TabIndex = 22;
+            txtNote4.BackColor = SystemColors.Info;
+            txtNote4.Location = new Point(656, 132);
+            txtNote4.MaxLength = 400;
+            txtNote4.Multiline = true;
+            txtNote4.Name = "txtNote4";
+            txtNote4.Size = new Size(186, 165);
+            txtNote4.TabIndex = 17;
+            txtNote4.TextChanged += txtNote4_TextChanged;
             // 
             // btnNavBack
             // 
-            this.btnNavBack.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNavBack.Location = new System.Drawing.Point(12, 12);
-            this.btnNavBack.Name = "btnNavBack";
-            this.btnNavBack.Size = new System.Drawing.Size(94, 29);
-            this.btnNavBack.TabIndex = 23;
-            this.btnNavBack.Text = "Back";
-            this.btnNavBack.UseVisualStyleBackColor = true;
-            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
+            btnNavBack.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavBack.Location = new Point(12, 12);
+            btnNavBack.Name = "btnNavBack";
+            btnNavBack.Size = new Size(94, 29);
+            btnNavBack.TabIndex = 23;
+            btnNavBack.Text = "Back";
+            btnNavBack.UseVisualStyleBackColor = true;
+            btnNavBack.Click += btnNavBack_Click;
+            // 
+            // flpTags
+            // 
+            flpTags.AutoScroll = true;
+            flpTags.Dock = DockStyle.Bottom;
+            flpTags.Location = new Point(0, 433);
+            flpTags.Margin = new Padding(2);
+            flpTags.Name = "flpTags";
+            flpTags.Padding = new Padding(6, 0, 6, 0);
+            flpTags.Size = new Size(882, 120);
+            flpTags.TabIndex = 24;
+            // 
+            // lblAddTagPrompt
+            // 
+            lblAddTagPrompt.AutoSize = true;
+            lblAddTagPrompt.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddTagPrompt.Location = new Point(34, 347);
+            lblAddTagPrompt.Margin = new Padding(2, 0, 2, 0);
+            lblAddTagPrompt.Name = "lblAddTagPrompt";
+            lblAddTagPrompt.Size = new Size(148, 20);
+            lblAddTagPrompt.TabIndex = 25;
+            lblAddTagPrompt.Text = "Add Tag to this Item:";
+            // 
+            // cmbAddTags
+            // 
+            cmbAddTags.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAddTags.FormattingEnabled = true;
+            cmbAddTags.Items.AddRange(new object[] { "(none)" });
+            cmbAddTags.Location = new Point(186, 344);
+            cmbAddTags.Margin = new Padding(2);
+            cmbAddTags.MaxDropDownItems = 100;
+            cmbAddTags.Name = "cmbAddTags";
+            cmbAddTags.Size = new Size(146, 28);
+            cmbAddTags.Sorted = true;
+            cmbAddTags.TabIndex = 26;
+            cmbAddTags.SelectedIndexChanged += cmbAddTags_SelectedIndexChanged;
+            // 
+            // btnAddTag
+            // 
+            btnAddTag.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddTag.Location = new Point(238, 375);
+            btnAddTag.Margin = new Padding(2);
+            btnAddTag.Name = "btnAddTag";
+            btnAddTag.Size = new Size(94, 29);
+            btnAddTag.TabIndex = 27;
+            btnAddTag.Text = "Add Tag";
+            btnAddTag.UseVisualStyleBackColor = true;
+            btnAddTag.Click += btnAddTag_Click;
+            // 
+            // btnDeleteTag
+            // 
+            btnDeleteTag.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeleteTag.Location = new Point(748, 376);
+            btnDeleteTag.Margin = new Padding(2);
+            btnDeleteTag.Name = "btnDeleteTag";
+            btnDeleteTag.Size = new Size(94, 29);
+            btnDeleteTag.TabIndex = 30;
+            btnDeleteTag.Text = "Delete Tag";
+            btnDeleteTag.UseVisualStyleBackColor = true;
+            btnDeleteTag.Click += btnDeleteTag_Click;
+            // 
+            // cmbDeleteTags
+            // 
+            cmbDeleteTags.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDeleteTags.FormattingEnabled = true;
+            cmbDeleteTags.Items.AddRange(new object[] { "(none)" });
+            cmbDeleteTags.Location = new Point(696, 344);
+            cmbDeleteTags.Margin = new Padding(2);
+            cmbDeleteTags.MaxDropDownItems = 100;
+            cmbDeleteTags.Name = "cmbDeleteTags";
+            cmbDeleteTags.Size = new Size(146, 28);
+            cmbDeleteTags.Sorted = true;
+            cmbDeleteTags.TabIndex = 29;
+            cmbDeleteTags.SelectedIndexChanged += cmbDeleteTags_SelectedIndexChanged;
+            // 
+            // lblDeleteTagPrompt
+            // 
+            lblDeleteTagPrompt.AutoSize = true;
+            lblDeleteTagPrompt.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDeleteTagPrompt.Location = new Point(510, 347);
+            lblDeleteTagPrompt.Margin = new Padding(2, 0, 2, 0);
+            lblDeleteTagPrompt.Name = "lblDeleteTagPrompt";
+            lblDeleteTagPrompt.Size = new Size(182, 20);
+            lblDeleteTagPrompt.TabIndex = 28;
+            lblDeleteTagPrompt.Text = "Delete Tag from this Item:";
             // 
             // Notes_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 478);
-            this.Controls.Add(this.btnNavBack);
-            this.Controls.Add(this.txtNote8);
-            this.Controls.Add(this.txtNote7);
-            this.Controls.Add(this.txtNote6);
-            this.Controls.Add(this.txtNote5);
-            this.Controls.Add(this.txtNote4);
-            this.Controls.Add(this.txtNote3);
-            this.Controls.Add(this.txtNote2);
-            this.Controls.Add(this.txtNote1);
-            this.Controls.Add(this.btnAddNote);
-            this.Controls.Add(this.lblTitle);
-            this.Name = "Notes_Form";
-            this.Text = "Notes";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(882, 553);
+            Controls.Add(btnDeleteTag);
+            Controls.Add(cmbDeleteTags);
+            Controls.Add(lblDeleteTagPrompt);
+            Controls.Add(btnAddTag);
+            Controls.Add(cmbAddTags);
+            Controls.Add(lblAddTagPrompt);
+            Controls.Add(flpTags);
+            Controls.Add(btnNavBack);
+            Controls.Add(txtNote4);
+            Controls.Add(txtNote3);
+            Controls.Add(txtNote2);
+            Controls.Add(txtNote1);
+            Controls.Add(btnAddNote);
+            Controls.Add(lblTitle);
+            Name = "Notes_Form";
+            Text = "Notes";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -184,10 +239,13 @@
         private TextBox txtNote2;
         private TextBox txtNote3;
         private TextBox txtNote4;
-        private TextBox txtNote5;
-        private TextBox txtNote6;
-        private TextBox txtNote7;
-        private TextBox txtNote8;
         private Button btnNavBack;
+        private FlowLayoutPanel flpTags;
+        private Label lblAddTagPrompt;
+        private ComboBox cmbAddTags;
+        private Button btnAddTag;
+        private Button btnDeleteTag;
+        private ComboBox cmbDeleteTags;
+        private Label lblDeleteTagPrompt;
     }
 }
