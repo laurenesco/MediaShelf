@@ -470,7 +470,7 @@ namespace MediaShelfApp
 
                 // API call for books REPLACE [QUERY] = https://www.googleapis.com/books/v1/volumes?q=[QUERY]&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ
 
-                var endpoint = new Uri("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ");
+                var endpoint = new Uri("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ&maxResults=20");
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
                 booksRoot bookList = JsonConvert.DeserializeObject<booksRoot>(json);
@@ -482,6 +482,7 @@ namespace MediaShelfApp
                 dataGridView1.Columns.Add("Title", "Title");
                 dataGridView1.Columns.Add("Overview", "Overview");
 
+                // google books api only allows for 10 results
                 for (int i = 0; i < 20; i++)
                 {
                     try
@@ -813,7 +814,7 @@ namespace MediaShelfApp
                         }
 
                         string platform;
-                        if (gamesjson.results[rowIndex].parent_platforms[0].platform.name == null)
+                        if (gamesjson.results[rowIndex].parent_platforms[0].platform.name == null || gamesjson.results[rowIndex].parent_platforms.Count == 0)
                         {
                             platform = "N/A";
                         }
@@ -822,7 +823,7 @@ namespace MediaShelfApp
                             platform = gamesjson.results[rowIndex].parent_platforms[0].platform.name.ToString();
                         }
 
-                        if (gamesjson.results[rowIndex].genres[0].name == null)
+                        if (gamesjson.results[rowIndex].genres == null || gamesjson.results[rowIndex].genres.Count == 0)
                         {
                             genre = "N/A";
                         }
