@@ -32,7 +32,7 @@ namespace MediaShelfApp
         //////////////////////
         //  Public methods  //
         //////////////////////
-        
+
         // Constructor
         public Notes_Form(int item_API_ID, int item_ID, string title)
         {
@@ -50,7 +50,7 @@ namespace MediaShelfApp
 
                 // Populate the form
                 LoadForm();
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error Initializing Notes Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -61,7 +61,7 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-        
+
         // fills out the form with information relating to the selected item in list view
         private void LoadForm()
         {
@@ -144,11 +144,11 @@ namespace MediaShelfApp
                 // This ensures there are not empty rows taking up space in db until we implement 
                 // method to check if a note exists/
                 DeleteNote(notepadID);
-            } 
+            }
             else if (dne)
             {
                 UpdateNote(notepadID, noteText);
-            } 
+            }
             else
             {
                 // If the note contains text AND does not exist, save it to database
@@ -220,7 +220,7 @@ namespace MediaShelfApp
                 // Close connection and dispose of the command
                 dbConnection.Close();
                 cmdInsertNote.Dispose();
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -280,7 +280,8 @@ namespace MediaShelfApp
                         MessageBox.Show("An error has occured.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return "Error";
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 // Catch any errors and display error string
                 MessageBox.Show(ex.ToString(), "Error Retrieving Note Text", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -321,7 +322,7 @@ namespace MediaShelfApp
                     if (reader.Read())
                     {
                         // Sets array value to true if note exists
-                        exists[i-1] = true;
+                        exists[i - 1] = true;
                     }
 
                     // Close connection and dispose of the command
@@ -378,14 +379,14 @@ namespace MediaShelfApp
             int tagNum = -1; // default value and value returned if tag hasn't been assigned a number
 
             dbConnection.Open();
-            
+
             // gets all tags that have been assigned a number in database and stores values in reader
             SqlCommand cmdFindTagNo = dbConnection.CreateCommand();
             cmdFindTagNo.CommandText = @"SELECT * FROM TAG";
             SqlDataReader reader = cmdFindTagNo.ExecuteReader();
 
             // while there are values in reader, search for tag in values
-            while (reader.Read()) 
+            while (reader.Read())
             {
                 // if tag is found, get its number
                 if (reader[1].ToString().ToUpper().Equals(tagName))
@@ -505,7 +506,7 @@ namespace MediaShelfApp
                 // get values of oldTags
                 oldTags = oldDesc.Split(',');
 
-                for (int i = 0; i < oldTags.Length; i++) 
+                for (int i = 0; i < oldTags.Length; i++)
                 {
                     oldTags[i] = oldTags[i].Trim();
                     //if (oldTags[i].Equals(tagToDelete.ToLower()))
@@ -518,9 +519,9 @@ namespace MediaShelfApp
                 else // get value of newDesc
                 {
                     //MessageBox.Show("Item has tag in database", "Test", MessageBoxButtons.OK);
-                    for (int i = 0; i < oldTags.Length; i++) 
+                    for (int i = 0; i < oldTags.Length; i++)
                     {
-                        if (i > 0 && i < oldTags.Length-1)
+                        if (i > 0 && i < oldTags.Length - 1)
                             newDesc += ", ";
                         if (!oldTags[i].Equals(tagToDelete.ToLower()))
                             newDesc += oldTags[i];
