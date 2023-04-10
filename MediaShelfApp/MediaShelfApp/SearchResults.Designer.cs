@@ -28,291 +28,126 @@ namespace MediaShelfApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNavBack = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            searchBox1 = new TextBox();
+            button1 = new Button();
+            label2 = new Label();
+            btnNavBack = new Button();
+            button2 = new Button();
+            dataGridView1 = new DataGridView();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            comboBox1 = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // searchBox1
             // 
-            this.searchBox1.Location = new System.Drawing.Point(411, 90);
-            this.searchBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.searchBox1.Name = "searchBox1";
-            this.searchBox1.PlaceholderText = "Search";
-            this.searchBox1.Size = new System.Drawing.Size(548, 31);
-            this.searchBox1.TabIndex = 0;
-            this.searchBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            searchBox1.Location = new Point(323, 154);
+            searchBox1.Margin = new Padding(3, 4, 3, 4);
+            searchBox1.Name = "searchBox1";
+            searchBox1.PlaceholderText = "Search";
+            searchBox1.Size = new Size(439, 27);
+            searchBox1.TabIndex = 0;
+            searchBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(41, 681);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add Manual Entry";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.checkedListBox2);
-            this.panel1.Controls.Add(this.checkedListBox1);
-            this.panel1.Location = new System.Drawing.Point(41, 90);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 577);
-            this.panel1.TabIndex = 3;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(70, 521);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(108, 31);
-            this.dateTimePicker2.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 529);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 25);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "To:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(28, 435);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Release Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(70, 474);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 31);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(18, 229);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 25);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Genre";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 480);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 25);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "From:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(18, 24);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Type";
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "Horror",
-            "Science Fiction",
-            "Fantasy"});
-            this.checkedListBox2.Location = new System.Drawing.Point(34, 255);
-            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(146, 56);
-            this.checkedListBox2.TabIndex = 7;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Books",
-            "Movies",
-            "Music",
-            "Games",
-            "Other"});
-            this.checkedListBox1.Location = new System.Drawing.Point(34, 50);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(146, 56);
-            this.checkedListBox1.TabIndex = 5;
+            button1.Location = new Point(59, 692);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(166, 39);
+            button1.TabIndex = 2;
+            button1.Text = "Add Manual Entry";
+            button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(594, 21);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 41);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Media Search";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(110, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filters";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(456, 35);
+            label2.Name = "label2";
+            label2.Size = new Size(165, 35);
+            label2.TabIndex = 5;
+            label2.Text = "Media Search";
             // 
             // btnNavBack
             // 
-            this.btnNavBack.Location = new System.Drawing.Point(15, 15);
-            this.btnNavBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnNavBack.Name = "btnNavBack";
-            this.btnNavBack.Size = new System.Drawing.Size(118, 36);
-            this.btnNavBack.TabIndex = 7;
-            this.btnNavBack.Text = "Back";
-            this.btnNavBack.UseVisualStyleBackColor = true;
-            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
+            btnNavBack.Location = new Point(12, 12);
+            btnNavBack.Name = "btnNavBack";
+            btnNavBack.Size = new Size(94, 29);
+            btnNavBack.TabIndex = 7;
+            btnNavBack.Text = "Back";
+            btnNavBack.UseVisualStyleBackColor = true;
+            btnNavBack.Click += btnNavBack_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(989, 89);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(792, 153);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(90, 28);
+            button2.TabIndex = 8;
+            button2.Text = "Search";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(411, 142);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 10;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(548, 588);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(59, 197);
+            dataGridView1.Margin = new Padding(2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 10;
+            dataGridView1.RowTemplate.Height = 33;
+            dataGridView1.Size = new Size(978, 468);
+            dataGridView1.TabIndex = 10;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // sqlCommand1
             // 
-            this.sqlCommand1.CommandTimeout = 30;
-            this.sqlCommand1.EnableOptimizedParameterBinding = false;
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // comboBox1
             // 
-            this.comboBox1.CausesValidation = false;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Movies/TV Shows",
-            "Books",
-            "Music",
-            "Video Games"});
-            this.comboBox1.Location = new System.Drawing.Point(942, 21);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(186, 33);
-            this.comboBox1.TabIndex = 11;
+            comboBox1.CausesValidation = false;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Movies/TV Shows", "Books", "Music", "Video Games" });
+            comboBox1.Location = new Point(887, 692);
+            comboBox1.Margin = new Padding(2);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(150, 28);
+            comboBox1.TabIndex = 11;
             // 
             // SearchResults
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 750);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnNavBack);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.searchBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "SearchResults";
-            this.Text = "SearchResults";
-            this.Load += new System.EventHandler(this.SearchResults_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1084, 761);
+            Controls.Add(comboBox1);
+            Controls.Add(dataGridView1);
+            Controls.Add(button2);
+            Controls.Add(btnNavBack);
+            Controls.Add(label2);
+            Controls.Add(button1);
+            Controls.Add(searchBox1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "SearchResults";
+            Text = "SearchResults";
+            Load += SearchResults_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private TextBox searchBox1;
         private Button button1;
-        private Panel panel1;
-        private Label label3;
-        private CheckedListBox checkedListBox1;
-        private Label label4;
-        private CheckedListBox checkedListBox2;
-        private Label label5;
-        private DateTimePicker dateTimePicker1;
-        private Label label6;
-        private DateTimePicker dateTimePicker2;
-        private Label label7;
         private Label label2;
-        private Label label1;
         private Button btnNavBack;
         private Button button2;
         private DataGridView dataGridView1;
