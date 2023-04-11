@@ -119,6 +119,20 @@ namespace MediaShelfApp
         {
             System.IO.File.WriteAllText(getSettingsFileLocation(), "fontsize=" + getFontSize());
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            setFontSize(10);
+            changeFontSize(this, fontSize);
+            saveSettings();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            setFontSize(12);
+            changeFontSize(this, fontSize);
+            saveSettings();
+        }
     }
 }
 
