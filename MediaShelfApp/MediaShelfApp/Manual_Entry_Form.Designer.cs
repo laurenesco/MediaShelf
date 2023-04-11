@@ -43,7 +43,7 @@
             lblTagName = new Label();
             txtTagName = new TextBox();
             lblAddTag = new Label();
-            btnNavBack = new Button();
+            btnBackButton = new Button();
             btnAddButton = new Button();
             ((System.ComponentModel.ISupportInitialize)picboxImage).BeginInit();
             SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             lblManualEntry.AutoSize = true;
             lblManualEntry.Font = new Font("Ebrima", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblManualEntry.Location = new Point(326, 21);
+            lblManualEntry.Location = new Point(368, 28);
             lblManualEntry.Name = "lblManualEntry";
             lblManualEntry.Size = new Size(191, 41);
             lblManualEntry.TabIndex = 7;
@@ -62,7 +62,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(326, 102);
+            lblTitle.Location = new Point(395, 144);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(41, 20);
             lblTitle.TabIndex = 8;
@@ -72,7 +72,7 @@
             // txtTitle
             // 
             txtTitle.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTitle.Location = new Point(379, 94);
+            txtTitle.Location = new Point(448, 136);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(304, 28);
             txtTitle.TabIndex = 9;
@@ -81,7 +81,7 @@
             // 
             lblCreator.AutoSize = true;
             lblCreator.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCreator.Location = new Point(306, 141);
+            lblCreator.Location = new Point(375, 183);
             lblCreator.Name = "lblCreator";
             lblCreator.Size = new Size(61, 20);
             lblCreator.TabIndex = 10;
@@ -92,7 +92,7 @@
             // 
             lblTags.AutoSize = true;
             lblTags.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTags.Location = new Point(279, 179);
+            lblTags.Location = new Point(348, 221);
             lblTags.Name = "lblTags";
             lblTags.Size = new Size(88, 20);
             lblTags.TabIndex = 12;
@@ -103,7 +103,7 @@
             // 
             lblReleaseDate.AutoSize = true;
             lblReleaseDate.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblReleaseDate.Location = new Point(268, 218);
+            lblReleaseDate.Location = new Point(337, 260);
             lblReleaseDate.Name = "lblReleaseDate";
             lblReleaseDate.Size = new Size(99, 20);
             lblReleaseDate.TabIndex = 13;
@@ -113,7 +113,7 @@
             // txtCreator
             // 
             txtCreator.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCreator.Location = new Point(379, 133);
+            txtCreator.Location = new Point(448, 175);
             txtCreator.Name = "txtCreator";
             txtCreator.Size = new Size(304, 28);
             txtCreator.TabIndex = 14;
@@ -121,7 +121,7 @@
             // txtTags
             // 
             txtTags.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTags.Location = new Point(379, 171);
+            txtTags.Location = new Point(448, 213);
             txtTags.Name = "txtTags";
             txtTags.Size = new Size(304, 28);
             txtTags.TabIndex = 16;
@@ -129,7 +129,7 @@
             // dtpReleaseDate
             // 
             dtpReleaseDate.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpReleaseDate.Location = new Point(379, 210);
+            dtpReleaseDate.Location = new Point(448, 252);
             dtpReleaseDate.Name = "dtpReleaseDate";
             dtpReleaseDate.Size = new Size(304, 28);
             dtpReleaseDate.TabIndex = 17;
@@ -138,7 +138,7 @@
             // 
             lblDescription.AutoSize = true;
             lblDescription.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDescription.Location = new Point(41, 269);
+            lblDescription.Location = new Point(57, 320);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(88, 20);
             lblDescription.TabIndex = 18;
@@ -147,10 +147,10 @@
             // txtDescriptionText
             // 
             txtDescriptionText.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDescriptionText.Location = new Point(46, 298);
+            txtDescriptionText.Location = new Point(46, 353);
             txtDescriptionText.Multiline = true;
             txtDescriptionText.Name = "txtDescriptionText";
-            txtDescriptionText.Size = new Size(702, 136);
+            txtDescriptionText.Size = new Size(791, 136);
             txtDescriptionText.TabIndex = 19;
             // 
             // picboxImage
@@ -160,7 +160,7 @@
             picboxImage.BackgroundImageLayout = ImageLayout.Center;
             picboxImage.BorderStyle = BorderStyle.FixedSingle;
             picboxImage.Cursor = Cursors.Hand;
-            picboxImage.Location = new Point(46, 66);
+            picboxImage.Location = new Point(57, 98);
             picboxImage.Name = "picboxImage";
             picboxImage.Size = new Size(200, 200);
             picboxImage.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -172,7 +172,7 @@
             // 
             lblTagName.AutoSize = true;
             lblTagName.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTagName.Location = new Point(244, 475);
+            lblTagName.Location = new Point(282, 233);
             lblTagName.Name = "lblTagName";
             lblTagName.Size = new Size(81, 20);
             lblTagName.TabIndex = 22;
@@ -181,7 +181,7 @@
             // 
             // txtTagName
             // 
-            txtTagName.Location = new Point(337, 472);
+            txtTagName.Location = new Point(375, 230);
             txtTagName.Name = "txtTagName";
             txtTagName.Size = new Size(222, 27);
             txtTagName.TabIndex = 23;
@@ -191,28 +191,28 @@
             // 
             lblAddTag.AutoSize = true;
             lblAddTag.Font = new Font("Ebrima", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAddTag.Location = new Point(337, 21);
+            lblAddTag.Location = new Point(375, 28);
             lblAddTag.Name = "lblAddTag";
             lblAddTag.Size = new Size(153, 41);
             lblAddTag.TabIndex = 24;
             lblAddTag.Text = "Add a Tag";
             lblAddTag.Visible = false;
             // 
-            // btnNavBack
+            // btnBackButton
             // 
-            btnNavBack.Location = new Point(12, 12);
-            btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(94, 29);
-            btnNavBack.TabIndex = 25;
-            btnNavBack.Text = "Back";
-            btnNavBack.UseVisualStyleBackColor = true;
-            btnNavBack.Click += btnNavBack_Click;
+            btnBackButton.Location = new Point(12, 12);
+            btnBackButton.Name = "btnBackButton";
+            btnBackButton.Size = new Size(94, 29);
+            btnBackButton.TabIndex = 25;
+            btnBackButton.Text = "Back";
+            btnBackButton.UseVisualStyleBackColor = true;
+            btnBackButton.Click += btnNavBack_Click;
             // 
             // btnAddButton
             // 
-            btnAddButton.Location = new Point(654, 449);
+            btnAddButton.Location = new Point(756, 495);
             btnAddButton.Name = "btnAddButton";
-            btnAddButton.Size = new Size(94, 29);
+            btnAddButton.Size = new Size(81, 29);
             btnAddButton.TabIndex = 26;
             btnAddButton.Text = "Add";
             btnAddButton.UseVisualStyleBackColor = true;
@@ -223,9 +223,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(782, 553);
+            ClientSize = new Size(882, 553);
             Controls.Add(btnAddButton);
-            Controls.Add(btnNavBack);
+            Controls.Add(btnBackButton);
             Controls.Add(lblAddTag);
             Controls.Add(txtTagName);
             Controls.Add(lblTagName);
@@ -264,7 +264,7 @@
         private Label lblTagName;
         private TextBox txtTagName;
         private Label lblAddTag;
-        private Button btnNavBack;
+        private Button btnBackButton;
         private Button btnAddButton;
     }
 }
