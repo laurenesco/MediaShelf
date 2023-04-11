@@ -58,7 +58,7 @@ namespace MediaShelfApp
         ///////////////////////
         
         // Add button functionality - saves user-made manual entry
-        private void ME_addButton_Click(object sender, EventArgs e)
+        private void TagElements()
         {
             foreach (Control c in this.Controls)
             {
