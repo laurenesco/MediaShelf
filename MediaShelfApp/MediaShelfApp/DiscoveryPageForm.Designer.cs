@@ -157,30 +157,18 @@
             button7.Click += btnGames;
             // 
             // label1
-            // <<<<<<< HEAD
+            // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Ebrima", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(503, 18);
+            label1.Location = new Point(501, 14);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(260, 60);
             label1.TabIndex = 8;
             label1.Text = "MediaShelf";
             label1.Click += lblTopName;
-//=======
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(402, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 50);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "MediaShelf";
-            this.label1.Click += new System.EventHandler(this.lblTopName);
-//>>>>>>> main
             // 
             // Recommendations
             // 

@@ -308,7 +308,7 @@ namespace MediaShelfApp
         //List #2
         private void label8_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         //List #2 Description
@@ -321,7 +321,7 @@ namespace MediaShelfApp
         //List #3
         private void label7_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         //List #3 Description
