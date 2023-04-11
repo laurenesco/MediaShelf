@@ -40,5 +40,11 @@ namespace MediaShelfApp
             ListView window = new ListView("Favorites", this);
             window.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Tags", this);
+            window.Show();
+        }
     }
 }

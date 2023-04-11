@@ -44,402 +44,34 @@ namespace MediaShelfApp
             this.list = list;
             this.caller = caller;
 
+            if (list == "Tags")
+            {
+                TagElements();
+            }
+
             // Initiate Database Connection
             dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
         }
 
-        // Set caller method - this variable allows the back button to reopen the calling form
-        public void setCaller(ListView caller)
-        {
-            this.caller = caller;
-        }
-
-        // Set list method - this variable allows the form to display the correct list
-        public void setList(String listName)
-        {
-            this.list = listName;
-        }
-
-        /*
-         * to maybe be added later
-         * load methods might be simplified later
-         
-        //enables access for developers to settings file without setting path themselves; might be able to add to Resources.resx
-        public string getSettingsFileLocation()
-        {
-            string path = "";
-            path += Environment.CurrentDirectory;
-            path = path.Substring(0, path.LastIndexOf("bin"));
-            path += "\\Resources\\settings.txt";
-
-            return path;
-        }
-
-        //get colorSelection method - this variable determines which color scheme should be used throughout app
-        public int getColorSelection()
-        {
-            return colorSelection;
-        }
-        //get fontSizeSelection method - this variable determines which font size should be used throughout app
-        public float getFontSizeSelection()
-        {
-            return fontSizeSelection;
-        }
-        //reads info (what color and font size to use) contained in settings file and updates variables colorSelection and fontSizeSelection
-        public void readSettings()
-        {
-            string path = getSettingsFileLocation();
-
-            string[] settings = System.IO.File.ReadAllLines(path);
-
-            colorSelection = int.Parse(Regex.Match(settings[0], @"\d+").Value);
-            fontSizeSelection = float.Parse(Regex.Match(settings[1], @"\d+").Value);
-        }
-        //updates info (what color and font size to use) in settings file
-        public void saveSettings()
-        {
-            string path = getSettingsFileLocation();
-
-            string[] settings = new string[2];
-
-            settings[0] = "color=" + colorSelection;
-            settings[1] = "fontsize=" + fontSizeSelection;
-
-            System.IO.File.WriteAllLines(path, settings);
-        }
-        //set method for colorSelection - assumed use in MyShelfForm
-        public void setColorSelection(int c)
-        {
-            colorSelection = c;
-        }
-        //set method for fontSizeSelection - assumed use in MyShelfForm
-        public void setFontSizeSelection(float f) 
-        {
-            fontSizeSelection = f;
-        }
-        \*
-         *  FOR DEVELOPERS:
-         *  if user were to select a setting, this is what it might look like:
-            public void radioButtonChecked()
-            {
-                ____Selection = #;
-                saveSettings();
-            }
-        *\
-
-        //sets colors of controllers in Manual Entry Form if color option in settings is 1 (colorSelection = 1) - EXAMPLE
-        public void loadColorSelection1()
-        {
-            //
-            // btnBackButton
-            //
-            this.btnBackButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            //
-            // btnAddButton
-            //
-            this.btnAddButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            // 
-            // Manual_Entry_Form
-            // 
-            this.BackColor = System.Drawing.Color.White;
-        }
-        //sets colors of controllers in Manual Entry Form if color option in settings is 2 (colorSelection = 2) EXAMPLE
-        public void loadColorSelection2()
-        {
-            //
-            // btnBackButton
-            //
-            this.btnBackButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            //
-            // btnAddButton
-            //
-            this.btnAddButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            // 
-            // Manual_Entry_Form
-            // 
-            this.BackColor = System.Drawing.Color.White;
-        }
-        //sets colors of controllers in Manual Entry Form if color option in settings is 3 (colorSelection = 3) - EXAMPLE
-        public void loadColorSelection3()
-        {
-            //
-            // btnBackButton
-            //
-            this.btnBackButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            //
-            // btnAddButton
-            //
-            this.btnAddButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            // 
-            // Manual_Entry_Form
-            // 
-            this.BackColor = System.Drawing.Color.White;
-        }
-        //sets fonts and locations of controllers in Manual Entry Form if font size in settings is 9 (fontSizeSelection = 9F)
-        public void loadFontSize9()
-        {
-            // 
-            // btnBackButton
-            // 
-            this.btnBackButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            // 
-            // lblManualEntry
-            // 
-            this.lblManualEntry.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblManualEntry.Location = new System.Drawing.Point(441, 24);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(418, 115);
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTitle.Location = new System.Drawing.Point(474, 113);
-            // 
-            // lblCreator
-            // 
-            this.lblCreator.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreator.Location = new System.Drawing.Point(392, 155);
-            // 
-            // lblType
-            // 
-            this.lblType.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblType.Location = new System.Drawing.Point(412, 195);
-            // 
-            // lblTags
-            // 
-            this.lblTags.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTags.Location = new System.Drawing.Point(360, 235);
-            // 
-            // lblReleaseDate
-            // 
-            this.lblReleaseDate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblReleaseDate.Location = new System.Drawing.Point(349, 277);
-            // 
-            // txtCreator
-            // 
-            this.txtCreator.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCreator.Location = new System.Drawing.Point(474, 153);
-            // 
-            // txtType
-            // 
-            this.txtType.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtType.Location = new System.Drawing.Point(474, 193);
-            // 
-            // txtTags
-            // 
-            this.txtTags.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTags.Location = new System.Drawing.Point(474, 233);
-            // 
-            // dateReleaseDate
-            // 
-            this.dateReleaseDate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateReleaseDate.Location = new System.Drawing.Point(474, 273);
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.Location = new System.Drawing.Point(51, 336);
-            // 
-            // txtDescriptionText
-            // 
-            this.txtDescriptionText.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescriptionText.Location = new System.Drawing.Point(58, 365);
-            // 
-            // btnAddButton
-            // 
-            this.btnAddButton.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-        }
-        //sets fonts and locations of controllers in Manual Entry Form if font size in settings is 10 (fontSizeSelection = 10F)
-        public void loadFontSize10()
-        {
-            // 
-            // btnBackButton
-            // 
-            this.btnBackButton.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            // 
-            // lblManualEntry
-            // 
-            this.lblManualEntry.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblManualEntry.Location = new System.Drawing.Point(441, 24);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(417, 104);
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTitle.Location = new System.Drawing.Point(474, 103);
-            // 
-            // lblCreator
-            // 
-            this.lblCreator.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreator.Location = new System.Drawing.Point(389, 145);
-            // 
-            // lblType
-            // 
-            this.lblType.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblType.Location = new System.Drawing.Point(412, 189);
-            // 
-            // lblTags
-            // 
-            this.lblTags.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTags.Location = new System.Drawing.Point(355, 231);
-            // 
-            // lblReleaseDate
-            // 
-            this.lblReleaseDate.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblReleaseDate.Location = new System.Drawing.Point(344, 275);
-            // 
-            // txtCreator
-            // 
-            this.txtCreator.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCreator.Location = new System.Drawing.Point(474, 146);
-            // 
-            // txtType
-            // 
-            this.txtType.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtType.Location = new System.Drawing.Point(474, 189);
-            // 
-            // txtTags
-            // 
-            this.txtTags.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTags.Location = new System.Drawing.Point(474, 232);
-            // 
-            // dateReleaseDate
-            // 
-            this.dateReleaseDate.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateReleaseDate.Location = new System.Drawing.Point(474, 275);
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.Location = new System.Drawing.Point(51, 336);
-            // 
-            // txtDescriptionText
-            // 
-            this.txtDescriptionText.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescriptionText.Location = new System.Drawing.Point(58, 365);
-            // 
-            // btnAddButton
-            // 
-            this.btnAddButton.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-        }
-        //sets fonts and locations of controllers in Manual Entry Form if font size in settings is 12 (fontSizeSelection = 12F)
-        public void loadFontSize12()
-        {
-            // 
-            // btnBackButton
-            // 
-            this.btnBackButton.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            // 
-            // lblManualEntry
-            // 
-            this.lblManualEntry.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblManualEntry.Location = new System.Drawing.Point(441, 24);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(407, 91);
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTitle.Location = new System.Drawing.Point(474, 90);
-            // 
-            // lblCreator
-            // 
-            this.lblCreator.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreator.Location = new System.Drawing.Point(374, 139);
-            // 
-            // lblType
-            // 
-            this.lblType.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblType.Location = new System.Drawing.Point(400, 188);
-            // 
-            // lblTags
-            // 
-            this.lblTags.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTags.Location = new System.Drawing.Point(330, 235);
-            // 
-            // lblReleaseDate
-            // 
-            this.lblReleaseDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblReleaseDate.Location = new System.Drawing.Point(314, 286);
-            // 
-            // txtCreator
-            // 
-            this.txtCreator.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCreator.Location = new System.Drawing.Point(474, 138);
-            // 
-            // txtType
-            // 
-            this.txtType.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtType.Location = new System.Drawing.Point(474, 186);
-            // 
-            // txtTags
-            // 
-            this.txtTags.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTags.Location = new System.Drawing.Point(474, 234);
-            // 
-            // dateReleaseDate
-            // 
-            this.dateReleaseDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateReleaseDate.Location = new System.Drawing.Point(474, 282);
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.Location = new System.Drawing.Point(51, 336);
-            // 
-            // txtDescriptionText
-            // 
-            this.txtDescriptionText.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescriptionText.Location = new System.Drawing.Point(58, 372);
-            // 
-            // btnAddButton
-            // 
-            this.btnAddButton.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-        }
-        */
-
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-        
-        // Add button functionality - saves user-made manual entry
-        private void ME_addButton_Click(object sender, EventArgs e)
+
+
+        private void TagElements()
         {
-            // Instance variable: isEmpty - bool representing whether title field is empty
-            bool isEmpty = true;
-            
-            //checks that title text field isn't empty/full of white-space
-            foreach (char c in txtTitle.Text)
+            foreach (Control c in this.Controls)
             {
-                if (c != ' ')
-                {
-                    isEmpty = false;
-                    break;
-                }
+                c.Visible = false;
             }
 
-            //if title field is empty, informs user to correct that; else, proceeds to save manual entry
-            if(isEmpty)
-            {
-                MessageBox.Show("Title field cannot be empty. Please enter a title.");
-            }
-            else
-            {
-                SaveManualEntry();
-                this.ClearFields();
-            }
+            this.btnBackButton.Visible = true;
+            this.btnAddButton.Visible = true;
+            this.lblTagName.Visible = true;
+            this.txtTagName.Visible = true;
+            this.lblAddTag.Visible = true;
         }
-        
+
         //refreshes Manual Entry Form
         private void ClearFields()
         {
@@ -454,14 +86,6 @@ namespace MediaShelfApp
             picboxImage.Image = null;
         }
 
-        // Back button functionality - reopens calling form with refreshed data grid
-        private void btnNavBack_Click(object sender, EventArgs e)
-        {
-            caller.PopulateDataTable("");
-            caller.Show();
-            this.Close();
-        }
-        
         //adds user-made manual entry to database
         private void SaveManualEntry()
         {
@@ -470,7 +94,7 @@ namespace MediaShelfApp
                 // Declaring all form variables that may be used in the query (to later be validated)
                 String title = txtTitle.Text;
                 String creator = txtCreator.Text;
-                String genre = txtTags.Text; 
+                String genre = txtTags.Text;
                 String description = txtDescriptionText.Text;
                 DateTime releaseDate = dtpReleaseDate.Value;
                 int listID = getListID(list);
@@ -523,7 +147,7 @@ namespace MediaShelfApp
                 cmdInsertMedia.Parameters.AddWithValue("@creator", creator);
                 cmdInsertMedia.Parameters.AddWithValue("@date", releaseDate);
                 if (icon != null)
-                    cmdInsertMedia.Parameters.AddWithValue("@icon", icon); 
+                    cmdInsertMedia.Parameters.AddWithValue("@icon", icon);
                 cmdInsertMedia.Parameters.AddWithValue("@desc", description);
                 cmdInsertMedia.Parameters.AddWithValue("@list", listID);
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
@@ -595,12 +219,97 @@ namespace MediaShelfApp
             open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                imagePath = open.FileName; 
+                imagePath = open.FileName;
 
                 picboxImage.ImageLocation = imagePath;
                 picboxImage.BackgroundImage = null;
                 picboxImage.BackColor = Color.Transparent;
             }
+        }
+
+        // Save a tag 
+        private void SaveTag()
+        {
+            try
+            {
+                string tagName = txtTagName.Text;
+
+                // Open connection and create command
+                dbConnection.Open();
+                SqlCommand cmdInsertTag = dbConnection.CreateCommand();
+
+                // Construct insertion query 
+                cmdInsertTag.CommandText = @"INSERT INTO TAG 
+                                                (TAG_NAME)
+                                                VALUES(@bind1)";
+
+                cmdInsertTag.Parameters.AddWithValue("@bind1", tagName);
+
+                // Execute the insertion query
+                cmdInsertTag.ExecuteNonQuery();
+
+                // Close connection and dispose of the command
+                dbConnection.Close();
+                cmdInsertTag.Dispose();
+
+                // Confirmation message
+                MessageBox.Show("Tag created!\n", "Confirmation Message", MessageBoxButtons.OK);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        // Add button functionality - saves user-made manual entry
+        private void btnAddButton_Click(object sender, EventArgs e)
+        {
+            if (list == "Tags")
+            {
+                SaveTag();
+            }
+            else
+            {
+                // Instance variable: isEmpty - bool representing whether title field is empty
+                bool isEmpty = true;
+
+                //checks that title text field isn't empty/full of white-space
+                foreach (char c in txtTitle.Text)
+                {
+                    if (c != ' ')
+                    {
+                        isEmpty = false;
+                        break;
+                    }
+                }
+
+                //if title field is empty, informs user to correct that; else, proceeds to save manual entry
+                if (isEmpty)
+                {
+                    MessageBox.Show("Title field cannot be empty. Please enter a title.");
+                }
+                else
+                {
+                    SaveManualEntry();
+                    this.ClearFields();
+                }
+            }
+        }
+
+        // Back button functionality - reopens calling form with refreshed data grid
+        private void btnNavBack_Click(object sender, EventArgs e)
+        {
+            if (list == "Tags")
+            {
+                caller.PopulateTagsTable("");
+            }
+            else
+            {
+                caller.PopulateDataTable("");
+            }
+            caller.Show();
+            this.Close();
         }
     }
 }
