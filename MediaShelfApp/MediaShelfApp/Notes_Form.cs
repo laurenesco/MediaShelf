@@ -358,10 +358,5 @@ namespace MediaShelfApp
         {
             this.Close();
         }
-
-        private void Notes_Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }
