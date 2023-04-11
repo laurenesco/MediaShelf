@@ -17,54 +17,6 @@ namespace MediaShelfApp
         public DiscoveryPageForm()
         {
             InitializeComponent();
-        }
-        /*
-        private void btnNavTempMyShelf_Click(object sender, EventArgs e)
-        {
-            MyShelfForm window = new MyShelfForm();
-            window.setCaller(this);
-            window.Show();
-        }*/
-
-        private void btnNavTempSearch_Click(object sender, EventArgs e)
-        {
-            SearchResults window = new SearchResults();
-            window.setCaller(this);
-            window.Show();
-        }
-
-        /* Favorites List button functionality - Opens the list form with the overloaded constructor setting the list as "Favorites"
-         *                                       and the caller as this instance of the Discovery Form (aka "this") */
-        private void lblFavoritesList_Click(object sender, EventArgs e)
-        {
-            ListView window = new ListView("Favorites", this);
-            window.Show();
-        }
-    }
-
-}
-
-
-/*
- * using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MediaShelfApp
-{
-    public partial class DiscoveryPageForm : Form
-    {
-
-        public DiscoveryPageForm()
-        {
-            InitializeComponent();
 
             // Initiate Database Connection
             try
@@ -90,36 +42,36 @@ namespace MediaShelfApp
         //Music Square
         private void btnMusic(object sender, EventArgs e)
         {
-            SearchResults window = new SearchResults("Music", this);
-            window.Show();
+            //SearchResults window = new SearchResults("Music", this);
+            //window.Show();
         }
 
         //Movies Square
         private void btnMovies(object sender, EventArgs e)
         {
-            SearchResults window = new SearchResults("Movies", this);
-            window.Show();
+            //SearchResults window = new SearchResults("Movies", this);
+            //window.Show();
         }
 
         //Shows Square
         private void btnTVShows(object sender, EventArgs e)
         {
-            SearchResults window = new SearchResults("Shows", this);
-            window.Show();
+            //SearchResults window = new SearchResults("Shows", this);
+            //window.Show();
         }
 
         //Book Square
         private void btnBooks(object sender, EventArgs e)
         {
-            SearchResults window = new SearchResults("Books", this);
-            window.Show();
+            //SearchResults window = new SearchResults("Books", this);
+            //window.Show();
         }
 
         //Games square
         private void btnGames(object sender, EventArgs e)
         {
-            SearchResults window = new SearchResults("Games", this);
-            window.Show();
+            //SearchResults window = new SearchResults("Games", this);
+            //window.Show();
         }
 
         //Search Bar
@@ -311,8 +263,8 @@ namespace MediaShelfApp
         //List Header
         private void lblListHeader(object sender, EventArgs e)
         {
-            ListView window = new ListView();
-            window.Show();
+            //ListView window = new ListView();
+            //window.Show();
         }
 
         //Favorites List
@@ -375,7 +327,3 @@ namespace MediaShelfApp
         }
     }
 }
-
- * 
- * 
- * */
