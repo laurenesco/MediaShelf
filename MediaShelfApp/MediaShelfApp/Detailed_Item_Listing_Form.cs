@@ -95,6 +95,9 @@ namespace MediaShelfApp
             {
                 cmbAddToList.Items.Add(reader.GetString(0));
             }
+
+            cmbAddToList.Text = "Favorites";
+
             dbConnection.Close();
         }
 
@@ -151,8 +154,11 @@ namespace MediaShelfApp
                     txtDescriptionValue.Text = description;
 
 
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    pbGameImage.Visible = false;
+                    pbBookImage.Visible = false;
+                    pbMovieImage.Visible = true;
+                    pbMovieImage.ImageLocation = mediaImageLink;
+                    pbMovieImage.Size = new System.Drawing.Size(369, 369);
                     break;
                 case 1:
 
@@ -170,12 +176,13 @@ namespace MediaShelfApp
                     txtDescriptionValue.Text = description;
 
 
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    picMediaImage.Size = new System.Drawing.Size(369, 369);
-
+                    pbMovieImage.Visible = false;
+                    pbGameImage.Visible = false;
+                    pbBookImage.Visible = true;
+                    pbBookImage.ImageLocation = mediaImageLink;
                     break;
                 case 2:
-                    // Modify Labels on Form for Books
+                    // Modify Labels on Form for Music
                     lblTitle.Text = title;
                     lblCreatorTitle.Text = "Artist:";
                     lblGenreTitle.Text = "Album:";
@@ -189,11 +196,15 @@ namespace MediaShelfApp
                     txtDescriptionValue.Text = description;
 
 
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    //picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    pbMovieImage.Visible = false;
+                    pbGameImage.Visible = false;
+                    pbBookImage.Visible = false;
+                    pbMusicImage.Visible = true;
+
+                    pbMusicImage.ImageLocation = mediaImageLink;
                     break;
                 case 3:
-
+                    // Modify Labels on Form for Games
                     lblCreatorTitle.Text = "Platform:";
                     lblDescriptionTitle.Text = "";
 
@@ -204,9 +215,11 @@ namespace MediaShelfApp
                     lblReleaseDateValue.Text = releaseDate;
                     txtDescriptionValue.Text = description;
 
-
-                    picMediaImage.ImageLocation = mediaImageLink;
-                    picMediaImage.Size = new System.Drawing.Size(369, 369);
+                    pbMovieImage.Visible = false;
+                    pbMusicImage.Visible = false;
+                    pbBookImage.Visible = false;
+                    pbGameImage.Visible = true;
+                    pbGameImage.ImageLocation = mediaImageLink;
                     break;
                 default:
                     break;
@@ -215,38 +228,87 @@ namespace MediaShelfApp
 
 
         }
-
-        private void Detailed_Item_Listing_Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnFavorite_Click(object sender, EventArgs e)
         {
             int list_index = cmbAddToList.SelectedIndex;
             SqlConnection dbConnect = new SqlConnection(dbConnectionString);
 
-            try
+            if (list_index == -1)
             {
-                dbConnect.Open();
-                SqlCommand cmd = dbConnect.CreateCommand();
-                cmd.CommandText = "INSERT INTO ITEMS VALUES (@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,NULL,@item_description,@item_list_id,@item_genre)";
-                cmd.Parameters.AddWithValue("@item_api", 0);
-                cmd.Parameters.AddWithValue("@item_media_type", 1);
-                cmd.Parameters.AddWithValue("@item_title", lblTitle.Text);
-                cmd.Parameters.AddWithValue("@item_creator", lblCreatorValue.Text);
-                cmd.Parameters.AddWithValue("@item_release_date", lblReleaseDateValue.Text);
-                //cmd.Parameters.AddWithValue("@item_icon", picMediaImage.Image);
-                cmd.Parameters.AddWithValue("@item_description", lblDescriptionValue.Text);
-                cmd.Parameters.AddWithValue("@item_list_id", list_index);
-                cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
-                cmd.ExecuteNonQuery();
+                MessageBox.Show("Please select a list to favorite item to.", "Error");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+
+                try
+                {
+                    dbConnect.Open();
+                    SqlCommand cmd = dbConnect.CreateCommand();
+                    cmd.CommandText = "INSERT INTO ITEMS VALUES (@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,NULL,@item_description,@item_list_id,@item_genre)";
+                    cmd.Parameters.AddWithValue("@item_api", 0);
+                    cmd.Parameters.AddWithValue("@item_media_type", 1);
+                    cmd.Parameters.AddWithValue("@item_title", lblTitle.Text);
+                    cmd.Parameters.AddWithValue("@item_creator", lblCreatorValue.Text);
+                    cmd.Parameters.AddWithValue("@item_release_date", lblReleaseDateValue.Text);
+                    //cmd.Parameters.AddWithValue("@item_icon", picMediaImage.Image);
+                    cmd.Parameters.AddWithValue("@item_description", txtDescriptionValue.Text);
+                    cmd.Parameters.AddWithValue("@item_list_id", list_index);
+                    cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Item saved to " + cmbAddToList.Text, "Save Confirmed");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                dbConnect.Close();
             }
-            dbConnect.Close();
+        }
+
+        private void moveLabelsVerticalPosition(int y)
+        {
+            Label[] labels = { lblCreatorTitle, lblGenreTitle, lblReleaseDateTitle, lblCreatorValue, lblGenreValue, lblReleaseDateValue };
+
+            foreach (Label currentLabel in labels)
+            {
+                currentLabel.Location = new Point(currentLabel.Location.X, currentLabel.Location.Y + y);
+            }
+        }
+
+        private void lblTitle_TextChanged(object sender, EventArgs e)
+        {
+
+            // The purpose of this function is to resize elements of the screen if the Title
+            // is to large to fit within its control.
+
+            if (lblTitle.Text.Length > 50)
+            {
+                // IF lblTitle LENGTH IS MORE THAN 50 CHARACTERS IN TITLE SET FONT SIZE TO 16
+                lblTitle.Font = new Font("Segoe UI", 16);
+            }
+            else if (lblTitle.Text.Length > 45 && lblTitle.Text.Length <= 50)
+            {
+                // IF lblTitle LENGTH is between 45 and 50 CHARACTERS IN TITLE SET FONT SIZE TO 19
+                lblTitle.Font = new Font("Segoe UI", 19);
+            }
+            else if (lblTitle.Text.Length > 20 && lblTitle.Text.Length <= 45)
+            {
+                // IF lblTitle LENGTH is between 20 and 45 CHARACTERS
+                // ADJUST LABEL SPACING AND VALUE LOCATIONS
+                lblDescriptionTitle.Location = new Point(lblDescriptionTitle.Location.X, lblDescriptionTitle.Location.Y+20);
+                txtDescriptionValue.Size = new Size(txtDescriptionValue.Size.Width, txtDescriptionValue.Size.Height - 20);
+                txtDescriptionValue.Location = new Point(txtDescriptionValue.Location.X, txtDescriptionValue.Location.Y + 20);
+                moveLabelsVerticalPosition(30);
+            }
+            else
+            {
+                // IF NONE OF THE ABOVE MOVE ALL LABELS UP 30 POINTS
+                moveLabelsVerticalPosition(-30);
+            }
+
+            txtDescriptionValue.Size = new Size(txtDescriptionValue.Size.Width, txtDescriptionValue.Size.Height);
+
+
         }
     }
 }

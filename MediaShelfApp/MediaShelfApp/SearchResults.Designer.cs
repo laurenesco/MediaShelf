@@ -1,4 +1,4 @@
-namespace MediaShelfApp
+﻿namespace MediaShelfApp
 {
     partial class SearchResults
     {

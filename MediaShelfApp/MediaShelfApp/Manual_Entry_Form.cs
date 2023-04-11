@@ -56,8 +56,8 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-
-
+        
+        // Add button functionality - saves user-made manual entry
         private void TagElements()
         {
             foreach (Control c in this.Controls)
