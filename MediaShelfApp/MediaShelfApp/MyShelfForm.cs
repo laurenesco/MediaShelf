@@ -139,6 +139,5 @@ namespace MediaShelfApp
             ListView window = new ListView("Manual Entries", this);
             window.Show();
         }
-
     }
 }

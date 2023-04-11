@@ -59,15 +59,14 @@
             // 
             // lblSearch
             // 
-            lblSearch.AutoSize = true;
-            lblSearch.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSearch.ForeColor = SystemColors.ActiveBorder;
-            lblSearch.Location = new Point(611, 270);
-            lblSearch.Margin = new Padding(5, 0, 5, 0);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(90, 32);
-            lblSearch.TabIndex = 146;
-            lblSearch.Text = "Search:";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSearch.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblSearch.Location = new System.Drawing.Point(376, 169);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(56, 20);
+            this.lblSearch.TabIndex = 146;
+            this.lblSearch.Text = "Search:";
             // 
             // txtListSearch
             // 
@@ -88,15 +87,14 @@
             // 
             // lblSortBy
             // 
-            lblSortBy.AutoSize = true;
-            lblSortBy.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSortBy.ForeColor = SystemColors.ActiveBorder;
-            lblSortBy.Location = new Point(1341, 1062);
-            lblSortBy.Margin = new Padding(5, 0, 5, 0);
-            lblSortBy.Name = "lblSortBy";
-            lblSortBy.Size = new Size(95, 32);
-            lblSortBy.TabIndex = 135;
-            lblSortBy.Text = "Sort By:";
+            this.lblSortBy.AutoSize = true;
+            this.lblSortBy.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSortBy.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblSortBy.Location = new System.Drawing.Point(825, 664);
+            this.lblSortBy.Name = "lblSortBy";
+            this.lblSortBy.Size = new System.Drawing.Size(59, 20);
+            this.lblSortBy.TabIndex = 135;
+            this.lblSortBy.Text = "Sort By:";
             // 
             // lblListName
             // 
@@ -113,14 +111,13 @@
             // 
             // btnNavBack
             // 
-            btnNavBack.Location = new Point(68, 1115);
-            btnNavBack.Margin = new Padding(5);
-            btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(153, 46);
-            btnNavBack.TabIndex = 160;
-            btnNavBack.Text = "Back";
-            btnNavBack.UseVisualStyleBackColor = true;
-            btnNavBack.Click += btnNavBack_Click;
+            this.btnNavBack.Location = new System.Drawing.Point(42, 697);
+            this.btnNavBack.Name = "btnNavBack";
+            this.btnNavBack.Size = new System.Drawing.Size(94, 29);
+            this.btnNavBack.TabIndex = 160;
+            this.btnNavBack.Text = "Back";
+            this.btnNavBack.UseVisualStyleBackColor = true;
+            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
             // 
             // lblDescriptionText
             // 
