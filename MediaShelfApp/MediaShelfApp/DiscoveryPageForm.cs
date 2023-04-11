@@ -298,6 +298,7 @@ namespace MediaShelfApp
             ListView window = new ListView("Manual Entries", this);
             window.Show();
         }
+
         //Manual Entries Description
         private void label23_Click(object sender, EventArgs e)
         {
@@ -307,19 +308,22 @@ namespace MediaShelfApp
         //List #2
         private void label8_Click(object sender, EventArgs e)
         {
-
+            
         }
+
         //List #2 Description
         private void label15_Click(object sender, EventArgs e)
         {
 
         }
 
+
         //List #3
         private void label7_Click(object sender, EventArgs e)
         {
-
+            
         }
+
         //List #3 Description
         private void label14_Click(object sender, EventArgs e)
         {

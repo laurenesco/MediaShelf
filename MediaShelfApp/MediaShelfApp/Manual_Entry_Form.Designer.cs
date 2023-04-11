@@ -28,197 +28,227 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBackButton = new System.Windows.Forms.Button();
-            this.lblManualEntry = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.lblCreator = new System.Windows.Forms.Label();
-            this.lblTags = new System.Windows.Forms.Label();
-            this.lblReleaseDate = new System.Windows.Forms.Label();
-            this.txtCreator = new System.Windows.Forms.TextBox();
-            this.txtTags = new System.Windows.Forms.TextBox();
-            this.dtpReleaseDate = new System.Windows.Forms.DateTimePicker();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtDescriptionText = new System.Windows.Forms.TextBox();
-            this.btnAddButton = new System.Windows.Forms.Button();
-            this.picboxImage = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // btnBackButton
-            // 
-            this.btnBackButton.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnBackButton.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBackButton.Location = new System.Drawing.Point(10, 10);
-            this.btnBackButton.Name = "btnBackButton";
-            this.btnBackButton.Size = new System.Drawing.Size(68, 37);
-            this.btnBackButton.TabIndex = 5;
-            this.btnBackButton.Text = "Back";
-            this.btnBackButton.UseVisualStyleBackColor = false;
-            this.btnBackButton.Click += new System.EventHandler(this.btnNavBack_Click);
+            lblManualEntry = new Label();
+            lblTitle = new Label();
+            txtTitle = new TextBox();
+            lblCreator = new Label();
+            lblTags = new Label();
+            lblReleaseDate = new Label();
+            txtCreator = new TextBox();
+            txtTags = new TextBox();
+            dtpReleaseDate = new DateTimePicker();
+            lblDescription = new Label();
+            txtDescriptionText = new TextBox();
+            picboxImage = new PictureBox();
+            lblTagName = new Label();
+            txtTagName = new TextBox();
+            lblAddTag = new Label();
+            btnBackButton = new Button();
+            btnAddButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)picboxImage).BeginInit();
+            SuspendLayout();
             // 
             // lblManualEntry
             // 
-            this.lblManualEntry.AutoSize = true;
-            this.lblManualEntry.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblManualEntry.Location = new System.Drawing.Point(353, 19);
-            this.lblManualEntry.Name = "lblManualEntry";
-            this.lblManualEntry.Size = new System.Drawing.Size(127, 28);
-            this.lblManualEntry.TabIndex = 7;
-            this.lblManualEntry.Text = "Manual Entry";
+            lblManualEntry.AutoSize = true;
+            lblManualEntry.Font = new Font("Ebrima", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblManualEntry.Location = new Point(368, 28);
+            lblManualEntry.Name = "lblManualEntry";
+            lblManualEntry.Size = new Size(191, 41);
+            lblManualEntry.TabIndex = 7;
+            lblManualEntry.Text = "Manual Entry";
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(326, 95);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(53, 28);
-            this.lblTitle.TabIndex = 8;
-            this.lblTitle.Text = "Title:";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.Location = new Point(395, 144);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(41, 20);
+            lblTitle.TabIndex = 8;
+            lblTitle.Text = "Title:";
+            lblTitle.TextAlign = ContentAlignment.TopRight;
             // 
             // txtTitle
             // 
-            this.txtTitle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTitle.Location = new System.Drawing.Point(379, 94);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(304, 35);
-            this.txtTitle.TabIndex = 9;
+            txtTitle.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTitle.Location = new Point(448, 136);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(304, 28);
+            txtTitle.TabIndex = 9;
             // 
             // lblCreator
             // 
-            this.lblCreator.AutoSize = true;
-            this.lblCreator.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreator.Location = new System.Drawing.Point(299, 134);
-            this.lblCreator.Name = "lblCreator";
-            this.lblCreator.Size = new System.Drawing.Size(81, 28);
-            this.lblCreator.TabIndex = 10;
-            this.lblCreator.Text = "Creator:";
-            this.lblCreator.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            lblCreator.AutoSize = true;
+            lblCreator.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCreator.Location = new Point(375, 183);
+            lblCreator.Name = "lblCreator";
+            lblCreator.Size = new Size(61, 20);
+            lblCreator.TabIndex = 10;
+            lblCreator.Text = "Creator:";
+            lblCreator.TextAlign = ContentAlignment.TopRight;
             // 
             // lblTags
             // 
-            this.lblTags.AutoSize = true;
-            this.lblTags.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTags.Location = new System.Drawing.Point(264, 172);
-            this.lblTags.Name = "lblTags";
-            this.lblTags.Size = new System.Drawing.Size(116, 28);
-            this.lblTags.TabIndex = 12;
-            this.lblTags.Text = "Genre/Tags:";
-            this.lblTags.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            lblTags.AutoSize = true;
+            lblTags.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTags.Location = new Point(348, 221);
+            lblTags.Name = "lblTags";
+            lblTags.Size = new Size(88, 20);
+            lblTags.TabIndex = 12;
+            lblTags.Text = "Genre/Tags:";
+            lblTags.TextAlign = ContentAlignment.TopRight;
             // 
             // lblReleaseDate
             // 
-            this.lblReleaseDate.AutoSize = true;
-            this.lblReleaseDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblReleaseDate.Location = new System.Drawing.Point(251, 213);
-            this.lblReleaseDate.Name = "lblReleaseDate";
-            this.lblReleaseDate.Size = new System.Drawing.Size(127, 28);
-            this.lblReleaseDate.TabIndex = 13;
-            this.lblReleaseDate.Text = "Release Date:";
-            this.lblReleaseDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            lblReleaseDate.AutoSize = true;
+            lblReleaseDate.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblReleaseDate.Location = new Point(337, 260);
+            lblReleaseDate.Name = "lblReleaseDate";
+            lblReleaseDate.Size = new Size(99, 20);
+            lblReleaseDate.TabIndex = 13;
+            lblReleaseDate.Text = "Release Date:";
+            lblReleaseDate.TextAlign = ContentAlignment.TopRight;
             // 
             // txtCreator
             // 
-            this.txtCreator.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCreator.Location = new System.Drawing.Point(379, 133);
-            this.txtCreator.Name = "txtCreator";
-            this.txtCreator.Size = new System.Drawing.Size(304, 35);
-            this.txtCreator.TabIndex = 14;
+            txtCreator.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCreator.Location = new Point(448, 175);
+            txtCreator.Name = "txtCreator";
+            txtCreator.Size = new Size(304, 28);
+            txtCreator.TabIndex = 14;
             // 
             // txtTags
             // 
-            this.txtTags.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTags.Location = new System.Drawing.Point(379, 171);
-            this.txtTags.Name = "txtTags";
-            this.txtTags.Size = new System.Drawing.Size(304, 35);
-            this.txtTags.TabIndex = 16;
+            txtTags.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTags.Location = new Point(448, 213);
+            txtTags.Name = "txtTags";
+            txtTags.Size = new Size(304, 28);
+            txtTags.TabIndex = 16;
             // 
             // dtpReleaseDate
             // 
-            this.dtpReleaseDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpReleaseDate.Location = new System.Drawing.Point(379, 210);
-            this.dtpReleaseDate.Name = "dtpReleaseDate";
-            this.dtpReleaseDate.Size = new System.Drawing.Size(304, 35);
-            this.dtpReleaseDate.TabIndex = 17;
+            dtpReleaseDate.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpReleaseDate.Location = new Point(448, 252);
+            dtpReleaseDate.Name = "dtpReleaseDate";
+            dtpReleaseDate.Size = new Size(304, 28);
+            dtpReleaseDate.TabIndex = 17;
             // 
             // lblDescription
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.Location = new System.Drawing.Point(41, 269);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(116, 28);
-            this.lblDescription.TabIndex = 18;
-            this.lblDescription.Text = "Description:";
+            lblDescription.AutoSize = true;
+            lblDescription.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDescription.Location = new Point(57, 320);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(88, 20);
+            lblDescription.TabIndex = 18;
+            lblDescription.Text = "Description:";
             // 
             // txtDescriptionText
             // 
-            this.txtDescriptionText.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescriptionText.Location = new System.Drawing.Point(46, 298);
-            this.txtDescriptionText.Multiline = true;
-            this.txtDescriptionText.Name = "txtDescriptionText";
-            this.txtDescriptionText.Size = new System.Drawing.Size(702, 136);
-            this.txtDescriptionText.TabIndex = 19;
-            // 
-            // btnAddButton
-            // 
-            this.btnAddButton.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAddButton.Location = new System.Drawing.Point(680, 439);
-            this.btnAddButton.Name = "btnAddButton";
-            this.btnAddButton.Size = new System.Drawing.Size(68, 37);
-            this.btnAddButton.TabIndex = 20;
-            this.btnAddButton.Text = "Add";
-            this.btnAddButton.UseVisualStyleBackColor = true;
-            this.btnAddButton.Click += new System.EventHandler(this.ME_addButton_Click);
+            txtDescriptionText.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDescriptionText.Location = new Point(46, 353);
+            txtDescriptionText.Multiline = true;
+            txtDescriptionText.Name = "txtDescriptionText";
+            txtDescriptionText.Size = new Size(791, 136);
+            txtDescriptionText.TabIndex = 19;
             // 
             // picboxImage
             // 
-            this.picboxImage.BackColor = System.Drawing.Color.White;
-            this.picboxImage.BackgroundImage = global::MediaShelfApp.Properties.Resources.uploadImagePrompt;
-            this.picboxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picboxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picboxImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picboxImage.Location = new System.Drawing.Point(46, 66);
-            this.picboxImage.Name = "picboxImage";
-            this.picboxImage.Size = new System.Drawing.Size(200, 200);
-            this.picboxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxImage.TabIndex = 21;
-            this.picboxImage.TabStop = false;
-            this.picboxImage.Click += new System.EventHandler(this.picboxImage_Click);
+            picboxImage.BackColor = Color.White;
+            picboxImage.BackgroundImage = Properties.Resources.uploadImagePrompt;
+            picboxImage.BackgroundImageLayout = ImageLayout.Center;
+            picboxImage.BorderStyle = BorderStyle.FixedSingle;
+            picboxImage.Cursor = Cursors.Hand;
+            picboxImage.Location = new Point(57, 98);
+            picboxImage.Name = "picboxImage";
+            picboxImage.Size = new Size(200, 200);
+            picboxImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            picboxImage.TabIndex = 21;
+            picboxImage.TabStop = false;
+            picboxImage.Click += picboxImage_Click;
+            // 
+            // lblTagName
+            // 
+            lblTagName.AutoSize = true;
+            lblTagName.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTagName.Location = new Point(282, 233);
+            lblTagName.Name = "lblTagName";
+            lblTagName.Size = new Size(81, 20);
+            lblTagName.TabIndex = 22;
+            lblTagName.Text = "Tag Name:";
+            lblTagName.Visible = false;
+            // 
+            // txtTagName
+            // 
+            txtTagName.Location = new Point(375, 230);
+            txtTagName.Name = "txtTagName";
+            txtTagName.Size = new Size(222, 27);
+            txtTagName.TabIndex = 23;
+            txtTagName.Visible = false;
+            // 
+            // lblAddTag
+            // 
+            lblAddTag.AutoSize = true;
+            lblAddTag.Font = new Font("Ebrima", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddTag.Location = new Point(375, 28);
+            lblAddTag.Name = "lblAddTag";
+            lblAddTag.Size = new Size(153, 41);
+            lblAddTag.TabIndex = 24;
+            lblAddTag.Text = "Add a Tag";
+            lblAddTag.Visible = false;
+            // 
+            // btnBackButton
+            // 
+            btnBackButton.Location = new Point(12, 12);
+            btnBackButton.Name = "btnBackButton";
+            btnBackButton.Size = new Size(94, 29);
+            btnBackButton.TabIndex = 25;
+            btnBackButton.Text = "Back";
+            btnBackButton.UseVisualStyleBackColor = true;
+            btnBackButton.Click += btnNavBack_Click;
+            // 
+            // btnAddButton
+            // 
+            btnAddButton.Location = new Point(756, 495);
+            btnAddButton.Name = "btnAddButton";
+            btnAddButton.Size = new Size(81, 29);
+            btnAddButton.TabIndex = 26;
+            btnAddButton.Text = "Add";
+            btnAddButton.UseVisualStyleBackColor = true;
+            btnAddButton.Click += btnAddButton_Click;
             // 
             // Manual_Entry_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(761, 486);
-            this.Controls.Add(this.picboxImage);
-            this.Controls.Add(this.btnAddButton);
-            this.Controls.Add(this.txtDescriptionText);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.dtpReleaseDate);
-            this.Controls.Add(this.txtTags);
-            this.Controls.Add(this.txtCreator);
-            this.Controls.Add(this.lblReleaseDate);
-            this.Controls.Add(this.lblTags);
-            this.Controls.Add(this.lblCreator);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblManualEntry);
-            this.Controls.Add(this.btnBackButton);
-            this.Name = "Manual_Entry_Form";
-            this.Text = "MediaShelf - Make Manual Entry";
-            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(882, 553);
+            Controls.Add(btnAddButton);
+            Controls.Add(btnBackButton);
+            Controls.Add(lblAddTag);
+            Controls.Add(txtTagName);
+            Controls.Add(lblTagName);
+            Controls.Add(picboxImage);
+            Controls.Add(txtDescriptionText);
+            Controls.Add(lblDescription);
+            Controls.Add(dtpReleaseDate);
+            Controls.Add(txtTags);
+            Controls.Add(txtCreator);
+            Controls.Add(lblReleaseDate);
+            Controls.Add(lblTags);
+            Controls.Add(lblCreator);
+            Controls.Add(txtTitle);
+            Controls.Add(lblTitle);
+            Controls.Add(lblManualEntry);
+            Name = "Manual_Entry_Form";
+            Text = "MediaShelf - Make Manual Entry";
+            ((System.ComponentModel.ISupportInitialize)picboxImage).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Button btnBackButton;
         private Label lblManualEntry;
         private Label lblTitle;
         private TextBox txtTitle;
@@ -230,7 +260,11 @@
         private DateTimePicker dtpReleaseDate;
         private Label lblDescription;
         private TextBox txtDescriptionText;
-        private Button btnAddButton;
         private PictureBox picboxImage;
+        private Label lblTagName;
+        private TextBox txtTagName;
+        private Label lblAddTag;
+        private Button btnBackButton;
+        private Button btnAddButton;
     }
 }
