@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,7 +29,7 @@ namespace MediaShelfApp
         private booksRoot booksjson;
         private musicRoot musicjson;
         private gamesRoot gamesjson;
-
+        private gameDetailsRoot gameDetailsjson;
 
 
         //////////////////////
@@ -89,8 +90,8 @@ namespace MediaShelfApp
         // gets results from index [i], which gets C# object from moviesResult "original_title"
 
 
-        public class moviesResult 
-        {   
+        public class moviesResult
+        {
             // Name of object has to match name of JSON object
             public bool adult { get; set; } // C# object assigned at apiCall function below
             public string backdrop_path { get; set; }
@@ -107,7 +108,7 @@ namespace MediaShelfApp
             public double vote_average { get; set; }
             public int vote_count { get; set; }
         }
-               
+
         public class moviesRoot // ROOT CLASS FOR MOVIES //
         {
             public List<moviesResult> results { get; set; } // ^ above is all info for results
@@ -125,7 +126,7 @@ namespace MediaShelfApp
             public string etag { get; set; }
             public string selfLink { get; set; }
             public VolumeInfo volumeInfo { get; set; }
-            
+
 
             // Might not need, let me know if needed
             //public AccessInfo accessInfo { get; set; }
@@ -145,7 +146,7 @@ namespace MediaShelfApp
             public List<string> authors { get; set; }
             public string publisher { get; set; }
             public string publishedDate { get; set; }
-            public string description { get; set; }            
+            public string description { get; set; }
             public int pageCount { get; set; }
             public string printType { get; set; }
             public List<string> categories { get; set; }
@@ -235,7 +236,7 @@ namespace MediaShelfApp
 
 
         ////// GAMES API CLASSES //////
-        
+
         public class gamesRoot // ROOT CLASS FOR GAMES // 
         {
             public int count { get; set; }
@@ -250,28 +251,28 @@ namespace MediaShelfApp
             public string name { get; set; }
             public int playtime { get; set; }
             //public List<Platform> platforms { get; set; }   // Leave commented
-            
+
             public string released { get; set; }
             public bool tba { get; set; }
             public string background_image { get; set; }
             public double rating { get; set; }
             public int rating_top { get; set; }
-            
+
             public int ratings_count { get; set; }
             public int reviews_text_count { get; set; }
             public int added { get; set; }
-            
+
             public int? metacritic { get; set; }
             public int suggestions_count { get; set; }
             public DateTime updated { get; set; }
             public int id { get; set; }
             public string score { get; set; }
-            public object clip { get; set; }           
+            public object clip { get; set; }
             public object user_game { get; set; }
             public int reviews_count { get; set; }
             public int community_rating { get; set; }
             public string saturated_color { get; set; }
-            public string dominant_color { get; set; }          
+            public string dominant_color { get; set; }
             public List<ParentPlatform> parent_platforms { get; set; }
             public List<Genre> genres { get; set; }
         }
@@ -303,6 +304,64 @@ namespace MediaShelfApp
             public string slug { get; set; }
         }
 
+        // GAME DETAILS API CLASS HELPER //
+        public class gameDetailsRoot
+        {
+            public int id { get; set; }
+            public string slug { get; set; }
+            public string name { get; set; }
+            public string name_original { get; set; }
+            public string description { get; set; }
+            public object metacritic { get; set; }
+            public List<object> metacritic_platforms { get; set; }
+            public string released { get; set; }
+            public bool tba { get; set; }
+            public DateTime updated { get; set; }
+            public string background_image { get; set; }
+            public string background_image_additional { get; set; }
+            public string website { get; set; }
+            public double rating { get; set; }
+            public int rating_top { get; set; }
+            public int added { get; set; }
+            public int playtime { get; set; }
+            public int screenshots_count { get; set; }
+            public int movies_count { get; set; }
+            public int creators_count { get; set; }
+            public int achievements_count { get; set; }
+            public int parent_achievements_count { get; set; }
+            public string reddit_url { get; set; }
+            public string reddit_name { get; set; }
+            public string reddit_description { get; set; }
+            public string reddit_logo { get; set; }
+            public int reddit_count { get; set; }
+            public int twitch_count { get; set; }
+            public int youtube_count { get; set; }
+            public int reviews_text_count { get; set; }
+            public int ratings_count { get; set; }
+            public int suggestions_count { get; set; }
+            public List<object> alternative_names { get; set; }
+            public string metacritic_url { get; set; }
+            public int parents_count { get; set; }
+            public int additions_count { get; set; }
+            public int game_series_count { get; set; }
+            public object user_game { get; set; }
+            public int reviews_count { get; set; }
+            public string saturated_color { get; set; }
+            public string dominant_color { get; set; }
+            public List<ParentPlatform> parent_platforms { get; set; }
+            public List<Platform> platforms { get; set; }
+            public List<object> stores { get; set; }
+            public List<Genre> genres { get; set; }
+            public List<Publisher> publishers { get; set; }
+            public object esrb_rating { get; set; }
+            public object clip { get; set; }
+            public string description_raw { get; set; }
+        }
+
+        public class gameDetailsHelper
+        {
+            public List<string> descriptions { get; set; }
+        }
         //////////////////////
         //  Priate methods  //
         //////////////////////
@@ -373,17 +432,27 @@ namespace MediaShelfApp
                 dataGridView1.Columns.Add("Title", "Title"); //Adds columns to datagrid, to keep alignment with displayed information, add column with name of info
                 dataGridView1.Columns.Add("Overview", "Overview");
 
-                //Displays Top 10 results, breaks loop if none
-                for (int i = 0; i < 10; i++)
+                //Displays Top 20 results, breaks loop if none
+                for (int i = 0; i < 20; i++)
                 {
                     try
                     {
+                        if (movieList.results[i].original_title == null)
+                        {
+                            movieList.results[i].original_title = "No title provided.";
+                        }
+
+                        if (movieList.results[i].overview == null || movieList.results[i].overview == "")
+                        {
+                            movieList.results[i].overview = "No description provided.";
+                        }
+
                         dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString()); // DISPLAYS information on datagrid, must add columns above to display info correctly/formatted correctly
 
                     }
                     catch (Exception ex)
                     {
-                        richTextBox1.AppendText(ex.Message); // Displays error in text box on search results, subject to change
+                        MessageBox.Show(ex.Message);
                         break;
                     }
                 }
@@ -401,7 +470,7 @@ namespace MediaShelfApp
 
                 // API call for books REPLACE [QUERY] = https://www.googleapis.com/books/v1/volumes?q=[QUERY]&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ
 
-                var endpoint = new Uri("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ");
+                var endpoint = new Uri("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyCUcXyqQE19ui4GTICk7wAQPkNPel5ybUQ&maxResults=20");
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
                 booksRoot bookList = JsonConvert.DeserializeObject<booksRoot>(json);
@@ -411,17 +480,29 @@ namespace MediaShelfApp
                 dataGridView1.Refresh();
 
                 dataGridView1.Columns.Add("Title", "Title");
-                dataGridView1.Columns.Add("Overview", "Overview");               
-                for (int i = 0; i < 10; i++)
+                dataGridView1.Columns.Add("Overview", "Overview");
+
+                // google books api only allows for 10 results
+                for (int i = 0; i < 20; i++)
                 {
                     try
                     {
+                        if (bookList.items[i].volumeInfo.title == null)
+                        {
+                            bookList.items[i].volumeInfo.title = "No title provided.";
+                        }
+
+                        if (bookList.items[i].volumeInfo.description == null)
+                        {
+                            bookList.items[i].volumeInfo.description = "No description provided";
+                        }
+
                         dataGridView1.Rows.Add(bookList.items[i].volumeInfo.title.ToString(), bookList.items[i].volumeInfo.description.ToString());
 
                     }
                     catch (Exception ex)
                     {
-                        richTextBox1.AppendText(ex.Message); // Leave Just In Case
+                        MessageBox.Show(ex.Message);
                         break;
                     }
                 }
@@ -438,7 +519,7 @@ namespace MediaShelfApp
 
                 // API call for music REPLACE [QUERY] = https://api.deezer.com/search/track?q=[QUERY]
                 var endpoint = new Uri("https://api.deezer.com/search/track?q=" + query); // NO API KEY NEEDED FOR DEEZER
-                var result = client.GetAsync(endpoint).Result; 
+                var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
                 musicRoot musicList = JsonConvert.DeserializeObject<musicRoot>(json);
 
@@ -449,23 +530,32 @@ namespace MediaShelfApp
                 dataGridView1.Columns.Add("Title", "Title");
                 dataGridView1.Columns.Add("Artist", "Artist");
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     try
                     {
-                        dataGridView1.Rows.Add(musicList.data[i].title.ToString(), musicList.data[i].artist.name.ToString());
+                        if (musicList.data[i].title == null)
+                        {
+                            musicList.data[i].title = "No title provided.";
+                        }
 
+                        if (musicList.data[i].artist.name == null)
+                        {
+                            musicList.data[i].artist.name = "No description provided.";
+                        }
+
+                        dataGridView1.Rows.Add(musicList.data[i].title.ToString(), musicList.data[i].artist.name.ToString());
                     }
                     catch (Exception ex)
                     {
-                        richTextBox1.AppendText(ex.Message);
+                        MessageBox.Show(ex.Message);
                         break;
                     }
                 }
                 musicjson = musicList;
             }
         }
-        
+
         // GAMES API CALL //
         private void gamesAPICall()
         {
@@ -484,16 +574,40 @@ namespace MediaShelfApp
                 dataGridView1.Refresh();
 
                 dataGridView1.Columns.Add("Title", "Title");
+                dataGridView1.Columns.Add("Overview", "Overview");
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     try
                     {
-                        dataGridView1.Rows.Add(gamesList.results[i].name.ToString());
+                        // Another API call to pull game overview
+                        int gameID = gamesList.results[i].id; // gets ID of current game and sends it to query specific game
+                        var ep = new Uri("https://api.rawg.io/api/games/" + gameID + "?key=4c2156667b7e46e1b3701085a1150dff");
+                        var res = client.GetAsync(ep).Result;
+                        var gameJson = res.Content.ReadAsStringAsync().Result;
+                        gameDetailsRoot gameDetail = JsonConvert.DeserializeObject<gameDetailsRoot>(gameJson);
+
+                        //string description = gameDetail.description;
+
+
+
+                        if (gamesList.results[i].name == null)
+                        {
+                            gamesList.results[i].name = "No title provided.";
+                        }
+
+                        if (gameDetail.description == null)
+                        {
+                            gameDetail.description = "No description provided.";
+                        }
+
+
+                        dataGridView1.Rows.Add(gamesList.results[i].name.ToString(), gameDetail.description_raw.ToString());
+                        gameDetailsjson = gameDetail;
                     }
                     catch (Exception ex)
                     {
-                        richTextBox1.AppendText(ex.Message);
+                        MessageBox.Show(ex.Message);
                         break;
                     }
                 }
@@ -501,7 +615,7 @@ namespace MediaShelfApp
             }
         }
 
-        
+
         /// END OF API CALLS /// 
 
         // Search Results Form Loads
@@ -535,54 +649,223 @@ namespace MediaShelfApp
                     case 0:
                         //movies
 
-                        title = moviesjson.results[rowIndex].original_title.ToString();
+                        // ALL IF ELSE STATEMENTS CHECK IF VALUE IS NULL, IF NULL IS TRUE PROVIDE STRING "N/A"
+
+                        if (moviesjson.results[rowIndex].original_title == null)
+                        {
+                            title = "No title provided.";
+                        }
+                        else
+                        {
+                            title = moviesjson.results[rowIndex].original_title.ToString();
+                        }
+
                         creator = "";
-                        release_date = moviesjson.results[rowIndex].release_date.ToString();
+
+                        if (moviesjson.results[rowIndex].release_date == null)
+                        {
+                            release_date = "N/A";
+                        }
+                        else
+                        {
+                            release_date = moviesjson.results[rowIndex].release_date.ToString();
+                        }
                         genre = "";
-                        description = moviesjson.results[rowIndex].overview.ToString();
+
+                        if (moviesjson.results[rowIndex].overview == null)
+                        {
+                            description = "N/A";
+                        }
+                        else
+                        {
+                            description = moviesjson.results[rowIndex].overview.ToString();
+                        }
                         mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
 
                         openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0);
 
                         break;
+
+
                     case 1:
                         //books
-                        title = booksjson.items[rowIndex].volumeInfo.title.ToString();
-                        string author = booksjson.items[rowIndex].volumeInfo.authors[0].ToString();
-                        release_date = booksjson.items[rowIndex].volumeInfo.publishedDate.ToString();
-                        string publisher = booksjson.items[rowIndex].volumeInfo.publisher.ToString();
-                        description = booksjson.items[rowIndex].volumeInfo.description.ToString();
-                        mediaImageLink = booksjson.items[rowIndex].volumeInfo.imageLinks.thumbnail;
+                        string author;
+                        string publisher;
+
+                        if (booksjson.items[rowIndex].volumeInfo.title == null)
+                        {
+                            title = "N/A";
+                        }
+                        else
+                        {
+                            title = booksjson.items[rowIndex].volumeInfo.title.ToString();
+                        }
+
+                        if (booksjson.items[rowIndex].volumeInfo.authors == null)
+                        {
+                            author = "N/A";
+                        }
+                        else
+                        {
+                            author = booksjson.items[rowIndex].volumeInfo.authors.ToString();
+                        }
+
+                        if (booksjson.items[rowIndex].volumeInfo.publishedDate == null)
+                        {
+                            release_date = "N/A";
+                        }
+                        else
+                        {
+                            release_date = booksjson.items[rowIndex].volumeInfo.publishedDate.ToString();
+                        }
+
+                        if (booksjson.items[rowIndex].volumeInfo.publisher == null)
+                        {
+                            publisher = "N/A";
+                        }
+                        else
+                        {
+                            publisher = booksjson.items[rowIndex].volumeInfo.publisher.ToString();
+                        }
+
+                        if (booksjson.items[rowIndex].volumeInfo.description == null)
+                        {
+                            description = "N/A";
+                        }
+                        else
+                        {
+                            description = booksjson.items[rowIndex].volumeInfo.description.ToString();
+                        }
+
+                        if (booksjson.items[rowIndex].volumeInfo.imageLinks == null)
+                        {
+                            mediaImageLink = "";
+                        }
+                        else
+                        {
+                            mediaImageLink = booksjson.items[rowIndex].volumeInfo.imageLinks.thumbnail;
+                        }
 
                         openDetailedItemListingForm(title, author, publisher, release_date, description, mediaImageLink, 1);
                         break;
+
+
                     case 2:
                         //music
-                        title = musicjson.data[rowIndex].title.ToString();
-                        string artist = musicjson.data[rowIndex].artist.name.ToString();
-                        string album = musicjson.data[rowIndex].album.title;
-                        release_date = "";
-                        description = "";
-                        mediaImageLink = musicjson.data[rowIndex].album.cover_big;
+                        string artist;
+                        string album;
 
-                        openDetailedItemListingForm(title, artist, album, release_date, description, mediaImageLink, 2); ;
+                        if (musicjson.data[rowIndex].title == null)
+                        {
+                            title = "N/A";
+                        }
+                        else
+                        {
+                            title = musicjson.data[rowIndex].title.ToString();
+                        }
+
+
+                        if (musicjson.data[rowIndex].artist.name == null)
+                        {
+                            artist = "N/A";
+                        }
+                        else
+                        {
+                            artist = musicjson.data[rowIndex].artist.name.ToString();
+                        }
+
+
+
+                        if (musicjson.data[rowIndex].album.title == null)
+                        {
+                            album = "N/A";
+                        }
+                        else
+                        {
+                            album = musicjson.data[rowIndex].album.title;
+                        }
+
+                        release_date = "";
+
+                        description = "";
+
+                        if (musicjson.data[rowIndex].album.cover_big == null)
+                        {
+                            mediaImageLink = "N/A";
+                        }
+                        else
+                        {
+                            mediaImageLink = musicjson.data[rowIndex].album.cover_big;
+                        }
+                        openDetailedItemListingForm(title, artist, album, release_date, description, mediaImageLink, 2);
                         break;
+
+
                     case 3:
                         //games
 
-                        title = gamesjson.results[rowIndex].name;
-                        string platform = gamesjson.results[rowIndex].parent_platforms[0].platform.name.ToString();
-                        genre = gamesjson.results[rowIndex].genres[1].name.ToString();
-                        release_date = gamesjson.results[rowIndex].released;
-                        description = "";
-                        mediaImageLink = gamesjson.results[rowIndex].background_image;
+                        if (gamesjson.results[rowIndex].name == null)
+                        {
+                            title = "N/A";
+                        }
+                        else
+                        {
+                            title = gamesjson.results[rowIndex].name.ToString();
+                        }
+
+                        string platform;
+                        if (gamesjson.results[rowIndex].parent_platforms[0].platform.name == null || gamesjson.results[rowIndex].parent_platforms.Count == 0)
+                        {
+                            platform = "N/A";
+                        }
+                        else
+                        {
+                            platform = gamesjson.results[rowIndex].parent_platforms[0].platform.name.ToString();
+                        }
+
+                        if (gamesjson.results[rowIndex].genres == null || gamesjson.results[rowIndex].genres.Count == 0)
+                        {
+                            genre = "N/A";
+                        }
+                        else
+                        {
+                            genre = gamesjson.results[rowIndex].genres[0].name.ToString();
+                        }
+
+                        if (gamesjson.results[rowIndex].released == null)
+                        {
+                            release_date = "N/A";
+                        }
+                        else
+                        {
+                            release_date = gamesjson.results[rowIndex].released;
+                        }
+
+                        if (gameDetailsjson.description == null)
+                        {
+                            description = "N/A";
+                        }
+                        else
+                        {
+                            description = gameDetailsjson.description_raw;
+                        }
+
+                        if (gamesjson.results[rowIndex].background_image == null)
+                        {
+                            mediaImageLink = "N/A";
+                        }
+                        else
+                        {
+                            mediaImageLink = gamesjson.results[rowIndex].background_image;
+                        }
 
 
                         openDetailedItemListingForm(title, platform, genre, release_date, description, mediaImageLink, 3);
 
                         break;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
