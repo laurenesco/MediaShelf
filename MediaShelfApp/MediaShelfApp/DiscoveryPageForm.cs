@@ -19,12 +19,14 @@ namespace MediaShelfApp
             InitializeComponent();
         }
 
+        /*
         private void btnNavTempMyShelf_Click(object sender, EventArgs e)
         {
             MyShelfForm window = new MyShelfForm();
             window.setCaller(this);
             window.Show();
         }
+        */
 
         private void btnNavTempSearch_Click(object sender, EventArgs e)
         {

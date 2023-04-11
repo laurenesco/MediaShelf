@@ -651,7 +651,7 @@
             this.btnNavTempMyShelf.TabIndex = 68;
             this.btnNavTempMyShelf.Text = "MyShelf";
             this.btnNavTempMyShelf.UseVisualStyleBackColor = true;
-            this.btnNavTempMyShelf.Click += new System.EventHandler(this.btnNavTempMyShelf_Click);
+            //this.btnNavTempMyShelf.Click += new System.EventHandler(this.btnNavTempMyShelf_Click);
             // 
             // DiscoveryPageForm
             // 
