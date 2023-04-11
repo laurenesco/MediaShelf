@@ -34,18 +34,21 @@
             txtNote2 = new TextBox();
             txtNote3 = new TextBox();
             txtNote4 = new TextBox();
-            txtNote5 = new TextBox();
-            txtNote6 = new TextBox();
-            txtNote7 = new TextBox();
-            txtNote8 = new TextBox();
             btnNavBack = new Button();
+            flpTags = new FlowLayoutPanel();
+            lblAddTagPrompt = new Label();
+            cmbAddTags = new ComboBox();
+            btnAddTag = new Button();
+            btnDeleteTag = new Button();
+            cmbDeleteTags = new ComboBox();
+            lblDeleteTagPrompt = new Label();
             SuspendLayout();
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Ebrima", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(298, 21);
+            lblTitle.Location = new Point(303, 33);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(282, 47);
             lblTitle.TabIndex = 4;
@@ -53,6 +56,7 @@
             // 
             // btnAddNote
             // 
+            btnAddNote.Enabled = false;
             btnAddNote.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAddNote.Location = new Point(769, 12);
             btnAddNote.Name = "btnAddNote";
@@ -65,82 +69,46 @@
             // txtNote1
             // 
             txtNote1.BackColor = SystemColors.Info;
-            txtNote1.Location = new Point(32, 91);
+            txtNote1.Location = new Point(34, 132);
             txtNote1.MaxLength = 400;
             txtNote1.Multiline = true;
             txtNote1.Name = "txtNote1";
             txtNote1.Size = new Size(186, 165);
             txtNote1.TabIndex = 12;
+            txtNote1.TextChanged += txtNote1_TextChanged;
             // 
             // txtNote2
             // 
             txtNote2.BackColor = SystemColors.Info;
-            txtNote2.Location = new Point(240, 91);
+            txtNote2.Location = new Point(242, 132);
             txtNote2.MaxLength = 400;
             txtNote2.Multiline = true;
             txtNote2.Name = "txtNote2";
             txtNote2.Size = new Size(186, 165);
             txtNote2.TabIndex = 15;
+            txtNote2.TextChanged += txtNote2_TextChanged;
             // 
             // txtNote3
             // 
             txtNote3.BackColor = SystemColors.Info;
-            txtNote3.Location = new Point(447, 91);
+            txtNote3.Location = new Point(449, 132);
             txtNote3.MaxLength = 400;
             txtNote3.Multiline = true;
             txtNote3.Name = "txtNote3";
             txtNote3.Size = new Size(186, 165);
             txtNote3.TabIndex = 16;
+            txtNote3.TextChanged += txtNote3_TextChanged;
             // 
             // txtNote4
             // 
             txtNote4.BackColor = SystemColors.Info;
-            txtNote4.Location = new Point(654, 91);
+            txtNote4.Location = new Point(656, 132);
             txtNote4.MaxLength = 400;
             txtNote4.Multiline = true;
             txtNote4.Name = "txtNote4";
             txtNote4.Size = new Size(186, 165);
             txtNote4.TabIndex = 17;
-            // 
-            // txtNote5
-            // 
-            txtNote5.BackColor = SystemColors.Info;
-            txtNote5.Location = new Point(32, 287);
-            txtNote5.MaxLength = 400;
-            txtNote5.Multiline = true;
-            txtNote5.Name = "txtNote5";
-            txtNote5.Size = new Size(186, 165);
-            txtNote5.TabIndex = 19;
-            // 
-            // txtNote6
-            // 
-            txtNote6.BackColor = SystemColors.Info;
-            txtNote6.Location = new Point(240, 287);
-            txtNote6.MaxLength = 400;
-            txtNote6.Multiline = true;
-            txtNote6.Name = "txtNote6";
-            txtNote6.Size = new Size(186, 165);
-            txtNote6.TabIndex = 20;
-            // 
-            // txtNote7
-            // 
-            txtNote7.BackColor = SystemColors.Info;
-            txtNote7.Location = new Point(447, 287);
-            txtNote7.MaxLength = 400;
-            txtNote7.Multiline = true;
-            txtNote7.Name = "txtNote7";
-            txtNote7.Size = new Size(186, 165);
-            txtNote7.TabIndex = 21;
-            // 
-            // txtNote8
-            // 
-            txtNote8.BackColor = SystemColors.Info;
-            txtNote8.Location = new Point(654, 287);
-            txtNote8.MaxLength = 400;
-            txtNote8.Multiline = true;
-            txtNote8.Name = "txtNote8";
-            txtNote8.Size = new Size(186, 165);
-            txtNote8.TabIndex = 22;
+            txtNote4.TextChanged += txtNote4_TextChanged;
             // 
             // btnNavBack
             // 
@@ -153,16 +121,104 @@
             btnNavBack.UseVisualStyleBackColor = true;
             btnNavBack.Click += btnNavBack_Click;
             // 
+            // flpTags
+            // 
+            flpTags.AutoScroll = true;
+            flpTags.Dock = DockStyle.Bottom;
+            flpTags.Location = new Point(0, 433);
+            flpTags.Margin = new Padding(2);
+            flpTags.Name = "flpTags";
+            flpTags.Padding = new Padding(6, 0, 6, 0);
+            flpTags.Size = new Size(882, 120);
+            flpTags.TabIndex = 24;
+            // 
+            // lblAddTagPrompt
+            // 
+            lblAddTagPrompt.AutoSize = true;
+            lblAddTagPrompt.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddTagPrompt.Location = new Point(34, 347);
+            lblAddTagPrompt.Margin = new Padding(2, 0, 2, 0);
+            lblAddTagPrompt.Name = "lblAddTagPrompt";
+            lblAddTagPrompt.Size = new Size(148, 20);
+            lblAddTagPrompt.TabIndex = 25;
+            lblAddTagPrompt.Text = "Add Tag to this Item:";
+            // 
+            // cmbAddTags
+            // 
+            cmbAddTags.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAddTags.FormattingEnabled = true;
+            cmbAddTags.Items.AddRange(new object[] { "(none)" });
+            cmbAddTags.Location = new Point(186, 344);
+            cmbAddTags.Margin = new Padding(2);
+            cmbAddTags.MaxDropDownItems = 100;
+            cmbAddTags.Name = "cmbAddTags";
+            cmbAddTags.Size = new Size(146, 28);
+            cmbAddTags.Sorted = true;
+            cmbAddTags.TabIndex = 26;
+            cmbAddTags.SelectedIndexChanged += cmbAddTags_SelectedIndexChanged;
+            // 
+            // btnAddTag
+            // 
+            btnAddTag.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddTag.Location = new Point(238, 375);
+            btnAddTag.Margin = new Padding(2);
+            btnAddTag.Name = "btnAddTag";
+            btnAddTag.Size = new Size(94, 29);
+            btnAddTag.TabIndex = 27;
+            btnAddTag.Text = "Add Tag";
+            btnAddTag.UseVisualStyleBackColor = true;
+            btnAddTag.Click += btnAddTag_Click;
+            // 
+            // btnDeleteTag
+            // 
+            btnDeleteTag.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeleteTag.Location = new Point(748, 376);
+            btnDeleteTag.Margin = new Padding(2);
+            btnDeleteTag.Name = "btnDeleteTag";
+            btnDeleteTag.Size = new Size(94, 29);
+            btnDeleteTag.TabIndex = 30;
+            btnDeleteTag.Text = "Delete Tag";
+            btnDeleteTag.UseVisualStyleBackColor = true;
+            btnDeleteTag.Click += btnDeleteTag_Click;
+            // 
+            // cmbDeleteTags
+            // 
+            cmbDeleteTags.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDeleteTags.FormattingEnabled = true;
+            cmbDeleteTags.Items.AddRange(new object[] { "(none)" });
+            cmbDeleteTags.Location = new Point(696, 344);
+            cmbDeleteTags.Margin = new Padding(2);
+            cmbDeleteTags.MaxDropDownItems = 100;
+            cmbDeleteTags.Name = "cmbDeleteTags";
+            cmbDeleteTags.Size = new Size(146, 28);
+            cmbDeleteTags.Sorted = true;
+            cmbDeleteTags.TabIndex = 29;
+            cmbDeleteTags.SelectedIndexChanged += cmbDeleteTags_SelectedIndexChanged;
+            // 
+            // lblDeleteTagPrompt
+            // 
+            lblDeleteTagPrompt.AutoSize = true;
+            lblDeleteTagPrompt.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDeleteTagPrompt.Location = new Point(510, 347);
+            lblDeleteTagPrompt.Margin = new Padding(2, 0, 2, 0);
+            lblDeleteTagPrompt.Name = "lblDeleteTagPrompt";
+            lblDeleteTagPrompt.Size = new Size(182, 20);
+            lblDeleteTagPrompt.TabIndex = 28;
+            lblDeleteTagPrompt.Text = "Delete Tag from this Item:";
+            // 
             // Notes_Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(875, 478);
+            ClientSize = new Size(882, 553);
+            Controls.Add(btnDeleteTag);
+            Controls.Add(cmbDeleteTags);
+            Controls.Add(lblDeleteTagPrompt);
+            Controls.Add(btnAddTag);
+            Controls.Add(cmbAddTags);
+            Controls.Add(lblAddTagPrompt);
+            Controls.Add(flpTags);
             Controls.Add(btnNavBack);
-            Controls.Add(txtNote8);
-            Controls.Add(txtNote7);
-            Controls.Add(txtNote6);
-            Controls.Add(txtNote5);
             Controls.Add(txtNote4);
             Controls.Add(txtNote3);
             Controls.Add(txtNote2);
@@ -183,10 +239,13 @@
         private TextBox txtNote2;
         private TextBox txtNote3;
         private TextBox txtNote4;
-        private TextBox txtNote5;
-        private TextBox txtNote6;
-        private TextBox txtNote7;
-        private TextBox txtNote8;
         private Button btnNavBack;
+        private FlowLayoutPanel flpTags;
+        private Label lblAddTagPrompt;
+        private ComboBox cmbAddTags;
+        private Button btnAddTag;
+        private Button btnDeleteTag;
+        private ComboBox cmbDeleteTags;
+        private Label lblDeleteTagPrompt;
     }
 }

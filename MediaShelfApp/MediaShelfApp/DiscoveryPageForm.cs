@@ -41,6 +41,12 @@ namespace MediaShelfApp
             window.Show();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Tags", this);
+            window.Show();
+        }
+
         private void DiscoveryPageForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
