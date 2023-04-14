@@ -48,6 +48,7 @@ namespace MediaShelfApp
             searchBox1.Size = new Size(439, 27);
             searchBox1.TabIndex = 0;
             searchBox1.TextAlign = HorizontalAlignment.Center;
+            searchBox1.KeyPress += searchBox1_KeyPress;
             // 
             // button1
             // 
@@ -82,7 +83,7 @@ namespace MediaShelfApp
             // button2
             // 
             button2.Location = new Point(792, 153);
-            button2.Margin = new Padding(2);
+            button2.Margin = new Padding(2, 2, 2, 2);
             button2.Name = "button2";
             button2.Size = new Size(90, 28);
             button2.TabIndex = 8;
@@ -96,7 +97,7 @@ namespace MediaShelfApp
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(59, 197);
-            dataGridView1.Margin = new Padding(2);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 10;
@@ -117,7 +118,7 @@ namespace MediaShelfApp
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Movies/TV Shows", "Books", "Music", "Video Games" });
             comboBox1.Location = new Point(887, 692);
-            comboBox1.Margin = new Padding(2);
+            comboBox1.Margin = new Padding(2, 2, 2, 2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 28);
             comboBox1.TabIndex = 11;
