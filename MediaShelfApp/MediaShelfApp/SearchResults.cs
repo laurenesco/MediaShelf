@@ -449,6 +449,10 @@ namespace MediaShelfApp
 
                         dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString()); // DISPLAYS information on datagrid, must add columns above to display info correctly/formatted correctly
 
+                    }                 
+                    catch (ArgumentOutOfRangeException ex)
+                    {                      
+                        break;
                     }
                     catch (Exception ex)
                     {
@@ -458,7 +462,7 @@ namespace MediaShelfApp
                 }
                 moviesjson = movieList;
             }
-
+           
         }
 
         // BOOKS API CALL //
@@ -499,6 +503,10 @@ namespace MediaShelfApp
 
                         dataGridView1.Rows.Add(bookList.items[i].volumeInfo.title.ToString(), bookList.items[i].volumeInfo.description.ToString());
 
+                    }
+                    catch (ArgumentOutOfRangeException ex)
+                    {
+                        break;
                     }
                     catch (Exception ex)
                     {
@@ -545,6 +553,10 @@ namespace MediaShelfApp
                         }
 
                         dataGridView1.Rows.Add(musicList.data[i].title.ToString(), musicList.data[i].artist.name.ToString());
+                    }
+                    catch (ArgumentOutOfRangeException ex)
+                    {
+                        break;
                     }
                     catch (Exception ex)
                     {
@@ -604,6 +616,10 @@ namespace MediaShelfApp
 
                         dataGridView1.Rows.Add(gamesList.results[i].name.ToString(), gameDetail.description_raw.ToString());
                         gameDetailsjson = gameDetail;
+                    }
+                    catch (ArgumentOutOfRangeException ex)
+                    {
+                        break;
                     }
                     catch (Exception ex)
                     {
@@ -680,8 +696,15 @@ namespace MediaShelfApp
                         {
                             description = moviesjson.results[rowIndex].overview.ToString();
                         }
-                        mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
 
+                        if (moviesjson.results[rowIndex].poster_path == null)
+                        {
+                            mediaImageLink = "";
+                        }
+                        else
+                        {
+                            mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
+                        }
                         openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0);
 
                         break;
