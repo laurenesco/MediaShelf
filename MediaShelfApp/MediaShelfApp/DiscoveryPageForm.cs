@@ -27,7 +27,7 @@ namespace MediaShelfApp
             // Initiate Database Connection
             try
             {
-                SqlConnection dbConnection = new SqlConnection(@"Data Source=Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID= mediaalt;Password=wehkun-7jYcnu-zidjaz");
+                SqlConnection dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID= mediaalt;Password=wehkun-7jYcnu-zidjaz");
                 dbConnection.Open();
             }
             catch (Exception ex)
