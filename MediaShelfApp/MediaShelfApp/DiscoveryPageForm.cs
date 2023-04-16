@@ -24,7 +24,7 @@ namespace MediaShelfApp
         public DiscoveryPageForm()
         {
             InitializeComponent();
-            //readSettings(); // uncomment to use settings file
+            readSettings(); // uncomment to use settings file
         }
 
         //////////////////////
@@ -33,30 +33,38 @@ namespace MediaShelfApp
         /* static functions for use within all forms */
 
         //use when user changes fontSize
-        public static void changeFontSize(Form form, int fs)
+        public static void changeFontSize(Form form, int fs, bool isDiscoveryForm = false)
         {
-            //form.BackgroundImage = null;
             foreach (Control c in form.Controls)
             {
                 if (c.HasChildren)
-                    changeFontSize(c, fs);
+                    changeFontSize(c, fs, isDiscoveryForm);
 
-                if (c is Button || (c is Label && c.Font.Size <= 12) || c is GroupBox)
+                if (isDiscoveryForm && (c is Button || (c is Label && c.Font.Size <= 12) || c is GroupBox || c is ComboBox))
                     c.Font = new Font(c.Font.FontFamily, fs, c.Font.Style, c.Font.Unit);
+                else if (!isDiscoveryForm)
+                {
+                    if (!(c is Label && c.Font.Size > 12))
+                        c.Font = new Font(c.Font.FontFamily, fs, c.Font.Style, c.Font.Unit);
+                }
             }
-            //form.BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
         }
 
         //utility function - intended use for above function
-        private static void changeFontSize(Control control, int fs)
+        private static void changeFontSize(Control control, int fs, bool isDiscoveryForm)
         {
             foreach (Control c in control.Controls)
             {
                 if (c.HasChildren)
-                    changeFontSize(c, fs);
+                    changeFontSize(c, fs, isDiscoveryForm);
 
-                if (c is Button || (c is Label && c.Font.Size <= 12))
+                if (isDiscoveryForm && c is Label && c.Font.Size <= 12)
                     c.Font = new Font(c.Font.FontFamily, fs, c.Font.Style, c.Font.Unit);
+                else if (!isDiscoveryForm)
+                {
+                    if (!(c is Label && c.Font.Size > 12))
+                        c.Font = new Font(c.Font.FontFamily, fs, c.Font.Style, c.Font.Unit);
+                }
             }
         }
 
@@ -162,8 +170,15 @@ namespace MediaShelfApp
             else if (rbLargeFont12.Checked)
                 setFontSize(12);
 
-            changeFontSize(this, fontSize);
+            changeFontSize(this, fontSize, true);
             saveSettings();
+        }
+
+        private void btnRecommendations_Click(object sender, EventArgs e)
+        {
+            Detailed_Recommendations window = new Detailed_Recommendations();
+            window.setCaller(this);
+            window.Show();
         }
     }
 }

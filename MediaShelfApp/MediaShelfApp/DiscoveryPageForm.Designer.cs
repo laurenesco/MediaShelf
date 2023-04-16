@@ -82,6 +82,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.btnRecommendations = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -461,10 +462,11 @@
             // btnNavTempSearch
             // 
             this.btnNavTempSearch.AutoSize = true;
+            this.btnNavTempSearch.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNavTempSearch.Location = new System.Drawing.Point(15, 15);
             this.btnNavTempSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnNavTempSearch.Name = "btnNavTempSearch";
-            this.btnNavTempSearch.Size = new System.Drawing.Size(118, 36);
+            this.btnNavTempSearch.Size = new System.Drawing.Size(118, 38);
             this.btnNavTempSearch.TabIndex = 67;
             this.btnNavTempSearch.Text = "Search";
             this.btnNavTempSearch.UseVisualStyleBackColor = true;
@@ -473,10 +475,11 @@
             // btnSettings
             // 
             this.btnSettings.AutoSize = true;
+            this.btnSettings.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSettings.Location = new System.Drawing.Point(12, 125);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(182, 36);
+            this.btnSettings.Size = new System.Drawing.Size(182, 38);
             this.btnSettings.TabIndex = 68;
             this.btnSettings.Text = "Open Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -551,6 +554,7 @@
             // 
             // cmbSettingsSelection
             // 
+            this.cmbSettingsSelection.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbSettingsSelection.FormattingEnabled = true;
             this.cmbSettingsSelection.Items.AddRange(new object[] {
             "Font Size",
@@ -558,7 +562,7 @@
             this.cmbSettingsSelection.Location = new System.Drawing.Point(12, 168);
             this.cmbSettingsSelection.MaxDropDownItems = 3;
             this.cmbSettingsSelection.Name = "cmbSettingsSelection";
-            this.cmbSettingsSelection.Size = new System.Drawing.Size(182, 33);
+            this.cmbSettingsSelection.Size = new System.Drawing.Size(210, 36);
             this.cmbSettingsSelection.TabIndex = 70;
             this.cmbSettingsSelection.Text = "Choose a setting";
             this.cmbSettingsSelection.Visible = false;
@@ -823,6 +827,17 @@
             this.label27.Text = "Title";
             this.label27.UseMnemonic = false;
             // 
+            // btnRecommendations
+            // 
+            this.btnRecommendations.AutoSize = true;
+            this.btnRecommendations.Location = new System.Drawing.Point(994, 378);
+            this.btnRecommendations.Name = "btnRecommendations";
+            this.btnRecommendations.Size = new System.Drawing.Size(112, 35);
+            this.btnRecommendations.TabIndex = 82;
+            this.btnRecommendations.Text = "See More";
+            this.btnRecommendations.UseVisualStyleBackColor = true;
+            this.btnRecommendations.Click += new System.EventHandler(this.btnRecommendations_Click);
+            // 
             // DiscoveryPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -832,6 +847,7 @@
             this.BackgroundImage = global::MediaShelfApp.Properties.Resources.BACKGROUND_WHITE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1246, 752);
+            this.Controls.Add(this.btnRecommendations);
             this.Controls.Add(this.flowLayoutPanel7);
             this.Controls.Add(this.flowLayoutPanel8);
             this.Controls.Add(this.flowLayoutPanel6);
@@ -953,5 +969,6 @@
         private Label label21;
         private Label label25;
         private Label label27;
+        private Button btnRecommendations;
     }
 }
