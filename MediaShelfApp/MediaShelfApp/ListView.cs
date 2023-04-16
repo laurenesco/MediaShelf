@@ -30,6 +30,7 @@ namespace MediaShelfApp
         public ListView(String list, Form caller)
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
             this.list = list;
             this.caller = caller;            
 
@@ -39,7 +40,8 @@ namespace MediaShelfApp
             // Populate form
 
             if (list == "Tags")
-            {             
+            {
+                //updateTagTable();
                 TagElements();
                 PopulateSortComboBox(2);
                 PopulateTagsTable("");
@@ -103,7 +105,6 @@ namespace MediaShelfApp
                 results.Load(reader);
 
                 dgvResults.DataSource = results;
-                dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvResults.Columns[0].HeaderText = "Tag";
                 dgvResults.Columns[1].HeaderText = "Items with this Tag";
 
@@ -183,7 +184,6 @@ namespace MediaShelfApp
 
                 // Configure table
                 dgvResults.DataSource = results;
-                dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvResults.Columns[0].HeaderText = "Title";
                 dgvResults.Columns[1].HeaderText = "Artist";
                 dgvResults.Columns[2].HeaderText = "Genre";
@@ -603,6 +603,62 @@ namespace MediaShelfApp
 
             dbConnection.Close();
             return 0;
+        }
+
+        private void updateTagTable()
+        {
+            //string[] results; 
+            List<string> tags = new List<string>();
+
+            dbConnection.Open();
+
+            // get any tags in database that were initialized with an item
+            SqlCommand cmdGetTagInfo = dbConnection.CreateCommand();
+            cmdGetTagInfo.CommandText = @"SELECT ITEM_GENRE FROM ITEMS WHERE NOT (ITEM_GENRE IS NULL OR ITEM_GENRE = ' ')";
+            SqlDataReader reader = cmdGetTagInfo.ExecuteReader();
+
+            while (reader.Read())
+            {
+                // arrange tags in an array
+                string[] results = reader[0].ToString().Split(',');
+
+                foreach (string s in results)
+                {
+                    string tag = s.Trim().ToLower();
+                    tags.Add(tag);
+                }
+            }
+            reader.Close();
+            cmdGetTagInfo.Dispose();
+
+            // get all tags that have numbers
+            SqlCommand cmdGetTagNumbers = dbConnection.CreateCommand();
+            cmdGetTagNumbers.CommandText = @"SELECT TAG_NAME FROM TAG";
+            reader = cmdGetTagNumbers.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string tag = reader[0].ToString().ToLower().Trim();
+                for (int i = 0; i < tags.Count; i++) 
+                {
+                    if (tags[i].Equals(tag))
+                    {
+                        tags.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
+            reader.Close();
+            cmdGetTagNumbers.Dispose();
+
+            SqlCommand cmdAddTagNumbers = dbConnection.CreateCommand();
+            foreach (string tag in tags) 
+            {
+                cmdAddTagNumbers.CommandText = @"INSERT INTO TAG (TAG_NAME) VALUES (@name)";
+                cmdAddTagNumbers.Parameters.AddWithValue("@name", tag);
+                cmdAddTagNumbers.ExecuteNonQuery();
+                cmdAddTagNumbers.Dispose();
+            }
         }
     }
 }

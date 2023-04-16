@@ -49,9 +49,11 @@
             // btnNavManualListItem
             // 
             this.btnNavManualListItem.AutoSize = true;
-            this.btnNavManualListItem.Location = new System.Drawing.Point(947, 694);
+            this.btnNavManualListItem.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNavManualListItem.Location = new System.Drawing.Point(1174, 867);
+            this.btnNavManualListItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnNavManualListItem.Name = "btnNavManualListItem";
-            this.btnNavManualListItem.Size = new System.Drawing.Size(94, 30);
+            this.btnNavManualListItem.Size = new System.Drawing.Size(128, 42);
             this.btnNavManualListItem.TabIndex = 147;
             this.btnNavManualListItem.Text = "Add Entry";
             this.btnNavManualListItem.UseVisualStyleBackColor = true;
@@ -60,19 +62,22 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
+            this.lblSearch.BackColor = System.Drawing.Color.Transparent;
             this.lblSearch.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSearch.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblSearch.Location = new System.Drawing.Point(376, 169);
+            this.lblSearch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblSearch.Location = new System.Drawing.Point(464, 211);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(56, 20);
+            this.lblSearch.Size = new System.Drawing.Size(68, 25);
             this.lblSearch.TabIndex = 146;
             this.lblSearch.Text = "Search:";
             // 
             // txtListSearch
             // 
-            this.txtListSearch.Location = new System.Drawing.Point(437, 166);
+            this.txtListSearch.Location = new System.Drawing.Point(552, 208);
+            this.txtListSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtListSearch.Name = "txtListSearch";
-            this.txtListSearch.Size = new System.Drawing.Size(245, 27);
+            this.txtListSearch.Size = new System.Drawing.Size(305, 31);
             this.txtListSearch.TabIndex = 145;
             this.txtListSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -80,40 +85,46 @@
             // 
             this.cmbListSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbListSort.FormattingEnabled = true;
-            this.cmbListSort.Location = new System.Drawing.Point(890, 661);
+            this.cmbListSort.Location = new System.Drawing.Point(1112, 826);
+            this.cmbListSort.Margin = new System.Windows.Forms.Padding(4);
             this.cmbListSort.Name = "cmbListSort";
-            this.cmbListSort.Size = new System.Drawing.Size(151, 28);
+            this.cmbListSort.Size = new System.Drawing.Size(188, 33);
             this.cmbListSort.TabIndex = 136;
             // 
             // lblSortBy
             // 
             this.lblSortBy.AutoSize = true;
+            this.lblSortBy.BackColor = System.Drawing.Color.Transparent;
             this.lblSortBy.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSortBy.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblSortBy.Location = new System.Drawing.Point(825, 664);
+            this.lblSortBy.ForeColor = System.Drawing.Color.Black;
+            this.lblSortBy.Location = new System.Drawing.Point(1019, 830);
+            this.lblSortBy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSortBy.Name = "lblSortBy";
-            this.lblSortBy.Size = new System.Drawing.Size(59, 20);
+            this.lblSortBy.Size = new System.Drawing.Size(73, 25);
             this.lblSortBy.TabIndex = 135;
             this.lblSortBy.Text = "Sort By:";
             // 
             // lblListName
             // 
             this.lblListName.AutoSize = true;
-            this.lblListName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.lblListName.BackColor = System.Drawing.Color.Transparent;
             this.lblListName.Font = new System.Drawing.Font("Ebrima", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblListName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblListName.Location = new System.Drawing.Point(468, 27);
+            this.lblListName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblListName.Location = new System.Drawing.Point(585, 34);
+            this.lblListName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblListName.Name = "lblListName";
-            this.lblListName.Size = new System.Drawing.Size(173, 47);
+            this.lblListName.Size = new System.Drawing.Size(209, 57);
             this.lblListName.TabIndex = 127;
             this.lblListName.Text = "List Name";
             this.lblListName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNavBack
             // 
-            this.btnNavBack.Location = new System.Drawing.Point(42, 697);
+            this.btnNavBack.AutoSize = true;
+            this.btnNavBack.Location = new System.Drawing.Point(52, 871);
+            this.btnNavBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnNavBack.Name = "btnNavBack";
-            this.btnNavBack.Size = new System.Drawing.Size(94, 29);
+            this.btnNavBack.Size = new System.Drawing.Size(118, 36);
             this.btnNavBack.TabIndex = 160;
             this.btnNavBack.Text = "Back";
             this.btnNavBack.UseVisualStyleBackColor = true;
@@ -122,11 +133,13 @@
             // lblDescriptionText
             // 
             this.lblDescriptionText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDescriptionText.BackColor = System.Drawing.Color.Transparent;
             this.lblDescriptionText.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescriptionText.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblDescriptionText.Location = new System.Drawing.Point(389, 74);
+            this.lblDescriptionText.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDescriptionText.Location = new System.Drawing.Point(512, 92);
+            this.lblDescriptionText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescriptionText.Name = "lblDescriptionText";
-            this.lblDescriptionText.Size = new System.Drawing.Size(322, 46);
+            this.lblDescriptionText.Size = new System.Drawing.Size(402, 58);
             this.lblDescriptionText.TabIndex = 162;
             this.lblDescriptionText.Text = "Description";
             this.lblDescriptionText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -138,24 +151,29 @@
             this.dgvResults.AllowUserToOrderColumns = true;
             this.dgvResults.AllowUserToResizeColumns = false;
             this.dgvResults.AllowUserToResizeRows = false;
-            this.dgvResults.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResults.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvResults.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvResults.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResults.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
-            this.dgvResults.Location = new System.Drawing.Point(42, 209);
+            this.dgvResults.Location = new System.Drawing.Point(52, 261);
+            this.dgvResults.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvResults.MultiSelect = false;
             this.dgvResults.Name = "dgvResults";
             this.dgvResults.ReadOnly = true;
             this.dgvResults.RowHeadersWidth = 10;
             this.dgvResults.RowTemplate.Height = 29;
             this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvResults.Size = new System.Drawing.Size(999, 435);
+            this.dgvResults.Size = new System.Drawing.Size(1249, 544);
             this.dgvResults.TabIndex = 163;
             // 
             // btnDeleteListItem
             // 
-            this.btnDeleteListItem.Location = new System.Drawing.Point(42, 661);
+            this.btnDeleteListItem.Location = new System.Drawing.Point(52, 826);
+            this.btnDeleteListItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteListItem.Name = "btnDeleteListItem";
-            this.btnDeleteListItem.Size = new System.Drawing.Size(137, 30);
+            this.btnDeleteListItem.Size = new System.Drawing.Size(171, 38);
             this.btnDeleteListItem.TabIndex = 164;
             this.btnDeleteListItem.Text = "Delete Entry";
             this.btnDeleteListItem.UseVisualStyleBackColor = true;
@@ -163,9 +181,11 @@
             // 
             // btnNotes
             // 
-            this.btnNotes.Location = new System.Drawing.Point(498, 650);
+            this.btnNotes.AutoSize = true;
+            this.btnNotes.Location = new System.Drawing.Point(622, 812);
+            this.btnNotes.Margin = new System.Windows.Forms.Padding(4);
             this.btnNotes.Name = "btnNotes";
-            this.btnNotes.Size = new System.Drawing.Size(94, 29);
+            this.btnNotes.Size = new System.Drawing.Size(118, 36);
             this.btnNotes.TabIndex = 165;
             this.btnNotes.Text = "Notes";
             this.btnNotes.UseVisualStyleBackColor = true;
@@ -173,9 +193,11 @@
             // 
             // btnDeleteTag
             // 
-            this.btnDeleteTag.Location = new System.Drawing.Point(42, 661);
+            this.btnDeleteTag.AutoSize = true;
+            this.btnDeleteTag.Location = new System.Drawing.Point(52, 826);
+            this.btnDeleteTag.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteTag.Name = "btnDeleteTag";
-            this.btnDeleteTag.Size = new System.Drawing.Size(137, 30);
+            this.btnDeleteTag.Size = new System.Drawing.Size(171, 38);
             this.btnDeleteTag.TabIndex = 166;
             this.btnDeleteTag.Text = "Delete Tag";
             this.btnDeleteTag.UseVisualStyleBackColor = true;
@@ -185,9 +207,11 @@
             // btnAddTag
             // 
             this.btnAddTag.AutoSize = true;
-            this.btnAddTag.Location = new System.Drawing.Point(947, 695);
+            this.btnAddTag.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddTag.Location = new System.Drawing.Point(1184, 869);
+            this.btnAddTag.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTag.Name = "btnAddTag";
-            this.btnAddTag.Size = new System.Drawing.Size(94, 30);
+            this.btnAddTag.Size = new System.Drawing.Size(118, 38);
             this.btnAddTag.TabIndex = 167;
             this.btnAddTag.Text = "Add Tag";
             this.btnAddTag.UseVisualStyleBackColor = true;
@@ -198,31 +222,34 @@
             // 
             this.cmbSortTags.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortTags.FormattingEnabled = true;
-            this.cmbSortTags.Location = new System.Drawing.Point(890, 661);
+            this.cmbSortTags.Location = new System.Drawing.Point(1112, 826);
+            this.cmbSortTags.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortTags.Name = "cmbSortTags";
-            this.cmbSortTags.Size = new System.Drawing.Size(151, 28);
+            this.cmbSortTags.Size = new System.Drawing.Size(188, 33);
             this.cmbSortTags.TabIndex = 168;
             this.cmbSortTags.Visible = false;
             // 
             // txtTagsSearch
             // 
-            this.txtTagsSearch.Location = new System.Drawing.Point(437, 166);
+            this.txtTagsSearch.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTagsSearch.Location = new System.Drawing.Point(552, 208);
+            this.txtTagsSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtTagsSearch.Name = "txtTagsSearch";
-            this.txtTagsSearch.Size = new System.Drawing.Size(245, 27);
+            this.txtTagsSearch.Size = new System.Drawing.Size(305, 32);
             this.txtTagsSearch.TabIndex = 169;
             this.txtTagsSearch.Visible = false;
             this.txtTagsSearch.TextChanged += new System.EventHandler(this.txtTagsSearch_TextChanged);
             // 
             // ListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.ClientSize = new System.Drawing.Size(1084, 761);
+            this.BackgroundImage = global::MediaShelfApp.Properties.Resources.BACKGROUND_WHITE;
+            this.ClientSize = new System.Drawing.Size(1355, 951);
             this.Controls.Add(this.txtTagsSearch);
             this.Controls.Add(this.cmbSortTags);
-            this.Controls.Add(this.btnAddTag);
             this.Controls.Add(this.btnDeleteTag);
             this.Controls.Add(this.btnNotes);
             this.Controls.Add(this.btnDeleteListItem);
@@ -230,11 +257,12 @@
             this.Controls.Add(this.lblDescriptionText);
             this.Controls.Add(this.btnNavBack);
             this.Controls.Add(this.btnNavManualListItem);
-            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtListSearch);
             this.Controls.Add(this.cmbListSort);
             this.Controls.Add(this.lblSortBy);
             this.Controls.Add(this.lblListName);
+            this.Controls.Add(this.btnAddTag);
+            this.Controls.Add(this.lblSearch);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListView";
             this.ShowIcon = false;
