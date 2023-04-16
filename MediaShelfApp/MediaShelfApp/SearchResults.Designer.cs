@@ -126,10 +126,10 @@ namespace MediaShelfApp
             "Books",
             "Music",
             "Video Games"});
-            this.comboBox1.Location = new System.Drawing.Point(1096, 865);
+            this.comboBox1.Location = new System.Drawing.Point(1070, 865);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 33);
+            this.comboBox1.Size = new System.Drawing.Size(225, 33);
             this.comboBox1.TabIndex = 11;
             // 
             // SearchResults
