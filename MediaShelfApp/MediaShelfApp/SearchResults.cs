@@ -40,6 +40,8 @@ namespace MediaShelfApp
         public SearchResults()
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
+            
 
             // Initiate Database Connection
             try
