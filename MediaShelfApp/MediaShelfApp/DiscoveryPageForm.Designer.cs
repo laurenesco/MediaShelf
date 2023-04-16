@@ -529,13 +529,11 @@
             // rbMediumFont10
             // 
             this.rbMediumFont10.BackColor = System.Drawing.Color.Transparent;
-            this.rbMediumFont10.Checked = true;
             this.rbMediumFont10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rbMediumFont10.Location = new System.Drawing.Point(3, 38);
             this.rbMediumFont10.Name = "rbMediumFont10";
             this.rbMediumFont10.Size = new System.Drawing.Size(110, 32);
             this.rbMediumFont10.TabIndex = 1;
-            this.rbMediumFont10.TabStop = true;
             this.rbMediumFont10.Text = "Medium";
             this.rbMediumFont10.UseVisualStyleBackColor = false;
             this.rbMediumFont10.CheckedChanged += new System.EventHandler(this.rbFontSettings_CheckedChanged);
@@ -830,12 +828,13 @@
             // btnRecommendations
             // 
             this.btnRecommendations.AutoSize = true;
-            this.btnRecommendations.Location = new System.Drawing.Point(994, 378);
+            this.btnRecommendations.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRecommendations.Location = new System.Drawing.Point(926, 701);
             this.btnRecommendations.Name = "btnRecommendations";
             this.btnRecommendations.Size = new System.Drawing.Size(112, 35);
             this.btnRecommendations.TabIndex = 82;
             this.btnRecommendations.Text = "See More";
-            this.btnRecommendations.UseVisualStyleBackColor = true;
+            this.btnRecommendations.UseVisualStyleBackColor = false;
             this.btnRecommendations.Click += new System.EventHandler(this.btnRecommendations_Click);
             // 
             // DiscoveryPageForm

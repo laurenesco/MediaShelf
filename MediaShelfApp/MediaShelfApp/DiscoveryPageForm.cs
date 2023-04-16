@@ -124,7 +124,12 @@ namespace MediaShelfApp
 
             int fs = int.Parse(Regex.Match(settings, @"\d+").Value);
 
-            setFontSize(fs);
+            if (fs == 9)
+                rbSmallFont9.Checked = true;
+            else if (fs == 10)
+                rbMediumFont10.Checked = true;
+            else if (fs == 12)
+                rbLargeFont12.Checked = true;
         }
 
         // write to settings file
@@ -137,12 +142,13 @@ namespace MediaShelfApp
         {
             if (btnSettings.Text == "Open Settings")
             {
-                cmbSettingsSelection.Visible = true;
+                //cmbSettingsSelection.Visible = true;
+                gbFontSizeSettings.Visible = true;
                 btnSettings.Text = "Close Settings";
             }
             else
             {
-                cmbSettingsSelection.Visible = false;
+                //cmbSettingsSelection.Visible = false;
                 gbFontSizeSettings.Visible = false;
                 btnSettings.Text = "Open Settings";
                 cmbSettingsSelection.Text = "Choose a setting";
