@@ -28,207 +28,289 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTitle = new Label();
-            btnAddNote = new Button();
-            txtNote1 = new TextBox();
-            txtNote2 = new TextBox();
-            txtNote3 = new TextBox();
-            txtNote4 = new TextBox();
-            btnNavBack = new Button();
-            flpTags = new FlowLayoutPanel();
-            lblAddTagPrompt = new Label();
-            cmbAddTags = new ComboBox();
-            btnAddTag = new Button();
-            btnDeleteTag = new Button();
-            cmbDeleteTags = new ComboBox();
-            lblDeleteTagPrompt = new Label();
-            SuspendLayout();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnAddNote = new System.Windows.Forms.Button();
+            this.txtNote1 = new System.Windows.Forms.TextBox();
+            this.txtNote2 = new System.Windows.Forms.TextBox();
+            this.txtNote3 = new System.Windows.Forms.TextBox();
+            this.txtNote4 = new System.Windows.Forms.TextBox();
+            this.btnNavBack = new System.Windows.Forms.Button();
+            this.flpTags = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblAddTagPrompt = new System.Windows.Forms.Label();
+            this.cmbAddTags = new System.Windows.Forms.ComboBox();
+            this.btnAddTag = new System.Windows.Forms.Button();
+            this.btnDeleteTag = new System.Windows.Forms.Button();
+            this.cmbDeleteTags = new System.Windows.Forms.ComboBox();
+            this.lblDeleteTagPrompt = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.SuspendLayout();
             // 
             // lblTitle
             // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Ebrima", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(303, 33);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(282, 47);
-            lblTitle.TabIndex = 4;
-            lblTitle.Text = "Item Name Label";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(379, 41);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(340, 57);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Item Name Label";
             // 
             // btnAddNote
             // 
-            btnAddNote.Enabled = false;
-            btnAddNote.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddNote.Location = new Point(769, 12);
-            btnAddNote.Name = "btnAddNote";
-            btnAddNote.Size = new Size(94, 29);
-            btnAddNote.TabIndex = 5;
-            btnAddNote.Text = "Save";
-            btnAddNote.UseVisualStyleBackColor = true;
-            btnAddNote.Click += btnAddNote_Click;
+            this.btnAddNote.AutoSize = true;
+            this.btnAddNote.Enabled = false;
+            this.btnAddNote.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddNote.Location = new System.Drawing.Point(961, 15);
+            this.btnAddNote.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddNote.Name = "btnAddNote";
+            this.btnAddNote.Size = new System.Drawing.Size(118, 36);
+            this.btnAddNote.TabIndex = 5;
+            this.btnAddNote.Text = "Save";
+            this.btnAddNote.UseVisualStyleBackColor = true;
             // 
             // txtNote1
             // 
-            txtNote1.BackColor = SystemColors.Info;
-            txtNote1.Location = new Point(34, 132);
-            txtNote1.MaxLength = 400;
-            txtNote1.Multiline = true;
-            txtNote1.Name = "txtNote1";
-            txtNote1.Size = new Size(186, 165);
-            txtNote1.TabIndex = 12;
-            txtNote1.TextChanged += txtNote1_TextChanged;
+            this.txtNote1.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote1.Location = new System.Drawing.Point(42, 165);
+            this.txtNote1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNote1.MaxLength = 400;
+            this.txtNote1.Multiline = true;
+            this.txtNote1.Name = "txtNote1";
+            this.txtNote1.Size = new System.Drawing.Size(232, 205);
+            this.txtNote1.TabIndex = 12;
             // 
             // txtNote2
             // 
-            txtNote2.BackColor = SystemColors.Info;
-            txtNote2.Location = new Point(242, 132);
-            txtNote2.MaxLength = 400;
-            txtNote2.Multiline = true;
-            txtNote2.Name = "txtNote2";
-            txtNote2.Size = new Size(186, 165);
-            txtNote2.TabIndex = 15;
-            txtNote2.TextChanged += txtNote2_TextChanged;
+            this.txtNote2.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote2.Location = new System.Drawing.Point(302, 165);
+            this.txtNote2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNote2.MaxLength = 400;
+            this.txtNote2.Multiline = true;
+            this.txtNote2.Name = "txtNote2";
+            this.txtNote2.Size = new System.Drawing.Size(232, 205);
+            this.txtNote2.TabIndex = 15;
             // 
             // txtNote3
             // 
-            txtNote3.BackColor = SystemColors.Info;
-            txtNote3.Location = new Point(449, 132);
-            txtNote3.MaxLength = 400;
-            txtNote3.Multiline = true;
-            txtNote3.Name = "txtNote3";
-            txtNote3.Size = new Size(186, 165);
-            txtNote3.TabIndex = 16;
-            txtNote3.TextChanged += txtNote3_TextChanged;
+            this.txtNote3.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote3.Location = new System.Drawing.Point(561, 165);
+            this.txtNote3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNote3.MaxLength = 400;
+            this.txtNote3.Multiline = true;
+            this.txtNote3.Name = "txtNote3";
+            this.txtNote3.Size = new System.Drawing.Size(232, 205);
+            this.txtNote3.TabIndex = 16;
             // 
             // txtNote4
             // 
-            txtNote4.BackColor = SystemColors.Info;
-            txtNote4.Location = new Point(656, 132);
-            txtNote4.MaxLength = 400;
-            txtNote4.Multiline = true;
-            txtNote4.Name = "txtNote4";
-            txtNote4.Size = new Size(186, 165);
-            txtNote4.TabIndex = 17;
-            txtNote4.TextChanged += txtNote4_TextChanged;
+            this.txtNote4.BackColor = System.Drawing.SystemColors.Info;
+            this.txtNote4.Location = new System.Drawing.Point(820, 165);
+            this.txtNote4.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNote4.MaxLength = 400;
+            this.txtNote4.Multiline = true;
+            this.txtNote4.Name = "txtNote4";
+            this.txtNote4.Size = new System.Drawing.Size(232, 205);
+            this.txtNote4.TabIndex = 17;
             // 
             // btnNavBack
             // 
-            btnNavBack.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNavBack.Location = new Point(12, 12);
-            btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(94, 29);
-            btnNavBack.TabIndex = 23;
-            btnNavBack.Text = "Back";
-            btnNavBack.UseVisualStyleBackColor = true;
-            btnNavBack.Click += btnNavBack_Click;
+            this.btnNavBack.AutoSize = true;
+            this.btnNavBack.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNavBack.Location = new System.Drawing.Point(15, 15);
+            this.btnNavBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNavBack.Name = "btnNavBack";
+            this.btnNavBack.Size = new System.Drawing.Size(118, 36);
+            this.btnNavBack.TabIndex = 23;
+            this.btnNavBack.Text = "Back";
+            this.btnNavBack.UseVisualStyleBackColor = true;
+            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
             // 
             // flpTags
             // 
-            flpTags.AutoScroll = true;
-            flpTags.Dock = DockStyle.Bottom;
-            flpTags.Location = new Point(0, 433);
-            flpTags.Margin = new Padding(2);
-            flpTags.Name = "flpTags";
-            flpTags.Padding = new Padding(6, 0, 6, 0);
-            flpTags.Size = new Size(882, 120);
-            flpTags.TabIndex = 24;
+            this.flpTags.AutoScroll = true;
+            this.flpTags.BackColor = System.Drawing.Color.Transparent;
+            this.flpTags.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flpTags.Location = new System.Drawing.Point(0, 541);
+            this.flpTags.Margin = new System.Windows.Forms.Padding(2);
+            this.flpTags.Name = "flpTags";
+            this.flpTags.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.flpTags.Size = new System.Drawing.Size(1102, 150);
+            this.flpTags.TabIndex = 24;
             // 
             // lblAddTagPrompt
             // 
-            lblAddTagPrompt.AutoSize = true;
-            lblAddTagPrompt.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAddTagPrompt.Location = new Point(34, 347);
-            lblAddTagPrompt.Margin = new Padding(2, 0, 2, 0);
-            lblAddTagPrompt.Name = "lblAddTagPrompt";
-            lblAddTagPrompt.Size = new Size(148, 20);
-            lblAddTagPrompt.TabIndex = 25;
-            lblAddTagPrompt.Text = "Add Tag to this Item:";
+            this.lblAddTagPrompt.AutoSize = true;
+            this.lblAddTagPrompt.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddTagPrompt.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAddTagPrompt.Location = new System.Drawing.Point(2, 8);
+            this.lblAddTagPrompt.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.lblAddTagPrompt.Name = "lblAddTagPrompt";
+            this.lblAddTagPrompt.Size = new System.Drawing.Size(180, 25);
+            this.lblAddTagPrompt.TabIndex = 25;
+            this.lblAddTagPrompt.Text = "Add Tag to this Item:";
             // 
             // cmbAddTags
             // 
-            cmbAddTags.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbAddTags.FormattingEnabled = true;
-            cmbAddTags.Items.AddRange(new object[] { "(none)" });
-            cmbAddTags.Location = new Point(186, 344);
-            cmbAddTags.Margin = new Padding(2);
-            cmbAddTags.MaxDropDownItems = 100;
-            cmbAddTags.Name = "cmbAddTags";
-            cmbAddTags.Size = new Size(146, 28);
-            cmbAddTags.Sorted = true;
-            cmbAddTags.TabIndex = 26;
-            cmbAddTags.SelectedIndexChanged += cmbAddTags_SelectedIndexChanged;
+            this.cmbAddTags.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbAddTags.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmbAddTags.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAddTags.DropDownWidth = 300;
+            this.cmbAddTags.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbAddTags.FormattingEnabled = true;
+            this.cmbAddTags.Items.AddRange(new object[] {
+            "(none)"});
+            this.cmbAddTags.Location = new System.Drawing.Point(2, 2);
+            this.cmbAddTags.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbAddTags.MaxDropDownItems = 100;
+            this.cmbAddTags.Name = "cmbAddTags";
+            this.cmbAddTags.Size = new System.Drawing.Size(182, 33);
+            this.cmbAddTags.Sorted = true;
+            this.cmbAddTags.TabIndex = 26;
             // 
             // btnAddTag
             // 
-            btnAddTag.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddTag.Location = new Point(238, 375);
-            btnAddTag.Margin = new Padding(2);
-            btnAddTag.Name = "btnAddTag";
-            btnAddTag.Size = new Size(94, 29);
-            btnAddTag.TabIndex = 27;
-            btnAddTag.Text = "Add Tag";
-            btnAddTag.UseVisualStyleBackColor = true;
-            btnAddTag.Click += btnAddTag_Click;
+            this.btnAddTag.AutoSize = true;
+            this.btnAddTag.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddTag.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddTag.Location = new System.Drawing.Point(66, 39);
+            this.btnAddTag.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddTag.Name = "btnAddTag";
+            this.btnAddTag.Size = new System.Drawing.Size(118, 42);
+            this.btnAddTag.TabIndex = 27;
+            this.btnAddTag.Text = "Add Tag";
+            this.btnAddTag.UseVisualStyleBackColor = true;
             // 
             // btnDeleteTag
             // 
-            btnDeleteTag.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDeleteTag.Location = new Point(748, 376);
-            btnDeleteTag.Margin = new Padding(2);
-            btnDeleteTag.Name = "btnDeleteTag";
-            btnDeleteTag.Size = new Size(94, 29);
-            btnDeleteTag.TabIndex = 30;
-            btnDeleteTag.Text = "Delete Tag";
-            btnDeleteTag.UseVisualStyleBackColor = true;
-            btnDeleteTag.Click += btnDeleteTag_Click;
+            this.btnDeleteTag.AutoSize = true;
+            this.btnDeleteTag.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDeleteTag.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteTag.Location = new System.Drawing.Point(44, 39);
+            this.btnDeleteTag.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteTag.Name = "btnDeleteTag";
+            this.btnDeleteTag.Size = new System.Drawing.Size(140, 42);
+            this.btnDeleteTag.TabIndex = 30;
+            this.btnDeleteTag.Text = "Delete Tag";
+            this.btnDeleteTag.UseVisualStyleBackColor = true;
             // 
             // cmbDeleteTags
             // 
-            cmbDeleteTags.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbDeleteTags.FormattingEnabled = true;
-            cmbDeleteTags.Items.AddRange(new object[] { "(none)" });
-            cmbDeleteTags.Location = new Point(696, 344);
-            cmbDeleteTags.Margin = new Padding(2);
-            cmbDeleteTags.MaxDropDownItems = 100;
-            cmbDeleteTags.Name = "cmbDeleteTags";
-            cmbDeleteTags.Size = new Size(146, 28);
-            cmbDeleteTags.Sorted = true;
-            cmbDeleteTags.TabIndex = 29;
-            cmbDeleteTags.SelectedIndexChanged += cmbDeleteTags_SelectedIndexChanged;
+            this.cmbDeleteTags.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cmbDeleteTags.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDeleteTags.DropDownWidth = 300;
+            this.cmbDeleteTags.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbDeleteTags.FormattingEnabled = true;
+            this.cmbDeleteTags.Items.AddRange(new object[] {
+            "(none)"});
+            this.cmbDeleteTags.Location = new System.Drawing.Point(2, 2);
+            this.cmbDeleteTags.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbDeleteTags.MaxDropDownItems = 100;
+            this.cmbDeleteTags.Name = "cmbDeleteTags";
+            this.cmbDeleteTags.Size = new System.Drawing.Size(182, 33);
+            this.cmbDeleteTags.Sorted = true;
+            this.cmbDeleteTags.TabIndex = 29;
             // 
             // lblDeleteTagPrompt
             // 
-            lblDeleteTagPrompt.AutoSize = true;
-            lblDeleteTagPrompt.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDeleteTagPrompt.Location = new Point(510, 347);
-            lblDeleteTagPrompt.Margin = new Padding(2, 0, 2, 0);
-            lblDeleteTagPrompt.Name = "lblDeleteTagPrompt";
-            lblDeleteTagPrompt.Size = new Size(182, 20);
-            lblDeleteTagPrompt.TabIndex = 28;
-            lblDeleteTagPrompt.Text = "Delete Tag from this Item:";
+            this.lblDeleteTagPrompt.AutoSize = true;
+            this.lblDeleteTagPrompt.BackColor = System.Drawing.Color.Transparent;
+            this.lblDeleteTagPrompt.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDeleteTagPrompt.Location = new System.Drawing.Point(2, 8);
+            this.lblDeleteTagPrompt.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.lblDeleteTagPrompt.Name = "lblDeleteTagPrompt";
+            this.lblDeleteTagPrompt.Size = new System.Drawing.Size(218, 25);
+            this.lblDeleteTagPrompt.TabIndex = 28;
+            this.lblDeleteTagPrompt.Text = "Delete Tag from this Item:";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.lblAddTagPrompt);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(42, 423);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(376, 89);
+            this.flowLayoutPanel1.TabIndex = 31;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Controls.Add(this.cmbAddTags);
+            this.flowLayoutPanel2.Controls.Add(this.btnAddTag);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(187, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(186, 83);
+            this.flowLayoutPanel2.TabIndex = 32;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel3.Controls.Add(this.lblDeleteTagPrompt);
+            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(561, 423);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(414, 89);
+            this.flowLayoutPanel3.TabIndex = 32;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.AutoSize = true;
+            this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel4.Controls.Add(this.cmbDeleteTags);
+            this.flowLayoutPanel4.Controls.Add(this.btnDeleteTag);
+            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(225, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(186, 83);
+            this.flowLayoutPanel4.TabIndex = 33;
             // 
             // Notes_Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(882, 553);
-            Controls.Add(btnDeleteTag);
-            Controls.Add(cmbDeleteTags);
-            Controls.Add(lblDeleteTagPrompt);
-            Controls.Add(btnAddTag);
-            Controls.Add(cmbAddTags);
-            Controls.Add(lblAddTagPrompt);
-            Controls.Add(flpTags);
-            Controls.Add(btnNavBack);
-            Controls.Add(txtNote4);
-            Controls.Add(txtNote3);
-            Controls.Add(txtNote2);
-            Controls.Add(txtNote1);
-            Controls.Add(btnAddNote);
-            Controls.Add(lblTitle);
-            Name = "Notes_Form";
-            Text = "Notes";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MediaShelfApp.Properties.Resources.BACKGROUND_WHITE;
+            this.ClientSize = new System.Drawing.Size(1102, 691);
+            this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpTags);
+            this.Controls.Add(this.btnNavBack);
+            this.Controls.Add(this.txtNote4);
+            this.Controls.Add(this.txtNote3);
+            this.Controls.Add(this.txtNote2);
+            this.Controls.Add(this.txtNote1);
+            this.Controls.Add(this.btnAddNote);
+            this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Notes_Form";
+            this.Text = "Notes";
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -247,5 +329,9 @@
         private Button btnDeleteTag;
         private ComboBox cmbDeleteTags;
         private Label lblDeleteTagPrompt;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private FlowLayoutPanel flowLayoutPanel4;
     }
 }

@@ -37,6 +37,7 @@ namespace MediaShelfApp
         public Notes_Form(int item_API_ID, int item_ID, string title)
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             // Set variables for the instance of the form
             this.item_API_ID = item_API_ID;
@@ -419,7 +420,6 @@ namespace MediaShelfApp
                 cmdAddTagNo.CommandText = @"INSERT INTO TAG (TAG_NAME) VALUES (@name)";
                 cmdAddTagNo.Parameters.AddWithValue("@name", tagToAdd.ToLower());
                 cmdAddTagNo.ExecuteNonQuery();
-                cmdAddTagNo.Dispose();
 
                 cmdAddTagNo.Dispose();
 
@@ -568,33 +568,34 @@ namespace MediaShelfApp
 
             dbConnection.Open();
 
-            // get any tags in database that were initialized with an item
-            SqlCommand cmdGetTagInfo = dbConnection.CreateCommand();
-            cmdGetTagInfo.CommandText = @"SELECT ITEM_GENRE FROM ITEMS WHERE NOT (ITEM_GENRE IS NULL OR ITEM_GENRE = ' ')";
-            SqlDataReader reader = cmdGetTagInfo.ExecuteReader();
+            //// get any tags in database that were initialized with an item
+            //SqlCommand cmdGetTagInfo = dbConnection.CreateCommand();
+            //cmdGetTagInfo.CommandText = @"SELECT ITEM_GENRE FROM ITEMS WHERE NOT (ITEM_GENRE IS NULL OR ITEM_GENRE = ' ')";
+            //SqlDataReader reader = cmdGetTagInfo.ExecuteReader();
 
-            while (reader.Read())
-            {
-                // arrange tags in an array
-                results = reader[0].ToString().Split(',');
+            //while (reader.Read())
+            //{
+            //    // arrange tags in an array
+            //    results = reader[0].ToString().Split(',');
 
-                //place tag from results in the appropriate combo box based on whether item currently has tag
-                foreach (string s in results)
-                {
-                    string tag = s.Trim().ToUpper();
-                    bool itemHasTag = currentItemTags.Contains(tag);
+            //    //place tag from results in the appropriate combo box based on whether item currently has tag
+            //    foreach (string s in results)
+            //    {
+            //        string tag = s.Trim().ToUpper();
+            //        bool itemHasTag = currentItemTags.Contains(tag);
 
-                    if (!itemHasTag && !addTags.Contains(tag))
-                        addTags.Add(tag);
-                    else if (item_API_ID == 0 && itemHasTag && !deleteTags.Contains(tag))
-                        deleteTags.Add(tag);
-                }
-            }
-            reader.Close();
+            //        if (!itemHasTag && !addTags.Contains(tag))
+            //            addTags.Add(tag);
+            //        else if (item_API_ID == 0 && itemHasTag && !deleteTags.Contains(tag))
+            //            deleteTags.Add(tag);
+            //    }
+            //}
+            //reader.Close();
 
             //get any tags in database that were added to an item after its initialization
+            SqlCommand cmdGetTagInfo = dbConnection.CreateCommand();
             cmdGetTagInfo.CommandText = @"SELECT TAG_NAME FROM TAG";
-            reader = cmdGetTagInfo.ExecuteReader();
+            SqlDataReader reader = cmdGetTagInfo.ExecuteReader();
 
             //place above tags in the appropriate combo box based on whether item currently has tag
             while (reader.Read())
@@ -614,11 +615,11 @@ namespace MediaShelfApp
             cmbAddTags.Items.AddRange(addTags.ToArray());
             cmbDeleteTags.Items.AddRange(deleteTags.ToArray());
 
-            foreach (string s in new string[] { "MOVIE", "TV SHOW", "BOOK", "GAME", "MUSIC" })
-            {
-                if (!cmbAddTags.Items.Contains(s) && !cmbDeleteTags.Items.Contains(s))
-                    cmbAddTags.Items.Add(s);
-            }
+            //foreach (string s in new string[] { "MOVIE", "TV SHOW", "BOOK", "GAME", "MUSIC" })
+            //{
+            //    if (!cmbAddTags.Items.Contains(s) && !cmbDeleteTags.Items.Contains(s))
+            //        cmbAddTags.Items.Add(s);
+            //}
 
             cmbAddTags.SelectedIndex = 0;
             cmbDeleteTags.SelectedIndex = 0;
@@ -672,7 +673,7 @@ namespace MediaShelfApp
             tag.AutoSize = true;
             tag.BackColor = Color.Linen;
             tag.BorderStyle = BorderStyle.FixedSingle;
-            tag.Font = new Font("Ebrima", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tag.Font = new Font("Ebrima", DiscoveryPageForm.getFontSize(), System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             tag.Padding = new Padding(4);
             tag.Text = tagText.ToLower();
             if (tagTab != -1)
