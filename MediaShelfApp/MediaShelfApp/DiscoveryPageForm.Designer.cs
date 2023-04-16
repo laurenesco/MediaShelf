@@ -65,10 +65,6 @@
             this.rbLargeFont12 = new System.Windows.Forms.RadioButton();
             this.cmbSettingsSelection = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
             this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -95,8 +91,6 @@
             this.gbFontSizeSettings.SuspendLayout();
             this.flpFontSizeSettings.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel15.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
@@ -111,7 +105,7 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(575, 78);
+            this.button2.Location = new System.Drawing.Point(575, -48);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 110);
@@ -125,7 +119,7 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(709, 207);
+            this.button3.Location = new System.Drawing.Point(709, 81);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 110);
@@ -139,7 +133,7 @@
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(310, 78);
+            this.button4.Location = new System.Drawing.Point(310, -48);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 110);
@@ -154,7 +148,7 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(846, 78);
+            this.button7.Location = new System.Drawing.Point(846, -48);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(110, 110);
@@ -168,7 +162,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Ebrima", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(502, 18);
+            this.label1.Location = new System.Drawing.Point(502, -108);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 60);
@@ -181,7 +175,7 @@
             this.Recommendations.BackColor = System.Drawing.Color.Transparent;
             this.Recommendations.Font = new System.Drawing.Font("Ebrima", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.Recommendations.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Recommendations.Location = new System.Drawing.Point(522, 349);
+            this.Recommendations.Location = new System.Drawing.Point(522, 223);
             this.Recommendations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Recommendations.Name = "Recommendations";
             this.Recommendations.Size = new System.Drawing.Size(227, 32);
@@ -193,7 +187,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(306, 381);
+            this.label2.Location = new System.Drawing.Point(306, 255);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.MinimumSize = new System.Drawing.Size(748, 32);
             this.label2.Name = "label2";
@@ -206,7 +200,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(306, 409);
+            this.label3.Location = new System.Drawing.Point(306, 283);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.MinimumSize = new System.Drawing.Size(321, 32);
             this.label3.Name = "label3";
@@ -217,7 +211,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 456);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 330);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(104, 106);
@@ -257,7 +251,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(422, 456);
+            this.pictureBox2.Location = new System.Drawing.Point(422, 330);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(104, 106);
@@ -267,7 +261,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(821, 455);
+            this.pictureBox3.Location = new System.Drawing.Point(821, 329);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(104, 106);
@@ -277,7 +271,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 583);
+            this.pictureBox4.Location = new System.Drawing.Point(24, 457);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(104, 106);
@@ -287,7 +281,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(422, 583);
+            this.pictureBox5.Location = new System.Drawing.Point(422, 457);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(104, 106);
@@ -297,7 +291,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(821, 583);
+            this.pictureBox6.Location = new System.Drawing.Point(821, 457);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(104, 106);
@@ -456,7 +450,7 @@
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Ebrima", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label26.Location = new System.Drawing.Point(594, 739);
+            this.label26.Location = new System.Drawing.Point(594, 613);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.MinimumSize = new System.Drawing.Size(64, 32);
             this.label26.Name = "label26";
@@ -467,7 +461,7 @@
             // btnNavTempSearch
             // 
             this.btnNavTempSearch.AutoSize = true;
-            this.btnNavTempSearch.Location = new System.Drawing.Point(15, 15);
+            this.btnNavTempSearch.Location = new System.Drawing.Point(15, -111);
             this.btnNavTempSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnNavTempSearch.Name = "btnNavTempSearch";
             this.btnNavTempSearch.Size = new System.Drawing.Size(118, 36);
@@ -479,7 +473,7 @@
             // btnSettings
             // 
             this.btnSettings.AutoSize = true;
-            this.btnSettings.Location = new System.Drawing.Point(12, 125);
+            this.btnSettings.Location = new System.Drawing.Point(12, -1);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(182, 36);
@@ -493,7 +487,7 @@
             this.gbFontSizeSettings.BackColor = System.Drawing.Color.White;
             this.gbFontSizeSettings.Controls.Add(this.flpFontSizeSettings);
             this.gbFontSizeSettings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gbFontSizeSettings.Location = new System.Drawing.Point(12, 207);
+            this.gbFontSizeSettings.Location = new System.Drawing.Point(12, 81);
             this.gbFontSizeSettings.MinimumSize = new System.Drawing.Size(300, 153);
             this.gbFontSizeSettings.Name = "gbFontSizeSettings";
             this.gbFontSizeSettings.Size = new System.Drawing.Size(300, 153);
@@ -561,7 +555,7 @@
             this.cmbSettingsSelection.Items.AddRange(new object[] {
             "Font Size",
             "Color"});
-            this.cmbSettingsSelection.Location = new System.Drawing.Point(12, 168);
+            this.cmbSettingsSelection.Location = new System.Drawing.Point(12, 42);
             this.cmbSettingsSelection.MaxDropDownItems = 3;
             this.cmbSettingsSelection.Name = "cmbSettingsSelection";
             this.cmbSettingsSelection.Size = new System.Drawing.Size(182, 33);
@@ -582,61 +576,6 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(266, 62);
             this.flowLayoutPanel2.TabIndex = 26;
             // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel3.Controls.Add(this.label5);
-            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel4);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(895, 251);
-            this.flowLayoutPanel3.MaximumSize = new System.Drawing.Size(300, 106);
-            this.flowLayoutPanel3.MinimumSize = new System.Drawing.Size(300, 106);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(300, 106);
-            this.flowLayoutPanel3.TabIndex = 72;
-            this.flowLayoutPanel3.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoEllipsis = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.MaximumSize = new System.Drawing.Size(300, 28);
-            this.label5.MinimumSize = new System.Drawing.Size(300, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 28);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Title";
-            this.label5.UseMnemonic = false;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.label11);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 28);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel4.MaximumSize = new System.Drawing.Size(300, 73);
-            this.flowLayoutPanel4.MinimumSize = new System.Drawing.Size(300, 73);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(300, 73);
-            this.flowLayoutPanel4.TabIndex = 26;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.MinimumSize = new System.Drawing.Size(83, 32);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 32);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Genre:";
-            // 
             // flowLayoutPanel15
             // 
             this.flowLayoutPanel15.AutoSize = true;
@@ -653,7 +592,7 @@
             this.flowLayoutPanel15.Controls.Add(this.label14);
             this.flowLayoutPanel15.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel15.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.flowLayoutPanel15.Location = new System.Drawing.Point(24, 774);
+            this.flowLayoutPanel15.Location = new System.Drawing.Point(24, 648);
             this.flowLayoutPanel15.MaximumSize = new System.Drawing.Size(1171, 0);
             this.flowLayoutPanel15.MinimumSize = new System.Drawing.Size(1171, 320);
             this.flowLayoutPanel15.Name = "flowLayoutPanel15";
@@ -666,7 +605,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(444, 207);
+            this.button1.Location = new System.Drawing.Point(444, 81);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 110);
@@ -907,7 +846,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.flowLayoutPanel15);
             this.Controls.Add(this.cmbSettingsSelection);
-            this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.gbFontSizeSettings);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnNavTempSearch);
@@ -942,9 +880,6 @@
             this.flpFontSizeSettings.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel15.ResumeLayout(false);
             this.flowLayoutPanel15.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1001,10 +936,6 @@
         private RadioButton rbLargeFont12;
         private ComboBox cmbSettingsSelection;
         private FlowLayoutPanel flowLayoutPanel2;
-        private FlowLayoutPanel flowLayoutPanel3;
-        private Label label5;
-        private FlowLayoutPanel flowLayoutPanel4;
-        private Label label11;
         private FlowLayoutPanel flowLayoutPanel15;
         private Button button1;
         private Label label16;
