@@ -38,7 +38,7 @@ namespace MediaShelfApp
             dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
 
             // Populate form
-
+            PopulateListInfo(list);
             if (list == "Tags")
             {
                 //updateTagTable();
@@ -49,7 +49,7 @@ namespace MediaShelfApp
             else
             {
                 PopulateSortComboBox(1);
-                PopulateListInfo(list);
+                //PopulateListInfo(list);
                 PopulateDataTable("");
             }
         }
@@ -222,6 +222,8 @@ namespace MediaShelfApp
             this.btnAddTag.Visible = true;
             this.cmbSortTags.Visible = true;
             this.txtTagsSearch.Visible = true;
+
+            this.lblListName.Text = "Manual Tags";
         }
 
         // Populate the combobox for the list or tag version of the page for sorting

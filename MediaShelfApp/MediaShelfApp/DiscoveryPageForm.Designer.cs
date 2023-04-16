@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiscoveryPageForm));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Recommendations = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblFavoritesList = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.btnNavTempSearch = new System.Windows.Forms.Button();
+            this.btnMovies = new System.Windows.Forms.Button();
+            this.btnTVShows = new System.Windows.Forms.Button();
+            this.btnBook = new System.Windows.Forms.Button();
+            this.btnGames = new System.Windows.Forms.Button();
+            this.lblMediaShelf = new System.Windows.Forms.Label();
+            this.lblRecommendations = new System.Windows.Forms.Label();
+            this.lblRecBasedOn = new System.Windows.Forms.Label();
+            this.lblRecOtherTitles = new System.Windows.Forms.Label();
+            this.pbRec1 = new System.Windows.Forms.PictureBox();
+            this.lblRecTitle1 = new System.Windows.Forms.Label();
+            this.lblRecGenre1 = new System.Windows.Forms.Label();
+            this.pbRec2 = new System.Windows.Forms.PictureBox();
+            this.pbRec3 = new System.Windows.Forms.PictureBox();
+            this.pbRec4 = new System.Windows.Forms.PictureBox();
+            this.pbRec5 = new System.Windows.Forms.PictureBox();
+            this.pbRec6 = new System.Windows.Forms.PictureBox();
+            this.lblList3 = new System.Windows.Forms.Label();
+            this.lblManualTags = new System.Windows.Forms.Label();
+            this.lblManualEntries = new System.Windows.Forms.Label();
+            this.lblWishlist = new System.Windows.Forms.Label();
+            this.lblList3Desc = new System.Windows.Forms.Label();
+            this.lblList2Desc = new System.Windows.Forms.Label();
+            this.lblWishlistDesc = new System.Windows.Forms.Label();
+            this.lblManualEntriesDesc = new System.Windows.Forms.Label();
+            this.lblFavoritesDesc = new System.Windows.Forms.Label();
+            this.lblFavorites = new System.Windows.Forms.Label();
+            this.lblLists = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.gbFontSizeSettings = new System.Windows.Forms.GroupBox();
             this.flpFontSizeSettings = new System.Windows.Forms.FlowLayoutPanel();
@@ -64,413 +64,416 @@
             this.rbMediumFont10 = new System.Windows.Forms.RadioButton();
             this.rbLargeFont12 = new System.Windows.Forms.RadioButton();
             this.cmbSettingsSelection = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpRec1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.btnMusic = new System.Windows.Forms.Button();
+            this.lblRecTitle2 = new System.Windows.Forms.Label();
+            this.flpRec2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblRecGenre2 = new System.Windows.Forms.Label();
+            this.lblRecTitle3 = new System.Windows.Forms.Label();
+            this.lblRecTitle4 = new System.Windows.Forms.Label();
+            this.flpRec3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblRecGenre3 = new System.Windows.Forms.Label();
+            this.flpRec4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblRecGenre4 = new System.Windows.Forms.Label();
+            this.flpRec5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblRecGenre5 = new System.Windows.Forms.Label();
+            this.flpRec6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblRecGenre6 = new System.Windows.Forms.Label();
+            this.lblRecTitle5 = new System.Windows.Forms.Label();
+            this.lblRecTitle6 = new System.Windows.Forms.Label();
             this.btnRecommendations = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec6)).BeginInit();
             this.gbFontSizeSettings.SuspendLayout();
             this.flpFontSizeSettings.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.flpRec1.SuspendLayout();
             this.flowLayoutPanel15.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
-            this.flowLayoutPanel7.SuspendLayout();
-            this.flowLayoutPanel8.SuspendLayout();
+            this.flpRec2.SuspendLayout();
+            this.flpRec3.SuspendLayout();
+            this.flpRec4.SuspendLayout();
+            this.flpRec5.SuspendLayout();
+            this.flpRec6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btnMovies
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(575, 78);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 110);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Movies";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnMovies.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnMovies.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMovies.BackgroundImage")));
+            this.btnMovies.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMovies.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMovies.Location = new System.Drawing.Point(575, 78);
+            this.btnMovies.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMovies.Name = "btnMovies";
+            this.btnMovies.Size = new System.Drawing.Size(110, 110);
+            this.btnMovies.TabIndex = 1;
+            this.btnMovies.Text = "Movies";
+            this.btnMovies.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnTVShows
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(709, 207);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 110);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "TV Shows";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnTVShows.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnTVShows.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTVShows.BackgroundImage")));
+            this.btnTVShows.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTVShows.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTVShows.Location = new System.Drawing.Point(709, 207);
+            this.btnTVShows.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTVShows.Name = "btnTVShows";
+            this.btnTVShows.Size = new System.Drawing.Size(110, 110);
+            this.btnTVShows.TabIndex = 2;
+            this.btnTVShows.Text = "TV Shows";
+            this.btnTVShows.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnBook
             // 
-            this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(310, 78);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 110);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Books";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnBook.BackColor = System.Drawing.Color.Red;
+            this.btnBook.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBook.BackgroundImage")));
+            this.btnBook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBook.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBook.Location = new System.Drawing.Point(310, 78);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(110, 110);
+            this.btnBook.TabIndex = 3;
+            this.btnBook.Text = "Books";
+            this.btnBook.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnGames
             // 
-            this.button7.BackColor = System.Drawing.Color.MediumPurple;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(846, 78);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(110, 110);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Games";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnGames.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnGames.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGames.BackgroundImage")));
+            this.btnGames.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGames.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGames.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnGames.Location = new System.Drawing.Point(846, 78);
+            this.btnGames.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGames.Name = "btnGames";
+            this.btnGames.Size = new System.Drawing.Size(110, 110);
+            this.btnGames.TabIndex = 6;
+            this.btnGames.Text = "Games";
+            this.btnGames.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lblMediaShelf
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(502, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 60);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "MediaShelf";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblMediaShelf.AutoSize = true;
+            this.lblMediaShelf.BackColor = System.Drawing.Color.Transparent;
+            this.lblMediaShelf.Font = new System.Drawing.Font("Ebrima", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMediaShelf.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblMediaShelf.Location = new System.Drawing.Point(502, 18);
+            this.lblMediaShelf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMediaShelf.Name = "lblMediaShelf";
+            this.lblMediaShelf.Size = new System.Drawing.Size(260, 60);
+            this.lblMediaShelf.TabIndex = 8;
+            this.lblMediaShelf.Text = "MediaShelf";
             // 
-            // Recommendations
+            // lblRecommendations
             // 
-            this.Recommendations.BackColor = System.Drawing.Color.Transparent;
-            this.Recommendations.Font = new System.Drawing.Font("Ebrima", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.Recommendations.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Recommendations.Location = new System.Drawing.Point(522, 349);
-            this.Recommendations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Recommendations.Name = "Recommendations";
-            this.Recommendations.Size = new System.Drawing.Size(227, 32);
-            this.Recommendations.TabIndex = 10;
-            this.Recommendations.Text = "Recommendations";
+            this.lblRecommendations.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecommendations.Font = new System.Drawing.Font("Ebrima", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblRecommendations.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecommendations.Location = new System.Drawing.Point(522, 349);
+            this.lblRecommendations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecommendations.Name = "lblRecommendations";
+            this.lblRecommendations.Size = new System.Drawing.Size(227, 32);
+            this.lblRecommendations.TabIndex = 10;
+            this.lblRecommendations.Text = "Recommendations";
             // 
-            // label2
+            // lblRecBasedOn
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(306, 381);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.MinimumSize = new System.Drawing.Size(748, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(748, 32);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Based on your favorites/wishlist, [TAG] is your most viewed tag ";
+            this.lblRecBasedOn.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecBasedOn.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRecBasedOn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecBasedOn.Location = new System.Drawing.Point(306, 381);
+            this.lblRecBasedOn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecBasedOn.MinimumSize = new System.Drawing.Size(748, 32);
+            this.lblRecBasedOn.Name = "lblRecBasedOn";
+            this.lblRecBasedOn.Size = new System.Drawing.Size(748, 32);
+            this.lblRecBasedOn.TabIndex = 11;
+            this.lblRecBasedOn.Text = "Based on your favorites/wishlist, [TAG] is your most viewed tag ";
             // 
-            // label3
+            // lblRecOtherTitles
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(306, 409);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.MinimumSize = new System.Drawing.Size(321, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 32);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Other titles with [TAG] tag:";
+            this.lblRecOtherTitles.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecOtherTitles.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRecOtherTitles.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecOtherTitles.Location = new System.Drawing.Point(306, 409);
+            this.lblRecOtherTitles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecOtherTitles.MinimumSize = new System.Drawing.Size(321, 32);
+            this.lblRecOtherTitles.Name = "lblRecOtherTitles";
+            this.lblRecOtherTitles.Size = new System.Drawing.Size(321, 32);
+            this.lblRecOtherTitles.TabIndex = 12;
+            this.lblRecOtherTitles.Text = "Other titles with [TAG] tag:";
             // 
-            // pictureBox1
+            // pbRec1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 456);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 106);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.pbRec1.BackColor = System.Drawing.Color.Transparent;
+            this.pbRec1.Location = new System.Drawing.Point(24, 456);
+            this.pbRec1.Margin = new System.Windows.Forms.Padding(2);
+            this.pbRec1.Name = "pbRec1";
+            this.pbRec1.Size = new System.Drawing.Size(104, 106);
+            this.pbRec1.TabIndex = 13;
+            this.pbRec1.TabStop = false;
             // 
-            // label4
+            // lblRecTitle1
             // 
-            this.label4.AutoEllipsis = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(130, 455);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.MaximumSize = new System.Drawing.Size(266, 59);
-            this.label4.MinimumSize = new System.Drawing.Size(266, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(266, 59);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Title";
-            this.label4.UseMnemonic = false;
+            this.lblRecTitle1.AutoEllipsis = true;
+            this.lblRecTitle1.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecTitle1.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblRecTitle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecTitle1.Location = new System.Drawing.Point(130, 455);
+            this.lblRecTitle1.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecTitle1.MaximumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle1.MinimumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle1.Name = "lblRecTitle1";
+            this.lblRecTitle1.Size = new System.Drawing.Size(266, 59);
+            this.lblRecTitle1.TabIndex = 17;
+            this.lblRecTitle1.Text = "Title";
+            this.lblRecTitle1.UseMnemonic = false;
             // 
-            // label10
+            // lblRecGenre1
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.MinimumSize = new System.Drawing.Size(83, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 32);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Genre:";
+            this.lblRecGenre1.AutoSize = true;
+            this.lblRecGenre1.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecGenre1.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRecGenre1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecGenre1.Location = new System.Drawing.Point(0, 0);
+            this.lblRecGenre1.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecGenre1.MinimumSize = new System.Drawing.Size(83, 32);
+            this.lblRecGenre1.Name = "lblRecGenre1";
+            this.lblRecGenre1.Size = new System.Drawing.Size(83, 32);
+            this.lblRecGenre1.TabIndex = 25;
+            this.lblRecGenre1.Text = "Genre:";
             // 
-            // pictureBox2
+            // pbRec2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(422, 456);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(104, 106);
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
+            this.pbRec2.BackColor = System.Drawing.Color.Transparent;
+            this.pbRec2.Location = new System.Drawing.Point(422, 456);
+            this.pbRec2.Margin = new System.Windows.Forms.Padding(2);
+            this.pbRec2.Name = "pbRec2";
+            this.pbRec2.Size = new System.Drawing.Size(104, 106);
+            this.pbRec2.TabIndex = 38;
+            this.pbRec2.TabStop = false;
             // 
-            // pictureBox3
+            // pbRec3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(821, 455);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(104, 106);
-            this.pictureBox3.TabIndex = 42;
-            this.pictureBox3.TabStop = false;
+            this.pbRec3.BackColor = System.Drawing.Color.Transparent;
+            this.pbRec3.Location = new System.Drawing.Point(821, 455);
+            this.pbRec3.Margin = new System.Windows.Forms.Padding(2);
+            this.pbRec3.Name = "pbRec3";
+            this.pbRec3.Size = new System.Drawing.Size(104, 106);
+            this.pbRec3.TabIndex = 42;
+            this.pbRec3.TabStop = false;
             // 
-            // pictureBox4
+            // pbRec4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 583);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(104, 106);
-            this.pictureBox4.TabIndex = 46;
-            this.pictureBox4.TabStop = false;
+            this.pbRec4.BackColor = System.Drawing.Color.Transparent;
+            this.pbRec4.Location = new System.Drawing.Point(24, 583);
+            this.pbRec4.Margin = new System.Windows.Forms.Padding(2);
+            this.pbRec4.Name = "pbRec4";
+            this.pbRec4.Size = new System.Drawing.Size(104, 106);
+            this.pbRec4.TabIndex = 46;
+            this.pbRec4.TabStop = false;
             // 
-            // pictureBox5
+            // pbRec5
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(422, 583);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(104, 106);
-            this.pictureBox5.TabIndex = 50;
-            this.pictureBox5.TabStop = false;
+            this.pbRec5.BackColor = System.Drawing.Color.Transparent;
+            this.pbRec5.Location = new System.Drawing.Point(422, 583);
+            this.pbRec5.Margin = new System.Windows.Forms.Padding(2);
+            this.pbRec5.Name = "pbRec5";
+            this.pbRec5.Size = new System.Drawing.Size(104, 106);
+            this.pbRec5.TabIndex = 50;
+            this.pbRec5.TabStop = false;
             // 
-            // pictureBox6
+            // pbRec6
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(821, 583);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(104, 106);
-            this.pictureBox6.TabIndex = 54;
-            this.pictureBox6.TabStop = false;
+            this.pbRec6.BackColor = System.Drawing.Color.Transparent;
+            this.pbRec6.Location = new System.Drawing.Point(821, 583);
+            this.pbRec6.Margin = new System.Windows.Forms.Padding(2);
+            this.pbRec6.Name = "pbRec6";
+            this.pbRec6.Size = new System.Drawing.Size(104, 106);
+            this.pbRec6.TabIndex = 54;
+            this.pbRec6.TabStop = false;
             // 
-            // label7
+            // lblList3
             // 
-            this.label7.AutoEllipsis = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(2, 248);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.MinimumSize = new System.Drawing.Size(1163, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1163, 32);
-            this.label7.TabIndex = 66;
-            this.label7.Text = "List #3";
+            this.lblList3.AutoEllipsis = true;
+            this.lblList3.BackColor = System.Drawing.Color.Transparent;
+            this.lblList3.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblList3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblList3.Location = new System.Drawing.Point(2, 248);
+            this.lblList3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblList3.MinimumSize = new System.Drawing.Size(1163, 0);
+            this.lblList3.Name = "lblList3";
+            this.lblList3.Size = new System.Drawing.Size(1163, 32);
+            this.lblList3.TabIndex = 66;
+            this.lblList3.Text = "List #3";
             // 
-            // label8
+            // lblManualTags
             // 
-            this.label8.AutoEllipsis = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(2, 188);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.MinimumSize = new System.Drawing.Size(1163, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(1163, 32);
-            this.label8.TabIndex = 65;
-            this.label8.Text = "List #2";
+            this.lblManualTags.AutoEllipsis = true;
+            this.lblManualTags.AutoSize = true;
+            this.lblManualTags.BackColor = System.Drawing.Color.Transparent;
+            this.lblManualTags.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblManualTags.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManualTags.Location = new System.Drawing.Point(2, 188);
+            this.lblManualTags.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManualTags.MinimumSize = new System.Drawing.Size(160, 32);
+            this.lblManualTags.Name = "lblManualTags";
+            this.lblManualTags.Size = new System.Drawing.Size(160, 32);
+            this.lblManualTags.TabIndex = 65;
+            this.lblManualTags.Text = "Manual Tags";
+            this.lblManualTags.Click += new System.EventHandler(this.lblManualTags_Click);
             // 
-            // label9
+            // lblManualEntries
             // 
-            this.label9.AutoEllipsis = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(2, 128);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.MinimumSize = new System.Drawing.Size(1163, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(1163, 32);
-            this.label9.TabIndex = 64;
-            this.label9.Text = "List #1";
+            this.lblManualEntries.AutoEllipsis = true;
+            this.lblManualEntries.BackColor = System.Drawing.Color.Transparent;
+            this.lblManualEntries.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblManualEntries.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManualEntries.Location = new System.Drawing.Point(2, 128);
+            this.lblManualEntries.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManualEntries.MinimumSize = new System.Drawing.Size(185, 32);
+            this.lblManualEntries.Name = "lblManualEntries";
+            this.lblManualEntries.Size = new System.Drawing.Size(185, 32);
+            this.lblManualEntries.TabIndex = 64;
+            this.lblManualEntries.Text = "Manual Entries";
+            this.lblManualEntries.Click += new System.EventHandler(this.lblManualEntries_Click);
             // 
-            // label13
+            // lblWishlist
             // 
-            this.label13.AutoEllipsis = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(2, 64);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.MinimumSize = new System.Drawing.Size(104, 32);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(104, 32);
-            this.label13.TabIndex = 63;
-            this.label13.Text = "Wishlist";
+            this.lblWishlist.AutoEllipsis = true;
+            this.lblWishlist.BackColor = System.Drawing.Color.Transparent;
+            this.lblWishlist.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblWishlist.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblWishlist.Location = new System.Drawing.Point(2, 64);
+            this.lblWishlist.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWishlist.MinimumSize = new System.Drawing.Size(104, 32);
+            this.lblWishlist.Name = "lblWishlist";
+            this.lblWishlist.Size = new System.Drawing.Size(104, 32);
+            this.lblWishlist.TabIndex = 63;
+            this.lblWishlist.Text = "Wishlist";
+            this.lblWishlist.Click += new System.EventHandler(this.lblWishlist_Click);
             // 
-            // label14
+            // lblList3Desc
             // 
-            this.label14.AutoEllipsis = true;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14.Location = new System.Drawing.Point(2, 280);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.MinimumSize = new System.Drawing.Size(1163, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1163, 28);
-            this.label14.TabIndex = 62;
-            this.label14.Text = "Description:";
+            this.lblList3Desc.AutoEllipsis = true;
+            this.lblList3Desc.AutoSize = true;
+            this.lblList3Desc.BackColor = System.Drawing.Color.Transparent;
+            this.lblList3Desc.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblList3Desc.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblList3Desc.Location = new System.Drawing.Point(2, 280);
+            this.lblList3Desc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblList3Desc.MinimumSize = new System.Drawing.Size(1163, 0);
+            this.lblList3Desc.Name = "lblList3Desc";
+            this.lblList3Desc.Size = new System.Drawing.Size(1163, 28);
+            this.lblList3Desc.TabIndex = 62;
+            this.lblList3Desc.Text = "Description:";
             // 
-            // label15
+            // lblList2Desc
             // 
-            this.label15.AutoEllipsis = true;
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(2, 220);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.MinimumSize = new System.Drawing.Size(1163, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(1163, 28);
-            this.label15.TabIndex = 61;
-            this.label15.Text = "Description:";
+            this.lblList2Desc.AutoEllipsis = true;
+            this.lblList2Desc.AutoSize = true;
+            this.lblList2Desc.BackColor = System.Drawing.Color.Transparent;
+            this.lblList2Desc.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblList2Desc.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblList2Desc.Location = new System.Drawing.Point(2, 220);
+            this.lblList2Desc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblList2Desc.MinimumSize = new System.Drawing.Size(1163, 0);
+            this.lblList2Desc.Name = "lblList2Desc";
+            this.lblList2Desc.Size = new System.Drawing.Size(1163, 28);
+            this.lblList2Desc.TabIndex = 61;
+            this.lblList2Desc.Text = "Description:";
             // 
-            // label22
+            // lblWishlistDesc
             // 
-            this.label22.AutoEllipsis = true;
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label22.Location = new System.Drawing.Point(2, 96);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.MinimumSize = new System.Drawing.Size(697, 32);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(697, 32);
-            this.label22.TabIndex = 60;
-            this.label22.Text = "Description: Items that have been wishlisted will be placed here.\r\n";
+            this.lblWishlistDesc.AutoEllipsis = true;
+            this.lblWishlistDesc.AutoSize = true;
+            this.lblWishlistDesc.BackColor = System.Drawing.Color.Transparent;
+            this.lblWishlistDesc.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblWishlistDesc.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblWishlistDesc.Location = new System.Drawing.Point(2, 96);
+            this.lblWishlistDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWishlistDesc.MinimumSize = new System.Drawing.Size(697, 32);
+            this.lblWishlistDesc.Name = "lblWishlistDesc";
+            this.lblWishlistDesc.Size = new System.Drawing.Size(697, 32);
+            this.lblWishlistDesc.TabIndex = 60;
+            this.lblWishlistDesc.Text = "Description: Items that have been wishlisted will be placed here.\r\n";
             // 
-            // label23
+            // lblManualEntriesDesc
             // 
-            this.label23.AutoEllipsis = true;
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label23.Location = new System.Drawing.Point(2, 160);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.MaximumSize = new System.Drawing.Size(1163, 0);
-            this.label23.MinimumSize = new System.Drawing.Size(1163, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(1163, 28);
-            this.label23.TabIndex = 59;
-            this.label23.Text = "Description:";
+            this.lblManualEntriesDesc.AutoEllipsis = true;
+            this.lblManualEntriesDesc.AutoSize = true;
+            this.lblManualEntriesDesc.BackColor = System.Drawing.Color.Transparent;
+            this.lblManualEntriesDesc.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblManualEntriesDesc.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManualEntriesDesc.Location = new System.Drawing.Point(2, 160);
+            this.lblManualEntriesDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManualEntriesDesc.MaximumSize = new System.Drawing.Size(1163, 0);
+            this.lblManualEntriesDesc.MinimumSize = new System.Drawing.Size(1163, 0);
+            this.lblManualEntriesDesc.Name = "lblManualEntriesDesc";
+            this.lblManualEntriesDesc.Size = new System.Drawing.Size(1163, 28);
+            this.lblManualEntriesDesc.TabIndex = 59;
+            this.lblManualEntriesDesc.Text = "Description:";
             // 
-            // label24
+            // lblFavoritesDesc
             // 
-            this.label24.AutoEllipsis = true;
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label24.Location = new System.Drawing.Point(2, 32);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.MinimumSize = new System.Drawing.Size(688, 32);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(688, 32);
-            this.label24.TabIndex = 58;
-            this.label24.Text = "Description: Items that have been favorited will be placed here.";
+            this.lblFavoritesDesc.AutoEllipsis = true;
+            this.lblFavoritesDesc.AutoSize = true;
+            this.lblFavoritesDesc.BackColor = System.Drawing.Color.Transparent;
+            this.lblFavoritesDesc.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFavoritesDesc.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFavoritesDesc.Location = new System.Drawing.Point(2, 32);
+            this.lblFavoritesDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFavoritesDesc.MinimumSize = new System.Drawing.Size(688, 32);
+            this.lblFavoritesDesc.Name = "lblFavoritesDesc";
+            this.lblFavoritesDesc.Size = new System.Drawing.Size(688, 32);
+            this.lblFavoritesDesc.TabIndex = 58;
+            this.lblFavoritesDesc.Text = "Description: Items that have been favorited will be placed here.";
             // 
-            // lblFavoritesList
+            // lblFavorites
             // 
-            this.lblFavoritesList.AutoEllipsis = true;
-            this.lblFavoritesList.BackColor = System.Drawing.Color.Transparent;
-            this.lblFavoritesList.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.lblFavoritesList.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFavoritesList.Location = new System.Drawing.Point(2, 0);
-            this.lblFavoritesList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFavoritesList.MinimumSize = new System.Drawing.Size(117, 32);
-            this.lblFavoritesList.Name = "lblFavoritesList";
-            this.lblFavoritesList.Size = new System.Drawing.Size(117, 32);
-            this.lblFavoritesList.TabIndex = 57;
-            this.lblFavoritesList.Text = "Favorites";
-            this.lblFavoritesList.Click += new System.EventHandler(this.lblFavoritesList_Click);
+            this.lblFavorites.AutoEllipsis = true;
+            this.lblFavorites.BackColor = System.Drawing.Color.Transparent;
+            this.lblFavorites.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblFavorites.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFavorites.Location = new System.Drawing.Point(2, 0);
+            this.lblFavorites.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFavorites.MinimumSize = new System.Drawing.Size(117, 32);
+            this.lblFavorites.Name = "lblFavorites";
+            this.lblFavorites.Size = new System.Drawing.Size(117, 32);
+            this.lblFavorites.TabIndex = 57;
+            this.lblFavorites.Text = "Favorites";
+            this.lblFavorites.Click += new System.EventHandler(this.lblFavorites_Click);
             // 
-            // label26
+            // lblLists
             // 
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Ebrima", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label26.Location = new System.Drawing.Point(594, 739);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.MinimumSize = new System.Drawing.Size(64, 32);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(64, 32);
-            this.label26.TabIndex = 56;
-            this.label26.Text = "Lists";
+            this.lblLists.BackColor = System.Drawing.Color.Transparent;
+            this.lblLists.Font = new System.Drawing.Font("Ebrima", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblLists.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblLists.Location = new System.Drawing.Point(594, 739);
+            this.lblLists.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLists.MinimumSize = new System.Drawing.Size(64, 32);
+            this.lblLists.Name = "lblLists";
+            this.lblLists.Size = new System.Drawing.Size(64, 32);
+            this.lblLists.TabIndex = 56;
+            this.lblLists.Text = "Lists";
             // 
-            // btnNavTempSearch
+            // btnSearch
             // 
-            this.btnNavTempSearch.AutoSize = true;
-            this.btnNavTempSearch.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNavTempSearch.Location = new System.Drawing.Point(15, 15);
-            this.btnNavTempSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNavTempSearch.Name = "btnNavTempSearch";
-            this.btnNavTempSearch.Size = new System.Drawing.Size(118, 38);
-            this.btnNavTempSearch.TabIndex = 67;
-            this.btnNavTempSearch.Text = "Search";
-            this.btnNavTempSearch.UseVisualStyleBackColor = true;
-            this.btnNavTempSearch.Click += new System.EventHandler(this.btnNavTempSearch_Click);
+            this.btnSearch.AutoSize = true;
+            this.btnSearch.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.Location = new System.Drawing.Point(15, 15);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(118, 38);
+            this.btnSearch.TabIndex = 67;
+            this.btnSearch.Text = "Search Bar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnSettings
             // 
@@ -566,32 +569,32 @@
             this.cmbSettingsSelection.Visible = false;
             this.cmbSettingsSelection.SelectedIndexChanged += new System.EventHandler(this.cmbSettingsSelection_SelectedIndexChanged);
             // 
-            // flowLayoutPanel2
+            // flpRec1
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel2.Controls.Add(this.label10);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(129, 509);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel2.MinimumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel2.TabIndex = 26;
+            this.flpRec1.BackColor = System.Drawing.Color.Transparent;
+            this.flpRec1.Controls.Add(this.lblRecGenre1);
+            this.flpRec1.Location = new System.Drawing.Point(129, 509);
+            this.flpRec1.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRec1.MaximumSize = new System.Drawing.Size(266, 62);
+            this.flpRec1.MinimumSize = new System.Drawing.Size(266, 62);
+            this.flpRec1.Name = "flpRec1";
+            this.flpRec1.Size = new System.Drawing.Size(266, 62);
+            this.flpRec1.TabIndex = 26;
             // 
             // flowLayoutPanel15
             // 
             this.flowLayoutPanel15.AutoSize = true;
             this.flowLayoutPanel15.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel15.Controls.Add(this.lblFavoritesList);
-            this.flowLayoutPanel15.Controls.Add(this.label24);
-            this.flowLayoutPanel15.Controls.Add(this.label13);
-            this.flowLayoutPanel15.Controls.Add(this.label22);
-            this.flowLayoutPanel15.Controls.Add(this.label9);
-            this.flowLayoutPanel15.Controls.Add(this.label23);
-            this.flowLayoutPanel15.Controls.Add(this.label8);
-            this.flowLayoutPanel15.Controls.Add(this.label15);
-            this.flowLayoutPanel15.Controls.Add(this.label7);
-            this.flowLayoutPanel15.Controls.Add(this.label14);
+            this.flowLayoutPanel15.Controls.Add(this.lblFavorites);
+            this.flowLayoutPanel15.Controls.Add(this.lblFavoritesDesc);
+            this.flowLayoutPanel15.Controls.Add(this.lblWishlist);
+            this.flowLayoutPanel15.Controls.Add(this.lblWishlistDesc);
+            this.flowLayoutPanel15.Controls.Add(this.lblManualEntries);
+            this.flowLayoutPanel15.Controls.Add(this.lblManualEntriesDesc);
+            this.flowLayoutPanel15.Controls.Add(this.lblManualTags);
+            this.flowLayoutPanel15.Controls.Add(this.lblList2Desc);
+            this.flowLayoutPanel15.Controls.Add(this.lblList3);
+            this.flowLayoutPanel15.Controls.Add(this.lblList3Desc);
             this.flowLayoutPanel15.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel15.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.flowLayoutPanel15.Location = new System.Drawing.Point(24, 774);
@@ -601,229 +604,229 @@
             this.flowLayoutPanel15.Size = new System.Drawing.Size(1171, 320);
             this.flowLayoutPanel15.TabIndex = 75;
             // 
-            // button1
+            // btnMusic
             // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(444, 207);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 110);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Music";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnMusic.BackColor = System.Drawing.Color.Gold;
+            this.btnMusic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMusic.BackgroundImage")));
+            this.btnMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMusic.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMusic.Location = new System.Drawing.Point(444, 207);
+            this.btnMusic.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMusic.Name = "btnMusic";
+            this.btnMusic.Size = new System.Drawing.Size(110, 110);
+            this.btnMusic.TabIndex = 0;
+            this.btnMusic.Text = "Music";
+            this.btnMusic.UseVisualStyleBackColor = false;
             // 
-            // label16
+            // lblRecTitle2
             // 
-            this.label16.AutoEllipsis = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label16.Location = new System.Drawing.Point(528, 455);
-            this.label16.Margin = new System.Windows.Forms.Padding(0);
-            this.label16.MaximumSize = new System.Drawing.Size(266, 59);
-            this.label16.MinimumSize = new System.Drawing.Size(266, 59);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(266, 59);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "Title";
-            this.label16.UseMnemonic = false;
+            this.lblRecTitle2.AutoEllipsis = true;
+            this.lblRecTitle2.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecTitle2.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblRecTitle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecTitle2.Location = new System.Drawing.Point(528, 455);
+            this.lblRecTitle2.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecTitle2.MaximumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle2.MinimumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle2.Name = "lblRecTitle2";
+            this.lblRecTitle2.Size = new System.Drawing.Size(266, 59);
+            this.lblRecTitle2.TabIndex = 27;
+            this.lblRecTitle2.Text = "Title";
+            this.lblRecTitle2.UseMnemonic = false;
             // 
-            // flowLayoutPanel1
+            // flpRec2
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.label17);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(527, 509);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel1.TabIndex = 28;
+            this.flpRec2.BackColor = System.Drawing.Color.Transparent;
+            this.flpRec2.Controls.Add(this.lblRecGenre2);
+            this.flpRec2.Location = new System.Drawing.Point(527, 509);
+            this.flpRec2.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRec2.MaximumSize = new System.Drawing.Size(266, 62);
+            this.flpRec2.MinimumSize = new System.Drawing.Size(266, 62);
+            this.flpRec2.Name = "flpRec2";
+            this.flpRec2.Size = new System.Drawing.Size(266, 62);
+            this.flpRec2.TabIndex = 28;
             // 
-            // label17
+            // lblRecGenre2
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label17.Location = new System.Drawing.Point(0, 0);
-            this.label17.Margin = new System.Windows.Forms.Padding(0);
-            this.label17.MinimumSize = new System.Drawing.Size(83, 32);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(83, 32);
-            this.label17.TabIndex = 25;
-            this.label17.Text = "Genre:";
+            this.lblRecGenre2.AutoSize = true;
+            this.lblRecGenre2.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecGenre2.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRecGenre2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecGenre2.Location = new System.Drawing.Point(0, 0);
+            this.lblRecGenre2.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecGenre2.MinimumSize = new System.Drawing.Size(83, 32);
+            this.lblRecGenre2.Name = "lblRecGenre2";
+            this.lblRecGenre2.Size = new System.Drawing.Size(83, 32);
+            this.lblRecGenre2.TabIndex = 25;
+            this.lblRecGenre2.Text = "Genre:";
             // 
-            // label6
+            // lblRecTitle3
             // 
-            this.label6.AutoEllipsis = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(927, 454);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.MaximumSize = new System.Drawing.Size(266, 59);
-            this.label6.MinimumSize = new System.Drawing.Size(266, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(266, 59);
-            this.label6.TabIndex = 76;
-            this.label6.Text = "Title";
-            this.label6.UseMnemonic = false;
+            this.lblRecTitle3.AutoEllipsis = true;
+            this.lblRecTitle3.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecTitle3.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblRecTitle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecTitle3.Location = new System.Drawing.Point(927, 454);
+            this.lblRecTitle3.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecTitle3.MaximumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle3.MinimumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle3.Name = "lblRecTitle3";
+            this.lblRecTitle3.Size = new System.Drawing.Size(266, 59);
+            this.lblRecTitle3.TabIndex = 76;
+            this.lblRecTitle3.Text = "Title";
+            this.lblRecTitle3.UseMnemonic = false;
             // 
-            // label12
+            // lblRecTitle4
             // 
-            this.label12.AutoEllipsis = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(130, 582);
-            this.label12.Margin = new System.Windows.Forms.Padding(0);
-            this.label12.MaximumSize = new System.Drawing.Size(266, 59);
-            this.label12.MinimumSize = new System.Drawing.Size(266, 59);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(266, 59);
-            this.label12.TabIndex = 77;
-            this.label12.Text = "Title";
-            this.label12.UseMnemonic = false;
+            this.lblRecTitle4.AutoEllipsis = true;
+            this.lblRecTitle4.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecTitle4.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblRecTitle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecTitle4.Location = new System.Drawing.Point(130, 582);
+            this.lblRecTitle4.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecTitle4.MaximumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle4.MinimumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle4.Name = "lblRecTitle4";
+            this.lblRecTitle4.Size = new System.Drawing.Size(266, 59);
+            this.lblRecTitle4.TabIndex = 77;
+            this.lblRecTitle4.Text = "Title";
+            this.lblRecTitle4.UseMnemonic = false;
             // 
-            // flowLayoutPanel5
+            // flpRec3
             // 
-            this.flowLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel5.Controls.Add(this.label18);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(926, 508);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel5.MaximumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel5.MinimumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel5.TabIndex = 27;
+            this.flpRec3.BackColor = System.Drawing.Color.Transparent;
+            this.flpRec3.Controls.Add(this.lblRecGenre3);
+            this.flpRec3.Location = new System.Drawing.Point(926, 508);
+            this.flpRec3.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRec3.MaximumSize = new System.Drawing.Size(266, 62);
+            this.flpRec3.MinimumSize = new System.Drawing.Size(266, 62);
+            this.flpRec3.Name = "flpRec3";
+            this.flpRec3.Size = new System.Drawing.Size(266, 62);
+            this.flpRec3.TabIndex = 27;
             // 
-            // label18
+            // lblRecGenre3
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label18.Location = new System.Drawing.Point(0, 0);
-            this.label18.Margin = new System.Windows.Forms.Padding(0);
-            this.label18.MinimumSize = new System.Drawing.Size(83, 32);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(83, 32);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "Genre:";
+            this.lblRecGenre3.AutoSize = true;
+            this.lblRecGenre3.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecGenre3.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRecGenre3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecGenre3.Location = new System.Drawing.Point(0, 0);
+            this.lblRecGenre3.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecGenre3.MinimumSize = new System.Drawing.Size(83, 32);
+            this.lblRecGenre3.Name = "lblRecGenre3";
+            this.lblRecGenre3.Size = new System.Drawing.Size(83, 32);
+            this.lblRecGenre3.TabIndex = 25;
+            this.lblRecGenre3.Text = "Genre:";
             // 
-            // flowLayoutPanel6
+            // flpRec4
             // 
-            this.flowLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel6.Controls.Add(this.label19);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(129, 636);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel6.MaximumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel6.MinimumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel6.TabIndex = 27;
+            this.flpRec4.BackColor = System.Drawing.Color.Transparent;
+            this.flpRec4.Controls.Add(this.lblRecGenre4);
+            this.flpRec4.Location = new System.Drawing.Point(129, 636);
+            this.flpRec4.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRec4.MaximumSize = new System.Drawing.Size(266, 62);
+            this.flpRec4.MinimumSize = new System.Drawing.Size(266, 62);
+            this.flpRec4.Name = "flpRec4";
+            this.flpRec4.Size = new System.Drawing.Size(266, 62);
+            this.flpRec4.TabIndex = 27;
             // 
-            // label19
+            // lblRecGenre4
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19.Location = new System.Drawing.Point(0, 0);
-            this.label19.Margin = new System.Windows.Forms.Padding(0);
-            this.label19.MinimumSize = new System.Drawing.Size(83, 32);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(83, 32);
-            this.label19.TabIndex = 25;
-            this.label19.Text = "Genre:";
+            this.lblRecGenre4.AutoSize = true;
+            this.lblRecGenre4.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecGenre4.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRecGenre4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecGenre4.Location = new System.Drawing.Point(0, 0);
+            this.lblRecGenre4.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecGenre4.MinimumSize = new System.Drawing.Size(83, 32);
+            this.lblRecGenre4.Name = "lblRecGenre4";
+            this.lblRecGenre4.Size = new System.Drawing.Size(83, 32);
+            this.lblRecGenre4.TabIndex = 25;
+            this.lblRecGenre4.Text = "Genre:";
             // 
-            // flowLayoutPanel7
+            // flpRec5
             // 
-            this.flowLayoutPanel7.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel7.Controls.Add(this.label20);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(527, 636);
-            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel7.MaximumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel7.MinimumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel7.TabIndex = 78;
+            this.flpRec5.BackColor = System.Drawing.Color.Transparent;
+            this.flpRec5.Controls.Add(this.lblRecGenre5);
+            this.flpRec5.Location = new System.Drawing.Point(527, 636);
+            this.flpRec5.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRec5.MaximumSize = new System.Drawing.Size(266, 62);
+            this.flpRec5.MinimumSize = new System.Drawing.Size(266, 62);
+            this.flpRec5.Name = "flpRec5";
+            this.flpRec5.Size = new System.Drawing.Size(266, 62);
+            this.flpRec5.TabIndex = 78;
             // 
-            // label20
+            // lblRecGenre5
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label20.Location = new System.Drawing.Point(0, 0);
-            this.label20.Margin = new System.Windows.Forms.Padding(0);
-            this.label20.MinimumSize = new System.Drawing.Size(83, 32);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(83, 32);
-            this.label20.TabIndex = 25;
-            this.label20.Text = "Genre:";
+            this.lblRecGenre5.AutoSize = true;
+            this.lblRecGenre5.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecGenre5.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRecGenre5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecGenre5.Location = new System.Drawing.Point(0, 0);
+            this.lblRecGenre5.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecGenre5.MinimumSize = new System.Drawing.Size(83, 32);
+            this.lblRecGenre5.Name = "lblRecGenre5";
+            this.lblRecGenre5.Size = new System.Drawing.Size(83, 32);
+            this.lblRecGenre5.TabIndex = 25;
+            this.lblRecGenre5.Text = "Genre:";
             // 
-            // flowLayoutPanel8
+            // flpRec6
             // 
-            this.flowLayoutPanel8.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel8.Controls.Add(this.label21);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(926, 636);
-            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel8.MaximumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel8.MinimumSize = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(266, 62);
-            this.flowLayoutPanel8.TabIndex = 79;
+            this.flpRec6.BackColor = System.Drawing.Color.Transparent;
+            this.flpRec6.Controls.Add(this.lblRecGenre6);
+            this.flpRec6.Location = new System.Drawing.Point(926, 636);
+            this.flpRec6.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRec6.MaximumSize = new System.Drawing.Size(266, 62);
+            this.flpRec6.MinimumSize = new System.Drawing.Size(266, 62);
+            this.flpRec6.Name = "flpRec6";
+            this.flpRec6.Size = new System.Drawing.Size(266, 62);
+            this.flpRec6.TabIndex = 79;
             // 
-            // label21
+            // lblRecGenre6
             // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21.Location = new System.Drawing.Point(0, 0);
-            this.label21.Margin = new System.Windows.Forms.Padding(0);
-            this.label21.MinimumSize = new System.Drawing.Size(83, 32);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(83, 32);
-            this.label21.TabIndex = 25;
-            this.label21.Text = "Genre:";
+            this.lblRecGenre6.AutoSize = true;
+            this.lblRecGenre6.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecGenre6.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRecGenre6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecGenre6.Location = new System.Drawing.Point(0, 0);
+            this.lblRecGenre6.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecGenre6.MinimumSize = new System.Drawing.Size(83, 32);
+            this.lblRecGenre6.Name = "lblRecGenre6";
+            this.lblRecGenre6.Size = new System.Drawing.Size(83, 32);
+            this.lblRecGenre6.TabIndex = 25;
+            this.lblRecGenre6.Text = "Genre:";
             // 
-            // label25
+            // lblRecTitle5
             // 
-            this.label25.AutoEllipsis = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label25.Location = new System.Drawing.Point(528, 582);
-            this.label25.Margin = new System.Windows.Forms.Padding(0);
-            this.label25.MaximumSize = new System.Drawing.Size(266, 59);
-            this.label25.MinimumSize = new System.Drawing.Size(266, 59);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(266, 59);
-            this.label25.TabIndex = 80;
-            this.label25.Text = "Title";
-            this.label25.UseMnemonic = false;
+            this.lblRecTitle5.AutoEllipsis = true;
+            this.lblRecTitle5.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecTitle5.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblRecTitle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecTitle5.Location = new System.Drawing.Point(528, 582);
+            this.lblRecTitle5.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecTitle5.MaximumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle5.MinimumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle5.Name = "lblRecTitle5";
+            this.lblRecTitle5.Size = new System.Drawing.Size(266, 59);
+            this.lblRecTitle5.TabIndex = 80;
+            this.lblRecTitle5.Text = "Title";
+            this.lblRecTitle5.UseMnemonic = false;
             // 
-            // label27
+            // lblRecTitle6
             // 
-            this.label27.AutoEllipsis = true;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label27.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label27.Location = new System.Drawing.Point(927, 582);
-            this.label27.Margin = new System.Windows.Forms.Padding(0);
-            this.label27.MaximumSize = new System.Drawing.Size(266, 59);
-            this.label27.MinimumSize = new System.Drawing.Size(266, 59);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(266, 59);
-            this.label27.TabIndex = 81;
-            this.label27.Text = "Title";
-            this.label27.UseMnemonic = false;
+            this.lblRecTitle6.AutoEllipsis = true;
+            this.lblRecTitle6.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecTitle6.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblRecTitle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRecTitle6.Location = new System.Drawing.Point(927, 582);
+            this.lblRecTitle6.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRecTitle6.MaximumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle6.MinimumSize = new System.Drawing.Size(266, 59);
+            this.lblRecTitle6.Name = "lblRecTitle6";
+            this.lblRecTitle6.Size = new System.Drawing.Size(266, 59);
+            this.lblRecTitle6.TabIndex = 81;
+            this.lblRecTitle6.Text = "Title";
+            this.lblRecTitle6.UseMnemonic = false;
             // 
             // btnRecommendations
             // 
@@ -847,102 +850,100 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1246, 752);
             this.Controls.Add(this.btnRecommendations);
-            this.Controls.Add(this.flowLayoutPanel7);
-            this.Controls.Add(this.flowLayoutPanel8);
-            this.Controls.Add(this.flowLayoutPanel6);
-            this.Controls.Add(this.flowLayoutPanel5);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.flpRec5);
+            this.Controls.Add(this.flpRec6);
+            this.Controls.Add(this.flpRec4);
+            this.Controls.Add(this.flpRec3);
+            this.Controls.Add(this.flpRec2);
+            this.Controls.Add(this.flpRec1);
+            this.Controls.Add(this.lblRecTitle5);
+            this.Controls.Add(this.lblRecTitle3);
+            this.Controls.Add(this.lblRecTitle2);
+            this.Controls.Add(this.lblRecTitle6);
+            this.Controls.Add(this.lblRecTitle4);
+            this.Controls.Add(this.lblRecTitle1);
             this.Controls.Add(this.flowLayoutPanel15);
             this.Controls.Add(this.cmbSettingsSelection);
             this.Controls.Add(this.gbFontSizeSettings);
             this.Controls.Add(this.btnSettings);
-            this.Controls.Add(this.btnNavTempSearch);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Recommendations);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.lblLists);
+            this.Controls.Add(this.pbRec6);
+            this.Controls.Add(this.pbRec5);
+            this.Controls.Add(this.pbRec4);
+            this.Controls.Add(this.pbRec3);
+            this.Controls.Add(this.pbRec2);
+            this.Controls.Add(this.pbRec1);
+            this.Controls.Add(this.lblRecOtherTitles);
+            this.Controls.Add(this.lblRecBasedOn);
+            this.Controls.Add(this.lblRecommendations);
+            this.Controls.Add(this.lblMediaShelf);
+            this.Controls.Add(this.btnGames);
+            this.Controls.Add(this.btnBook);
+            this.Controls.Add(this.btnTVShows);
+            this.Controls.Add(this.btnMovies);
+            this.Controls.Add(this.btnMusic);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DiscoveryPageForm";
             this.Text = "Discovery";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRec6)).EndInit();
             this.gbFontSizeSettings.ResumeLayout(false);
             this.gbFontSizeSettings.PerformLayout();
             this.flpFontSizeSettings.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
+            this.flpRec1.ResumeLayout(false);
+            this.flpRec1.PerformLayout();
             this.flowLayoutPanel15.ResumeLayout(false);
             this.flowLayoutPanel15.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
-            this.flowLayoutPanel7.ResumeLayout(false);
-            this.flowLayoutPanel7.PerformLayout();
-            this.flowLayoutPanel8.ResumeLayout(false);
-            this.flowLayoutPanel8.PerformLayout();
+            this.flpRec2.ResumeLayout(false);
+            this.flpRec2.PerformLayout();
+            this.flpRec3.ResumeLayout(false);
+            this.flpRec3.PerformLayout();
+            this.flpRec4.ResumeLayout(false);
+            this.flpRec4.PerformLayout();
+            this.flpRec5.ResumeLayout(false);
+            this.flpRec5.PerformLayout();
+            this.flpRec6.ResumeLayout(false);
+            this.flpRec6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button7;
-        private Label label1;
-        private Label Recommendations;
-        private Label label2;
-        private Label label3;
-        private PictureBox pictureBox1;
-        private Label label4;
-        private Label label10;
-        private Button btnNavSearch;
-        private Button btnNavRec;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label22;
-        private Label label23;
-        private Label label24;
-        private Label lblFavoritesList;
-        private Label label26;
-        private Button btnNavTempSearch;
+        private Button btnMovies;
+        private Button btnTVShows;
+        private Button btnBook;
+        private Button btnGames;
+        private Label lblMediaShelf;
+        private Label lblRecommendations;
+        private Label lblRecBasedOn;
+        private Label lblRecOtherTitles;
+        private PictureBox pbRec1;
+        private Label lblRecTitle1;
+        private Label lblRecGenre1;
+        private PictureBox pbRec2;
+        private PictureBox pbRec3;
+        private PictureBox pbRec4;
+        private PictureBox pbRec5;
+        private PictureBox pbRec6;
+        private Label lblList3;
+        private Label lblManualTags;
+        private Label lblManualEntries;
+        private Label lblWishlist;
+        private Label lblList3Desc;
+        private Label lblList2Desc;
+        private Label lblWishlistDesc;
+        private Label lblManualEntriesDesc;
+        private Label lblFavoritesDesc;
+        private Label lblFavorites;
+        private Label lblLists;
+        private Button btnSearch;
         private Button btnSettings;
         private GroupBox gbFontSizeSettings;
         private FlowLayoutPanel flpFontSizeSettings;
@@ -950,24 +951,24 @@
         private RadioButton rbMediumFont10;
         private RadioButton rbLargeFont12;
         private ComboBox cmbSettingsSelection;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flpRec1;
         private FlowLayoutPanel flowLayoutPanel15;
-        private Button button1;
-        private Label label16;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Label label17;
-        private Label label6;
-        private Label label12;
-        private FlowLayoutPanel flowLayoutPanel5;
-        private Label label18;
-        private FlowLayoutPanel flowLayoutPanel6;
-        private Label label19;
-        private FlowLayoutPanel flowLayoutPanel7;
-        private Label label20;
-        private FlowLayoutPanel flowLayoutPanel8;
-        private Label label21;
-        private Label label25;
-        private Label label27;
+        private Button btnMusic;
+        private Label lblRecTitle2;
+        private FlowLayoutPanel flpRec2;
+        private Label lblRecGenre2;
+        private Label lblRecTitle3;
+        private Label lblRecTitle4;
+        private FlowLayoutPanel flpRec3;
+        private Label lblRecGenre3;
+        private FlowLayoutPanel flpRec4;
+        private Label lblRecGenre4;
+        private FlowLayoutPanel flpRec5;
+        private Label lblRecGenre5;
+        private FlowLayoutPanel flpRec6;
+        private Label lblRecGenre6;
+        private Label lblRecTitle5;
+        private Label lblRecTitle6;
         private Button btnRecommendations;
     }
 }

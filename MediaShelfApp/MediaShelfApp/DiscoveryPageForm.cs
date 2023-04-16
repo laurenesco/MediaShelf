@@ -98,7 +98,7 @@ namespace MediaShelfApp
         //  Private methods  //
         ///////////////////////
 
-        private void btnNavTempSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             SearchResults window = new SearchResults();
             window.setCaller(this);
@@ -107,13 +107,25 @@ namespace MediaShelfApp
 
         /* Favorites List button functionality - Opens the list form with the overloaded constructor setting the list as "Favorites"
          *                                       and the caller as this instance of the Discovery Form (aka "this") */
-        private void lblFavoritesList_Click(object sender, EventArgs e)
+        private void lblFavorites_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Favorites", this);
             window.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblWishlist_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Wishlist", this);
+            window.Show();
+        }
+
+        private void lblManualEntries_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Manual Entries", this);
+            window.Show();
+        }
+
+        private void lblManualTags_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Tags", this);
             window.Show();
