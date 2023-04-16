@@ -43,6 +43,7 @@ namespace MediaShelfApp
         public Detailed_Item_Listing_Form()
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             // Initiate Database Connection
             try
@@ -58,7 +59,7 @@ namespace MediaShelfApp
         public Detailed_Item_Listing_Form(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int api_type)
         {
             InitializeComponent();
-
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             // Initiate Database Connection
             try
@@ -95,6 +96,7 @@ namespace MediaShelfApp
             {
                 cmbAddToList.Items.Add(reader.GetString(0));
             }
+            cmbAddToList.Items.Remove("Tags");
 
             cmbAddToList.Text = "Favorites";
 

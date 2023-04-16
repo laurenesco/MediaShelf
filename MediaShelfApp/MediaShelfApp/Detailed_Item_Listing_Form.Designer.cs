@@ -28,241 +28,346 @@
         /// </summary>
         private void InitializeComponent()
         {
-            splitContainer1 = new SplitContainer();
-            btnNavBack = new Button();
-            pbMovieImage = new PictureBox();
-            pbBookImage = new PictureBox();
-            pbGameImage = new PictureBox();
-            pbMusicImage = new PictureBox();
-            txtDescriptionValue = new TextBox();
-            lblReleaseDateValue = new Label();
-            lblGenreValue = new Label();
-            lblCreatorValue = new Label();
-            lblDescriptionTitle = new Label();
-            lblReleaseDateTitle = new Label();
-            lblGenreTitle = new Label();
-            lblCreatorTitle = new Label();
-            lblTitle = new Label();
-            cmbAddToList = new ComboBox();
-            btnFavorite = new Button();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbMovieImage).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbBookImage).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbGameImage).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbMusicImage).BeginInit();
-            SuspendLayout();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnNavBack = new System.Windows.Forms.Button();
+            this.pbMovieImage = new System.Windows.Forms.PictureBox();
+            this.pbBookImage = new System.Windows.Forms.PictureBox();
+            this.pbGameImage = new System.Windows.Forms.PictureBox();
+            this.pbMusicImage = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblCreatorTitle = new System.Windows.Forms.Label();
+            this.lblGenreTitle = new System.Windows.Forms.Label();
+            this.lblReleaseDateTitle = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblCreatorValue = new System.Windows.Forms.Label();
+            this.lblGenreValue = new System.Windows.Forms.Label();
+            this.lblReleaseDateValue = new System.Windows.Forms.Label();
+            this.lblDescriptionTitle = new System.Windows.Forms.Label();
+            this.txtDescriptionValue = new System.Windows.Forms.TextBox();
+            this.cmbAddToList = new System.Windows.Forms.ComboBox();
+            this.btnFavorite = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMovieImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBookImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMusicImage)).BeginInit();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.SuspendLayout();
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(btnNavBack);
-            splitContainer1.Panel1.Controls.Add(pbMovieImage);
-            splitContainer1.Panel1.Controls.Add(pbBookImage);
-            splitContainer1.Panel1.Controls.Add(pbGameImage);
-            splitContainer1.Panel1.Controls.Add(pbMusicImage);
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer1.Panel1.BackgroundImage = global::MediaShelfApp.Properties.Resources.BACKGROUND_WHITE;
+            this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.splitContainer1.Panel1.Controls.Add(this.btnNavBack);
+            this.splitContainer1.Panel1.Controls.Add(this.pbMovieImage);
+            this.splitContainer1.Panel1.Controls.Add(this.pbBookImage);
+            this.splitContainer1.Panel1.Controls.Add(this.pbGameImage);
+            this.splitContainer1.Panel1.Controls.Add(this.pbMusicImage);
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(txtDescriptionValue);
-            splitContainer1.Panel2.Controls.Add(lblReleaseDateValue);
-            splitContainer1.Panel2.Controls.Add(lblGenreValue);
-            splitContainer1.Panel2.Controls.Add(lblCreatorValue);
-            splitContainer1.Panel2.Controls.Add(lblDescriptionTitle);
-            splitContainer1.Panel2.Controls.Add(lblReleaseDateTitle);
-            splitContainer1.Panel2.Controls.Add(lblGenreTitle);
-            splitContainer1.Panel2.Controls.Add(lblCreatorTitle);
-            splitContainer1.Panel2.Controls.Add(lblTitle);
-            splitContainer1.Panel2.Controls.Add(cmbAddToList);
-            splitContainer1.Panel2.Controls.Add(btnFavorite);
-            splitContainer1.Size = new Size(938, 558);
-            splitContainer1.SplitterDistance = 369;
-            splitContainer1.TabIndex = 0;
+            this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer1.Panel2.BackgroundImage = global::MediaShelfApp.Properties.Resources.BACKGROUND_WHITE;
+            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel4);
+            this.splitContainer1.Panel2.Controls.Add(this.cmbAddToList);
+            this.splitContainer1.Panel2.Controls.Add(this.btnFavorite);
+            this.splitContainer1.Size = new System.Drawing.Size(1172, 698);
+            this.splitContainer1.SplitterDistance = 461;
+            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.TabIndex = 0;
             // 
             // btnNavBack
             // 
-            btnNavBack.Location = new Point(18, 6);
-            btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(105, 29);
-            btnNavBack.TabIndex = 1;
-            btnNavBack.Text = "Back";
-            btnNavBack.UseVisualStyleBackColor = true;
-            btnNavBack.Click += btnNavBack_Click;
+            this.btnNavBack.AutoSize = true;
+            this.btnNavBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnNavBack.Location = new System.Drawing.Point(22, 8);
+            this.btnNavBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNavBack.Name = "btnNavBack";
+            this.btnNavBack.Size = new System.Drawing.Size(131, 36);
+            this.btnNavBack.TabIndex = 1;
+            this.btnNavBack.Text = "Back";
+            this.btnNavBack.UseVisualStyleBackColor = false;
             // 
             // pbMovieImage
             // 
-            pbMovieImage.Location = new Point(63, 56);
-            pbMovieImage.Name = "pbMovieImage";
-            pbMovieImage.Size = new Size(400, 400);
-            pbMovieImage.SizeMode = PictureBoxSizeMode.AutoSize;
-            pbMovieImage.TabIndex = 0;
-            pbMovieImage.TabStop = false;
+            this.pbMovieImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbMovieImage.Location = new System.Drawing.Point(79, 70);
+            this.pbMovieImage.Margin = new System.Windows.Forms.Padding(4);
+            this.pbMovieImage.Name = "pbMovieImage";
+            this.pbMovieImage.Size = new System.Drawing.Size(400, 400);
+            this.pbMovieImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMovieImage.TabIndex = 0;
+            this.pbMovieImage.TabStop = false;
             // 
             // pbBookImage
             // 
-            pbBookImage.Location = new Point(21, 74);
-            pbBookImage.Margin = new Padding(2, 2, 2, 2);
-            pbBookImage.Name = "pbBookImage";
-            pbBookImage.Size = new Size(369, 375);
-            pbBookImage.SizeMode = PictureBoxSizeMode.Zoom;
-            pbBookImage.TabIndex = 2;
-            pbBookImage.TabStop = false;
-            pbBookImage.Visible = false;
+            this.pbBookImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbBookImage.Location = new System.Drawing.Point(26, 92);
+            this.pbBookImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pbBookImage.Name = "pbBookImage";
+            this.pbBookImage.Size = new System.Drawing.Size(461, 469);
+            this.pbBookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBookImage.TabIndex = 2;
+            this.pbBookImage.TabStop = false;
+            this.pbBookImage.Visible = false;
             // 
             // pbGameImage
             // 
-            pbGameImage.Location = new Point(7, 74);
-            pbGameImage.Margin = new Padding(2, 2, 2, 2);
-            pbGameImage.Name = "pbGameImage";
-            pbGameImage.Size = new Size(369, 375);
-            pbGameImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbGameImage.TabIndex = 3;
-            pbGameImage.TabStop = false;
-            pbGameImage.Visible = false;
+            this.pbGameImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbGameImage.Location = new System.Drawing.Point(9, 92);
+            this.pbGameImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pbGameImage.Name = "pbGameImage";
+            this.pbGameImage.Size = new System.Drawing.Size(461, 469);
+            this.pbGameImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbGameImage.TabIndex = 3;
+            this.pbGameImage.TabStop = false;
+            this.pbGameImage.Visible = false;
             // 
             // pbMusicImage
             // 
-            pbMusicImage.Location = new Point(7, 74);
-            pbMusicImage.Margin = new Padding(2, 2, 2, 2);
-            pbMusicImage.Name = "pbMusicImage";
-            pbMusicImage.Size = new Size(369, 375);
-            pbMusicImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbMusicImage.TabIndex = 4;
-            pbMusicImage.TabStop = false;
-            pbMusicImage.Visible = false;
+            this.pbMusicImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbMusicImage.Location = new System.Drawing.Point(9, 92);
+            this.pbMusicImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMusicImage.Name = "pbMusicImage";
+            this.pbMusicImage.Size = new System.Drawing.Size(461, 469);
+            this.pbMusicImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMusicImage.TabIndex = 4;
+            this.pbMusicImage.TabStop = false;
+            this.pbMusicImage.Visible = false;
             // 
-            // txtDescriptionValue
+            // flowLayoutPanel4
             // 
-            txtDescriptionValue.Location = new Point(55, 304);
-            txtDescriptionValue.Margin = new Padding(2, 2, 2, 2);
-            txtDescriptionValue.Multiline = true;
-            txtDescriptionValue.Name = "txtDescriptionValue";
-            txtDescriptionValue.ReadOnly = true;
-            txtDescriptionValue.ScrollBars = ScrollBars.Vertical;
-            txtDescriptionValue.Size = new Size(483, 221);
-            txtDescriptionValue.TabIndex = 11;
-            // 
-            // lblReleaseDateValue
-            // 
-            lblReleaseDateValue.AutoSize = true;
-            lblReleaseDateValue.Location = new Point(163, 227);
-            lblReleaseDateValue.Margin = new Padding(2, 0, 2, 0);
-            lblReleaseDateValue.Name = "lblReleaseDateValue";
-            lblReleaseDateValue.Size = new Size(0, 20);
-            lblReleaseDateValue.TabIndex = 10;
-            // 
-            // lblGenreValue
-            // 
-            lblGenreValue.AutoSize = true;
-            lblGenreValue.Location = new Point(130, 195);
-            lblGenreValue.Margin = new Padding(2, 0, 2, 0);
-            lblGenreValue.Name = "lblGenreValue";
-            lblGenreValue.Size = new Size(0, 20);
-            lblGenreValue.TabIndex = 9;
-            // 
-            // lblCreatorValue
-            // 
-            lblCreatorValue.AutoSize = true;
-            lblCreatorValue.Location = new Point(130, 166);
-            lblCreatorValue.Margin = new Padding(2, 0, 2, 0);
-            lblCreatorValue.Name = "lblCreatorValue";
-            lblCreatorValue.Size = new Size(0, 20);
-            lblCreatorValue.TabIndex = 8;
-            // 
-            // lblDescriptionTitle
-            // 
-            lblDescriptionTitle.AutoSize = true;
-            lblDescriptionTitle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescriptionTitle.Location = new Point(54, 277);
-            lblDescriptionTitle.Name = "lblDescriptionTitle";
-            lblDescriptionTitle.Size = new Size(89, 20);
-            lblDescriptionTitle.TabIndex = 6;
-            lblDescriptionTitle.Text = "Description";
-            // 
-            // lblReleaseDateTitle
-            // 
-            lblReleaseDateTitle.AutoSize = true;
-            lblReleaseDateTitle.Location = new Point(55, 225);
-            lblReleaseDateTitle.Name = "lblReleaseDateTitle";
-            lblReleaseDateTitle.Size = new Size(99, 20);
-            lblReleaseDateTitle.TabIndex = 5;
-            lblReleaseDateTitle.Text = "Release Date:";
-            // 
-            // lblGenreTitle
-            // 
-            lblGenreTitle.AutoSize = true;
-            lblGenreTitle.Location = new Point(54, 193);
-            lblGenreTitle.Name = "lblGenreTitle";
-            lblGenreTitle.Size = new Size(51, 20);
-            lblGenreTitle.TabIndex = 4;
-            lblGenreTitle.Text = "Genre:";
-            // 
-            // lblCreatorTitle
-            // 
-            lblCreatorTitle.AutoSize = true;
-            lblCreatorTitle.Location = new Point(54, 161);
-            lblCreatorTitle.Name = "lblCreatorTitle";
-            lblCreatorTitle.Size = new Size(61, 20);
-            lblCreatorTitle.TabIndex = 3;
-            lblCreatorTitle.Text = "Creator:";
+            this.flowLayoutPanel4.AutoSize = true;
+            this.flowLayoutPanel4.Controls.Add(this.lblTitle);
+            this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel1);
+            this.flowLayoutPanel4.Controls.Add(this.lblDescriptionTitle);
+            this.flowLayoutPanel4.Controls.Add(this.txtDescriptionValue);
+            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(40, 70);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(607, 556);
+            this.flowLayoutPanel4.TabIndex = 12;
             // 
             // lblTitle
             // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 25.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(43, 56);
-            lblTitle.MaximumSize = new Size(492, 125);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(103, 57);
-            lblTitle.TabIndex = 2;
-            lblTitle.Text = "Title";
-            lblTitle.TextChanged += lblTitle_TextChanged;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(4, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.MaximumSize = new System.Drawing.Size(615, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(124, 68);
+            this.lblTitle.TabIndex = 2;
+            this.lblTitle.Text = "Title";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 86);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 18, 3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(141, 135);
+            this.flowLayoutPanel1.TabIndex = 5;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.Controls.Add(this.lblCreatorTitle);
+            this.flowLayoutPanel2.Controls.Add(this.lblGenreTitle);
+            this.flowLayoutPanel2.Controls.Add(this.lblReleaseDateTitle);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(125, 111);
+            this.flowLayoutPanel2.TabIndex = 6;
+            // 
+            // lblCreatorTitle
+            // 
+            this.lblCreatorTitle.AutoSize = true;
+            this.lblCreatorTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblCreatorTitle.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblCreatorTitle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCreatorTitle.Location = new System.Drawing.Point(47, 0);
+            this.lblCreatorTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 18);
+            this.lblCreatorTitle.Name = "lblCreatorTitle";
+            this.lblCreatorTitle.Size = new System.Drawing.Size(74, 25);
+            this.lblCreatorTitle.TabIndex = 3;
+            this.lblCreatorTitle.Text = "Creator:";
+            // 
+            // lblGenreTitle
+            // 
+            this.lblGenreTitle.AutoSize = true;
+            this.lblGenreTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblGenreTitle.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblGenreTitle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGenreTitle.Location = new System.Drawing.Point(59, 43);
+            this.lblGenreTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 18);
+            this.lblGenreTitle.Name = "lblGenreTitle";
+            this.lblGenreTitle.Size = new System.Drawing.Size(62, 25);
+            this.lblGenreTitle.TabIndex = 4;
+            this.lblGenreTitle.Text = "Genre:";
+            // 
+            // lblReleaseDateTitle
+            // 
+            this.lblReleaseDateTitle.AutoSize = true;
+            this.lblReleaseDateTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblReleaseDateTitle.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblReleaseDateTitle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReleaseDateTitle.Location = new System.Drawing.Point(4, 86);
+            this.lblReleaseDateTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReleaseDateTitle.Name = "lblReleaseDateTitle";
+            this.lblReleaseDateTitle.Size = new System.Drawing.Size(117, 25);
+            this.lblReleaseDateTitle.TabIndex = 5;
+            this.lblReleaseDateTitle.Text = "Release Date:";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel3.Controls.Add(this.lblCreatorValue);
+            this.flowLayoutPanel3.Controls.Add(this.lblGenreValue);
+            this.flowLayoutPanel3.Controls.Add(this.lblReleaseDateValue);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(134, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(4, 129);
+            this.flowLayoutPanel3.TabIndex = 7;
+            // 
+            // lblCreatorValue
+            // 
+            this.lblCreatorValue.AutoSize = true;
+            this.lblCreatorValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblCreatorValue.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblCreatorValue.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCreatorValue.Location = new System.Drawing.Point(2, 0);
+            this.lblCreatorValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 18);
+            this.lblCreatorValue.Name = "lblCreatorValue";
+            this.lblCreatorValue.Size = new System.Drawing.Size(0, 25);
+            this.lblCreatorValue.TabIndex = 8;
+            // 
+            // lblGenreValue
+            // 
+            this.lblGenreValue.AutoSize = true;
+            this.lblGenreValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblGenreValue.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblGenreValue.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGenreValue.Location = new System.Drawing.Point(2, 43);
+            this.lblGenreValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 18);
+            this.lblGenreValue.Name = "lblGenreValue";
+            this.lblGenreValue.Size = new System.Drawing.Size(0, 25);
+            this.lblGenreValue.TabIndex = 9;
+            // 
+            // lblReleaseDateValue
+            // 
+            this.lblReleaseDateValue.AutoSize = true;
+            this.lblReleaseDateValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblReleaseDateValue.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblReleaseDateValue.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReleaseDateValue.Location = new System.Drawing.Point(2, 86);
+            this.lblReleaseDateValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 18);
+            this.lblReleaseDateValue.Name = "lblReleaseDateValue";
+            this.lblReleaseDateValue.Size = new System.Drawing.Size(0, 25);
+            this.lblReleaseDateValue.TabIndex = 10;
+            // 
+            // lblDescriptionTitle
+            // 
+            this.lblDescriptionTitle.AutoSize = true;
+            this.lblDescriptionTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDescriptionTitle.Location = new System.Drawing.Point(4, 252);
+            this.lblDescriptionTitle.Margin = new System.Windows.Forms.Padding(4, 28, 4, 0);
+            this.lblDescriptionTitle.Name = "lblDescriptionTitle";
+            this.lblDescriptionTitle.Size = new System.Drawing.Size(109, 25);
+            this.lblDescriptionTitle.TabIndex = 6;
+            this.lblDescriptionTitle.Text = "Description";
+            // 
+            // txtDescriptionValue
+            // 
+            this.txtDescriptionValue.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtDescriptionValue.Location = new System.Drawing.Point(2, 279);
+            this.txtDescriptionValue.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescriptionValue.Multiline = true;
+            this.txtDescriptionValue.Name = "txtDescriptionValue";
+            this.txtDescriptionValue.ReadOnly = true;
+            this.txtDescriptionValue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescriptionValue.Size = new System.Drawing.Size(603, 275);
+            this.txtDescriptionValue.TabIndex = 11;
             // 
             // cmbAddToList
             // 
-            cmbAddToList.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbAddToList.FormattingEnabled = true;
-            cmbAddToList.Location = new Point(222, 10);
-            cmbAddToList.Name = "cmbAddToList";
-            cmbAddToList.Size = new Size(171, 28);
-            cmbAddToList.TabIndex = 1;
+            this.cmbAddToList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAddToList.FormattingEnabled = true;
+            this.cmbAddToList.Location = new System.Drawing.Point(278, 12);
+            this.cmbAddToList.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbAddToList.Name = "cmbAddToList";
+            this.cmbAddToList.Size = new System.Drawing.Size(213, 33);
+            this.cmbAddToList.TabIndex = 1;
             // 
             // btnFavorite
             // 
-            btnFavorite.Location = new Point(408, 8);
-            btnFavorite.Name = "btnFavorite";
-            btnFavorite.Size = new Size(119, 29);
-            btnFavorite.TabIndex = 0;
-            btnFavorite.Text = "Favorite";
-            btnFavorite.UseVisualStyleBackColor = true;
-            btnFavorite.Click += btnFavorite_Click;
+            this.btnFavorite.AutoSize = true;
+            this.btnFavorite.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFavorite.Location = new System.Drawing.Point(510, 10);
+            this.btnFavorite.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFavorite.Name = "btnFavorite";
+            this.btnFavorite.Size = new System.Drawing.Size(149, 36);
+            this.btnFavorite.TabIndex = 0;
+            this.btnFavorite.Text = "Add to List";
+            this.btnFavorite.UseVisualStyleBackColor = true;
             // 
             // Detailed_Item_Listing_Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(938, 558);
-            Controls.Add(splitContainer1);
-            Name = "Detailed_Item_Listing_Form";
-            Text = "Detailed Item Listing";
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
-            splitContainer1.Panel2.ResumeLayout(false);
-            splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbMovieImage).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbBookImage).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbGameImage).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbMusicImage).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1172, 698);
+            this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Detailed_Item_Listing_Form";
+            this.Text = "Detailed Item Listing";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMovieImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBookImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMusicImage)).EndInit();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -284,5 +389,9 @@
         private PictureBox pbBookImage;
         private PictureBox pbGameImage;
         private PictureBox pbMusicImage;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private FlowLayoutPanel flowLayoutPanel4;
     }
 }
