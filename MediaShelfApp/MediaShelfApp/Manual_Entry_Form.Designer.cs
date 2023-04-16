@@ -28,224 +28,319 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblManualEntry = new Label();
-            lblTitle = new Label();
-            txtTitle = new TextBox();
-            lblCreator = new Label();
-            lblTags = new Label();
-            lblReleaseDate = new Label();
-            txtCreator = new TextBox();
-            txtTags = new TextBox();
-            dtpReleaseDate = new DateTimePicker();
-            lblDescription = new Label();
-            txtDescriptionText = new TextBox();
-            picboxImage = new PictureBox();
-            lblTagName = new Label();
-            txtTagName = new TextBox();
-            lblAddTag = new Label();
-            btnBackButton = new Button();
-            btnAddButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)picboxImage).BeginInit();
-            SuspendLayout();
+            this.lblManualEntry = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.lblCreator = new System.Windows.Forms.Label();
+            this.lblTags = new System.Windows.Forms.Label();
+            this.lblReleaseDate = new System.Windows.Forms.Label();
+            this.txtCreator = new System.Windows.Forms.TextBox();
+            this.txtTags = new System.Windows.Forms.TextBox();
+            this.dtpReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescriptionText = new System.Windows.Forms.TextBox();
+            this.picboxImage = new System.Windows.Forms.PictureBox();
+            this.lblTagName = new System.Windows.Forms.Label();
+            this.txtTagName = new System.Windows.Forms.TextBox();
+            this.lblAddTag = new System.Windows.Forms.Label();
+            this.btnBackButton = new System.Windows.Forms.Button();
+            this.btnAddButton = new System.Windows.Forms.Button();
+            this.flpManualEntryFields = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpTagName = new System.Windows.Forms.FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
+            this.flpManualEntryFields.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flpTagName.SuspendLayout();
+            this.SuspendLayout();
             // 
             // lblManualEntry
             // 
-            lblManualEntry.AutoSize = true;
-            lblManualEntry.Font = new Font("Ebrima", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblManualEntry.Location = new Point(368, 28);
-            lblManualEntry.Name = "lblManualEntry";
-            lblManualEntry.Size = new Size(191, 41);
-            lblManualEntry.TabIndex = 7;
-            lblManualEntry.Text = "Manual Entry";
+            this.lblManualEntry.AutoSize = true;
+            this.lblManualEntry.BackColor = System.Drawing.Color.Transparent;
+            this.lblManualEntry.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblManualEntry.Location = new System.Drawing.Point(460, 35);
+            this.lblManualEntry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblManualEntry.Name = "lblManualEntry";
+            this.lblManualEntry.Size = new System.Drawing.Size(227, 48);
+            this.lblManualEntry.TabIndex = 7;
+            this.lblManualEntry.Text = "Manual Entry";
             // 
             // lblTitle
             // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(395, 144);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(41, 20);
-            lblTitle.TabIndex = 8;
-            lblTitle.Text = "Title:";
-            lblTitle.TextAlign = ContentAlignment.TopRight;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblTitle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(73, 8);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(48, 25);
+            this.lblTitle.TabIndex = 8;
+            this.lblTitle.Text = "Title:";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtTitle
             // 
-            txtTitle.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTitle.Location = new Point(448, 136);
-            txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(304, 28);
-            txtTitle.TabIndex = 9;
+            this.txtTitle.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTitle.Location = new System.Drawing.Point(4, 7);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 7);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(379, 32);
+            this.txtTitle.TabIndex = 9;
             // 
             // lblCreator
             // 
-            lblCreator.AutoSize = true;
-            lblCreator.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCreator.Location = new Point(375, 183);
-            lblCreator.Name = "lblCreator";
-            lblCreator.Size = new Size(61, 20);
-            lblCreator.TabIndex = 10;
-            lblCreator.Text = "Creator:";
-            lblCreator.TextAlign = ContentAlignment.TopRight;
+            this.lblCreator.AutoSize = true;
+            this.lblCreator.BackColor = System.Drawing.Color.Transparent;
+            this.lblCreator.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblCreator.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCreator.Location = new System.Drawing.Point(47, 51);
+            this.lblCreator.Margin = new System.Windows.Forms.Padding(4, 0, 4, 18);
+            this.lblCreator.Name = "lblCreator";
+            this.lblCreator.Size = new System.Drawing.Size(74, 25);
+            this.lblCreator.TabIndex = 10;
+            this.lblCreator.Text = "Creator:";
+            this.lblCreator.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblTags
             // 
-            lblTags.AutoSize = true;
-            lblTags.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTags.Location = new Point(348, 221);
-            lblTags.Name = "lblTags";
-            lblTags.Size = new Size(88, 20);
-            lblTags.TabIndex = 12;
-            lblTags.Text = "Genre/Tags:";
-            lblTags.TextAlign = ContentAlignment.TopRight;
+            this.lblTags.AutoSize = true;
+            this.lblTags.BackColor = System.Drawing.Color.Transparent;
+            this.lblTags.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblTags.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTags.Location = new System.Drawing.Point(68, 94);
+            this.lblTags.Margin = new System.Windows.Forms.Padding(4, 0, 4, 18);
+            this.lblTags.Name = "lblTags";
+            this.lblTags.Size = new System.Drawing.Size(53, 25);
+            this.lblTags.TabIndex = 12;
+            this.lblTags.Text = "Tags:";
+            this.lblTags.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblReleaseDate
             // 
-            lblReleaseDate.AutoSize = true;
-            lblReleaseDate.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblReleaseDate.Location = new Point(337, 260);
-            lblReleaseDate.Name = "lblReleaseDate";
-            lblReleaseDate.Size = new Size(99, 20);
-            lblReleaseDate.TabIndex = 13;
-            lblReleaseDate.Text = "Release Date:";
-            lblReleaseDate.TextAlign = ContentAlignment.TopRight;
+            this.lblReleaseDate.AutoSize = true;
+            this.lblReleaseDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblReleaseDate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblReleaseDate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReleaseDate.Location = new System.Drawing.Point(4, 138);
+            this.lblReleaseDate.Margin = new System.Windows.Forms.Padding(4, 1, 4, 0);
+            this.lblReleaseDate.Name = "lblReleaseDate";
+            this.lblReleaseDate.Size = new System.Drawing.Size(117, 25);
+            this.lblReleaseDate.TabIndex = 13;
+            this.lblReleaseDate.Text = "Release Date:";
+            this.lblReleaseDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtCreator
             // 
-            txtCreator.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCreator.Location = new Point(448, 175);
-            txtCreator.Name = "txtCreator";
-            txtCreator.Size = new Size(304, 28);
-            txtCreator.TabIndex = 14;
+            this.txtCreator.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCreator.Location = new System.Drawing.Point(4, 50);
+            this.txtCreator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 7);
+            this.txtCreator.Name = "txtCreator";
+            this.txtCreator.Size = new System.Drawing.Size(379, 32);
+            this.txtCreator.TabIndex = 14;
             // 
             // txtTags
             // 
-            txtTags.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTags.Location = new Point(448, 213);
-            txtTags.Name = "txtTags";
-            txtTags.Size = new Size(304, 28);
-            txtTags.TabIndex = 16;
+            this.txtTags.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTags.Location = new System.Drawing.Point(4, 93);
+            this.txtTags.Margin = new System.Windows.Forms.Padding(4, 4, 4, 7);
+            this.txtTags.Name = "txtTags";
+            this.txtTags.Size = new System.Drawing.Size(379, 32);
+            this.txtTags.TabIndex = 16;
             // 
             // dtpReleaseDate
             // 
-            dtpReleaseDate.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpReleaseDate.Location = new Point(448, 252);
-            dtpReleaseDate.Name = "dtpReleaseDate";
-            dtpReleaseDate.Size = new Size(304, 28);
-            dtpReleaseDate.TabIndex = 17;
+            this.dtpReleaseDate.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpReleaseDate.Location = new System.Drawing.Point(4, 136);
+            this.dtpReleaseDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpReleaseDate.Name = "dtpReleaseDate";
+            this.dtpReleaseDate.Size = new System.Drawing.Size(379, 32);
+            this.dtpReleaseDate.TabIndex = 17;
             // 
             // lblDescription
             // 
-            lblDescription.AutoSize = true;
-            lblDescription.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDescription.Location = new Point(57, 320);
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(88, 20);
-            lblDescription.TabIndex = 18;
-            lblDescription.Text = "Description:";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDescription.Location = new System.Drawing.Point(65, 400);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(106, 25);
+            this.lblDescription.TabIndex = 18;
+            this.lblDescription.Text = "Description:";
             // 
             // txtDescriptionText
             // 
-            txtDescriptionText.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDescriptionText.Location = new Point(46, 353);
-            txtDescriptionText.Multiline = true;
-            txtDescriptionText.Name = "txtDescriptionText";
-            txtDescriptionText.Size = new Size(791, 136);
-            txtDescriptionText.TabIndex = 19;
+            this.txtDescriptionText.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDescriptionText.Location = new System.Drawing.Point(71, 441);
+            this.txtDescriptionText.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescriptionText.Multiline = true;
+            this.txtDescriptionText.Name = "txtDescriptionText";
+            this.txtDescriptionText.Size = new System.Drawing.Size(975, 169);
+            this.txtDescriptionText.TabIndex = 19;
             // 
             // picboxImage
             // 
-            picboxImage.BackColor = Color.White;
-            picboxImage.BackgroundImage = Properties.Resources.uploadImagePrompt;
-            picboxImage.BackgroundImageLayout = ImageLayout.Center;
-            picboxImage.BorderStyle = BorderStyle.FixedSingle;
-            picboxImage.Cursor = Cursors.Hand;
-            picboxImage.Location = new Point(57, 98);
-            picboxImage.Name = "picboxImage";
-            picboxImage.Size = new Size(200, 200);
-            picboxImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            picboxImage.TabIndex = 21;
-            picboxImage.TabStop = false;
-            picboxImage.Click += picboxImage_Click;
+            this.picboxImage.BackColor = System.Drawing.Color.White;
+            this.picboxImage.BackgroundImage = global::MediaShelfApp.Properties.Resources.uploadImagePrompt;
+            this.picboxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picboxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picboxImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picboxImage.Location = new System.Drawing.Point(71, 122);
+            this.picboxImage.Margin = new System.Windows.Forms.Padding(4);
+            this.picboxImage.Name = "picboxImage";
+            this.picboxImage.Size = new System.Drawing.Size(250, 250);
+            this.picboxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxImage.TabIndex = 21;
+            this.picboxImage.TabStop = false;
             // 
             // lblTagName
             // 
-            lblTagName.AutoSize = true;
-            lblTagName.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTagName.Location = new Point(282, 233);
-            lblTagName.Name = "lblTagName";
-            lblTagName.Size = new Size(81, 20);
-            lblTagName.TabIndex = 22;
-            lblTagName.Text = "Tag Name:";
-            lblTagName.Visible = false;
+            this.lblTagName.AutoSize = true;
+            this.lblTagName.BackColor = System.Drawing.Color.Transparent;
+            this.lblTagName.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTagName.Location = new System.Drawing.Point(4, 7);
+            this.lblTagName.Margin = new System.Windows.Forms.Padding(4, 7, 4, 0);
+            this.lblTagName.Name = "lblTagName";
+            this.lblTagName.Size = new System.Drawing.Size(97, 25);
+            this.lblTagName.TabIndex = 22;
+            this.lblTagName.Text = "Tag Name:";
             // 
             // txtTagName
             // 
-            txtTagName.Location = new Point(375, 230);
-            txtTagName.Name = "txtTagName";
-            txtTagName.Size = new Size(222, 27);
-            txtTagName.TabIndex = 23;
-            txtTagName.Visible = false;
+            this.txtTagName.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTagName.Location = new System.Drawing.Point(109, 4);
+            this.txtTagName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTagName.Name = "txtTagName";
+            this.txtTagName.Size = new System.Drawing.Size(276, 32);
+            this.txtTagName.TabIndex = 23;
             // 
             // lblAddTag
             // 
-            lblAddTag.AutoSize = true;
-            lblAddTag.Font = new Font("Ebrima", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAddTag.Location = new Point(375, 28);
-            lblAddTag.Name = "lblAddTag";
-            lblAddTag.Size = new Size(153, 41);
-            lblAddTag.TabIndex = 24;
-            lblAddTag.Text = "Add a Tag";
-            lblAddTag.Visible = false;
+            this.lblAddTag.AutoSize = true;
+            this.lblAddTag.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddTag.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAddTag.Location = new System.Drawing.Point(469, 35);
+            this.lblAddTag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddTag.Name = "lblAddTag";
+            this.lblAddTag.Size = new System.Drawing.Size(181, 48);
+            this.lblAddTag.TabIndex = 24;
+            this.lblAddTag.Text = "Add a Tag";
+            this.lblAddTag.Visible = false;
             // 
             // btnBackButton
             // 
-            btnBackButton.Location = new Point(12, 12);
-            btnBackButton.Name = "btnBackButton";
-            btnBackButton.Size = new Size(94, 29);
-            btnBackButton.TabIndex = 25;
-            btnBackButton.Text = "Back";
-            btnBackButton.UseVisualStyleBackColor = true;
-            btnBackButton.Click += btnNavBack_Click;
+            this.btnBackButton.AutoSize = true;
+            this.btnBackButton.Location = new System.Drawing.Point(15, 15);
+            this.btnBackButton.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBackButton.Name = "btnBackButton";
+            this.btnBackButton.Size = new System.Drawing.Size(118, 36);
+            this.btnBackButton.TabIndex = 25;
+            this.btnBackButton.Text = "Back";
+            this.btnBackButton.UseVisualStyleBackColor = true;
             // 
             // btnAddButton
             // 
-            btnAddButton.Location = new Point(756, 495);
-            btnAddButton.Name = "btnAddButton";
-            btnAddButton.Size = new Size(81, 29);
-            btnAddButton.TabIndex = 26;
-            btnAddButton.Text = "Add";
-            btnAddButton.UseVisualStyleBackColor = true;
-            btnAddButton.Click += btnAddButton_Click;
+            this.btnAddButton.AutoSize = true;
+            this.btnAddButton.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddButton.Location = new System.Drawing.Point(945, 618);
+            this.btnAddButton.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddButton.Name = "btnAddButton";
+            this.btnAddButton.Size = new System.Drawing.Size(101, 42);
+            this.btnAddButton.TabIndex = 26;
+            this.btnAddButton.Text = "Add";
+            this.btnAddButton.UseVisualStyleBackColor = true;
+            // 
+            // flpManualEntryFields
+            // 
+            this.flpManualEntryFields.AutoSize = true;
+            this.flpManualEntryFields.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpManualEntryFields.BackColor = System.Drawing.Color.Transparent;
+            this.flpManualEntryFields.Controls.Add(this.flowLayoutPanel2);
+            this.flpManualEntryFields.Controls.Add(this.flowLayoutPanel3);
+            this.flpManualEntryFields.Location = new System.Drawing.Point(352, 147);
+            this.flpManualEntryFields.Name = "flpManualEntryFields";
+            this.flpManualEntryFields.Size = new System.Drawing.Size(524, 178);
+            this.flpManualEntryFields.TabIndex = 27;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Controls.Add(this.lblTitle);
+            this.flowLayoutPanel2.Controls.Add(this.lblCreator);
+            this.flowLayoutPanel2.Controls.Add(this.lblTags);
+            this.flowLayoutPanel2.Controls.Add(this.lblReleaseDate);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(125, 171);
+            this.flowLayoutPanel2.TabIndex = 28;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel3.Controls.Add(this.txtTitle);
+            this.flowLayoutPanel3.Controls.Add(this.txtCreator);
+            this.flowLayoutPanel3.Controls.Add(this.txtTags);
+            this.flowLayoutPanel3.Controls.Add(this.dtpReleaseDate);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(134, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(387, 172);
+            this.flowLayoutPanel3.TabIndex = 28;
+            // 
+            // flpTagName
+            // 
+            this.flpTagName.AutoSize = true;
+            this.flpTagName.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpTagName.BackColor = System.Drawing.Color.Transparent;
+            this.flpTagName.Controls.Add(this.lblTagName);
+            this.flpTagName.Controls.Add(this.txtTagName);
+            this.flpTagName.Location = new System.Drawing.Point(350, 281);
+            this.flpTagName.Name = "flpTagName";
+            this.flpTagName.Size = new System.Drawing.Size(389, 40);
+            this.flpTagName.TabIndex = 28;
+            this.flpTagName.Visible = false;
             // 
             // Manual_Entry_Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(882, 553);
-            Controls.Add(btnAddButton);
-            Controls.Add(btnBackButton);
-            Controls.Add(lblAddTag);
-            Controls.Add(txtTagName);
-            Controls.Add(lblTagName);
-            Controls.Add(picboxImage);
-            Controls.Add(txtDescriptionText);
-            Controls.Add(lblDescription);
-            Controls.Add(dtpReleaseDate);
-            Controls.Add(txtTags);
-            Controls.Add(txtCreator);
-            Controls.Add(lblReleaseDate);
-            Controls.Add(lblTags);
-            Controls.Add(lblCreator);
-            Controls.Add(txtTitle);
-            Controls.Add(lblTitle);
-            Controls.Add(lblManualEntry);
-            Name = "Manual_Entry_Form";
-            Text = "MediaShelf - Make Manual Entry";
-            ((System.ComponentModel.ISupportInitialize)picboxImage).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackgroundImage = global::MediaShelfApp.Properties.Resources.BACKGROUND_WHITE;
+            this.ClientSize = new System.Drawing.Size(1102, 691);
+            this.Controls.Add(this.flpTagName);
+            this.Controls.Add(this.btnAddButton);
+            this.Controls.Add(this.btnBackButton);
+            this.Controls.Add(this.lblAddTag);
+            this.Controls.Add(this.picboxImage);
+            this.Controls.Add(this.txtDescriptionText);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.lblManualEntry);
+            this.Controls.Add(this.flpManualEntryFields);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Manual_Entry_Form";
+            this.Text = "MediaShelf - Make Manual Entry";
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
+            this.flpManualEntryFields.ResumeLayout(false);
+            this.flpManualEntryFields.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flpTagName.ResumeLayout(false);
+            this.flpTagName.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -266,5 +361,9 @@
         private Label lblAddTag;
         private Button btnBackButton;
         private Button btnAddButton;
+        private FlowLayoutPanel flpManualEntryFields;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private FlowLayoutPanel flpTagName;
     }
 }
