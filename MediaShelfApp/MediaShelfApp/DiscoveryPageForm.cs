@@ -35,6 +35,21 @@ namespace MediaShelfApp
         //use when user changes fontSize
         public static void changeFontSize(Form form, int fs, bool isDiscoveryForm = false)
         {
+            /*
+             * If the form whose font size is being changed is the Discovery Form, 
+             * then this function only changes the non-title labels and buttons.
+             * Else, the only thing the function DOESN'T change are title labels (any label whose size > 12).
+             * 
+             * To control re-sizing of controls (for all forms), either 
+             * 1.) min/max controller size was set maually (so autosize is still set to true). 
+             *     The size to set is determined by its size when its font size is maxed (12).
+             * or 2.) autosize was set to false.
+             * 
+             * To maintain positioning after auto re-sizing, some controls were put in flow layout panels.
+             * 
+             */
+
+
             foreach (Control c in form.Controls)
             {
                 if (c.HasChildren)
