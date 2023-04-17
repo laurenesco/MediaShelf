@@ -1,4 +1,4 @@
-﻿namespace MediaShelfApp
+namespace MediaShelfApp
 {
     partial class DiscoveryPageForm
     {
@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiscoveryPageForm));
             this.btnMovies = new System.Windows.Forms.Button();
             this.btnTVShows = new System.Windows.Forms.Button();
-            this.btnBook = new System.Windows.Forms.Button();
             this.btnGames = new System.Windows.Forms.Button();
             this.lblMediaShelf = new System.Windows.Forms.Label();
             this.lblRecommendations = new System.Windows.Forms.Label();
@@ -50,7 +49,7 @@
             this.lblManualEntries = new System.Windows.Forms.Label();
             this.lblWishlist = new System.Windows.Forms.Label();
             this.lblList3Desc = new System.Windows.Forms.Label();
-            this.lblList2Desc = new System.Windows.Forms.Label();
+            this.lblManualTagsDesc = new System.Windows.Forms.Label();
             this.lblWishlistDesc = new System.Windows.Forms.Label();
             this.lblManualEntriesDesc = new System.Windows.Forms.Label();
             this.lblFavoritesDesc = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@
             this.lblRecTitle5 = new System.Windows.Forms.Label();
             this.lblRecTitle6 = new System.Windows.Forms.Label();
             this.btnRecommendations = new System.Windows.Forms.Button();
+            this.btnBooks = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbRec1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRec2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRec3)).BeginInit();
@@ -112,7 +112,9 @@
             this.btnMovies.Size = new System.Drawing.Size(110, 110);
             this.btnMovies.TabIndex = 1;
             this.btnMovies.Text = "Movies";
+            this.btnMovies.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMovies.UseVisualStyleBackColor = false;
+            this.btnMovies.Click += new System.EventHandler(this.btnMovies_Click);
             // 
             // btnTVShows
             // 
@@ -126,21 +128,9 @@
             this.btnTVShows.Size = new System.Drawing.Size(110, 110);
             this.btnTVShows.TabIndex = 2;
             this.btnTVShows.Text = "TV Shows";
+            this.btnTVShows.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTVShows.UseVisualStyleBackColor = false;
-            // 
-            // btnBook
-            // 
-            this.btnBook.BackColor = System.Drawing.Color.Red;
-            this.btnBook.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBook.BackgroundImage")));
-            this.btnBook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBook.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBook.Location = new System.Drawing.Point(310, 78);
-            this.btnBook.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(110, 110);
-            this.btnBook.TabIndex = 3;
-            this.btnBook.Text = "Books";
-            this.btnBook.UseVisualStyleBackColor = false;
+            this.btnTVShows.Click += new System.EventHandler(this.btnTVShows_Click);
             // 
             // btnGames
             // 
@@ -155,7 +145,9 @@
             this.btnGames.Size = new System.Drawing.Size(110, 110);
             this.btnGames.TabIndex = 6;
             this.btnGames.Text = "Games";
+            this.btnGames.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGames.UseVisualStyleBackColor = false;
+            this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
             // 
             // lblMediaShelf
             // 
@@ -317,6 +309,7 @@
             this.lblManualTags.AutoEllipsis = true;
             this.lblManualTags.AutoSize = true;
             this.lblManualTags.BackColor = System.Drawing.Color.Transparent;
+            this.lblManualTags.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblManualTags.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblManualTags.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblManualTags.Location = new System.Drawing.Point(2, 188);
@@ -332,6 +325,7 @@
             // 
             this.lblManualEntries.AutoEllipsis = true;
             this.lblManualEntries.BackColor = System.Drawing.Color.Transparent;
+            this.lblManualEntries.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblManualEntries.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblManualEntries.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblManualEntries.Location = new System.Drawing.Point(2, 128);
@@ -347,6 +341,7 @@
             // 
             this.lblWishlist.AutoEllipsis = true;
             this.lblWishlist.BackColor = System.Drawing.Color.Transparent;
+            this.lblWishlist.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblWishlist.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblWishlist.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblWishlist.Location = new System.Drawing.Point(2, 64);
@@ -373,20 +368,20 @@
             this.lblList3Desc.TabIndex = 62;
             this.lblList3Desc.Text = "Description:";
             // 
-            // lblList2Desc
+            // lblManualTagsDesc
             // 
-            this.lblList2Desc.AutoEllipsis = true;
-            this.lblList2Desc.AutoSize = true;
-            this.lblList2Desc.BackColor = System.Drawing.Color.Transparent;
-            this.lblList2Desc.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblList2Desc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblList2Desc.Location = new System.Drawing.Point(2, 220);
-            this.lblList2Desc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblList2Desc.MinimumSize = new System.Drawing.Size(1163, 0);
-            this.lblList2Desc.Name = "lblList2Desc";
-            this.lblList2Desc.Size = new System.Drawing.Size(1163, 28);
-            this.lblList2Desc.TabIndex = 61;
-            this.lblList2Desc.Text = "Description:";
+            this.lblManualTagsDesc.AutoEllipsis = true;
+            this.lblManualTagsDesc.AutoSize = true;
+            this.lblManualTagsDesc.BackColor = System.Drawing.Color.Transparent;
+            this.lblManualTagsDesc.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblManualTagsDesc.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManualTagsDesc.Location = new System.Drawing.Point(2, 220);
+            this.lblManualTagsDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManualTagsDesc.MinimumSize = new System.Drawing.Size(1163, 0);
+            this.lblManualTagsDesc.Name = "lblManualTagsDesc";
+            this.lblManualTagsDesc.Size = new System.Drawing.Size(1163, 28);
+            this.lblManualTagsDesc.TabIndex = 61;
+            this.lblManualTagsDesc.Text = "Description:";
             // 
             // lblWishlistDesc
             // 
@@ -438,6 +433,7 @@
             // 
             this.lblFavorites.AutoEllipsis = true;
             this.lblFavorites.BackColor = System.Drawing.Color.Transparent;
+            this.lblFavorites.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFavorites.Font = new System.Drawing.Font("Ebrima", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblFavorites.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblFavorites.Location = new System.Drawing.Point(2, 0);
@@ -473,7 +469,7 @@
             this.btnSearch.TabIndex = 67;
             this.btnSearch.Text = "Search Bar";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearchBar_Click);
             // 
             // btnSettings
             // 
@@ -592,7 +588,7 @@
             this.flowLayoutPanel15.Controls.Add(this.lblManualEntries);
             this.flowLayoutPanel15.Controls.Add(this.lblManualEntriesDesc);
             this.flowLayoutPanel15.Controls.Add(this.lblManualTags);
-            this.flowLayoutPanel15.Controls.Add(this.lblList2Desc);
+            this.flowLayoutPanel15.Controls.Add(this.lblManualTagsDesc);
             this.flowLayoutPanel15.Controls.Add(this.lblList3);
             this.flowLayoutPanel15.Controls.Add(this.lblList3Desc);
             this.flowLayoutPanel15.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -610,13 +606,16 @@
             this.btnMusic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMusic.BackgroundImage")));
             this.btnMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMusic.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMusic.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMusic.Location = new System.Drawing.Point(444, 207);
             this.btnMusic.Margin = new System.Windows.Forms.Padding(2);
             this.btnMusic.Name = "btnMusic";
             this.btnMusic.Size = new System.Drawing.Size(110, 110);
             this.btnMusic.TabIndex = 0;
             this.btnMusic.Text = "Music";
+            this.btnMusic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMusic.UseVisualStyleBackColor = false;
+            this.btnMusic.Click += new System.EventHandler(this.btnMusic_Click);
             // 
             // lblRecTitle2
             // 
@@ -840,6 +839,22 @@
             this.btnRecommendations.UseVisualStyleBackColor = false;
             this.btnRecommendations.Click += new System.EventHandler(this.btnRecommendations_Click);
             // 
+            // btnBooks
+            // 
+            this.btnBooks.BackColor = System.Drawing.Color.Red;
+            this.btnBooks.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBooks.BackgroundImage")));
+            this.btnBooks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBooks.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBooks.Location = new System.Drawing.Point(310, 78);
+            this.btnBooks.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBooks.Name = "btnBooks";
+            this.btnBooks.Size = new System.Drawing.Size(110, 110);
+            this.btnBooks.TabIndex = 83;
+            this.btnBooks.Text = "Books";
+            this.btnBooks.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBooks.UseVisualStyleBackColor = false;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
+            // 
             // DiscoveryPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -879,11 +894,10 @@
             this.Controls.Add(this.lblRecommendations);
             this.Controls.Add(this.lblMediaShelf);
             this.Controls.Add(this.btnGames);
-            this.Controls.Add(this.btnBook);
             this.Controls.Add(this.btnTVShows);
             this.Controls.Add(this.btnMovies);
             this.Controls.Add(this.btnMusic);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.btnBooks);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DiscoveryPageForm";
             this.Text = "Discovery";
@@ -918,7 +932,6 @@
         #endregion
         private Button btnMovies;
         private Button btnTVShows;
-        private Button btnBook;
         private Button btnGames;
         private Label lblMediaShelf;
         private Label lblRecommendations;
@@ -937,7 +950,7 @@
         private Label lblManualEntries;
         private Label lblWishlist;
         private Label lblList3Desc;
-        private Label lblList2Desc;
+        private Label lblManualTagsDesc;
         private Label lblWishlistDesc;
         private Label lblManualEntriesDesc;
         private Label lblFavoritesDesc;
@@ -970,5 +983,6 @@
         private Label lblRecTitle5;
         private Label lblRecTitle6;
         private Button btnRecommendations;
+        private Button btnBooks;
     }
 }
