@@ -40,6 +40,7 @@ namespace MediaShelfApp
         public Manual_Entry_Form(string list, ListView caller)
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             this.list = list;
             this.caller = caller;
@@ -70,6 +71,7 @@ namespace MediaShelfApp
             this.lblTagName.Visible = true;
             this.txtTagName.Visible = true;
             this.lblAddTag.Visible = true;
+            this.flpTagName.Visible = true;
         }
 
         //refreshes Manual Entry Form

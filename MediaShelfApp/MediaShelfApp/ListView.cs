@@ -30,6 +30,7 @@ namespace MediaShelfApp
         public ListView(String list, Form caller)
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
             this.list = list;
             this.caller = caller;            
 

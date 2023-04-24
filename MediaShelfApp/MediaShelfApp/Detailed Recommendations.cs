@@ -34,6 +34,7 @@ namespace MediaShelfApp
         public Detailed_Recommendations()
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             // Initiate Database Connection
             try

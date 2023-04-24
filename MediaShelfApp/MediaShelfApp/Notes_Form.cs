@@ -37,6 +37,7 @@ namespace MediaShelfApp
         public Notes_Form(int item_API_ID, int item_ID, string title)
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             // Set variables for the instance of the form
             this.item_API_ID = item_API_ID;

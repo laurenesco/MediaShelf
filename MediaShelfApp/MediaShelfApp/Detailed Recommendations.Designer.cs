@@ -28,65 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblRecommendations = new Label();
-            dgvResults = new DataGridView();
-            btnBack = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvResults).BeginInit();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detailed_Recommendations));
+            this.lblRecommendations = new System.Windows.Forms.Label();
+            this.dgvResults = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
+            this.SuspendLayout();
             // 
             // lblRecommendations
             // 
-            lblRecommendations.AutoSize = true;
-            lblRecommendations.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblRecommendations.Location = new Point(396, 12);
-            lblRecommendations.Margin = new Padding(2, 0, 2, 0);
-            lblRecommendations.Name = "lblRecommendations";
-            lblRecommendations.Size = new Size(351, 54);
-            lblRecommendations.TabIndex = 1;
-            lblRecommendations.Text = "Recommendations";
+            this.lblRecommendations.AutoSize = true;
+            this.lblRecommendations.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecommendations.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRecommendations.Location = new System.Drawing.Point(396, 12);
+            this.lblRecommendations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecommendations.Name = "lblRecommendations";
+            this.lblRecommendations.Size = new System.Drawing.Size(351, 54);
+            this.lblRecommendations.TabIndex = 1;
+            this.lblRecommendations.Text = "Recommendations";
             // 
             // dgvResults
             // 
-            dgvResults.AllowUserToDeleteRows = false;
-            dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvResults.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResults.Location = new Point(75, 102);
-            dgvResults.Margin = new Padding(2);
-            dgvResults.Name = "dgvResults";
-            dgvResults.ReadOnly = true;
-            dgvResults.RowHeadersWidth = 62;
-            dgvResults.RowTemplate.Height = 33;
-            dgvResults.Size = new Size(996, 595);
-            dgvResults.TabIndex = 4;
-            dgvResults.CellContentClick += dgvResults_CellContentClick;
+            this.dgvResults.AllowUserToDeleteRows = false;
+            this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResults.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvResults.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResults.Location = new System.Drawing.Point(75, 102);
+            this.dgvResults.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvResults.Name = "dgvResults";
+            this.dgvResults.ReadOnly = true;
+            this.dgvResults.RowHeadersWidth = 62;
+            this.dgvResults.RowTemplate.Height = 33;
+            this.dgvResults.Size = new System.Drawing.Size(996, 595);
+            this.dgvResults.TabIndex = 4;
+            this.dgvResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResults_CellContentClick);
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(30, 29);
-            btnBack.Margin = new Padding(4);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(118, 36);
-            btnBack.TabIndex = 5;
-            btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
+            this.btnBack.Location = new System.Drawing.Point(30, 29);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(118, 36);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Detailed_Recommendations
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1115, 752);
-            Controls.Add(btnBack);
-            Controls.Add(dgvResults);
-            Controls.Add(lblRecommendations);
-            Margin = new Padding(2);
-            Name = "Detailed_Recommendations";
-            Text = "Detailed_Recommendations";
-            Load += Detailed_Recommendations_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvResults).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1115, 752);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.dgvResults);
+            this.Controls.Add(this.lblRecommendations);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Detailed_Recommendations";
+            this.Text = "Detailed_Recommendations";
+            this.Load += new System.EventHandler(this.Detailed_Recommendations_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

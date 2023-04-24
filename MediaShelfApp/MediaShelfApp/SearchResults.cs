@@ -40,6 +40,7 @@ namespace MediaShelfApp
         public SearchResults()
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             // Initiate Database Connection
             try
@@ -363,7 +364,7 @@ namespace MediaShelfApp
             public List<string> descriptions { get; set; }
         }
         //////////////////////
-        //  Priate methods  //
+        //  Private methods  //
         //////////////////////
 
         // Back button functionality - reopens the calling form and closes this form

@@ -28,120 +28,130 @@ namespace MediaShelfApp
         /// </summary>
         private void InitializeComponent()
         {
-            searchBox1 = new TextBox();
-            button1 = new Button();
-            label2 = new Label();
-            btnNavBack = new Button();
-            button2 = new Button();
-            dataGridView1 = new DataGridView();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            comboBox1 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchResults));
+            this.searchBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnNavBack = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // searchBox1
             // 
-            searchBox1.Location = new Point(323, 154);
-            searchBox1.Margin = new Padding(3, 4, 3, 4);
-            searchBox1.Name = "searchBox1";
-            searchBox1.PlaceholderText = "Search";
-            searchBox1.Size = new Size(439, 27);
-            searchBox1.TabIndex = 0;
-            searchBox1.TextAlign = HorizontalAlignment.Center;
+            this.searchBox1.Location = new System.Drawing.Point(404, 192);
+            this.searchBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchBox1.Name = "searchBox1";
+            this.searchBox1.PlaceholderText = "Search";
+            this.searchBox1.Size = new System.Drawing.Size(548, 31);
+            this.searchBox1.TabIndex = 0;
+            this.searchBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             searchBox1.KeyPress += searchBox1_KeyPress;
             // 
             // button1
             // 
-            button1.Location = new Point(59, 692);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(166, 39);
-            button1.TabIndex = 2;
-            button1.Text = "Add Manual Entry";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(74, 865);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(208, 49);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add Manual Entry";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(456, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(165, 35);
-            label2.TabIndex = 5;
-            label2.Text = "Media Search";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Ebrima", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(570, 44);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 41);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Media Search";
             // 
             // btnNavBack
             // 
-            btnNavBack.Location = new Point(12, 12);
-            btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(94, 29);
-            btnNavBack.TabIndex = 7;
-            btnNavBack.Text = "Back";
-            btnNavBack.UseVisualStyleBackColor = true;
-            btnNavBack.Click += btnNavBack_Click;
+            this.btnNavBack.Location = new System.Drawing.Point(15, 15);
+            this.btnNavBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNavBack.Name = "btnNavBack";
+            this.btnNavBack.Size = new System.Drawing.Size(118, 36);
+            this.btnNavBack.TabIndex = 7;
+            this.btnNavBack.Text = "Back";
+            this.btnNavBack.UseVisualStyleBackColor = true;
+            this.btnNavBack.Click += new System.EventHandler(this.btnNavBack_Click);
             // 
             // button2
             // 
-            button2.Location = new Point(792, 153);
-            button2.Margin = new Padding(2, 2, 2, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(90, 28);
-            button2.TabIndex = 8;
-            button2.Text = "Search";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.Location = new System.Drawing.Point(990, 191);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 35);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(59, 197);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 10;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(978, 468);
-            dataGridView1.TabIndex = 10;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(74, 246);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 10;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(1222, 585);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // sqlCommand1
             // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
+            this.sqlCommand1.CommandTimeout = 30;
+            this.sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // comboBox1
             // 
-            comboBox1.CausesValidation = false;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Movies/TV Shows", "Books", "Music", "Video Games" });
-            comboBox1.Location = new Point(887, 692);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(150, 28);
-            comboBox1.TabIndex = 11;
+            this.comboBox1.CausesValidation = false;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Movies/TV Shows",
+            "Books",
+            "Music",
+            "Video Games"});
+            this.comboBox1.Location = new System.Drawing.Point(1024, 865);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(271, 33);
+            this.comboBox1.TabIndex = 11;
             // 
             // SearchResults
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1084, 761);
-            Controls.Add(comboBox1);
-            Controls.Add(dataGridView1);
-            Controls.Add(button2);
-            Controls.Add(btnNavBack);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(searchBox1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "SearchResults";
-            Text = "SearchResults";
-            Load += SearchResults_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1355, 951);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnNavBack);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.searchBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "SearchResults";
+            this.Text = "SearchResults";
+            this.Load += new System.EventHandler(this.SearchResults_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
