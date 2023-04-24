@@ -103,7 +103,6 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SearchResults window = new SearchResults();
@@ -111,8 +110,6 @@ namespace MediaShelfApp
             window.Show();
         }
 
-        /* Favorites List button functionality - Opens the list form with the overloaded constructor setting the list as "Favorites"
-         *                                       and the caller as this instance of the Discovery Form (aka "this") */
         private void lblFavorites_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Favorites", this);
@@ -201,6 +198,35 @@ namespace MediaShelfApp
 
             changeFontSize(this, fontSize, true);
             saveSettings();
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Books", this);
+            window.Show();
+        }
+
+        private void btnMovies_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Movies", this);
+            window.Show();
+        }
+
+        private void btnGames_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Games", this);
+            window.Show();
+        }
+
+        private void btnTVShows_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Movies", this);
+            window.Show();
+        }
+
+        private void btnMusic_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Music", this);
+            window.Show();
         }
     }
 }

@@ -25,14 +25,14 @@ namespace MediaShelfApp
         //////////////////////
         //  Public methods  //
         //////////////////////
-        
+
         // Constructor
         public ListView(String list, Form caller)
         {
             InitializeComponent();
             DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
             this.list = list;
-            this.caller = caller;            
+            this.caller = caller;
 
             // Initiate Database Connection String
             dbConnection = new SqlConnection(@"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID=mediaalt;Password=wehkun-7jYcnu-zidjaz");
@@ -40,7 +40,7 @@ namespace MediaShelfApp
             // Populate form
 
             if (list == "Tags")
-            {             
+            {
                 TagElements();
                 PopulateSortComboBox(2);
                 PopulateTagsTable("");
@@ -128,9 +128,9 @@ namespace MediaShelfApp
             // Format search
             String search = "%" + s + "%";
             String parameter = "";
-            
+
             // Set search parameter
-            switch(cmbListSort.Text)
+            switch (cmbListSort.Text)
             {
                 case "Title":
                     parameter = "ITEM_TITLE";
@@ -173,7 +173,7 @@ namespace MediaShelfApp
                     cmdGetListItems.CommandText += " AND " + parameter + " LIKE @bind2";
                     cmdGetListItems.Parameters.AddWithValue("@bind2", search);
                 }
-                                               
+
 
                 // Parameterize the variables for system security
                 cmdGetListItems.Parameters.AddWithValue("@bind1", list);
@@ -207,7 +207,7 @@ namespace MediaShelfApp
         ///////////////////////
         //  Private methods  //
         ///////////////////////
-        
+
         // Set list items to non-visible, set tags items to visible
         private void TagElements()
         {
@@ -223,6 +223,8 @@ namespace MediaShelfApp
             this.btnAddTag.Visible = true;
             this.cmbSortTags.Visible = true;
             this.txtTagsSearch.Visible = true;
+            this.lblListName.Text = "Tags";
+            this.lblDescriptionText.Text = "Manage Your Tags";
         }
 
         // Populate the combobox for the list or tag version of the page for sorting
@@ -331,7 +333,7 @@ namespace MediaShelfApp
         }
 
         // Deletes the specified item from the current list
-        private void DeleteItem (int id, int api)
+        private void DeleteItem(int id, int api)
         {
             try
             {
@@ -365,7 +367,7 @@ namespace MediaShelfApp
         }
 
         // Deletes all notes associated with an item
-        private void DeleteNotes (int id, int api)
+        private void DeleteNotes(int id, int api)
         {
             try
             {
@@ -436,7 +438,7 @@ namespace MediaShelfApp
                 // Dispose of resources
                 cmdGetIDs.Dispose();
 
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error loading notes form.", MessageBoxButtons.OK, MessageBoxIcon.Error);

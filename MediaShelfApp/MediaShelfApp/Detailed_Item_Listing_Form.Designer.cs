@@ -1,4 +1,4 @@
-﻿namespace MediaShelfApp
+namespace MediaShelfApp
 {
     partial class Detailed_Item_Listing_Form
     {
