@@ -13,37 +13,69 @@ namespace MediaShelfApp
 {
     public partial class DiscoveryPageForm : Form
     {
-
         public DiscoveryPageForm()
         {
             InitializeComponent();
         }
 
-        private void btnNavTempMyShelf_Click(object sender, EventArgs e)
-        {
-            MyShelfForm window = new MyShelfForm();
-            window.setCaller(this);
-            window.Show();
-        }
-
-        private void btnNavTempSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             SearchResults window = new SearchResults();
             window.setCaller(this);
             window.Show();
         }
 
-        /* Favorites List button functionality - Opens the list form with the overloaded constructor setting the list as "Favorites"
-         *                                       and the caller as this instance of the Discovery Form (aka "this") */                                                
-        private void lblFavoritesList_Click(object sender, EventArgs e)
+        private void lblFavoritesList_Click_1(object sender, EventArgs e)
         {
             ListView window = new ListView("Favorites", this);
             window.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblWishlist_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Wishlist", this);
+            window.Show();
+        }
+
+        private void lblTags_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Tags", this);
+            window.Show();
+        }
+
+        private void lblManualEntries_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Manual Entries", this);
+            window.Show();
+        }
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Books", this);
+            window.Show();
+        }
+
+        private void btnMovies_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Movies", this);
+            window.Show();
+        }
+
+        private void btnGames_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Games", this);
+            window.Show();
+        }
+
+        private void btnTVShows_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Movies", this);
+            window.Show();
+        }
+
+        private void btnMusic_Click(object sender, EventArgs e)
+        {
+            ListView window = new ListView("Music", this);
             window.Show();
         }
     }
