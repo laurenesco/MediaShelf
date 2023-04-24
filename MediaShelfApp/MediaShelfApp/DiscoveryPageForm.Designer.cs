@@ -234,7 +234,7 @@
             label24.Text = "Description: Media that have been favorited will be placed here.\r\n\r\n\r\n";
             label24.Click += lblFavoritesDescription;
             // 
-            // label25
+            // lblFavoritesList
             // 
             label25.AutoSize = true;
             label25.BackColor = Color.Transparent;
@@ -259,6 +259,18 @@
             label26.TabIndex = 56;
             label26.Text = "Lists";
             label26.Click += lblListHeader;
+
+            // 
+            // btnNavTempSearch
+            // 
+            this.btnNavTempSearch.Location = new System.Drawing.Point(12, 12);
+            this.btnNavTempSearch.Name = "btnNavTempSearch";
+            this.btnNavTempSearch.Size = new System.Drawing.Size(94, 29);
+            this.btnNavTempSearch.TabIndex = 67;
+            this.btnNavTempSearch.Text = "Search";
+            this.btnNavTempSearch.UseVisualStyleBackColor = true;
+            this.btnNavTempSearch.Click += new System.EventHandler(this.btnNavTempSearch_Click);
+
             // 
             // DiscoveryPageForm
             // 
@@ -283,6 +295,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(btnNavTempSearch);
             Name = "DiscoveryPageForm";
             Text = "DiscoveryPageForm";
             Load += DiscoveryPageForm_Load;
@@ -304,7 +317,9 @@
         private Label label22;
         private Label label23;
         private Label label24;
-        private Label label25;
+        private Label lblFavoritesList;
         private Label label26;
+        private Button btnNavTempSearch;
+        private Button btnNavTempMyShelf;
     }
 }
