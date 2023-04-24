@@ -197,7 +197,6 @@ namespace MediaShelfApp
         //                               with search parameter set as text from the search box
         private void btnSearchBar(object sender, EventArgs e)
         {
-            this.Hide();
             SearchResults window = new SearchResults();
             window.setCaller(this);
             window.setSearchText("Test"); // Text pulled from search box will go here
