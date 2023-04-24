@@ -19,6 +19,7 @@ namespace MediaShelfApp
         // itemID   - ID of item intended to be viewed, used for querying 
         private ListView lcaller = null!;
         private SearchResults dcaller = null!;
+        private Detailed_Recommendations reccaller = null!;
         private int itemID = 0;
 
 
@@ -29,6 +30,10 @@ namespace MediaShelfApp
         private string release_date;
         private string creator;
         private string mediaImageLink;
+
+        // for recommendations form
+        private int movieID;
+        private bool isMovie = false;
 
         private string dbConnectionString = @"Data Source=media-data-1-sv.database.windows.net;Initial Catalog=media-store-db2;Persist Security Info=True;User ID= mediaalt;Password=wehkun-7jYcnu-zidjaz";
 
@@ -55,7 +60,7 @@ namespace MediaShelfApp
             }
         }
 
-        public Detailed_Item_Listing_Form(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int api_type)
+        public Detailed_Item_Listing_Form(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int api_type, int movieID)
         {
             InitializeComponent();
 
@@ -77,6 +82,7 @@ namespace MediaShelfApp
             this.release_date = release_date;
             this.description = description;
             this.mediaImageLink = mediaImageLink;
+            this.movieID = movieID; // recommendations form
 
             displayData(title, creator, genre, release_date, description, mediaImageLink, api_type);
         }
@@ -110,6 +116,16 @@ namespace MediaShelfApp
         public void setCaller(SearchResults dcaller)
         {
             this.dcaller = dcaller;
+        }
+
+        public void setRecCaller(Detailed_Recommendations reccaller)
+        {
+
+            this.reccaller = reccaller;
+            if (reccaller != null)
+            {
+                btnRecommendations.Visible = false;
+            }
         }
 
         // Set itemID method - this variable allows the form to display the correct item
@@ -158,6 +174,9 @@ namespace MediaShelfApp
                     pbMovieImage.Visible = true;
                     pbMovieImage.ImageLocation = mediaImageLink;
                     pbMovieImage.Size = new System.Drawing.Size(369, 369);
+
+                    this.isMovie = true;
+
                     break;
 
                 case 1: // Add Book Data To Detailed Item Listing Form
@@ -307,5 +326,31 @@ namespace MediaShelfApp
 
 
         }
+
+
+        private void openRecommendationsForm()
+        {
+
+            Detailed_Recommendations window = new Detailed_Recommendations(movieID);
+            window.setCaller(this);
+            window.setPrevCaller(dcaller);
+            this.Hide();
+            window.Show();
+
+        }
+        private void btnRecommendations_Click(object sender, EventArgs e)
+        {
+            openRecommendationsForm();
+        }
+
+        private void Detailed_Item_Listing_Form_Load(object sender, EventArgs e)
+        {
+            if (isMovie == false)
+            {
+                btnRecommendations.Visible = false;
+            }
+        }
+
+
     }
 }
