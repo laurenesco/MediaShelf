@@ -207,175 +207,86 @@ namespace MediaShelfApp
 
         //==================================================================
         //Recommendations Header
-        private void lblRecommendations(object sender, EventArgs e)
-        {
-            this.Hide();
-            Detailed_Recommendations window = new Detailed_Recommendations();
-            window.setCaller(this);
-            window.Show();
-        }
+        
         //Based on your... info
-        private void lblBasedOnYourInfo(object sender, EventArgs e)
-        {
-        }
+        
         //Other titles with TAG
-        private void lblOtherTitlesWithTag(object sender, EventArgs e)
-        {
-        }
+        
 
         //Recommendation #1 picture
-        private void picBox1(object sender, EventArgs e)
-        {
-        }
+        
 
         //Recommendation #1 Title 
-        private void lblTitle1(object sender, EventArgs e)
-        {
-
-        }
+        
         //Recommendation #1 Tag Label
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         //Recommendation #1 TAG
-        private void btnTag1(object sender, EventArgs e)
-        {
-
-        }
 
 
         //Recommendation #2 Picture
-        private void picBox2(object sender, EventArgs e)
-        {
 
-        }
 
         ////Recommendation #2 Title
-        private void lblTitle2(object sender, EventArgs e)
-        {
 
-        }
 
         //Recommendation #2 Tag Label
-        private void label11_Click(object sender, EventArgs e)
-        {
 
-        }
 
         //Recommendation #2 TAG
-        private void btnTag2(object sender, EventArgs e)
-        {
-
-        }
 
 
         //Recommendation #3 Picture
-        private void picBox3(object sender, EventArgs e)
-        {
 
-        }
 
         //Recommendation #3 Title
-        private void lblTitle3(object sender, EventArgs e)
-        {
 
-        }
 
         //Recommendation #3 Tag Label
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         //Recommendation #3 TAG
-        private void btnTag3(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Recommendation #4 Picture
-        private void picBox4(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Recommendation #4 Title
-        private void lblTitle4(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //Recommendation #4 Tag Label
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //Recommendation #4 TAG
-        private void btnTag4(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //Recommendation #5 Picture
-        private void picBox5(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Recommendation #5 Title
-        private void lblTitle5(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Recommendation #5 Tag Label
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //Recommendation #5 TAG
-        private void btnTag5(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
         //Recommendation #6 Picture
-        private void picBox6(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Recommendation #6 Title
-        private void lblTitle6(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //Recommendation #6 Tag Label
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //Recommendation #6 TAG
-        private void btnTag6(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //See More Recommendations
         // See More button functionality - Hides this form as the caller, opens detailed recommendations form
-        private void btnSeeMoreRecommendations(object sender, EventArgs e)
-        {
-            this.Hide();
-            Detailed_Recommendations window = new Detailed_Recommendations();
-            window.setCaller(this);
-            window.Show();
-        }
+     
 
         //==========================================================================
         //List Header
