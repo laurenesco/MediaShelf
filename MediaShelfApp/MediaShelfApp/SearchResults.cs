@@ -114,6 +114,73 @@ namespace MediaShelfApp
             public List<moviesResult> results { get; set; } // ^ above is all info for results
         }
 
+        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        public class BelongsToCollection
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+            public string poster_path { get; set; }
+            public string backdrop_path { get; set; }
+        }
+
+        public class MovieGenre
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+        }
+
+        public class ProductionCompany
+        {
+            public int id { get; set; }
+            public string logo_path { get; set; }
+            public string name { get; set; }
+            public string origin_country { get; set; }
+        }
+
+        public class ProductionCountry
+        {
+            public string iso_3166_1 { get; set; }
+            public string name { get; set; }
+        }
+
+        public class DetailedMoviesRoot
+        {
+            public bool adult { get; set; }
+            public string backdrop_path { get; set; }
+            public BelongsToCollection belongs_to_collection { get; set; }
+            public int budget { get; set; }
+            public List<MovieGenre> genres { get; set; }
+            public string homepage { get; set; }
+            public int id { get; set; }
+            public string imdb_id { get; set; }
+            public string original_language { get; set; }
+            public string original_title { get; set; }
+            public string overview { get; set; }
+            public double popularity { get; set; }
+            public string poster_path { get; set; }
+            public List<ProductionCompany> production_companies { get; set; }
+            public List<ProductionCountry> production_countries { get; set; }
+            public string release_date { get; set; }
+            public int revenue { get; set; }
+            public int runtime { get; set; }
+            public List<SpokenLanguage> spoken_languages { get; set; }
+            public string status { get; set; }
+            public string tagline { get; set; }
+            public string title { get; set; }
+            public bool video { get; set; }
+            public double vote_average { get; set; }
+            public int vote_count { get; set; }
+        }
+
+        public class SpokenLanguage
+        {
+            public string english_name { get; set; }
+            public string iso_639_1 { get; set; }
+            public string name { get; set; }
+        }
+
+
+
 
 
 
@@ -363,7 +430,7 @@ namespace MediaShelfApp
             public List<string> descriptions { get; set; }
         }
         //////////////////////
-        //  Priate methods  //
+        //  Private methods  //
         //////////////////////
 
         // Back button functionality - reopens the calling form and closes this form
@@ -449,9 +516,9 @@ namespace MediaShelfApp
 
                         dataGridView1.Rows.Add(movieList.results[i].original_title.ToString(), movieList.results[i].overview.ToString()); // DISPLAYS information on datagrid, must add columns above to display info correctly/formatted correctly
 
-                    }                 
+                    }
                     catch (ArgumentOutOfRangeException ex)
-                    {                      
+                    {
                         break;
                     }
                     catch (Exception ex)
@@ -462,7 +529,7 @@ namespace MediaShelfApp
                 }
                 moviesjson = movieList;
             }
-           
+
         }
 
         // BOOKS API CALL //
@@ -663,10 +730,24 @@ namespace MediaShelfApp
             {
                 switch (comboBox1.SelectedIndex) // calls API depended on comboBox selection
                 {
-                    case 0:
-                        //movies
+                    case 0: //movies
 
                         // ALL IF ELSE STATEMENTS CHECK IF VALUE IS NULL, IF NULL IS TRUE PROVIDE STRING "N/A"
+
+
+                        int movieid = moviesjson.results[rowIndex].id;
+                        DetailedMoviesRoot movieCompleteList;
+
+
+                        using (var client = new HttpClient()) // allows to connect to HTTP
+                        {
+                            var endpoint = new Uri("https://api.themoviedb.org/3/movie/" + movieid + "?api_key=d076abf5fac2dab8dfeaca89a50f37a2&language=en-US"); // endpoint = HTTP URL for API call
+                            var result = client.GetAsync(endpoint).Result; // checks API status to get successful API call, Code 200 for most API = successful API call
+                            var json = result.Content.ReadAsStringAsync().Result; // Confirms successful API call then pulls the JSON 
+                            movieCompleteList = JsonConvert.DeserializeObject<DetailedMoviesRoot>(json); // ROOT CLASS VARIABLE  //Parses JSON and assigns it as a C# object to assigned rootClass
+                        }
+
+
 
                         if (moviesjson.results[rowIndex].original_title == null)
                         {
@@ -674,37 +755,53 @@ namespace MediaShelfApp
                         }
                         else
                         {
-                            title = moviesjson.results[rowIndex].original_title.ToString();
+                            title = movieCompleteList.original_title.ToString();
                         }
 
-                        creator = "";
+                        if (movieCompleteList.runtime == null)
+                        {
+                            creator = "No Runtime Provided";
+                        }
+                        else
+                        {
+                            creator = movieCompleteList.runtime.ToString() + " Minutes";
+                        }
 
-                        if (moviesjson.results[rowIndex].release_date == null)
+                        if (movieCompleteList.release_date == null)
                         {
                             release_date = "N/A";
                         }
                         else
                         {
-                            release_date = moviesjson.results[rowIndex].release_date.ToString();
+                            release_date = movieCompleteList.release_date.ToString();
                         }
-                        genre = "";
 
-                        if (moviesjson.results[rowIndex].overview == null)
+                        if (movieCompleteList.genres == null)
+                        {
+                            genre = "No Genre Provided";
+                        }
+                        else
+                        {
+                            genre = movieCompleteList.genres[0].name.ToString();
+                        }
+
+
+                        if (movieCompleteList.overview == null)
                         {
                             description = "N/A";
                         }
                         else
                         {
-                            description = moviesjson.results[rowIndex].overview.ToString();
+                            description = movieCompleteList.overview.ToString();
                         }
 
-                        if (moviesjson.results[rowIndex].poster_path == null)
+                        if (movieCompleteList.poster_path == null)
                         {
                             mediaImageLink = "";
                         }
                         else
                         {
-                            mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
+                            mediaImageLink = "https://image.tmdb.org/t/p/w500" + movieCompleteList.poster_path.ToString();
                         }
                         movieID = moviesjson.results[rowIndex].id;
                         openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0, movieID);
@@ -726,18 +823,19 @@ namespace MediaShelfApp
                             title = booksjson.items[rowIndex].volumeInfo.title.ToString();
                         }
 
+
                         if (booksjson.items[rowIndex].volumeInfo.authors == null)
                         {
-                            author = "N/A";
+                            author = "No Author Provided.";
                         }
                         else
                         {
-                            author = booksjson.items[rowIndex].volumeInfo.authors.ToString();
+                            author = booksjson.items[rowIndex].volumeInfo.authors[0].ToString();
                         }
 
                         if (booksjson.items[rowIndex].volumeInfo.publishedDate == null)
                         {
-                            release_date = "N/A";
+                            release_date = "No Publish Date Provided.";
                         }
                         else
                         {
@@ -746,7 +844,7 @@ namespace MediaShelfApp
 
                         if (booksjson.items[rowIndex].volumeInfo.publisher == null)
                         {
-                            publisher = "N/A";
+                            publisher = "No Publisher Provided.";
                         }
                         else
                         {
@@ -755,7 +853,7 @@ namespace MediaShelfApp
 
                         if (booksjson.items[rowIndex].volumeInfo.description == null)
                         {
-                            description = "N/A";
+                            description = "No Description Provided.";
                         }
                         else
                         {
@@ -810,7 +908,20 @@ namespace MediaShelfApp
                             album = musicjson.data[rowIndex].album.title;
                         }
 
-                        release_date = "";
+                        if (musicjson.data[rowIndex].duration == null)
+                        {
+                            release_date = "No Duration Provided.";
+                        }
+                        else
+                        {
+                            float duration = musicjson.data[rowIndex].duration;
+                            duration /= 60;
+
+                            int minutes = Convert.ToInt32(Math.Floor(duration));
+                            int seconds = Convert.ToInt32((duration - minutes) * 100);
+
+                            release_date = minutes + " Minutes " + seconds + " Seconds";
+                        }
 
                         description = "";
 
@@ -901,7 +1012,9 @@ namespace MediaShelfApp
             if (e.KeyChar == '\r')
             {
                 button2.PerformClick();
+                e.Handled = true;
             }
+
         }
     }
 }

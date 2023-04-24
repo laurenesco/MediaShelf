@@ -120,12 +120,12 @@ namespace MediaShelfApp
 
         public void setRecCaller(Detailed_Recommendations reccaller)
         {
-            
+
             this.reccaller = reccaller;
             if (reccaller != null)
             {
                 btnRecommendations.Visible = false;
-            }          
+            }
         }
 
         // Set itemID method - this variable allows the form to display the correct item
@@ -161,14 +161,13 @@ namespace MediaShelfApp
             switch (mediaType)
             {
 
-                case 0:
-
+                case 0: // Add Movie Data To Detailed Item Listing Form
                     lblTitle.Text = title;
+                    lblCreatorTitle.Text = "Runtime:";
                     lblCreatorValue.Text = creator;
                     lblGenreValue.Text = genre;
                     lblReleaseDateValue.Text = releaseDate;
                     txtDescriptionValue.Text = description;
-
 
                     pbGameImage.Visible = false;
                     pbBookImage.Visible = false;
@@ -179,9 +178,8 @@ namespace MediaShelfApp
                     this.isMovie = true;
 
                     break;
-                case 1:
 
-                    // Modify Labels on Form for Books
+                case 1: // Add Book Data To Detailed Item Listing Form
                     lblTitle.Text = title;
                     lblCreatorTitle.Text = "Author:";
                     lblGenreTitle.Text = "Publisher:";
@@ -200,12 +198,12 @@ namespace MediaShelfApp
                     pbBookImage.Visible = true;
                     pbBookImage.ImageLocation = mediaImageLink;
                     break;
-                case 2:
-                    // Modify Labels on Form for Music
+
+                case 2: // Add Music Data To Detailed Item Listing Form
                     lblTitle.Text = title;
                     lblCreatorTitle.Text = "Artist:";
                     lblGenreTitle.Text = "Album:";
-                    lblReleaseDateTitle.Text = "Release Date:";
+                    lblReleaseDateTitle.Text = "Duration:";
 
 
                     lblTitle.Text = title;
@@ -222,11 +220,10 @@ namespace MediaShelfApp
 
                     pbMusicImage.ImageLocation = mediaImageLink;
                     break;
-                case 3:
-                    // Modify Labels on Form for Games
+
+                case 3: // Add Games Data To Detailed Item Listing Form
                     lblCreatorTitle.Text = "Platform:";
                     lblDescriptionTitle.Text = "";
-
 
                     lblTitle.Text = title;
                     lblCreatorValue.Text = creator;
@@ -240,9 +237,9 @@ namespace MediaShelfApp
                     pbGameImage.Visible = true;
                     pbGameImage.ImageLocation = mediaImageLink;
                     break;
+
                 default:
                     break;
-
             }
 
 
@@ -339,7 +336,7 @@ namespace MediaShelfApp
             window.setPrevCaller(dcaller);
             this.Hide();
             window.Show();
-            
+
         }
         private void btnRecommendations_Click(object sender, EventArgs e)
         {
@@ -354,6 +351,6 @@ namespace MediaShelfApp
             }
         }
 
-        
+
     }
 }

@@ -83,7 +83,7 @@ namespace MediaShelfApp
             // button2
             // 
             button2.Location = new Point(792, 153);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(90, 28);
             button2.TabIndex = 8;
@@ -93,15 +93,20 @@ namespace MediaShelfApp
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(59, 197);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 10;
             dataGridView1.RowTemplate.Height = 33;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(978, 468);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -118,7 +123,7 @@ namespace MediaShelfApp
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Movies/TV Shows", "Books", "Music", "Video Games" });
             comboBox1.Location = new Point(887, 692);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
+            comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 28);
             comboBox1.TabIndex = 11;
@@ -136,6 +141,8 @@ namespace MediaShelfApp
             Controls.Add(button1);
             Controls.Add(searchBox1);
             Margin = new Padding(3, 4, 3, 4);
+            MaximumSize = new Size(1102, 808);
+            MinimumSize = new Size(1102, 808);
             Name = "SearchResults";
             Text = "SearchResults";
             Load += SearchResults_Load;
