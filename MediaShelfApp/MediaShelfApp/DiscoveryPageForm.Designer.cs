@@ -29,118 +29,125 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiscoveryPageForm));
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button7 = new Button();
+            btnMusic = new Button();
+            btnMovies = new Button();
+            btnTVShows = new Button();
+            btnBooks = new Button();
+            btnGames = new Button();
             label1 = new Label();
-            button6 = new Button();
-            label9 = new Label();
-            label13 = new Label();
+            lblManualEntries = new Label();
+            lblWishlist = new Label();
             label22 = new Label();
             label23 = new Label();
             label24 = new Label();
-            label25 = new Label();
+            lblFavoritesList = new Label();
             label26 = new Label();
+            btnSearch = new Button();
+            lblTags = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnMusic
             // 
-            button1.BackColor = Color.Gold;
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.FlatAppearance.BorderColor = Color.Goldenrod;
-            button1.FlatAppearance.BorderSize = 7;
-            button1.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ImageAlign = ContentAlignment.BottomCenter;
-            button1.Location = new Point(318, 318);
-            button1.Name = "button1";
-            button1.Size = new Size(167, 167);
-            button1.TabIndex = 0;
-            button1.Text = "Music";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += btnMusic;
+            btnMusic.BackColor = Color.Gold;
+            btnMusic.BackgroundImage = (Image)resources.GetObject("btnMusic.BackgroundImage");
+            btnMusic.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMusic.FlatAppearance.BorderColor = Color.Goldenrod;
+            btnMusic.FlatAppearance.BorderSize = 7;
+            btnMusic.FlatAppearance.MouseDownBackColor = Color.Goldenrod;
+            btnMusic.FlatStyle = FlatStyle.Flat;
+            btnMusic.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMusic.ImageAlign = ContentAlignment.BottomCenter;
+            btnMusic.Location = new Point(336, 282);
+            btnMusic.Margin = new Padding(2);
+            btnMusic.Name = "btnMusic";
+            btnMusic.Size = new Size(134, 134);
+            btnMusic.TabIndex = 0;
+            btnMusic.Text = "Music";
+            btnMusic.TextAlign = ContentAlignment.BottomCenter;
+            btnMusic.UseVisualStyleBackColor = false;
+            btnMusic.Click += btnMusic_Click;
             // 
-            // button2
+            // btnMovies
             // 
-            button2.BackColor = Color.DodgerBlue;
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.FlatAppearance.BorderColor = Color.SteelBlue;
-            button2.FlatAppearance.BorderSize = 7;
-            button2.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(489, 124);
-            button2.Name = "button2";
-            button2.Size = new Size(167, 154);
-            button2.TabIndex = 1;
-            button2.Text = "Movies";
-            button2.TextAlign = ContentAlignment.BottomCenter;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += btnMovies;
+            btnMovies.BackColor = Color.DodgerBlue;
+            btnMovies.BackgroundImage = (Image)resources.GetObject("btnMovies.BackgroundImage");
+            btnMovies.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMovies.FlatAppearance.BorderColor = Color.SteelBlue;
+            btnMovies.FlatAppearance.BorderSize = 7;
+            btnMovies.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
+            btnMovies.FlatStyle = FlatStyle.Flat;
+            btnMovies.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMovies.Location = new Point(473, 127);
+            btnMovies.Margin = new Padding(2);
+            btnMovies.Name = "btnMovies";
+            btnMovies.Size = new Size(134, 123);
+            btnMovies.TabIndex = 1;
+            btnMovies.Text = "Movies";
+            btnMovies.TextAlign = ContentAlignment.BottomCenter;
+            btnMovies.UseVisualStyleBackColor = false;
+            btnMovies.Click += btnMovies_Click;
             // 
-            // button3
+            // btnTVShows
             // 
-            button3.BackColor = Color.ForestGreen;
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatAppearance.BorderColor = Color.DarkGreen;
-            button3.FlatAppearance.BorderSize = 7;
-            button3.FlatAppearance.MouseDownBackColor = Color.DarkGreen;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(665, 318);
-            button3.Name = "button3";
-            button3.Size = new Size(167, 167);
-            button3.TabIndex = 2;
-            button3.Text = "TV Shows";
-            button3.TextAlign = ContentAlignment.BottomCenter;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += btnTVShows;
+            btnTVShows.BackColor = Color.ForestGreen;
+            btnTVShows.BackgroundImage = (Image)resources.GetObject("btnTVShows.BackgroundImage");
+            btnTVShows.BackgroundImageLayout = ImageLayout.Stretch;
+            btnTVShows.FlatAppearance.BorderColor = Color.DarkGreen;
+            btnTVShows.FlatAppearance.BorderSize = 7;
+            btnTVShows.FlatAppearance.MouseDownBackColor = Color.DarkGreen;
+            btnTVShows.FlatStyle = FlatStyle.Flat;
+            btnTVShows.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTVShows.Location = new Point(614, 282);
+            btnTVShows.Margin = new Padding(2);
+            btnTVShows.Name = "btnTVShows";
+            btnTVShows.Size = new Size(134, 134);
+            btnTVShows.TabIndex = 2;
+            btnTVShows.Text = "TV Shows";
+            btnTVShows.TextAlign = ContentAlignment.BottomCenter;
+            btnTVShows.UseVisualStyleBackColor = false;
+            btnTVShows.Click += btnTVShows_Click;
             // 
-            // button4
+            // btnBooks
             // 
-            button4.BackColor = Color.Red;
-            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
-            button4.BackgroundImageLayout = ImageLayout.Zoom;
-            button4.FlatAppearance.BorderColor = Color.Firebrick;
-            button4.FlatAppearance.BorderSize = 7;
-            button4.FlatAppearance.MouseDownBackColor = Color.Firebrick;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(148, 124);
-            button4.Name = "button4";
-            button4.Size = new Size(167, 154);
-            button4.TabIndex = 3;
-            button4.Text = "Books";
-            button4.TextAlign = ContentAlignment.BottomCenter;
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += btnBooks;
+            btnBooks.BackColor = Color.Red;
+            btnBooks.BackgroundImage = (Image)resources.GetObject("btnBooks.BackgroundImage");
+            btnBooks.BackgroundImageLayout = ImageLayout.Zoom;
+            btnBooks.FlatAppearance.BorderColor = Color.Firebrick;
+            btnBooks.FlatAppearance.BorderSize = 7;
+            btnBooks.FlatAppearance.MouseDownBackColor = Color.Firebrick;
+            btnBooks.FlatStyle = FlatStyle.Flat;
+            btnBooks.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBooks.Location = new Point(200, 127);
+            btnBooks.Margin = new Padding(2);
+            btnBooks.Name = "btnBooks";
+            btnBooks.Size = new Size(134, 123);
+            btnBooks.TabIndex = 3;
+            btnBooks.Text = "Books";
+            btnBooks.TextAlign = ContentAlignment.BottomCenter;
+            btnBooks.UseVisualStyleBackColor = false;
+            btnBooks.Click += btnBooks_Click;
             // 
-            // button7
+            // btnGames
             // 
-            button7.BackColor = Color.DarkOrchid;
-            button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
-            button7.BackgroundImageLayout = ImageLayout.Zoom;
-            button7.FlatAppearance.BorderColor = Color.DarkViolet;
-            button7.FlatAppearance.BorderSize = 7;
-            button7.FlatAppearance.MouseDownBackColor = Color.DarkViolet;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.ForeColor = SystemColors.ControlText;
-            button7.Location = new Point(831, 124);
-            button7.Name = "button7";
-            button7.Size = new Size(167, 154);
-            button7.TabIndex = 6;
-            button7.Text = "Games";
-            button7.TextAlign = ContentAlignment.BottomCenter;
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += btnGames;
+            btnGames.BackColor = Color.DarkOrchid;
+            btnGames.BackgroundImage = (Image)resources.GetObject("btnGames.BackgroundImage");
+            btnGames.BackgroundImageLayout = ImageLayout.Zoom;
+            btnGames.FlatAppearance.BorderColor = Color.DarkViolet;
+            btnGames.FlatAppearance.BorderSize = 7;
+            btnGames.FlatAppearance.MouseDownBackColor = Color.DarkViolet;
+            btnGames.FlatStyle = FlatStyle.Flat;
+            btnGames.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGames.ForeColor = SystemColors.ControlText;
+            btnGames.Location = new Point(747, 127);
+            btnGames.Margin = new Padding(2);
+            btnGames.Name = "btnGames";
+            btnGames.Size = new Size(134, 123);
+            btnGames.TabIndex = 6;
+            btnGames.Text = "Games";
+            btnGames.TextAlign = ContentAlignment.BottomCenter;
+            btnGames.UseVisualStyleBackColor = false;
+            btnGames.Click += btnGames_Click;
             // 
             // label1
             // 
@@ -148,52 +155,40 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Ebrima", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(460, 14);
+            label1.Location = new Point(430, 22);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(260, 60);
+            label1.Size = new Size(219, 50);
             label1.TabIndex = 8;
             label1.Text = "MediaShelf";
-            label1.Click += lblTopName;
             // 
-            // button6
+            // lblManualEntries
             // 
-            button6.BackColor = Color.LightGray;
-            button6.Font = new Font("Ebrima", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = SystemColors.ActiveCaptionText;
-            button6.Location = new Point(23, 27);
-            button6.Name = "button6";
-            button6.Size = new Size(130, 30);
-            button6.TabIndex = 9;
-            button6.Text = "Search Bar";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += btnSearchBar;
+            lblManualEntries.AutoSize = true;
+            lblManualEntries.BackColor = Color.Transparent;
+            lblManualEntries.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblManualEntries.ForeColor = SystemColors.ControlText;
+            lblManualEntries.Location = new Point(366, 615);
+            lblManualEntries.Margin = new Padding(2, 0, 2, 0);
+            lblManualEntries.Name = "lblManualEntries";
+            lblManualEntries.Size = new Size(128, 23);
+            lblManualEntries.TabIndex = 64;
+            lblManualEntries.Text = "Manual Entries";
+            lblManualEntries.Click += lblManualEntries_Click;
             // 
-            // label9
+            // lblWishlist
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label9.ForeColor = SystemColors.ControlText;
-            label9.Location = new Point(151, 708);
-            label9.Name = "label9";
-            label9.Size = new Size(154, 28);
-            label9.TabIndex = 64;
-            label9.Text = "Manual Entries";
-            label9.Click += label9_Click;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.Transparent;
-            label13.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label13.ForeColor = SystemColors.ControlText;
-            label13.Location = new Point(151, 659);
-            label13.Name = "label13";
-            label13.Size = new Size(88, 28);
-            label13.TabIndex = 63;
-            label13.Text = "Wishlist";
-            label13.Click += lblWishlistList;
+            lblWishlist.AutoSize = true;
+            lblWishlist.BackColor = Color.Transparent;
+            lblWishlist.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblWishlist.ForeColor = SystemColors.ControlText;
+            lblWishlist.Location = new Point(368, 573);
+            lblWishlist.Margin = new Padding(2, 0, 2, 0);
+            lblWishlist.Name = "lblWishlist";
+            lblWishlist.Size = new Size(73, 23);
+            lblWishlist.TabIndex = 63;
+            lblWishlist.Text = "Wishlist";
+            lblWishlist.Click += lblWishlist_Click;
             // 
             // label22
             // 
@@ -201,12 +196,12 @@
             label22.BackColor = Color.Transparent;
             label22.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label22.ForeColor = SystemColors.ControlText;
-            label22.Location = new Point(151, 687);
+            label22.Location = new Point(366, 595);
+            label22.Margin = new Padding(2, 0, 2, 0);
             label22.Name = "label22";
-            label22.Size = new Size(523, 25);
+            label22.Size = new Size(358, 20);
             label22.TabIndex = 60;
-            label22.Text = "Description: Media that have been Wishlisted will be placed here.\r\n";
-            label22.Click += lblWishlistDescription;
+            label22.Text = "Media that have been Wishlisted will be placed here.\r\n";
             // 
             // label23
             // 
@@ -214,12 +209,12 @@
             label23.BackColor = Color.Transparent;
             label23.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label23.ForeColor = SystemColors.ControlText;
-            label23.Location = new Point(151, 736);
+            label23.Location = new Point(366, 634);
+            label23.Margin = new Padding(2, 0, 2, 0);
             label23.Name = "label23";
-            label23.Size = new Size(423, 25);
+            label23.Size = new Size(273, 20);
             label23.TabIndex = 59;
-            label23.Text = "Description: Your manual entries will be placed here.";
-            label23.Click += label23_Click;
+            label23.Text = "Your manual entries will be placed here.";
             // 
             // label24
             // 
@@ -227,93 +222,119 @@
             label24.BackColor = Color.Transparent;
             label24.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label24.ForeColor = SystemColors.ControlText;
-            label24.Location = new Point(151, 636);
+            label24.Location = new Point(366, 554);
+            label24.Margin = new Padding(2, 0, 2, 0);
             label24.Name = "label24";
-            label24.Size = new Size(513, 75);
+            label24.Size = new Size(350, 60);
             label24.TabIndex = 58;
-            label24.Text = "Description: Media that have been favorited will be placed here.\r\n\r\n\r\n";
-            label24.Click += lblFavoritesDescription;
+            label24.Text = "Media that have been favorited will be placed here.\r\n\r\n\r\n";
             // 
             // lblFavoritesList
             // 
-            label25.AutoSize = true;
-            label25.BackColor = Color.Transparent;
-            label25.Font = new Font("Ebrima", 10F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label25.ForeColor = SystemColors.ControlText;
-            label25.Location = new Point(151, 608);
-            label25.Name = "label25";
-            label25.Size = new Size(98, 28);
-            label25.TabIndex = 57;
-            label25.Text = "Favorites";
-            label25.Click += lblFavoritesList;
+            lblFavoritesList.AutoSize = true;
+            lblFavoritesList.BackColor = Color.Transparent;
+            lblFavoritesList.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFavoritesList.ForeColor = SystemColors.ControlText;
+            lblFavoritesList.Location = new Point(366, 531);
+            lblFavoritesList.Margin = new Padding(2, 0, 2, 0);
+            lblFavoritesList.Name = "lblFavoritesList";
+            lblFavoritesList.Size = new Size(82, 23);
+            lblFavoritesList.TabIndex = 57;
+            lblFavoritesList.Text = "Favorites";
+            lblFavoritesList.Click += lblFavoritesList_Click_1;
             // 
             // label26
             // 
             label26.AutoSize = true;
             label26.BackColor = Color.Transparent;
-            label26.Font = new Font("Ebrima", 15F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label26.Font = new Font("Ebrima", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label26.ForeColor = SystemColors.ControlText;
-            label26.Location = new Point(545, 569);
+            label26.Location = new Point(502, 476);
+            label26.Margin = new Padding(2, 0, 2, 0);
             label26.Name = "label26";
-            label26.Size = new Size(80, 41);
+            label26.Size = new Size(67, 35);
             label26.TabIndex = 56;
             label26.Text = "Lists";
-            label26.Click += lblListHeader;
-
             // 
-            // btnNavTempSearch
+            // btnSearch
             // 
-            this.btnNavTempSearch.Location = new System.Drawing.Point(12, 12);
-            this.btnNavTempSearch.Name = "btnNavTempSearch";
-            this.btnNavTempSearch.Size = new System.Drawing.Size(94, 29);
-            this.btnNavTempSearch.TabIndex = 67;
-            this.btnNavTempSearch.Text = "Search";
-            this.btnNavTempSearch.UseVisualStyleBackColor = true;
-            this.btnNavTempSearch.Click += new System.EventHandler(this.btnNavTempSearch_Click);
-
+            btnSearch.Location = new Point(12, 11);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 29);
+            btnSearch.TabIndex = 65;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // lblTags
+            // 
+            lblTags.AutoSize = true;
+            lblTags.BackColor = Color.Transparent;
+            lblTags.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTags.ForeColor = SystemColors.ControlText;
+            lblTags.Location = new Point(368, 654);
+            lblTags.Margin = new Padding(2, 0, 2, 0);
+            lblTags.Name = "lblTags";
+            lblTags.Size = new Size(47, 23);
+            lblTags.TabIndex = 66;
+            lblTags.Text = "Tags";
+            lblTags.Click += lblTags_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ControlText;
+            label3.Location = new Point(369, 676);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(128, 20);
+            label3.TabIndex = 67;
+            label3.Text = "Manage your tags";
             // 
             // DiscoveryPageForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1246, 752);
-            Controls.Add(label9);
-            Controls.Add(label13);
+            ClientSize = new Size(1084, 761);
+            Controls.Add(label3);
+            Controls.Add(lblTags);
+            Controls.Add(btnSearch);
+            Controls.Add(lblManualEntries);
+            Controls.Add(lblWishlist);
             Controls.Add(label22);
             Controls.Add(label23);
             Controls.Add(label24);
-            Controls.Add(label25);
+            Controls.Add(lblFavoritesList);
             Controls.Add(label26);
-            Controls.Add(button6);
             Controls.Add(label1);
-            Controls.Add(button7);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(btnNavTempSearch);
+            Controls.Add(btnGames);
+            Controls.Add(btnBooks);
+            Controls.Add(btnTVShows);
+            Controls.Add(btnMovies);
+            Controls.Add(btnMusic);
+            Margin = new Padding(2);
             Name = "DiscoveryPageForm";
             Text = "DiscoveryPageForm";
-            Load += DiscoveryPageForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button7;
+        private Button btnMusic;
+        private Button btnMovies;
+        private Button btnTVShows;
+        private Button btnBooks;
+        private Button btnGames;
         private Label label1;
-        private Button button6;
-        private Label label9;
-        private Label label13;
+        private Label lblManualEntries;
+        private Label lblWishlist;
         private Label label22;
         private Label label23;
         private Label label24;
@@ -321,5 +342,8 @@
         private Label label26;
         private Button btnNavTempSearch;
         private Button btnNavTempMyShelf;
+        private Button btnSearch;
+        private Label lblTags;
+        private Label label3;
     }
 }
