@@ -75,15 +75,17 @@ namespace MediaShelfApp
              * 
              */
 
-
+            // for every control in the form, change the font size if needed
             foreach (Control c in form.Controls)
             {
+                //if the current control contains child controls, change the font size of those too
                 if (c.HasChildren)
                     changeFontSize(c, fs, isDiscoveryForm);
-
+                
+                // if the current form is the Discovery Form, change font size of only certain controls in form
                 if (isDiscoveryForm && (c is Button || (c is Label && c.Font.Size <= 12) || c is GroupBox || c is ComboBox))
                     c.Font = new Font(c.Font.FontFamily, fs, c.Font.Style, c.Font.Unit);
-                else if (!isDiscoveryForm)
+                else if (!isDiscoveryForm) // else change font size of every control in form except titles
                 {
                     if (!(c is Label && c.Font.Size > 12))
                         c.Font = new Font(c.Font.FontFamily, fs, c.Font.Style, c.Font.Unit);
@@ -91,11 +93,13 @@ namespace MediaShelfApp
             }
         }
 
-        //utility function - intended use for above function
+        //utility function - intended use for above function; used when user changes font size
         private static void changeFontSize(Control control, int fs, bool isDiscoveryForm)
         {
+            // for every child control in the parent control, change its font size
             foreach (Control c in control.Controls)
             {
+                //if the current control contains child controls, change the font size of those too
                 if (c.HasChildren)
                     changeFontSize(c, fs, isDiscoveryForm);
 
@@ -109,11 +113,12 @@ namespace MediaShelfApp
             }
         }
 
+        // modifier method for variable fontSize
         public static void setFontSize(int n)
         {
             fontSize = n;
         }
-
+        // accessor method for variable fontSize
         public static int getFontSize()
 
         {
@@ -426,18 +431,21 @@ namespace MediaShelfApp
         {
         }
 
+        // shows items in user's wishlist
         private void lblWishlist_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Wishlist", this);
             window.Show();
         }
 
+        // shows items that user has made
         private void lblManualEntries_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Manual Entries", this);
             window.Show();
         }
 
+        // shows tags that user has made
         private void lblManualTags_Click(object sender, EventArgs e)
         {
             ListView window = new ListView("Tags", this);
@@ -478,6 +486,7 @@ namespace MediaShelfApp
             System.IO.File.WriteAllText(getSettingsFileLocation(), "fontsize=" + fontSize);
         }
 
+        // opens/closes whole settings menu
         private void btnSettings_Click(object sender, EventArgs e)
         {
             if (btnSettings.Text == "Open Settings")
@@ -495,6 +504,7 @@ namespace MediaShelfApp
             }
         }
 
+        // opens settings type part of settings menu
         private void cmbSettingsSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSettingsSelection.SelectedIndex == 0)
@@ -507,17 +517,18 @@ namespace MediaShelfApp
             }
         }
 
+        // changes current font size to new selection
         private void rbFontSettings_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbSmallFont9.Checked)
-                setFontSize(9);
-            else if (rbMediumFont10.Checked)
-                setFontSize(10);
-            else if (rbLargeFont12.Checked)
-                setFontSize(12);
+            if (rbSmallFont9.Checked) //font size 9 was selected
+                setFontSize(9); //new font size = 9
+            else if (rbMediumFont10.Checked) //font size 10 was selected
+                setFontSize(10); //new font size = 10
+            else if (rbLargeFont12.Checked) //font size 12 was selected
+                setFontSize(12); //new font size = 12
 
-            changeFontSize(this, fontSize, true);
-            saveSettings();
+            changeFontSize(this, fontSize, true); // change font size to new selection
+            saveSettings(); // save current font size in settings file
         }
 
         //Withlist Decription
