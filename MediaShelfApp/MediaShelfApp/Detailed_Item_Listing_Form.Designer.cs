@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            btnRecommendations = new Button();
             btnNavBack = new Button();
             pbMovieImage = new PictureBox();
             pbBookImage = new PictureBox();
@@ -59,10 +60,12 @@
             // 
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Margin = new Padding(4);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(btnRecommendations);
             splitContainer1.Panel1.Controls.Add(btnNavBack);
             splitContainer1.Panel1.Controls.Add(pbMovieImage);
             splitContainer1.Panel1.Controls.Add(pbBookImage);
@@ -82,15 +85,27 @@
             splitContainer1.Panel2.Controls.Add(lblTitle);
             splitContainer1.Panel2.Controls.Add(cmbAddToList);
             splitContainer1.Panel2.Controls.Add(btnFavorite);
-            splitContainer1.Size = new Size(938, 558);
-            splitContainer1.SplitterDistance = 369;
+            splitContainer1.Size = new Size(1172, 698);
+            splitContainer1.SplitterDistance = 461;
+            splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
+            // 
+            // btnRecommendations
+            // 
+            btnRecommendations.Location = new Point(184, 8);
+            btnRecommendations.Name = "btnRecommendations";
+            btnRecommendations.Size = new Size(207, 36);
+            btnRecommendations.TabIndex = 5;
+            btnRecommendations.Text = "Recommendations";
+            btnRecommendations.UseVisualStyleBackColor = true;
+            btnRecommendations.Click += btnRecommendations_Click;
             // 
             // btnNavBack
             // 
-            btnNavBack.Location = new Point(18, 6);
+            btnNavBack.Location = new Point(22, 8);
+            btnNavBack.Margin = new Padding(4);
             btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(105, 29);
+            btnNavBack.Size = new Size(131, 36);
             btnNavBack.TabIndex = 1;
             btnNavBack.Text = "Back";
             btnNavBack.UseVisualStyleBackColor = true;
@@ -98,7 +113,8 @@
             // 
             // pbMovieImage
             // 
-            pbMovieImage.Location = new Point(63, 56);
+            pbMovieImage.Location = new Point(79, 70);
+            pbMovieImage.Margin = new Padding(4);
             pbMovieImage.Name = "pbMovieImage";
             pbMovieImage.Size = new Size(400, 400);
             pbMovieImage.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -107,10 +123,10 @@
             // 
             // pbBookImage
             // 
-            pbBookImage.Location = new Point(21, 74);
-            pbBookImage.Margin = new Padding(2, 2, 2, 2);
+            pbBookImage.Location = new Point(26, 92);
+            pbBookImage.Margin = new Padding(2);
             pbBookImage.Name = "pbBookImage";
-            pbBookImage.Size = new Size(369, 375);
+            pbBookImage.Size = new Size(461, 469);
             pbBookImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbBookImage.TabIndex = 2;
             pbBookImage.TabStop = false;
@@ -118,10 +134,10 @@
             // 
             // pbGameImage
             // 
-            pbGameImage.Location = new Point(7, 74);
-            pbGameImage.Margin = new Padding(2, 2, 2, 2);
+            pbGameImage.Location = new Point(9, 92);
+            pbGameImage.Margin = new Padding(2);
             pbGameImage.Name = "pbGameImage";
-            pbGameImage.Size = new Size(369, 375);
+            pbGameImage.Size = new Size(461, 469);
             pbGameImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbGameImage.TabIndex = 3;
             pbGameImage.TabStop = false;
@@ -129,10 +145,10 @@
             // 
             // pbMusicImage
             // 
-            pbMusicImage.Location = new Point(7, 74);
-            pbMusicImage.Margin = new Padding(2, 2, 2, 2);
+            pbMusicImage.Location = new Point(9, 92);
+            pbMusicImage.Margin = new Padding(2);
             pbMusicImage.Name = "pbMusicImage";
-            pbMusicImage.Size = new Size(369, 375);
+            pbMusicImage.Size = new Size(461, 469);
             pbMusicImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbMusicImage.TabIndex = 4;
             pbMusicImage.TabStop = false;
@@ -140,76 +156,80 @@
             // 
             // txtDescriptionValue
             // 
-            txtDescriptionValue.Location = new Point(55, 304);
-            txtDescriptionValue.Margin = new Padding(2, 2, 2, 2);
+            txtDescriptionValue.Location = new Point(69, 380);
+            txtDescriptionValue.Margin = new Padding(2);
             txtDescriptionValue.Multiline = true;
             txtDescriptionValue.Name = "txtDescriptionValue";
             txtDescriptionValue.ReadOnly = true;
             txtDescriptionValue.ScrollBars = ScrollBars.Vertical;
-            txtDescriptionValue.Size = new Size(483, 221);
+            txtDescriptionValue.Size = new Size(603, 275);
             txtDescriptionValue.TabIndex = 11;
             // 
             // lblReleaseDateValue
             // 
             lblReleaseDateValue.AutoSize = true;
-            lblReleaseDateValue.Location = new Point(163, 227);
+            lblReleaseDateValue.Location = new Point(204, 284);
             lblReleaseDateValue.Margin = new Padding(2, 0, 2, 0);
             lblReleaseDateValue.Name = "lblReleaseDateValue";
-            lblReleaseDateValue.Size = new Size(0, 20);
+            lblReleaseDateValue.Size = new Size(0, 25);
             lblReleaseDateValue.TabIndex = 10;
             // 
             // lblGenreValue
             // 
             lblGenreValue.AutoSize = true;
-            lblGenreValue.Location = new Point(130, 195);
+            lblGenreValue.Location = new Point(162, 244);
             lblGenreValue.Margin = new Padding(2, 0, 2, 0);
             lblGenreValue.Name = "lblGenreValue";
-            lblGenreValue.Size = new Size(0, 20);
+            lblGenreValue.Size = new Size(0, 25);
             lblGenreValue.TabIndex = 9;
             // 
             // lblCreatorValue
             // 
             lblCreatorValue.AutoSize = true;
-            lblCreatorValue.Location = new Point(130, 166);
+            lblCreatorValue.Location = new Point(162, 208);
             lblCreatorValue.Margin = new Padding(2, 0, 2, 0);
             lblCreatorValue.Name = "lblCreatorValue";
-            lblCreatorValue.Size = new Size(0, 20);
+            lblCreatorValue.Size = new Size(0, 25);
             lblCreatorValue.TabIndex = 8;
             // 
             // lblDescriptionTitle
             // 
             lblDescriptionTitle.AutoSize = true;
             lblDescriptionTitle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescriptionTitle.Location = new Point(54, 277);
+            lblDescriptionTitle.Location = new Point(68, 346);
+            lblDescriptionTitle.Margin = new Padding(4, 0, 4, 0);
             lblDescriptionTitle.Name = "lblDescriptionTitle";
-            lblDescriptionTitle.Size = new Size(89, 20);
+            lblDescriptionTitle.Size = new Size(109, 25);
             lblDescriptionTitle.TabIndex = 6;
             lblDescriptionTitle.Text = "Description";
             // 
             // lblReleaseDateTitle
             // 
             lblReleaseDateTitle.AutoSize = true;
-            lblReleaseDateTitle.Location = new Point(55, 225);
+            lblReleaseDateTitle.Location = new Point(69, 281);
+            lblReleaseDateTitle.Margin = new Padding(4, 0, 4, 0);
             lblReleaseDateTitle.Name = "lblReleaseDateTitle";
-            lblReleaseDateTitle.Size = new Size(99, 20);
+            lblReleaseDateTitle.Size = new Size(116, 25);
             lblReleaseDateTitle.TabIndex = 5;
             lblReleaseDateTitle.Text = "Release Date:";
             // 
             // lblGenreTitle
             // 
             lblGenreTitle.AutoSize = true;
-            lblGenreTitle.Location = new Point(54, 193);
+            lblGenreTitle.Location = new Point(68, 241);
+            lblGenreTitle.Margin = new Padding(4, 0, 4, 0);
             lblGenreTitle.Name = "lblGenreTitle";
-            lblGenreTitle.Size = new Size(51, 20);
+            lblGenreTitle.Size = new Size(62, 25);
             lblGenreTitle.TabIndex = 4;
             lblGenreTitle.Text = "Genre:";
             // 
             // lblCreatorTitle
             // 
             lblCreatorTitle.AutoSize = true;
-            lblCreatorTitle.Location = new Point(54, 161);
+            lblCreatorTitle.Location = new Point(68, 201);
+            lblCreatorTitle.Margin = new Padding(4, 0, 4, 0);
             lblCreatorTitle.Name = "lblCreatorTitle";
-            lblCreatorTitle.Size = new Size(61, 20);
+            lblCreatorTitle.Size = new Size(74, 25);
             lblCreatorTitle.TabIndex = 3;
             lblCreatorTitle.Text = "Creator:";
             // 
@@ -217,10 +237,11 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 25.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(43, 56);
-            lblTitle.MaximumSize = new Size(492, 125);
+            lblTitle.Location = new Point(54, 70);
+            lblTitle.Margin = new Padding(4, 0, 4, 0);
+            lblTitle.MaximumSize = new Size(615, 156);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(103, 57);
+            lblTitle.Size = new Size(124, 68);
             lblTitle.TabIndex = 2;
             lblTitle.Text = "Title";
             lblTitle.TextChanged += lblTitle_TextChanged;
@@ -229,16 +250,18 @@
             // 
             cmbAddToList.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbAddToList.FormattingEnabled = true;
-            cmbAddToList.Location = new Point(222, 10);
+            cmbAddToList.Location = new Point(278, 12);
+            cmbAddToList.Margin = new Padding(4);
             cmbAddToList.Name = "cmbAddToList";
-            cmbAddToList.Size = new Size(171, 28);
+            cmbAddToList.Size = new Size(213, 33);
             cmbAddToList.TabIndex = 1;
             // 
             // btnFavorite
             // 
-            btnFavorite.Location = new Point(408, 8);
+            btnFavorite.Location = new Point(510, 10);
+            btnFavorite.Margin = new Padding(4);
             btnFavorite.Name = "btnFavorite";
-            btnFavorite.Size = new Size(119, 29);
+            btnFavorite.Size = new Size(149, 36);
             btnFavorite.TabIndex = 0;
             btnFavorite.Text = "Favorite";
             btnFavorite.UseVisualStyleBackColor = true;
@@ -246,12 +269,14 @@
             // 
             // Detailed_Item_Listing_Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(938, 558);
+            ClientSize = new Size(1172, 698);
             Controls.Add(splitContainer1);
+            Margin = new Padding(4);
             Name = "Detailed_Item_Listing_Form";
             Text = "Detailed Item Listing";
+            Load += Detailed_Item_Listing_Form_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -284,5 +309,6 @@
         private PictureBox pbBookImage;
         private PictureBox pbGameImage;
         private PictureBox pbMusicImage;
+        private Button btnRecommendations;
     }
 }
