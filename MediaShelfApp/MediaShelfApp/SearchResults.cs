@@ -486,7 +486,7 @@ namespace MediaShelfApp
                 dataGridView1.Columns.Add("Title", "Title");
                 dataGridView1.Columns.Add("Overview", "Overview");
 
-                // google books api only allows for 10 results
+                
                 for (int i = 0; i < 20; i++)
                 {
                     try
@@ -640,9 +640,9 @@ namespace MediaShelfApp
             comboBox1.SelectedIndex = 0; //pre-sets comboBox to Movies/TV Shows
         }
 
-        private void openDetailedItemListingForm(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int mediaType)
+        private void openDetailedItemListingForm(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int mediaType, int movieID)
         {
-            Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form(title, creator, genre, release_date, description, mediaImageLink, mediaType);
+            Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form(title, creator, genre, release_date, description, mediaImageLink, mediaType, movieID);
             window.setCaller(this);
             this.Hide();
             window.Show();
@@ -657,6 +657,7 @@ namespace MediaShelfApp
             string release_date;
             string description;
             string mediaImageLink;
+            int movieID = 0;
 
             try
             {
@@ -705,7 +706,8 @@ namespace MediaShelfApp
                         {
                             mediaImageLink = "https://image.tmdb.org/t/p/w500" + moviesjson.results[rowIndex].poster_path.ToString();
                         }
-                        openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0);
+                        movieID = moviesjson.results[rowIndex].id;
+                        openDetailedItemListingForm(title, creator, genre, release_date, description, mediaImageLink, 0, movieID);
 
                         break;
 
@@ -769,7 +771,7 @@ namespace MediaShelfApp
                             mediaImageLink = booksjson.items[rowIndex].volumeInfo.imageLinks.thumbnail;
                         }
 
-                        openDetailedItemListingForm(title, author, publisher, release_date, description, mediaImageLink, 1);
+                        openDetailedItemListingForm(title, author, publisher, release_date, description, mediaImageLink, 1, 0);
                         break;
 
 
@@ -820,7 +822,7 @@ namespace MediaShelfApp
                         {
                             mediaImageLink = musicjson.data[rowIndex].album.cover_big;
                         }
-                        openDetailedItemListingForm(title, artist, album, release_date, description, mediaImageLink, 2);
+                        openDetailedItemListingForm(title, artist, album, release_date, description, mediaImageLink, 2, 0);
                         break;
 
 
@@ -883,7 +885,7 @@ namespace MediaShelfApp
                         }
 
 
-                        openDetailedItemListingForm(title, platform, genre, release_date, description, mediaImageLink, 3);
+                        openDetailedItemListingForm(title, platform, genre, release_date, description, mediaImageLink, 3, 0);
 
                         break;
                 }
