@@ -59,6 +59,7 @@ namespace MediaShelfApp
             button1.TabIndex = 2;
             button1.Text = "Add Manual Entry";
             button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
             // 
             // label2
             // 
