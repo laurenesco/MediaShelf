@@ -64,6 +64,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.BackColor = SystemColors.ControlLightLight;
             splitContainer1.Panel1.Controls.Add(btnRecommendations);
             splitContainer1.Panel1.Controls.Add(btnNavBack);
             splitContainer1.Panel1.Controls.Add(pbMovieImage);
@@ -73,6 +74,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
             splitContainer1.Panel2.Controls.Add(lblCreatorValue);
             splitContainer1.Panel2.Controls.Add(txtDescriptionValue);
             splitContainer1.Panel2.Controls.Add(lblReleaseDateValue);
@@ -111,6 +113,7 @@
             // 
             // pbMovieImage
             // 
+            pbMovieImage.BackColor = SystemColors.ControlLightLight;
             pbMovieImage.Location = new Point(63, 56);
             pbMovieImage.Name = "pbMovieImage";
             pbMovieImage.Size = new Size(400, 400);
@@ -120,6 +123,7 @@
             // 
             // pbBookImage
             // 
+            pbBookImage.BackColor = SystemColors.ControlLightLight;
             pbBookImage.Location = new Point(21, 74);
             pbBookImage.Margin = new Padding(2);
             pbBookImage.Name = "pbBookImage";
@@ -131,6 +135,7 @@
             // 
             // pbGameImage
             // 
+            pbGameImage.BackColor = SystemColors.ControlLightLight;
             pbGameImage.Location = new Point(7, 74);
             pbGameImage.Margin = new Padding(2);
             pbGameImage.Name = "pbGameImage";
@@ -154,6 +159,7 @@
             // lblCreatorValue
             // 
             lblCreatorValue.AutoSize = true;
+            lblCreatorValue.BackColor = SystemColors.ControlLightLight;
             lblCreatorValue.Location = new Point(154, 162);
             lblCreatorValue.Margin = new Padding(2, 0, 2, 0);
             lblCreatorValue.Name = "lblCreatorValue";
@@ -162,6 +168,7 @@
             // 
             // txtDescriptionValue
             // 
+            txtDescriptionValue.BackColor = SystemColors.ControlLightLight;
             txtDescriptionValue.Location = new Point(55, 304);
             txtDescriptionValue.Margin = new Padding(2);
             txtDescriptionValue.Multiline = true;
@@ -174,6 +181,7 @@
             // lblReleaseDateValue
             // 
             lblReleaseDateValue.AutoSize = true;
+            lblReleaseDateValue.BackColor = SystemColors.ControlLightLight;
             lblReleaseDateValue.Location = new Point(154, 227);
             lblReleaseDateValue.Margin = new Padding(2, 0, 2, 0);
             lblReleaseDateValue.Name = "lblReleaseDateValue";
@@ -183,6 +191,7 @@
             // lblGenreValue
             // 
             lblGenreValue.AutoSize = true;
+            lblGenreValue.BackColor = SystemColors.ControlLightLight;
             lblGenreValue.Location = new Point(154, 195);
             lblGenreValue.Margin = new Padding(2, 0, 2, 0);
             lblGenreValue.Name = "lblGenreValue";
@@ -192,6 +201,7 @@
             // lblDescriptionTitle
             // 
             lblDescriptionTitle.AutoSize = true;
+            lblDescriptionTitle.BackColor = SystemColors.ControlLightLight;
             lblDescriptionTitle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblDescriptionTitle.Location = new Point(54, 277);
             lblDescriptionTitle.Name = "lblDescriptionTitle";
@@ -202,6 +212,7 @@
             // lblReleaseDateTitle
             // 
             lblReleaseDateTitle.AutoSize = true;
+            lblReleaseDateTitle.BackColor = SystemColors.ControlLightLight;
             lblReleaseDateTitle.Location = new Point(55, 225);
             lblReleaseDateTitle.Name = "lblReleaseDateTitle";
             lblReleaseDateTitle.Size = new Size(99, 20);
@@ -212,6 +223,7 @@
             // lblGenreTitle
             // 
             lblGenreTitle.AutoSize = true;
+            lblGenreTitle.BackColor = SystemColors.ControlLightLight;
             lblGenreTitle.Location = new Point(54, 193);
             lblGenreTitle.MinimumSize = new Size(96, 20);
             lblGenreTitle.Name = "lblGenreTitle";
@@ -223,6 +235,7 @@
             // lblCreatorTitle
             // 
             lblCreatorTitle.AutoSize = true;
+            lblCreatorTitle.BackColor = SystemColors.ControlLightLight;
             lblCreatorTitle.Location = new Point(54, 161);
             lblCreatorTitle.MinimumSize = new Size(96, 20);
             lblCreatorTitle.Name = "lblCreatorTitle";
@@ -234,6 +247,7 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
+            lblTitle.BackColor = SystemColors.ControlLightLight;
             lblTitle.Font = new Font("Segoe UI", 25.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitle.Location = new Point(43, 56);
             lblTitle.MaximumSize = new Size(492, 125);

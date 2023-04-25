@@ -60,8 +60,9 @@
             // lblSearch
             // 
             lblSearch.AutoSize = true;
+            lblSearch.BackColor = SystemColors.ControlLightLight;
             lblSearch.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSearch.ForeColor = SystemColors.ActiveBorder;
+            lblSearch.ForeColor = SystemColors.ActiveCaptionText;
             lblSearch.Location = new Point(376, 169);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(56, 20);
@@ -88,8 +89,9 @@
             // lblSortBy
             // 
             lblSortBy.AutoSize = true;
+            lblSortBy.BackColor = SystemColors.ControlLight;
             lblSortBy.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSortBy.ForeColor = SystemColors.ActiveBorder;
+            lblSortBy.ForeColor = SystemColors.ActiveCaptionText;
             lblSortBy.Location = new Point(825, 664);
             lblSortBy.Name = "lblSortBy";
             lblSortBy.Size = new Size(59, 20);
@@ -99,9 +101,9 @@
             // lblListName
             // 
             lblListName.AutoSize = true;
-            lblListName.BackColor = Color.FromArgb(29, 29, 29);
+            lblListName.BackColor = SystemColors.ControlLightLight;
             lblListName.Font = new Font("Ebrima", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            lblListName.ForeColor = SystemColors.ButtonFace;
+            lblListName.ForeColor = SystemColors.ActiveCaptionText;
             lblListName.Location = new Point(437, 27);
             lblListName.MinimumSize = new Size(250, 47);
             lblListName.Name = "lblListName";
@@ -123,8 +125,9 @@
             // lblDescriptionText
             // 
             lblDescriptionText.Anchor = AnchorStyles.Top;
+            lblDescriptionText.BackColor = SystemColors.ControlLightLight;
             lblDescriptionText.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDescriptionText.ForeColor = SystemColors.ActiveBorder;
+            lblDescriptionText.ForeColor = SystemColors.ActiveCaptionText;
             lblDescriptionText.Location = new Point(437, 74);
             lblDescriptionText.MinimumSize = new Size(250, 47);
             lblDescriptionText.Name = "lblDescriptionText";
@@ -140,7 +143,7 @@
             dgvResults.AllowUserToOrderColumns = true;
             dgvResults.AllowUserToResizeColumns = false;
             dgvResults.AllowUserToResizeRows = false;
-            dgvResults.BackgroundColor = Color.FromArgb(43, 41, 44);
+            dgvResults.BackgroundColor = SystemColors.ControlLightLight;
             dgvResults.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvResults.GridColor = Color.FromArgb(43, 41, 44);
@@ -221,6 +224,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(29, 29, 29);
+            BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
             ClientSize = new Size(1084, 761);
             Controls.Add(txtTagsSearch);
             Controls.Add(cmbSortTags);

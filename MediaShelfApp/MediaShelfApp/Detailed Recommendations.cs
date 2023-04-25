@@ -173,7 +173,7 @@ namespace MediaShelfApp
             }
         }
 
-        
+
         private void openDetailedItemListingForm(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int mediaType, int movieID)
         {
             Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form(title, creator, genre, release_date, description, mediaImageLink, mediaType, movieID);

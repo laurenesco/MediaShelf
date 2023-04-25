@@ -553,7 +553,7 @@ namespace MediaShelfApp
                 dataGridView1.Columns.Add("Title", "Title");
                 dataGridView1.Columns.Add("Overview", "Overview");
 
-                
+
                 for (int i = 0; i < 20; i++)
                 {
                     try
