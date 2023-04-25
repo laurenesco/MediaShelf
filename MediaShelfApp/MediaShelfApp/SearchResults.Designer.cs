@@ -36,7 +36,9 @@ namespace MediaShelfApp
             dataGridView1 = new DataGridView();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             comboBox1 = new ComboBox();
+            pictureMessage = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureMessage).BeginInit();
             SuspendLayout();
             // 
             // searchBox1
@@ -63,6 +65,7 @@ namespace MediaShelfApp
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(456, 35);
             label2.Name = "label2";
@@ -99,6 +102,7 @@ namespace MediaShelfApp
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(59, 197);
             dataGridView1.Margin = new Padding(2);
@@ -128,11 +132,23 @@ namespace MediaShelfApp
             comboBox1.Size = new Size(150, 28);
             comboBox1.TabIndex = 11;
             // 
+            // pictureMessage
+            // 
+            pictureMessage.Image = Properties.Resources.Untitled;
+            pictureMessage.Location = new Point(59, 197);
+            pictureMessage.Name = "pictureMessage";
+            pictureMessage.Size = new Size(978, 468);
+            pictureMessage.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureMessage.TabIndex = 12;
+            pictureMessage.TabStop = false;
+            // 
             // SearchResults
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
             ClientSize = new Size(1084, 761);
+            Controls.Add(pictureMessage);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(button2);
@@ -147,6 +163,7 @@ namespace MediaShelfApp
             Text = "SearchResults";
             Load += SearchResults_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureMessage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,5 +178,6 @@ namespace MediaShelfApp
         private DataGridView dataGridView1;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private ComboBox comboBox1;
+        private PictureBox pictureMessage;
     }
 }
