@@ -448,15 +448,19 @@ namespace MediaShelfApp
             {
                 case 0:
                     movieAPICall();
+                    remove_picture(); //calls function to remove pictureBox once users clicks search
                     break;
                 case 1:
                     booksAPICall();
+                    remove_picture();
                     break;
                 case 2:
                     musicAPICall();
+                    remove_picture();
                     break;
                 case 3:
                     gamesAPICall();
+                    remove_picture();
                     break;
             }
         }
@@ -553,7 +557,7 @@ namespace MediaShelfApp
                 dataGridView1.Columns.Add("Title", "Title");
                 dataGridView1.Columns.Add("Overview", "Overview");
 
-                
+
                 for (int i = 0; i < 20; i++)
                 {
                     try
@@ -1016,5 +1020,11 @@ namespace MediaShelfApp
             }
 
         }
+        private void remove_picture() //removes the picture box one the search button is clicked
+        {
+            //makes the picture box not visuble anymore            
+            pictureMessage.Visible = false;
+        }
+
     }
 }
