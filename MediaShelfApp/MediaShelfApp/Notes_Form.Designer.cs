@@ -47,6 +47,7 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
+            lblTitle.BackColor = SystemColors.ControlLightLight;
             lblTitle.Font = new Font("Ebrima", 21F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitle.Location = new Point(303, 33);
             lblTitle.Name = "lblTitle";
@@ -124,17 +125,20 @@
             // flpTags
             // 
             flpTags.AutoScroll = true;
+            flpTags.BackColor = SystemColors.ControlLightLight;
+            flpTags.BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
             flpTags.Dock = DockStyle.Bottom;
-            flpTags.Location = new Point(0, 433);
+            flpTags.Location = new Point(0, 432);
             flpTags.Margin = new Padding(2);
             flpTags.Name = "flpTags";
             flpTags.Padding = new Padding(6, 0, 6, 0);
-            flpTags.Size = new Size(882, 120);
+            flpTags.Size = new Size(882, 121);
             flpTags.TabIndex = 24;
             // 
             // lblAddTagPrompt
             // 
             lblAddTagPrompt.AutoSize = true;
+            lblAddTagPrompt.BackColor = SystemColors.ControlLightLight;
             lblAddTagPrompt.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblAddTagPrompt.Location = new Point(34, 347);
             lblAddTagPrompt.Margin = new Padding(2, 0, 2, 0);
@@ -210,6 +214,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
             ClientSize = new Size(882, 553);
             Controls.Add(btnDeleteTag);
             Controls.Add(cmbDeleteTags);

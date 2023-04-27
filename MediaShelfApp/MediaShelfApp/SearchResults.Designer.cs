@@ -59,10 +59,12 @@ namespace MediaShelfApp
             button1.TabIndex = 2;
             button1.Text = "Add Manual Entry";
             button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = SystemColors.ControlLightLight;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(456, 35);
             label2.Name = "label2";
@@ -99,6 +101,7 @@ namespace MediaShelfApp
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(59, 197);
             dataGridView1.Margin = new Padding(2);
@@ -132,6 +135,7 @@ namespace MediaShelfApp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
             ClientSize = new Size(1084, 761);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);

@@ -37,11 +37,12 @@
             // lblRecommendations
             // 
             lblRecommendations.AutoSize = true;
+            lblRecommendations.BackColor = SystemColors.ControlLightLight;
             lblRecommendations.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblRecommendations.Location = new Point(396, 12);
+            lblRecommendations.Location = new Point(317, 10);
             lblRecommendations.Margin = new Padding(2, 0, 2, 0);
             lblRecommendations.Name = "lblRecommendations";
-            lblRecommendations.Size = new Size(351, 54);
+            lblRecommendations.Size = new Size(298, 46);
             lblRecommendations.TabIndex = 1;
             lblRecommendations.Text = "Recommendations";
             // 
@@ -50,23 +51,23 @@
             dgvResults.AllowUserToDeleteRows = false;
             dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvResults.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvResults.BackgroundColor = SystemColors.ControlLightLight;
             dgvResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResults.Location = new Point(75, 102);
+            dgvResults.Location = new Point(60, 82);
             dgvResults.Margin = new Padding(2);
             dgvResults.Name = "dgvResults";
             dgvResults.ReadOnly = true;
             dgvResults.RowHeadersWidth = 62;
             dgvResults.RowTemplate.Height = 33;
-            dgvResults.Size = new Size(996, 595);
+            dgvResults.Size = new Size(797, 476);
             dgvResults.TabIndex = 4;
             dgvResults.CellContentClick += dgvResults_CellContentClick;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(30, 29);
-            btnBack.Margin = new Padding(4);
+            btnBack.Location = new Point(24, 23);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(118, 36);
+            btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 5;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
@@ -74,9 +75,10 @@
             // 
             // Detailed_Recommendations
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1115, 752);
+            BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
+            ClientSize = new Size(892, 602);
             Controls.Add(btnBack);
             Controls.Add(dgvResults);
             Controls.Add(lblRecommendations);
