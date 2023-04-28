@@ -152,9 +152,15 @@ namespace MediaShelfApp
                 cmdInsertMedia.Parameters.AddWithValue("@list", listID);
                 cmdInsertMedia.Parameters.AddWithValue("@genre", genre);
 
-
                 // Execute the insertion query
                 cmdInsertMedia.ExecuteNonQuery();
+
+                // Make sure item is added to manual entries list
+                if (listID != 0)
+                {
+                    cmdInsertMedia.Parameters[cmdInsertMedia.Parameters.IndexOf("@list")].Value = 0;
+                    cmdInsertMedia.ExecuteNonQuery();
+                }
 
                 // Close connection and dispose of the command
                 dbConnection.Close();
