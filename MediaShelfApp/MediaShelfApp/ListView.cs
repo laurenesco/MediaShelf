@@ -319,7 +319,8 @@ namespace MediaShelfApp
 
             if (areYouSure == DialogResult.Yes)
             {
-                int[] id = GetItemID(title, creator);
+                int listID = getListID(list);
+                int[] id = GetItemID(title, creator, listID);
                 DeleteItem(id[0], id[1]);
                 DeleteNotes(id[0], id[1]);
 
@@ -450,8 +451,8 @@ namespace MediaShelfApp
             window.Show();
         }
 
-        // Returns the items ID and API ID (primary key) from title and creator
-        private int[] GetItemID(string title, string creator)
+        // Returns the items ID and API ID (primary key) from title, creator, and list id
+        private int[] GetItemID(string title, string creator, int listID)
         {
             int[] item = { 0, 0 };
             try
@@ -465,11 +466,13 @@ namespace MediaShelfApp
                                          ITEM_API
                                          FROM ITEMS
                                          WHERE ITEM_CREATOR = @bind2
-                                         AND ITEM_TITLE = @bind1";
+                                         AND ITEM_TITLE = @bind1
+                                         AND ITEM_LIST_ID = @bind3";
 
                 // Parameterize the variables for system security
                 cmdGetID.Parameters.AddWithValue("@bind1", title);
                 cmdGetID.Parameters.AddWithValue("@bind2", creator);
+                cmdGetID.Parameters.AddWithValue("@bind3", listID);
 
                 // Execute query
                 SqlDataReader reader = cmdGetID.ExecuteReader();
@@ -605,6 +608,33 @@ namespace MediaShelfApp
 
             dbConnection.Close();
             return 0;
+        }
+
+        // gets the list id of the current list
+        private int getListID(string listName)
+        {
+            int listID = -1;
+
+            // open connection to database
+            dbConnection.Open();
+
+            // find the list id in database
+            SqlCommand cmdGetListID = dbConnection.CreateCommand();
+            cmdGetListID.CommandText = @"SELECT LIST_ID FROM LIST WHERE LIST_NAME = @bind1";
+            cmdGetListID.Parameters.AddWithValue("@bind1", list);
+            cmdGetListID.ExecuteNonQuery();
+            cmdGetListID.Dispose();
+
+            // get the list id from database
+            SqlDataReader reader = cmdGetListID.ExecuteReader();
+            if (reader.Read())
+                listID = int.Parse(reader[0].ToString());
+            reader.Close();
+
+            // close connection to database
+            dbConnection.Close();
+
+            return listID;
         }
     }
 }
