@@ -41,21 +41,22 @@ namespace MediaShelfApp
             // 
             // searchBox1
             // 
-            searchBox1.Location = new Point(323, 154);
-            searchBox1.Margin = new Padding(3, 4, 3, 4);
+            searchBox1.Location = new Point(404, 192);
+            searchBox1.Margin = new Padding(4, 5, 4, 5);
             searchBox1.Name = "searchBox1";
             searchBox1.PlaceholderText = "Search";
-            searchBox1.Size = new Size(439, 27);
+            searchBox1.Size = new Size(548, 31);
             searchBox1.TabIndex = 0;
             searchBox1.TextAlign = HorizontalAlignment.Center;
             searchBox1.KeyPress += searchBox1_KeyPress;
             // 
             // button1
             // 
-            button1.Location = new Point(59, 692);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(74, 865);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(166, 39);
+            button1.Size = new Size(208, 49);
             button1.TabIndex = 2;
             button1.Text = "Add Manual Entry";
             button1.UseVisualStyleBackColor = true;
@@ -65,18 +66,21 @@ namespace MediaShelfApp
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ControlLightLight;
-            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(456, 35);
+            label2.Font = new Font("Ebrima", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(570, 44);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(165, 35);
+            label2.Size = new Size(197, 41);
             label2.TabIndex = 5;
             label2.Text = "Media Search";
             // 
             // btnNavBack
             // 
-            btnNavBack.Location = new Point(12, 12);
+            btnNavBack.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavBack.Location = new Point(15, 15);
+            btnNavBack.Margin = new Padding(4);
             btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(94, 29);
+            btnNavBack.Size = new Size(118, 42);
             btnNavBack.TabIndex = 7;
             btnNavBack.Text = "Back";
             btnNavBack.UseVisualStyleBackColor = true;
@@ -84,10 +88,11 @@ namespace MediaShelfApp
             // 
             // button2
             // 
-            button2.Location = new Point(792, 153);
+            button2.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(990, 186);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(90, 28);
+            button2.Size = new Size(112, 42);
             button2.TabIndex = 8;
             button2.Text = "Search";
             button2.UseVisualStyleBackColor = true;
@@ -103,14 +108,14 @@ namespace MediaShelfApp
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(59, 197);
+            dataGridView1.Location = new Point(74, 246);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 10;
             dataGridView1.RowTemplate.Height = 33;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(978, 468);
+            dataGridView1.Size = new Size(1222, 585);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -125,18 +130,18 @@ namespace MediaShelfApp
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Movies/TV Shows", "Books", "Music", "Video Games" });
-            comboBox1.Location = new Point(887, 692);
+            comboBox1.Location = new Point(1109, 865);
             comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(150, 28);
+            comboBox1.Size = new Size(186, 33);
             comboBox1.TabIndex = 11;
             // 
             // SearchResults
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BACKGROUND_WHITE;
-            ClientSize = new Size(1084, 761);
+            ClientSize = new Size(1350, 940);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(button2);
@@ -144,9 +149,9 @@ namespace MediaShelfApp
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(searchBox1);
-            Margin = new Padding(3, 4, 3, 4);
-            MaximumSize = new Size(1102, 808);
-            MinimumSize = new Size(1102, 808);
+            Margin = new Padding(4, 5, 4, 5);
+            MaximumSize = new Size(1372, 996);
+            MinimumSize = new Size(1372, 996);
             Name = "SearchResults";
             Text = "SearchResults";
             Load += SearchResults_Load;

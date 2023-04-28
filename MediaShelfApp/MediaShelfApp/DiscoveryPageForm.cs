@@ -14,7 +14,7 @@ namespace MediaShelfApp
 {
     public partial class DiscoveryPageForm : Form
     {
-        static int fontSize;
+        static int fontSize = 10;
 
         public DiscoveryPageForm()
         {

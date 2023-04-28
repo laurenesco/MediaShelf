@@ -34,6 +34,7 @@ namespace MediaShelfApp
         public Detailed_Recommendations()
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             // Initiate Database Connection
             try
@@ -48,6 +49,7 @@ namespace MediaShelfApp
         public Detailed_Recommendations(int movieID)
         {
             InitializeComponent();
+            DiscoveryPageForm.changeFontSize(this, DiscoveryPageForm.getFontSize());
 
             this.movieID = movieID;
 
