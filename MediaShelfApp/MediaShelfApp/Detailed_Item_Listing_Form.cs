@@ -3,12 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 
 namespace MediaShelfApp
 {
@@ -60,6 +64,88 @@ namespace MediaShelfApp
             }
         }
 
+        public Detailed_Item_Listing_Form(string item_id)
+        {
+            InitializeComponent();
+
+            string title;
+            string creator;
+            string genre;
+            string releaseDate;
+            string description;
+            string mediaImageLink;
+            int api_id;
+
+
+            // Lookup item in sql db via item_id
+            SqlConnection conn = new SqlConnection(dbConnectionString);
+            conn.Open();
+
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT * FROM ITEMS WHERE item_id=" + item_id;
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            rd.Read();
+
+            if (rd["item_title"].ToString() != null)
+            {
+                title = rd["item_title"].ToString();
+            }
+            else
+            {
+                title = "No Title Provided.";
+            }
+
+            // Creator
+            if (rd["item_creator"].ToString() != "")
+            {
+                creator = rd["item_creator"].ToString();
+            }
+            else
+            {
+                creator = "No Creator Provided.";
+            }
+
+            // Genre
+            if (rd["item_genre"].ToString() != "")
+            {
+                genre = rd["item_genre"].ToString();
+            }
+            else
+            {
+                genre = "No Genre Provided.";
+            }
+
+            if (rd["item_release_date"].ToString() != "")
+            {
+                releaseDate = rd["item_release_date"].ToString();
+            }
+            else
+            {
+                releaseDate = "No Release Date.";
+            }
+
+            if (rd["item_description"].ToString() != "")
+            {
+                description = rd["item_description"].ToString();
+            }
+            else
+            {
+                description = "No Description Provided.";
+            }
+
+            // Get API ID
+            api_id = int.Parse(rd["item_api"].ToString());
+
+            rd.Dispose();
+            conn.Close();
+
+            // Create a DB Flag that hides image when image is not present
+
+            displayData(title, creator, genre, releaseDate, description, "", api_id, 1);
+        }
+
         public Detailed_Item_Listing_Form(string title, string creator, string genre, string release_date, string description, string mediaImageLink, int api_type, int movieID)
         {
             InitializeComponent();
@@ -106,18 +192,15 @@ namespace MediaShelfApp
 
             dbConnection.Close();
         }
-
         // Set caller method - this variable allows the back button to reopen the calling form
         public void setCaller(ListView lcaller)
         {
             this.lcaller = lcaller;
         }
-
         public void setCaller(SearchResults dcaller)
         {
             this.dcaller = dcaller;
         }
-
         public void setRecCaller(Detailed_Recommendations reccaller)
         {
 
@@ -133,7 +216,6 @@ namespace MediaShelfApp
         {
             this.itemID = id;
         }
-
         ///////////////////////
         //  Private methods  //
         ///////////////////////
@@ -153,11 +235,80 @@ namespace MediaShelfApp
                 lcaller.Show();
             }
         }
-
-
-        private void displayData(string title, string creator, string genre, string releaseDate, string description, string mediaImageLink, int mediaType)
+        public static void ScaleImage(string imageUrl, PictureBox pictureBox, int width, int height)
         {
+            try
+            {
+                // Download the image from the URL
+                using (WebClient client = new WebClient())
+                {
+                    using (Stream stream = client.OpenRead(imageUrl))
+                    {
+                        if (stream != null)
+                        {
+                            // Load the image from the stream
+                            Image originalImage = Image.FromStream(stream);
 
+                            // Scale the image to the desired size
+                            Image scaledImage = ScaleImageToSize(originalImage, width, height);
+
+                            // Set the scaled image to the PictureBox
+                            pictureBox.Image = scaledImage;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+        private static Image ScaleImageToSize(Image image, int maxWidth, int maxHeight)
+        {
+            int newWidth;
+            int newHeight;
+
+            // Calculate the new dimensions while preserving the aspect ratio
+            if (image.Width > maxWidth || image.Height > maxHeight)
+            {
+                double aspectRatio = (double)image.Width / image.Height;
+
+                if (image.Width > maxWidth)
+                {
+                    newWidth = maxWidth;
+                    newHeight = (int)(newWidth / aspectRatio);
+                }
+                else
+                {
+                    newHeight = maxHeight;
+                    newWidth = (int)(newHeight * aspectRatio);
+                }
+            }
+            else
+            {
+                newWidth = image.Width;
+                newHeight = image.Height;
+            }
+
+            // Create a new bitmap with the scaled dimensions
+            Bitmap scaledBitmap = new Bitmap(newWidth, newHeight);
+
+            // Draw the original image onto the scaled bitmap
+            using (Graphics graphics = Graphics.FromImage(scaledBitmap))
+            {
+                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+
+            return scaledBitmap;
+        }
+        private void displayData(string title, string creator, string genre, string releaseDate, string description, string mediaImageLink, int mediaType, int db_flag = 0)
+        {
+            if (db_flag == 1)
+            {
+                btnFavorite.Visible = false;
+                btnRecommendations.Visible = false;
+                cmbAddToList.Visible = false;
+            }
             switch (mediaType)
             {
 
@@ -172,8 +323,11 @@ namespace MediaShelfApp
                     pbGameImage.Visible = false;
                     pbBookImage.Visible = false;
                     pbMovieImage.Visible = true;
-                    pbMovieImage.ImageLocation = mediaImageLink;
-                    pbMovieImage.Size = new System.Drawing.Size(369, 369);
+
+                    if (db_flag == 0)
+                    {
+                        ScaleImage(mediaImageLink, pbMovieImage, 250, 250);
+                    }
 
                     this.isMovie = true;
 
@@ -196,21 +350,27 @@ namespace MediaShelfApp
                     pbMovieImage.Visible = false;
                     pbGameImage.Visible = false;
                     pbBookImage.Visible = true;
-                    pbBookImage.ImageLocation = mediaImageLink;
+
+                    if (db_flag == 0)
+                    {
+                        pbBookImage.ImageLocation = mediaImageLink;
+                    }
+
                     break;
 
                 case 2: // Add Music Data To Detailed Item Listing Form
                     lblTitle.Text = title;
                     lblCreatorTitle.Text = "Artist:";
                     lblGenreTitle.Text = "Album:";
-                    lblReleaseDateTitle.Text = "Duration:";
+                    lblReleaseDateTitle.Text = "Release Date:";
 
 
                     lblTitle.Text = title;
                     lblCreatorValue.Text = creator;
                     lblGenreValue.Text = genre;
                     lblReleaseDateValue.Text = releaseDate;
-                    txtDescriptionValue.Text = description;
+                    lblDescriptionTitle.Visible = false;
+                    txtDescriptionValue.Visible = false;
 
 
                     pbMovieImage.Visible = false;
@@ -218,10 +378,15 @@ namespace MediaShelfApp
                     pbBookImage.Visible = false;
                     pbMusicImage.Visible = true;
 
-                    pbMusicImage.ImageLocation = mediaImageLink;
-                    break;
+                    if (db_flag == 0)
+                    {
+                        pbMusicImage.ImageLocation = mediaImageLink;
+                    }
 
-                case 3: // Add Games Data To Detailed Item Listing Form
+                    break;
+                case 3:
+                case 4:
+                    // Add Games Data To Detailed Item Listing Form
                     lblCreatorTitle.Text = "Platform:";
                     lblDescriptionTitle.Text = "";
 
@@ -235,7 +400,13 @@ namespace MediaShelfApp
                     pbMusicImage.Visible = false;
                     pbBookImage.Visible = false;
                     pbGameImage.Visible = true;
-                    pbGameImage.ImageLocation = mediaImageLink;
+
+
+                    if (db_flag == 0)
+                    {
+                        pbGameImage.ImageLocation = mediaImageLink;
+                    }
+
                     break;
 
                 default:
@@ -256,31 +427,77 @@ namespace MediaShelfApp
             else
             {
 
+                // Assign API ID
+                System.Int32 api_id = 0;
+                switch (lblCreatorTitle.Text)
+                {
+                    case "Runtime:":
+                        api_id = 1;
+                        break;
+                    case "Author:":
+                        api_id = 2;
+                        break;
+                    case "Artist:":
+                        api_id = 3;
+                        break;
+                    case "Platform:":
+                        api_id = 4;
+                        break;
+                    default:
+                        break;
+                }
+
                 try
                 {
                     dbConnect.Open();
                     SqlCommand cmd = dbConnect.CreateCommand();
-                    cmd.CommandText = "INSERT INTO ITEMS VALUES (@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,NULL,@item_description,@item_list_id,@item_genre)";
-                    cmd.Parameters.AddWithValue("@item_api", 0);
+                    cmd.CommandText = "INSERT INTO ITEMS VALUES (@item_api,@item_media_type,@item_title,@item_creator,@item_release_date,@image_data,@item_description,@item_list_id,@item_genre)";
+                    cmd.Parameters.AddWithValue("@item_api", api_id);
                     cmd.Parameters.AddWithValue("@item_media_type", 1);
                     cmd.Parameters.AddWithValue("@item_title", lblTitle.Text);
                     cmd.Parameters.AddWithValue("@item_creator", lblCreatorValue.Text);
                     cmd.Parameters.AddWithValue("@item_release_date", lblReleaseDateValue.Text);
-                    //cmd.Parameters.AddWithValue("@item_icon", picMediaImage.Image);
                     cmd.Parameters.AddWithValue("@item_description", txtDescriptionValue.Text);
                     cmd.Parameters.AddWithValue("@item_list_id", list_index);
                     cmd.Parameters.AddWithValue("@item_genre", lblGenreValue.Text);
+
+                    byte[] imageData = null;
+
+                    switch (api_id)
+                    {
+                        case 1:
+                            imageData = PrepareImageForDatabase(pbMovieImage);
+                            break;
+                        case 2:
+                            imageData = PrepareImageForDatabase(pbBookImage);
+                            break;
+                        case 3:
+                            imageData = PrepareImageForDatabase(pbMusicImage);
+                            break;
+                        case 4:
+                            imageData = PrepareImageForDatabase(pbGameImage);
+                            break;
+                        default:
+                            break;
+                    }
+                    // Save Media Image
+                    cmd.Parameters.AddWithValue("@image_data", imageData);
+
+                    // Execute DB Write
                     cmd.ExecuteNonQuery();
+
+                    // Show Confirmation Message
                     MessageBox.Show("Item saved to " + cmbAddToList.Text, "Save Confirmed");
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
+
                 dbConnect.Close();
             }
         }
-
         private void moveLabelsVerticalPosition(int y)
         {
             Label[] labels = { lblCreatorTitle, lblGenreTitle, lblReleaseDateTitle, lblCreatorValue, lblGenreValue, lblReleaseDateValue };
@@ -290,7 +507,6 @@ namespace MediaShelfApp
                 currentLabel.Location = new Point(currentLabel.Location.X, currentLabel.Location.Y + y);
             }
         }
-
         private void lblTitle_TextChanged(object sender, EventArgs e)
         {
 
@@ -326,8 +542,6 @@ namespace MediaShelfApp
 
 
         }
-
-
         private void openRecommendationsForm()
         {
 
@@ -342,7 +556,6 @@ namespace MediaShelfApp
         {
             openRecommendationsForm();
         }
-
         private void Detailed_Item_Listing_Form_Load(object sender, EventArgs e)
         {
             if (isMovie == false)
@@ -350,7 +563,20 @@ namespace MediaShelfApp
                 btnRecommendations.Visible = false;
             }
         }
+        public byte[] PrepareImageForDatabase(PictureBox pictureBox)
+        {
 
+            // Retrieve the image from the picture box
+            Image image = pictureBox.Image;
+
+            byte[] imageData;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                imageData = ms.ToArray();
+            }
+            return imageData;
+        }
 
     }
 }
