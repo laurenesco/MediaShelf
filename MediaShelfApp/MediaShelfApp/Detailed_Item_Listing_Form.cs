@@ -170,7 +170,7 @@ namespace MediaShelfApp
             this.mediaImageLink = mediaImageLink;
             this.movieID = movieID; // recommendations form
 
-            displayData(title, creator, genre, release_date, description, mediaImageLink, api_type);
+            displayData(title, creator, genre, release_date, description, mediaImageLink, api_type, 0);
         }
 
         // ============================================================================================================================================================
@@ -326,7 +326,7 @@ namespace MediaShelfApp
 
                     if (db_flag == 0)
                     {
-                        ScaleImage(mediaImageLink, pbMovieImage, 250, 250);
+                        ScaleImage(mediaImageLink, pbMovieImage, 500, 700);
                     }
 
                     this.isMovie = true;

@@ -60,7 +60,7 @@
             // 
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Margin = new Padding(3, 2, 3, 2);
+            splitContainer1.Margin = new Padding(6, 4, 6, 4);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -87,16 +87,17 @@
             splitContainer1.Panel2.Controls.Add(lblTitle);
             splitContainer1.Panel2.Controls.Add(cmbAddToList);
             splitContainer1.Panel2.Controls.Add(btnFavorite);
-            splitContainer1.Size = new Size(821, 418);
-            splitContainer1.SplitterDistance = 322;
+            splitContainer1.Size = new Size(1525, 892);
+            splitContainer1.SplitterDistance = 598;
+            splitContainer1.SplitterWidth = 7;
             splitContainer1.TabIndex = 0;
             // 
             // btnRecommendations
             // 
-            btnRecommendations.Location = new Point(117, 4);
-            btnRecommendations.Margin = new Padding(2);
+            btnRecommendations.Location = new Point(217, 9);
+            btnRecommendations.Margin = new Padding(4);
             btnRecommendations.Name = "btnRecommendations";
-            btnRecommendations.Size = new Size(131, 22);
+            btnRecommendations.Size = new Size(243, 47);
             btnRecommendations.TabIndex = 5;
             btnRecommendations.Text = "Recommendations";
             btnRecommendations.UseVisualStyleBackColor = true;
@@ -104,10 +105,10 @@
             // 
             // btnNavBack
             // 
-            btnNavBack.Location = new Point(16, 4);
-            btnNavBack.Margin = new Padding(3, 2, 3, 2);
+            btnNavBack.Location = new Point(30, 9);
+            btnNavBack.Margin = new Padding(6, 4, 6, 4);
             btnNavBack.Name = "btnNavBack";
-            btnNavBack.Size = new Size(92, 22);
+            btnNavBack.Size = new Size(171, 47);
             btnNavBack.TabIndex = 1;
             btnNavBack.Text = "Back";
             btnNavBack.UseVisualStyleBackColor = true;
@@ -116,11 +117,11 @@
             // pbMovieImage
             // 
             pbMovieImage.BackColor = SystemColors.ControlLightLight;
-            pbMovieImage.Location = new Point(55, 42);
-            pbMovieImage.Margin = new Padding(3, 2, 3, 2);
-            pbMovieImage.MinimumSize = new Size(250, 250);
+            pbMovieImage.Location = new Point(60, 90);
+            pbMovieImage.Margin = new Padding(6, 4, 6, 4);
+            pbMovieImage.MinimumSize = new Size(500, 700);
             pbMovieImage.Name = "pbMovieImage";
-            pbMovieImage.Size = new Size(250, 250);
+            pbMovieImage.Size = new Size(500, 700);
             pbMovieImage.SizeMode = PictureBoxSizeMode.AutoSize;
             pbMovieImage.TabIndex = 0;
             pbMovieImage.TabStop = false;
@@ -128,10 +129,10 @@
             // pbBookImage
             // 
             pbBookImage.BackColor = SystemColors.ControlLightLight;
-            pbBookImage.Location = new Point(18, 56);
-            pbBookImage.Margin = new Padding(2);
+            pbBookImage.Location = new Point(33, 119);
+            pbBookImage.Margin = new Padding(4);
             pbBookImage.Name = "pbBookImage";
-            pbBookImage.Size = new Size(323, 281);
+            pbBookImage.Size = new Size(600, 599);
             pbBookImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbBookImage.TabIndex = 2;
             pbBookImage.TabStop = false;
@@ -140,10 +141,10 @@
             // pbGameImage
             // 
             pbGameImage.BackColor = SystemColors.ControlLightLight;
-            pbGameImage.Location = new Point(6, 56);
-            pbGameImage.Margin = new Padding(2);
+            pbGameImage.Location = new Point(11, 119);
+            pbGameImage.Margin = new Padding(4);
             pbGameImage.Name = "pbGameImage";
-            pbGameImage.Size = new Size(323, 281);
+            pbGameImage.Size = new Size(600, 599);
             pbGameImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbGameImage.TabIndex = 3;
             pbGameImage.TabStop = false;
@@ -151,10 +152,10 @@
             // 
             // pbMusicImage
             // 
-            pbMusicImage.Location = new Point(6, 56);
-            pbMusicImage.Margin = new Padding(2);
+            pbMusicImage.Location = new Point(11, 119);
+            pbMusicImage.Margin = new Padding(4);
             pbMusicImage.Name = "pbMusicImage";
-            pbMusicImage.Size = new Size(323, 281);
+            pbMusicImage.Size = new Size(600, 599);
             pbMusicImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbMusicImage.TabIndex = 4;
             pbMusicImage.TabStop = false;
@@ -164,42 +165,42 @@
             // 
             lblCreatorValue.AutoSize = true;
             lblCreatorValue.BackColor = SystemColors.ControlLightLight;
-            lblCreatorValue.Location = new Point(135, 122);
-            lblCreatorValue.Margin = new Padding(2, 0, 2, 0);
+            lblCreatorValue.Location = new Point(251, 260);
+            lblCreatorValue.Margin = new Padding(4, 0, 4, 0);
             lblCreatorValue.Name = "lblCreatorValue";
-            lblCreatorValue.Size = new Size(0, 15);
+            lblCreatorValue.Size = new Size(0, 32);
             lblCreatorValue.TabIndex = 8;
             // 
             // txtDescriptionValue
             // 
             txtDescriptionValue.BackColor = SystemColors.ControlLightLight;
-            txtDescriptionValue.Location = new Point(48, 228);
-            txtDescriptionValue.Margin = new Padding(2);
+            txtDescriptionValue.Location = new Point(89, 486);
+            txtDescriptionValue.Margin = new Padding(4);
             txtDescriptionValue.Multiline = true;
             txtDescriptionValue.Name = "txtDescriptionValue";
             txtDescriptionValue.ReadOnly = true;
             txtDescriptionValue.ScrollBars = ScrollBars.Vertical;
-            txtDescriptionValue.Size = new Size(423, 167);
+            txtDescriptionValue.Size = new Size(782, 352);
             txtDescriptionValue.TabIndex = 11;
             // 
             // lblReleaseDateValue
             // 
             lblReleaseDateValue.AutoSize = true;
             lblReleaseDateValue.BackColor = SystemColors.ControlLightLight;
-            lblReleaseDateValue.Location = new Point(135, 170);
-            lblReleaseDateValue.Margin = new Padding(2, 0, 2, 0);
+            lblReleaseDateValue.Location = new Point(251, 363);
+            lblReleaseDateValue.Margin = new Padding(4, 0, 4, 0);
             lblReleaseDateValue.Name = "lblReleaseDateValue";
-            lblReleaseDateValue.Size = new Size(0, 15);
+            lblReleaseDateValue.Size = new Size(0, 32);
             lblReleaseDateValue.TabIndex = 10;
             // 
             // lblGenreValue
             // 
             lblGenreValue.AutoSize = true;
             lblGenreValue.BackColor = SystemColors.ControlLightLight;
-            lblGenreValue.Location = new Point(135, 146);
-            lblGenreValue.Margin = new Padding(2, 0, 2, 0);
+            lblGenreValue.Location = new Point(251, 311);
+            lblGenreValue.Margin = new Padding(4, 0, 4, 0);
             lblGenreValue.Name = "lblGenreValue";
-            lblGenreValue.Size = new Size(0, 15);
+            lblGenreValue.Size = new Size(0, 32);
             lblGenreValue.TabIndex = 9;
             // 
             // lblDescriptionTitle
@@ -207,9 +208,10 @@
             lblDescriptionTitle.AutoSize = true;
             lblDescriptionTitle.BackColor = SystemColors.ControlLightLight;
             lblDescriptionTitle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescriptionTitle.Location = new Point(47, 208);
+            lblDescriptionTitle.Location = new Point(87, 444);
+            lblDescriptionTitle.Margin = new Padding(6, 0, 6, 0);
             lblDescriptionTitle.Name = "lblDescriptionTitle";
-            lblDescriptionTitle.Size = new Size(71, 15);
+            lblDescriptionTitle.Size = new Size(146, 32);
             lblDescriptionTitle.TabIndex = 6;
             lblDescriptionTitle.Text = "Description";
             // 
@@ -217,9 +219,10 @@
             // 
             lblReleaseDateTitle.AutoSize = true;
             lblReleaseDateTitle.BackColor = SystemColors.ControlLightLight;
-            lblReleaseDateTitle.Location = new Point(48, 169);
+            lblReleaseDateTitle.Location = new Point(89, 361);
+            lblReleaseDateTitle.Margin = new Padding(6, 0, 6, 0);
             lblReleaseDateTitle.Name = "lblReleaseDateTitle";
-            lblReleaseDateTitle.Size = new Size(76, 15);
+            lblReleaseDateTitle.Size = new Size(156, 32);
             lblReleaseDateTitle.TabIndex = 5;
             lblReleaseDateTitle.Text = "Release Date:";
             lblReleaseDateTitle.TextAlign = ContentAlignment.MiddleRight;
@@ -228,10 +231,11 @@
             // 
             lblGenreTitle.AutoSize = true;
             lblGenreTitle.BackColor = SystemColors.ControlLightLight;
-            lblGenreTitle.Location = new Point(47, 145);
-            lblGenreTitle.MinimumSize = new Size(84, 15);
+            lblGenreTitle.Location = new Point(87, 309);
+            lblGenreTitle.Margin = new Padding(6, 0, 6, 0);
+            lblGenreTitle.MinimumSize = new Size(156, 32);
             lblGenreTitle.Name = "lblGenreTitle";
-            lblGenreTitle.Size = new Size(84, 15);
+            lblGenreTitle.Size = new Size(156, 32);
             lblGenreTitle.TabIndex = 4;
             lblGenreTitle.Text = "Genre:";
             lblGenreTitle.TextAlign = ContentAlignment.MiddleRight;
@@ -240,10 +244,11 @@
             // 
             lblCreatorTitle.AutoSize = true;
             lblCreatorTitle.BackColor = SystemColors.ControlLightLight;
-            lblCreatorTitle.Location = new Point(47, 121);
-            lblCreatorTitle.MinimumSize = new Size(84, 15);
+            lblCreatorTitle.Location = new Point(87, 258);
+            lblCreatorTitle.Margin = new Padding(6, 0, 6, 0);
+            lblCreatorTitle.MinimumSize = new Size(156, 32);
             lblCreatorTitle.Name = "lblCreatorTitle";
-            lblCreatorTitle.Size = new Size(84, 15);
+            lblCreatorTitle.Size = new Size(156, 32);
             lblCreatorTitle.TabIndex = 3;
             lblCreatorTitle.Text = "Creator:";
             lblCreatorTitle.TextAlign = ContentAlignment.MiddleRight;
@@ -253,10 +258,11 @@
             lblTitle.AutoSize = true;
             lblTitle.BackColor = SystemColors.ControlLightLight;
             lblTitle.Font = new Font("Segoe UI", 25.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(38, 42);
-            lblTitle.MaximumSize = new Size(430, 94);
+            lblTitle.Location = new Point(71, 90);
+            lblTitle.Margin = new Padding(6, 0, 6, 0);
+            lblTitle.MaximumSize = new Size(799, 201);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(84, 46);
+            lblTitle.Size = new Size(166, 91);
             lblTitle.TabIndex = 2;
             lblTitle.Text = "Title";
             lblTitle.TextChanged += lblTitle_TextChanged;
@@ -265,18 +271,18 @@
             // 
             cmbAddToList.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbAddToList.FormattingEnabled = true;
-            cmbAddToList.Location = new Point(194, 8);
-            cmbAddToList.Margin = new Padding(3, 2, 3, 2);
+            cmbAddToList.Location = new Point(360, 17);
+            cmbAddToList.Margin = new Padding(6, 4, 6, 4);
             cmbAddToList.Name = "cmbAddToList";
-            cmbAddToList.Size = new Size(150, 23);
+            cmbAddToList.Size = new Size(275, 40);
             cmbAddToList.TabIndex = 1;
             // 
             // btnFavorite
             // 
-            btnFavorite.Location = new Point(357, 6);
-            btnFavorite.Margin = new Padding(3, 2, 3, 2);
+            btnFavorite.Location = new Point(663, 13);
+            btnFavorite.Margin = new Padding(6, 4, 6, 4);
             btnFavorite.Name = "btnFavorite";
-            btnFavorite.Size = new Size(104, 22);
+            btnFavorite.Size = new Size(193, 47);
             btnFavorite.TabIndex = 0;
             btnFavorite.Text = "Favorite";
             btnFavorite.UseVisualStyleBackColor = true;
@@ -284,11 +290,11 @@
             // 
             // Detailed_Item_Listing_Form
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(821, 418);
+            ClientSize = new Size(1525, 892);
             Controls.Add(splitContainer1);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(6, 4, 6, 4);
             Name = "Detailed_Item_Listing_Form";
             Text = "Detailed Item Listing";
             Load += Detailed_Item_Listing_Form_Load;
