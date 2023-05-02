@@ -45,6 +45,7 @@
             btnSearch = new Button();
             lblTags = new Label();
             label3 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // btnMusic
@@ -80,7 +81,7 @@
             btnMovies.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
             btnMovies.FlatStyle = FlatStyle.Flat;
             btnMovies.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMovies.Location = new Point(597, 159);
+            btnMovies.Location = new Point(602, 159);
             btnMovies.Margin = new Padding(2);
             btnMovies.Name = "btnMovies";
             btnMovies.Size = new Size(168, 154);
@@ -101,7 +102,7 @@
             btnTVShows.FlatAppearance.MouseDownBackColor = Color.DarkGreen;
             btnTVShows.FlatStyle = FlatStyle.Flat;
             btnTVShows.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTVShows.Location = new Point(774, 353);
+            btnTVShows.Location = new Point(780, 353);
             btnTVShows.Margin = new Padding(2);
             btnTVShows.Name = "btnTVShows";
             btnTVShows.Size = new Size(168, 168);
@@ -136,15 +137,15 @@
             // 
             btnGames.BackColor = Color.DarkOrchid;
             btnGames.BackgroundImage = (Image)resources.GetObject("btnGames.BackgroundImage");
-            btnGames.BackgroundImageLayout = ImageLayout.Zoom;
+            btnGames.BackgroundImageLayout = ImageLayout.Stretch;
             btnGames.Cursor = Cursors.Hand;
             btnGames.FlatAppearance.BorderColor = Color.DarkViolet;
             btnGames.FlatAppearance.BorderSize = 7;
             btnGames.FlatAppearance.MouseDownBackColor = Color.DarkViolet;
             btnGames.FlatStyle = FlatStyle.Flat;
             btnGames.Font = new Font("Ebrima", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGames.ForeColor = SystemColors.ControlText;
-            btnGames.Location = new Point(940, 159);
+            btnGames.ForeColor = Color.Black;
+            btnGames.Location = new Point(957, 159);
             btnGames.Margin = new Padding(2);
             btnGames.Name = "btnGames";
             btnGames.Size = new Size(168, 154);
@@ -255,7 +256,7 @@
             // 
             label26.AutoSize = true;
             label26.BackColor = Color.Transparent;
-            label26.Font = new Font("Ebrima", 16F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label26.Font = new Font("Ebrima", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label26.ForeColor = SystemColors.ControlText;
             label26.Location = new Point(627, 595);
             label26.Margin = new Padding(2, 0, 2, 0);
@@ -282,7 +283,7 @@
             lblTags.Cursor = Cursors.Hand;
             lblTags.Font = new Font("Ebrima", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             lblTags.ForeColor = SystemColors.ControlText;
-            lblTags.Location = new Point(387, 825);
+            lblTags.Location = new Point(387, 826);
             lblTags.Margin = new Padding(2, 0, 2, 0);
             lblTags.Name = "lblTags";
             lblTags.Size = new Size(62, 30);
@@ -296,12 +297,22 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(388, 852);
+            label3.Location = new Point(388, 853);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(156, 25);
             label3.TabIndex = 67;
             label3.Text = "Manage your tags";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 1F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(472, 638);
+            label2.Name = "label2";
+            label2.Size = new Size(389, 3);
+            label2.TabIndex = 68;
+            label2.Text = resources.GetString("label2.Text");
             // 
             // DiscoveryPageForm
             // 
@@ -312,6 +323,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1355, 951);
+            Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(lblTags);
             Controls.Add(btnSearch);
@@ -355,5 +367,6 @@
         private Button btnSearch;
         private Label lblTags;
         private Label label3;
+        private Label label2;
     }
 }

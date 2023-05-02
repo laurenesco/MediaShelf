@@ -78,7 +78,7 @@ namespace MediaShelfApp
         //TV Shows List Button
         private void btnTVShows_Click(object sender, EventArgs e)
         {
-            ListView window = new ListView("Movies", this);
+            ListView window = new ListView("TV Shows", this);
             window.Show();
         }
 
