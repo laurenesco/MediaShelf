@@ -299,6 +299,11 @@ namespace MediaShelfApp
             public string next { get; set; }
         }
 
+        public class musicReleaseDate
+        {
+            public string release_date { get; set; }
+        }
+
 
 
 
@@ -585,7 +590,7 @@ namespace MediaShelfApp
             }
         }
 
-
+        // MUSIC API CALL //
         private void musicAPICall()
         {
             using (var client = new HttpClient())
@@ -596,12 +601,14 @@ namespace MediaShelfApp
                 var endpoint = new Uri("https://api.deezer.com/search/track?q=" + query); // NO API KEY NEEDED FOR DEEZER
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
+
                 musicRoot musicList = JsonConvert.DeserializeObject<musicRoot>(json);
 
                 dataGridView1.Rows.Clear();
                 dataGridView1.Columns.Clear();
                 dataGridView1.Refresh();
 
+                dataGridView1.Columns.Add("Id", "Id");
                 dataGridView1.Columns.Add("Title", "Title");
                 dataGridView1.Columns.Add("Artist", "Artist");
 
@@ -609,6 +616,7 @@ namespace MediaShelfApp
                 {
                     try
                     {
+
                         if (musicList.data[i].title == null)
                         {
                             musicList.data[i].title = "No title provided.";
@@ -619,7 +627,8 @@ namespace MediaShelfApp
                             musicList.data[i].artist.name = "No description provided.";
                         }
 
-                        dataGridView1.Rows.Add(musicList.data[i].title.ToString(), musicList.data[i].artist.name.ToString());
+                        dataGridView1.Rows.Add(musicList.data[i].id.ToString(),musicList.data[i].title.ToString(), musicList.data[i].artist.name.ToString());
+                        dataGridView1.Columns["Id"].Visible = false;
                     }
                     catch (ArgumentOutOfRangeException ex)
                     {
@@ -877,6 +886,24 @@ namespace MediaShelfApp
                         //music
                         string artist;
                         string album;
+                        string music_release_date;
+
+                        string music_id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+
+                        // Query for song release date
+                        using (var client = new HttpClient())
+                        {
+                            
+                            var equery = new Uri("https://api.deezer.com/track/" + music_id); // NO API KEY NEEDED FOR DEEZER
+                            var eresult = client.GetAsync(equery).Result;
+                            var ejson = eresult.Content.ReadAsStringAsync().Result;
+
+                            musicReleaseDate musicItem = JsonConvert.DeserializeObject<musicReleaseDate>(ejson);
+
+                            music_release_date = musicItem.release_date;
+                        }
+
 
                         if (musicjson.data[rowIndex].title == null)
                         {
@@ -898,7 +925,7 @@ namespace MediaShelfApp
                         }
 
 
-
+                        
                         if (musicjson.data[rowIndex].album.title == null)
                         {
                             album = "N/A";
@@ -908,19 +935,15 @@ namespace MediaShelfApp
                             album = musicjson.data[rowIndex].album.title;
                         }
 
+
+
                         if (musicjson.data[rowIndex].duration == null)
                         {
-                            release_date = "No Duration Provided.";
+                            release_date = "No Release Date Provided.";
                         }
                         else
                         {
-                            float duration = musicjson.data[rowIndex].duration;
-                            duration /= 60;
-
-                            int minutes = Convert.ToInt32(Math.Floor(duration));
-                            int seconds = Convert.ToInt32((duration - minutes) * 100);
-
-                            release_date = minutes + " Minutes " + seconds + " Seconds";
+                            release_date = music_release_date;
                         }
 
                         description = "";

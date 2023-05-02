@@ -159,7 +159,7 @@ namespace MediaShelfApp
                 SqlCommand cmdGetListItems = dbConnection.CreateCommand();
 
                 // Construct select query
-                cmdGetListItems.CommandText = @"SELECT ITEM_TITLE,
+                cmdGetListItems.CommandText = @"SELECT ITEM_ID,ITEM_TITLE,
                                                ITEM_CREATOR,
                                                ITEM_GENRE
                                                FROM ITEMS
@@ -184,9 +184,11 @@ namespace MediaShelfApp
                 // Configure table
                 dgvResults.DataSource = results;
                 dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvResults.Columns[0].HeaderText = "Title";
-                dgvResults.Columns[1].HeaderText = "Artist";
-                dgvResults.Columns[2].HeaderText = "Genre";
+                dgvResults.Columns[0].HeaderText = "Item_id";
+                dgvResults.Columns[1].HeaderText = "Title";
+                dgvResults.Columns[2].HeaderText = "Artist";
+                dgvResults.Columns[3].HeaderText = "Genre";
+                dgvResults.Columns[0].Visible = false;
 
                 // Close resources
                 reader.Close();
@@ -312,8 +314,8 @@ namespace MediaShelfApp
         // Delete entry functionality - Deletes selected item from list
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            string creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            string title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            string creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[2].Value.ToString();
 
             var areYouSure = MessageBox.Show("Are you sure you want to delete " + title + "?", "Deletion Warning", MessageBoxButtons.YesNoCancel);
 
@@ -388,7 +390,6 @@ namespace MediaShelfApp
 
                 // Dispose of resources
                 cmdDeleteItem.Dispose();
-
             }
             catch (Exception ex)
             {
@@ -403,8 +404,8 @@ namespace MediaShelfApp
         private void btnNotes_Click(object sender, EventArgs e)
         {
             // Declare variables
-            string title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            string creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            string title = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            string creator = dgvResults.Rows[dgvResults.CurrentCell.RowIndex].Cells[2].Value.ToString();
             int[] IDs = new int[2];
 
             // Run query to retrieve the ID's necessary to open notes form
@@ -605,6 +606,19 @@ namespace MediaShelfApp
 
             dbConnection.Close();
             return 0;
+        }
+
+        private void dgvResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (this.list != "Tags")
+            {
+                string item_id = dgvResults.CurrentRow.Cells[0].Value.ToString();
+                Detailed_Item_Listing_Form window = new Detailed_Item_Listing_Form(item_id);
+                window.setCaller(this);
+                this.Hide();
+                window.Show();
+            }
         }
     }
 }
